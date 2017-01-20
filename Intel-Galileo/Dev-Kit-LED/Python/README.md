@@ -87,7 +87,7 @@ First of all you need to connect up an LED to your Intel Galileo Gen 1. To conne
 
 ## Execute The Program
 
-    $ python/python3 Basic-Led.py 
+    $ python/python3 Dev-Kit-Led.py 
 
 ## IoT JumpWay Intel Galileo Examples Bugs/Issues
 
