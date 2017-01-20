@@ -8,6 +8,10 @@ TechBubble Technologies Internet of Things (IoT) JumpWay is an IoT PaaS that all
 
 The Intel Galileo examples provide example projects that you can use to get started with using the TechBubble IoT JumpWay for your Intel Galileo projects.
 
+## Intel Galileo Examples
+
+- [Intel Galileo Basic LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Galileo/Basic-LED/Python "Intel Galileo Basic LED Python Example")
+
 ## Intel Galileo Docs
 
 - [Intel Galileo Security](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Galileo/DOCS/1-Security.md "Intel Galileo Security")
