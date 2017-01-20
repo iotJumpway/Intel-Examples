@@ -12,6 +12,8 @@ The Intel Galileo examples provide example projects that you can use to get star
 
 - [Intel Galileo Basic LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Galileo/Basic-LED/Python "Intel Galileo Basic LED Python Example")
 
+- [Intel Galileo Dev Kit LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Galileo/Dev-Kit-LED/Python "Intel Galileo Dev Kit LED Python Example")
+
 ## Intel Galileo Docs
 
 - [Intel Galileo Security](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Galileo/DOCS/1-Security.md "Intel Galileo Security")
