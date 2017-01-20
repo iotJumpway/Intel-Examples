@@ -92,3 +92,7 @@ First of all you need to connect up an LED to your Intel Galileo Gen 1. To conne
 ## IoT JumpWay Intel Galileo Examples Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come accross whilst using the IoT JumpWay Intel Galileo Examples. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel Galileo Examples in your IoT projects.
+
+## IoT JumpWay Intel Galileo Examples Contributors
+
+- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
