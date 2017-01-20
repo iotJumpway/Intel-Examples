@@ -10,4 +10,4 @@ The Intel examples provide example projects that you can use to get started with
 
 ## IoT JumpWay Intel Bugs/Issues
 
-Please feel free to create issues for bugs and general issues you come accross whilst using the IoT JumpWay Raspberry Pi Examples. You may also use the issues area to ask for general help whilst using the IoT JumpWay Raspberry Pi Examples in your IoT projects.
+Please feel free to create issues for bugs and general issues you come accross whilst using the IoT JumpWay Intel Examples. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel Examples in your IoT projects.
