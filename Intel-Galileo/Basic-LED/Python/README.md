@@ -39,7 +39,7 @@ To help secure your Intel Galileo Gen 1, follow the [Intel Galileo Security](htt
     $ pip install --upgrade pip
     $ pip install -r requirements.txt
 
-## Setting Up Your Raspberry Pi
+## Setting Up Your Galileo Gen 1
 
 First of all you need to connect up an LED to your Intel Galileo Gen 1. To connect the LED you will need a breadboard, a 220 ohm resistor, and two jumper wires. 
 
