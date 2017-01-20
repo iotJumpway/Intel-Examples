@@ -1,6 +1,6 @@
 # Securing Intel Galileo Gen 1 Projects
 
-![TechBubble IoT JumpWay Docs](../images/main/IoT-Jumpway.jpg)  
+![TechBubble IoT JumpWay Docs](../../images/main/IoT-Jumpway.jpg)  
 
 ## Introduction
 
