@@ -19,6 +19,8 @@ If this is the first time you have used the TechBubble IoT JumpWay in your IoT p
 
 ## Hardware requirements
 
+![IoT JumpWay Intel Galileo Gen 1 Basic LED Example Docs](../../../images/Basic-LED/Hardware.jpg)
+
 1. Intel Galileo Gen 1.
 2. 1 x LED.
 3. 1 x 220 ohm Resistor
@@ -40,6 +42,8 @@ To help secure your Intel Galileo Gen 1, follow the [Intel Galileo Security](htt
     $ pip install -r requirements.txt
 
 ## Setting Up Your Galileo Gen 1
+
+![IoT JumpWay Intel Galileo Gen 1 Basic LED Example Docs](../../../images/Basic-LED/Blinking.jpg)
 
 First of all you need to connect up an LED to your Intel Galileo Gen 1. To connect the LED you will need a breadboard, a 220 ohm resistor, and two jumper wires. 
 
