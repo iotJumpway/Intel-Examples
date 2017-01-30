@@ -63,3 +63,28 @@ Once on the page scroll towards the bottom in the software section and click on 
     ```
         $ sudo cp -a Rootfs/* /media/YOUR_SD_CARD/
     ```
+
+## Setting Up Your Edison To Use The SD Card
+
+Now you need to take your SD card and plug it into the Edison, run the following command to find the name of the SD:
+
+    ```
+        $ dmesg |tail -n 10
+    ```
+
+You should see an output similar to the one below:
+
+    ```
+        [53400.186825] mmc1: new high speed SDHC card at address 1234
+        [53400.187781] mmcblk1: mmc1:1234 SA08G 7.28 GiB
+        [53400.189731]  mmcblk1: p1
+        [53412.585076] EXT4-fs (mmcblk1p1): recovery complete
+        [53412.589107] EXT4-fs (mmcblk1p1): mounted filesystem with ordered data mode. O
+    ```
+
+This tells us that the SD card is “/dev/mmcblk1” and the partition we’ve created is "/dev/mmcblk1p1".
+
+
+
+
+
