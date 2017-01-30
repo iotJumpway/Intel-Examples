@@ -1,4 +1,4 @@
-# Booting Your Edison From An SD
+# Booting Your Edison From An SD (Linux)
 
 ![TechBubble IoT JumpWay Docs](../../images/main/IoT-Jumpway.jpg)  
 
@@ -36,5 +36,30 @@ The next step is to download the latest Yocto image for your Edison, to do this 
 
 [Intel® Edison Module Downloads](https://software.intel.com/en-us/iot/hardware/edison/downloads "Intel® Edison Module Downloads")
 
-Once on the page scroll towards the bottom in the software section and click on the link to download the latest Yocto Poky Image.
+Once on the page scroll towards the bottom in the software section and click on the link to download the latest Yocto Poky Image, once downloaded, unpack the contents to ~/Downloads/edison.
 
+## Mount & Move Files To The SD Card
+
+1. Next you need to move into the previously created edison folder:
+
+    ```
+        $ cd ~/Downloads/edison
+    ```
+
+2. Then enter the following command to create the Rootfs directory:
+
+    ```
+        $ mkdir Rootfs
+    ```
+
+3. Then mount the edison image to the Rootfs directory:
+
+    ```
+        $ sudo mount ./edison-image-edison.ext4 Rootfs
+    ```
+
+4. Finally copy the files to your SD card, replacing YOUR_SD_CARD with the name of your mounted SD card.
+
+    ```
+        $ sudo cp -a Rootfs/* /media/YOUR_SD_CARD/
+    ```
