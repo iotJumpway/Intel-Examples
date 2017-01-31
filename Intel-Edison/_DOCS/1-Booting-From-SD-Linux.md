@@ -66,23 +66,62 @@ Once on the page scroll towards the bottom in the software section and click on 
 
 ## Setting Up Your Edison To Use The SD Card
 
-Now you need to take your SD card and plug it into the Edison, run the following command to find the name of the SD:
+1. Now you need to take your SD card and plug it into the Edison, run the following command to find the name of the SD:
 
     ```
-        $ dmesg |tail -n 10
+        # dmesg |tail -n 10
     ```
 
 You should see an output similar to the one below:
 
-    ```
         [53400.186825] mmc1: new high speed SDHC card at address 1234
         [53400.187781] mmcblk1: mmc1:1234 SA08G 7.28 GiB
         [53400.189731]  mmcblk1: p1
         [53412.585076] EXT4-fs (mmcblk1p1): recovery complete
         [53412.589107] EXT4-fs (mmcblk1p1): mounted filesystem with ordered data mode. O
-    ```
 
 This tells us that the SD card is “/dev/mmcblk1” and the partition we’ve created is "/dev/mmcblk1p1".
+
+2. Set the U-Boot environment variables (Ensure you copy the full line below):
+
+    ```
+        # fw_printenv |grep mmc-bootargs=mmc-bootargs=setenv bootargs root=PARTUUID=${uuid_rootfs} rootfstype=ext4 ${bootargs_console} ${bootargs_debug} systemd.unit=${bootargs_target}.target hardware_id=${hardware_id} g_multi.iSerialNumber=${serial#} g_multi.dev_addr=${usb0addr}
+    ```
+
+    ```
+        # fw_setenv mmc-bootargs 'setenv bootargs root=${myrootfs} rootdelay=3 rootfstype=ext4 ${bootargs_console} ${bootargs_debug} systemd.unit=${bootargs_target}.target hardware_id=${hardware_id} g_multi.iSerialNumber=${serial#} g_multi.dev_addr=${usb0addr}'
+    ```
+
+    ```
+        # fw_setenv myrootfs_sdcard '/dev/mmcblk1p1'
+    ```
+
+    ```
+        # fw_printenv uuid_rootfs
+    ```
+
+    ```
+        #  fw_setenv myrootfs_emmc 'PARTUUID=UID FROM ABOVE STEP'
+    ```
+
+    ```
+        #  fw_setenv myrootfs '/dev/mmcblk1p1'
+    ```
+
+    ```
+        #  fw_setenv do_boot_emmc 'setenv myrootfs ${myrootfs_emmc}; run do_boot'
+    ```
+
+    ```
+        #  fw_setenv do_boot_sdcard 'setenv myrootfs ${myrootfs_sdcard}; run do_boot'
+    ```
+
+    ```
+        #  sudo reboot
+    ```
+ 
+
+
 
 
 
