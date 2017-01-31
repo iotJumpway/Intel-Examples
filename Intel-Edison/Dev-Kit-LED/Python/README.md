@@ -50,7 +50,7 @@ You will need to clone this repository to a location on your Raspberry Pi 3. Nav
 
 ![IoT JumpWay Intel Edison Dev Kit LED Example Docs](../../../images/Dev-Kit-LED/Blinking.jpg)
 
-First of all you need to connect up an LED to your Intel Edison. To connect the LED you will need an , a 220 ohm resistor, and two jumper wires. 
+First of all you need to connect up an LED to your Intel Edison. To connect the LED you will need an IoT Dev Kit. 
 
 1. Connect the IoT Dev Kit to your Intel Edison.
 2. Connect the LED to pin D5 of your IoT Dev Kit.
