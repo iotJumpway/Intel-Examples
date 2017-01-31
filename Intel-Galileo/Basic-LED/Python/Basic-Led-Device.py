@@ -74,28 +74,6 @@ BasicLED = BasicLED()
 
 while True:
     
-    BasicLED.JumpWayMQTTClient.publishToDeviceChannel(
-		"Commands",
-		{
-			"Actuator":"LED",
-			"ActuatorID":BasicLED.configs["Sensors"]["LED"]["ID"],
-			"Command":"TOGGLE",
-			"CommandValue":"ON"
-		}
-    )
-    
-    time.sleep(5)
-    
-    BasicLED.JumpWayMQTTClient.publishToDeviceChannel(
-		"Commands",
-		{
-			"Actuator":"LED",
-			"ActuatorID":BasicLED.configs["Sensors"]["LED"]["ID"],
-			"Command":"TOGGLE",
-			"CommandValue":"OFF"
-		}
-    )
-    
-    time.sleep(5)
+    time.sleep(1)
     
 BasicLED.JumpWayMQTTClient.disconnectFromDevice()

@@ -16,7 +16,7 @@ import json
 
 import techbubbleiotjumpwaymqtt.application
 
-class BasicLEDApplication():
+class DevKitLedApplication():
     
     def __init__(self):
         
@@ -46,15 +46,17 @@ class BasicLEDApplication():
             
         self.JumpWayMQTTClient.connectToApplication()
         
-BasicLEDApplication = BasicLEDApplication()
+DevKitLedApplication = DevKitLedApplication()
 
 while True:
     
-    BasicLEDApplication.JumpWayMQTTClient.publishToDeviceChannel(
+    DevKitLedApplication.JumpWayMQTTClient.publishToDeviceChannel(
 		"Commands",
+		DevKitLedApplication.configs["IoTJumpWaySettings"]["SystemZone"],
+		DevKitLedApplication.configs["IoTJumpWaySettings"]["SystemDeviceID"],
 		{
 			"Actuator":"LED",
-			"ActuatorID":BasicLEDApplication.configs["Actuators"]["LED"]["ID"],
+			"ActuatorID":DevKitLedApplication.configs["Actuators"]["LED"]["ID"],
 			"Command":"TOGGLE",
 			"CommandValue":"ON"
 		}
@@ -62,11 +64,13 @@ while True:
     
     time.sleep(5)
     
-    BasicLEDApplication.JumpWayMQTTClient.publishToDeviceChannel(
+    DevKitLedApplication.JumpWayMQTTClient.publishToDeviceChannel(
 		"Commands",
+		DevKitLedApplication.configs["IoTJumpWaySettings"]["SystemZone"],
+		DevKitLedApplication.configs["IoTJumpWaySettings"]["SystemDeviceID"],
 		{
 			"Actuator":"LED",
-			"ActuatorID":BasicLEDApplication.configs["Actuators"]["LED"]["ID"],
+			"ActuatorID":DevKitLedApplication.configs["Actuators"]["LED"]["ID"],
 			"Command":"TOGGLE",
 			"CommandValue":"OFF"
 		}
@@ -74,4 +78,4 @@ while True:
     
     time.sleep(5)
     
-BasicLED.JumpWayMQTTClient.disconnectFromApplication()
+DevKitLedApplication.JumpWayMQTTClient.disconnectFromApplication()
