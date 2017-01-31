@@ -52,6 +52,8 @@ while True:
     
     DevKitLedApplication.JumpWayMQTTClient.publishToDeviceChannel(
 		"Commands",
+		DevKitLedApplication.configs["IoTJumpWaySettings"]["SystemZone"],
+		DevKitLedApplication.configs["IoTJumpWaySettings"]["SystemDeviceID"],
 		{
 			"Actuator":"LED",
 			"ActuatorID":DevKitLedApplication.configs["Actuators"]["LED"]["ID"],
@@ -64,6 +66,8 @@ while True:
     
     DevKitLedApplication.JumpWayMQTTClient.publishToDeviceChannel(
 		"Commands",
+		DevKitLedApplication.configs["IoTJumpWaySettings"]["SystemZone"],
+		DevKitLedApplication.configs["IoTJumpWaySettings"]["SystemDeviceID"],
 		{
 			"Actuator":"LED",
 			"ActuatorID":DevKitLedApplication.configs["Actuators"]["LED"]["ID"],
@@ -74,4 +78,4 @@ while True:
     
     time.sleep(5)
     
-BasicLED.JumpWayMQTTClient.disconnectFromApplication()
+DevKitLedApplication.JumpWayMQTTClient.disconnectFromApplication()

@@ -74,6 +74,6 @@ DevKitLED = DevKitLED()
 
 while True:
     
-    pass
+    time.sleep(1)
     
 DevKitLED.JumpWayMQTTClient.disconnectFromDevice()
