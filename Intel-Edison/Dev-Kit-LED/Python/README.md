@@ -18,7 +18,7 @@ Here you will find sample device scripts for connecting Intel Edison and IoT Dev
 
 ## Hardware Requirements
 
-![IoT JumpWay Intel Edison Dev Kit LED Example Docs](../../../images/Dev-Kit-LED/Hardware.jpg)
+![IoT JumpWay Intel Edison Dev Kit LED Example Docs](../../../images/Dev-Kit-LED/Edison-Hardware.jpg)
 
 1. Intel Edison.
 2. Grove starter kit plus - Intel IoT Edition for Intel Edison.
@@ -48,7 +48,7 @@ You will need to clone this repository to a location on your Raspberry Pi 3. Nav
 
 ## Setting Up Your Intel Edison
 
-![IoT JumpWay Intel Edison Dev Kit LED Example Docs](../../../images/Dev-Kit-LED/Blinking.jpg)
+![IoT JumpWay Intel Edison Dev Kit LED Example Docs](../../../images/Dev-Kit-LED/Edison-Blinking.jpg)
 
 First of all you need to connect up an LED to your Intel Edison. To connect the LED you will need an IoT Dev Kit. 
 
