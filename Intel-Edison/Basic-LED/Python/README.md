@@ -18,7 +18,7 @@ Here you will find sample device scripts for connecting Intel Edison to the Tech
 
 ## Hardware requirements
 
-![IoT JumpWay Intel Edison Basic LED Example Docs](../../../images/Basic-LED/Hardware.jpg)
+![IoT JumpWay Intel Edison Basic LED Example Docs](../../../images/Basic-LED/Edison-Hardware.jpg)
 
 1. Intel Edison.
 2. 1 x LED.
@@ -50,7 +50,7 @@ You will need to clone this repository to a location on your Raspberry Pi 3. Nav
 
 ## Setting Up Your Edison
 
-![IoT JumpWay Intel Edison Basic LED Example Docs](../../../images/Basic-LED/Blinking.jpg)
+![IoT JumpWay Intel Edison Basic LED Example Docs](../../../images/Basic-LED/Edison-Blinking.jpg)
 
 First of all you need to connect up an LED to your Intel Edison. To connect the LED you will need a breadboard, a 220 ohm resistor, and two jumper wires. 
 
