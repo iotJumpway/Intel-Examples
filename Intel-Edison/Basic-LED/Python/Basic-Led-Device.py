@@ -27,7 +27,7 @@ class BasicLED():
         with open('config.json') as configs:
             self.configs = json.loads(configs.read())
             
-        self.LED = mraa.Gpio(self.configs["Sensors"]["LED"]["PIN"])
+        self.LED = mraa.Gpio(self.configs["Actuators"]["LED"]["PIN"])
         self.LED.dir(mraa.DIR_OUT)
         self.LED.write(0)
         
@@ -39,12 +39,12 @@ class BasicLED():
         
         jsonData = json.loads(payload.decode("utf-8"))
         
-        if jsonData['ActuatorID']==self.configs["Sensors"]["LED"]["ID"] and jsonData['Command']=='TOGGLE' and jsonData['CommandValue']=='ON':
+        if jsonData['ActuatorID']==self.configs["Actuators"]["LED"]["ID"] and jsonData['Command']=='TOGGLE' and jsonData['CommandValue']=='ON':
             
             print('Turning ON')
             self.LED.write(1)
 
-        elif jsonData['ActuatorID']==self.configs["Sensors"]["LED"]["ID"] and jsonData['Command']=='TOGGLE' and jsonData['CommandValue']=='OFF':
+        elif jsonData['ActuatorID']==self.configs["Actuators"]["LED"]["ID"] and jsonData['Command']=='TOGGLE' and jsonData['CommandValue']=='OFF':
             
             print('Turning OFF')
             self.LED.write(0)
