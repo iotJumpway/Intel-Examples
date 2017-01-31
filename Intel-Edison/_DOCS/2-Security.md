@@ -1,0 +1,1 @@
+    opkg update (Updates the list of available packages)
