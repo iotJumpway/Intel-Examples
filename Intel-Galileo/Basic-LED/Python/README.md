@@ -44,7 +44,7 @@ You will need to clone this repository to a location on your Raspberry Pi 3. Nav
 
 ## Install Requirements
 
-    $ cd IoT-JumpWay-Intel-Examples/Basic-LED/Python
+    $ cd IoT-JumpWay-Intel-Examples/Intel-Galileo/Basic-LED/Python
     $ pip install --upgrade pip
     $ pip install -r requirements.txt
 
