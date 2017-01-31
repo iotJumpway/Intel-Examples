@@ -6,6 +6,14 @@
 
 The following information will help you set up your SD card and use it to boot the Edison, for this tutorial we recommend an 8 - 16gb SD.
 
+## Setup Your Edison
+
+Before we can setup your SD card, you need to have your Edison already setup. The easiest way to do this is to download one of the official installlers from the [Intel® Edison Downloads Page](https://software.intel.com/en-us/iot/hardware/edison/downloads "Intel® Edison Downloads Page"). At the time of writing this article the latest installers are:
+
+- [Intel® Edison Windows Installer](https://software.intel.com/edison-config/win/latest "Intel® Edison Windows Installer")
+- [Intel® Edison OS X Installer](https://software.intel.com/edison-config/osx/latest "Intel® Edison OS X Installer")
+- [Intel® Edison Linux Installer](https://software.intel.com/edison-config/linux/latest "Intel® Edison Linux Installer")
+
 ## Formatting Your SD card
 
 First of all you need to format your SD card, for this section of the guide we will be using a Linux computer running Ubuntu and the GParted software. 
@@ -83,10 +91,6 @@ You should see an output similar to the one below:
 This tells us that the SD card is “/dev/mmcblk1” and the partition we’ve created is "/dev/mmcblk1p1".
 
 2. Set the U-Boot environment variables (Ensure you copy the full line below):
-
-    ```
-        # fw_printenv |grep mmc-bootargs=mmc-bootargs=setenv bootargs root=PARTUUID=${uuid_rootfs} rootfstype=ext4 ${bootargs_console} ${bootargs_debug} systemd.unit=${bootargs_target}.target hardware_id=${hardware_id} g_multi.iSerialNumber=${serial#} g_multi.dev_addr=${usb0addr}
-    ```
 
     ```
         # fw_setenv mmc-bootargs 'setenv bootargs root=${myrootfs} rootdelay=3 rootfstype=ext4 ${bootargs_console} ${bootargs_debug} systemd.unit=${bootargs_target}.target hardware_id=${hardware_id} g_multi.iSerialNumber=${serial#} g_multi.dev_addr=${usb0addr}'
