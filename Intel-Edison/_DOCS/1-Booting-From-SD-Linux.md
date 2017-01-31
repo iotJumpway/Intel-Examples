@@ -14,7 +14,7 @@ Before we can setup your SD card, you need to have your Edison already setup. Th
 - [Intel® Edison OS X Installer](https://software.intel.com/edison-config/osx/latest "Intel® Edison OS X Installer")
 - [Intel® Edison Linux Installer](https://software.intel.com/edison-config/linux/latest "Intel® Edison Linux Installer")
 
-![Intel® Edison Windows Installer](../../../images/Docs/Ediosn-Installer.jpg)  
+![Intel® Edison Windows Installer](../../images/Docs/Ediosn-Installer.jpg)  
 
 ## Formatting Your SD card
 
