@@ -14,6 +14,8 @@ Before we can setup your SD card, you need to have your Edison already setup. Th
 - [Intel® Edison OS X Installer](https://software.intel.com/edison-config/osx/latest "Intel® Edison OS X Installer")
 - [Intel® Edison Linux Installer](https://software.intel.com/edison-config/linux/latest "Intel® Edison Linux Installer")
 
+![Intel® Edison Windows Installer](../../../images/Docs/Ediosn-Installer.jpg)  
+
 ## Formatting Your SD card
 
 First of all you need to format your SD card, for this section of the guide we will be using a Linux computer running Ubuntu and the GParted software. 
@@ -123,6 +125,12 @@ This tells us that the SD card is “/dev/mmcblk1” and the partition we’ve c
     ```
         #  sudo reboot
     ```
+
+## IoT JumpWay Intel Edison Examples Document Contributors
+
+- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
+
+![Adam Milton-Barker,  Intel Software Innovator](../../../images/main/Intel-Software-Innovator.jpg)  
  
 
 
