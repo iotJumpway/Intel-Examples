@@ -71,7 +71,7 @@ First of all you need to connect up an LED to your Intel Galileo Gen 1. To conne
 	"Actuators": {
 		"LED": {
 			"ID": 0,
-			"PIN": 18
+			"PIN": 5
 		}
 	}
 ```
