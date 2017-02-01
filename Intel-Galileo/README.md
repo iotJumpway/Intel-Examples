@@ -18,6 +18,8 @@ The Intel® Galileo examples provide example projects that you can use to get st
 
 - [Intel® Galileo Security](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Galileo/DOCS/1-Security.md "Intel® Galileo Security")
 
+- [Expanding The Available Disk Space On Intel® Galileo Gen 1](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Galileo/_DOCS/2-Expanding-Disk-Space.md "Expanding The Available Disk Space On Intel® Galileo Gen 1")
+
 ## IoT JumpWay Intel® Galileo Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come accross whilst using the IoT JumpWay Intel Examples. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel Examples in your IoT projects.
