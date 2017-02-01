@@ -176,7 +176,6 @@ To verify that you are using your SD card, enter the following command:
 
 You should see the following output:
 
-    ```
         Filesystem       Size  Used Avail Use% Mounted on
         /dev/root        7.2G  1.1G  5.8G  15% /
         devtmpfs         480M     0  480M   0% /dev
@@ -189,7 +188,6 @@ You should see the following output:
         /dev/mmcblk0p5  1003K   19K  913K   3% /factory
         tmpfs             97M     0   97M   0% /run/user/0
         /dev/loop0       767M   12K  767M   1% /media/storage
-    ```
 
 If everything has been successful, /dev/root should match the size of your SD card.
 
