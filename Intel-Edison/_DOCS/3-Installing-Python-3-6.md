@@ -28,7 +28,7 @@ To install Python 3.6 on your Intel® Edison, follow the steps below:
         tar -xvf Python-3.6.0.tgz
     ```
 
-4. Move into the Python directory, configure and make. You have to just wait for this to finish as there is no output, be patient:
+4. Move into the Python directory, configure and make. You have to just wait for the make to finish as there is no output, be patient:
 
     ```
         cd Python-3.6.0/
