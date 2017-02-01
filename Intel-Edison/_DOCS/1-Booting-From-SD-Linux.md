@@ -191,6 +191,25 @@ You should see the following output:
 
 If everything has been successful, /dev/root should match the size of your SD card.
 
+## Last steps
+
+There are a few more steps to take so you can use the full space available on your SD card.
+
+1. Enter the following command and remove the last line you see, this will disable the home mounting:
+
+    ```
+        # nano /etc/fstab
+    ```
+
+2. Stop the SD card being automounted to /media/sdcard:
+
+    ```
+        # cd /etc/systemd
+        # systemctl stop media-sdcard.mount
+        # systemctl disable media-sdcard.mount
+        # rm '/etc/systemd/system/default.target.wants/media-sdcard.mount'
+    ```
+
 ## IoT JumpWay Intel Edison Examples Document Contributors
 
 - [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
