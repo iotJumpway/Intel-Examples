@@ -2,11 +2,15 @@
 
 ![TechBubble IoT JumpWay Docs](../../images/main/IoT-Jumpway.jpg)  
 
+## WARNING
+
+This tutorial will replace the existing Python 2.7 with Python 3.6. 
+
 ## Introduction
 
 The following information will help you install Python 3 on your Intel® Edison.
 
-## Guide
+## Installing Python 3.6 
 
 To install Python 3.6 on your Intel® Edison, follow the steps below:
 
@@ -40,15 +44,13 @@ To install Python 3.6 on your Intel® Edison, follow the steps below:
 
     ```
         rm /usr/bin/python
-        ln -s /home/root/Python-3.4.2/python /usr/bin/python
-
+        ln -s /home/root/Python-3.6.0/python /usr/bin/python
     ```
 
 6. Now check that Python 3.6 is being used:
 
     ```
         # python
-
     ```
 
 7. You should see the following output:
@@ -57,9 +59,18 @@ To install Python 3.6 on your Intel® Edison, follow the steps below:
         Python 3.6.0 (default, Feb  1 2017, 05:35:57)
         [GCC 4.9.1] on linux
         Type "help", "copyright", "credits" or "license" for more information.
-
     ```
 
+8. Now you can clean up some space by deleting the downloaded. DO NOT delete the Python-3.6.0 directory, if you do you will have to start again with this tutorial as Python will no longer work.
+
+    ```
+        # rm -rf Python-3.6.0.tgz
+    ```
+
+## Installing Pip 3
+
+WORKING ON THIS, TO BE UPDATED
+    
 ## IoT JumpWay Intel® Edison Examples Document Contributors
 
 - [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
