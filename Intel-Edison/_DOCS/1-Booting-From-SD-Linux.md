@@ -126,6 +126,73 @@ This tells us that the SD card is “/dev/mmcblk1” and the partition we’ve c
         #  sudo reboot
     ```
 
+## Connecting To Your Intel Edison 
+
+At this point you will not be able to connect to the Intel Edison with SSH and the device will not be connected to your network. Use the following steps to connect to your Edison.
+
+1. You will need screen shell session manager, if you do not have it installed, use the following command:
+
+    ```
+        $ sudo apt-get install screen
+    ```
+
+2. Next to connect to your Edison, use the following command (ttyUSB0) should be your Edison:
+
+    ```
+        $ sudo screen /dev/ttyUSB0 115200
+    ```
+
+3. Press enter twice and you will see the login screen.
+
+4. Enter root as the login.
+
+5. Press enter at the password prompt.
+
+## Configuring Your Intel Edison
+
+You need to enable SSH and setup your WiFi connections, take the following steps to accomplish this.
+
+1. In your existing screen session that you created above, enter the following command:
+
+    ```
+        # configure_edison --setup 
+    ```
+
+2. You will be prompted for a password. Use a secure password!
+
+3. You will be prompted for a unique name for your Edison.
+
+4. You will be asked if you want to set up WiFi, type Y and hit enter.
+
+5. The device will then scan for all available WiFi networks, when prompted, enter the number that relates to the WiFi network you want to connect to, when asked to confirm, type Y and hit enter if the network is correct.
+
+6. You will be prompted for your network password, enter your password and hit enter, the device will then connect to the network, you will then be provided with your IP and your local address for your device, you will now be able to access your device via SSH.
+
+## Verifying You Are Using Your SD Card
+
+To verify that you are using your SD card, enter the following command:
+
+    # df -h
+
+You should see the following output:
+
+    ```
+        Filesystem       Size  Used Avail Use% Mounted on
+        /dev/root        7.2G  1.1G  5.8G  15% /
+        devtmpfs         480M     0  480M   0% /dev
+        tmpfs            481M     0  481M   0% /dev/shm
+        tmpfs            481M  596K  480M   1% /run
+        tmpfs            481M     0  481M   0% /sys/fs/cgroup
+        tmpfs            481M  4.0K  481M   1% /tmp
+        /dev/mmcblk0p10  1.3G  2.1M  1.3G   1% /home
+        tmpfs            481M  6.1M  474M   2% /var/volatile
+        /dev/mmcblk0p5  1003K   19K  913K   3% /factory
+        tmpfs             97M     0   97M   0% /run/user/0
+        /dev/loop0       767M   12K  767M   1% /media/storage
+    ```
+
+If everything has been successful, /dev/root should match the size of your SD card.
+
 ## IoT JumpWay Intel Edison Examples Document Contributors
 
 - [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
