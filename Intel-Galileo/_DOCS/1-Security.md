@@ -1,10 +1,10 @@
-# Securing Intel Galileo Gen 1 Projects
+# Securing Intel® Galileo Gen 1 Projects
 
 ![TechBubble IoT JumpWay Docs](../../images/main/IoT-Jumpway.jpg)  
 
 ## Introduction
 
-The following information will help you secure your internet accessible Intel Galileo Gen 1 projects.
+The following information will help you secure your internet accessible Intel® Galileo Gen 1 projects.
 
 ## Secure Your Router
 
@@ -12,9 +12,9 @@ The following information will help you secure your internet accessible Intel Ga
 
 [Is Your Router Secure ?](https://www.techbubble.info/blog/web/online-security/entry/Is-Your-Router-Secure "Is Your Router Secure ?")
 
-## Secure Your Intel Galileo Gen 1 
+## Secure Your Intel® Galileo Gen 1 
 
-1. CHANGE ROOT PASSWORD: The first stage with any new device should always be to change the default password. Lists are easily accessible on the internet that give hackers the default passwords of pretty much every type of device, and if you do not change your password to a secure password anyone can easily access your device if it is connected to the internet. Once logged into the Intel Galileo via SSH issue the following command from commandline:
+1. CHANGE ROOT PASSWORD: The first stage with any new device should always be to change the default password. Lists are easily accessible on the internet that give hackers the default passwords of pretty much every type of device, and if you do not change your password to a secure password anyone can easily access your device if it is connected to the internet. Once logged into the Intel® Galileo via SSH issue the following command from commandline:
 
 ```
     passwd
@@ -23,7 +23,7 @@ The following information will help you secure your internet accessible Intel Ga
 
 You will then be asked to enter a password of a minimum of 5 characters and informed to use a combination of upper and lower case letters and numbers, you should also use symbols as well to make sure your password is as secure as possible. Re enter your new password and a confirmation will be shown that the password has been changed.
 
-2. REGULARLY UPDATE YOUR FIRMWARE: Another important task to carry out regularly is to update your firmware. On the following link you will find some firmware updater software for your Intel Galileo that can be run from Windows, Mac and Linux, use it regularly to update your boards firmware. (https://downloadcenter.intel.com/download/24748/Intel-Galileo-Firmware-and-Drivers-1-0-4)
+2. REGULARLY UPDATE YOUR FIRMWARE: Another important task to carry out regularly is to update your firmware. On the following link you will find some firmware updater software for your Intel® Galileo that can be run from Windows, Mac and Linux, use it regularly to update your boards firmware. (https://downloadcenter.intel.com/download/24748/Intel-Galileo-Firmware-and-Drivers-1-0-4)
 
 3. REGULARLY UPDATE YOUR PACKAGES: It is also important to update and upgrade your packages regularly. From the commandline issue the following commands:
 
@@ -34,7 +34,7 @@ You will then be asked to enter a password of a minimum of 5 characters and info
 
 ```
 
-4. ADD A DOMAIN NAME AND SSL CERTIFICATE TO YOUR BOARD: To help ensure that data passed between your Intel Galileo and any connecting web services is encrypted, an important thing to do is to add SSL encryption to your requests. Here is the basics of completing this task.
+4. ADD A DOMAIN NAME AND SSL CERTIFICATE TO YOUR BOARD: To help ensure that data passed between your Intel® Galileo and any connecting web services is encrypted, an important thing to do is to add SSL encryption to your requests. Here is the basics of completing this task.
 
 - Ensure your local network has a static IP, you will be able to purchase one from your ISP, you can use service such as no-ip.com but this is not the preferred method.
 
@@ -44,7 +44,7 @@ You will then be asked to enter a password of a minimum of 5 characters and info
 
 - Edit the domains DNS zone file to include a sub domain, using an A record to point to the static IP of your network.
 
-- Set up a port forwarder from your router to the IP address of the Intel Galileo.
+- Set up a port forwarder from your router to the IP address of the Intel® Galileo.
 
 - Login to your Galileo via SSH and generate an RSA key and a CSR that will be used to activate your SSL certificate.
 
@@ -64,11 +64,11 @@ Use the following command to generate your CSR:
 
 - You will be asked a few questions at this stage, complete them all but ensure to not enter a password when prompted to, just hit enter.
 
-- Head over to where you bought the SSL certificate from and activate your SSL cert using the CSR you generated on your Intel Galileo, once verified you will receive your SSL certificate files.
+- Head over to where you bought the SSL certificate from and activate your SSL cert using the CSR you generated on your Intel® Galileo, once verified you will receive your SSL certificate files.
 
-- Connect to your Galileo using SFTP, for this I always WinSCP on Windows but you can use FileZilla or the FTP client of your choice. Once connected upload your SSL cert files to your certs folder and include them in your application to ensure encrypted traffic to and from your Intel Galileo.
+- Connect to your Galileo using SFTP, for this I always WinSCP on Windows but you can use FileZilla or the FTP client of your choice. Once connected upload your SSL cert files to your certs folder and include them in your application to ensure encrypted traffic to and from your Intel® Galileo.
 
-6. CLOSE ALL PORTS EXCEPT FOR ONES REQUIRED FOR YOUR APPLICATION: Once you have your application accessible via the internet and secured using SSL it is time to check if IPTables is installed. IPTables allows you to specify which ports are accessible on your Intel Galileo by blocking them all and allowing access to only the ports that you white list. IPTables has a lot of features and methods this is the basics:
+6. CLOSE ALL PORTS EXCEPT FOR ONES REQUIRED FOR YOUR APPLICATION: Once you have your application accessible via the internet and secured using SSL it is time to check if IPTables is installed. IPTables allows you to specify which ports are accessible on your Intel® Galileo by blocking them all and allowing access to only the ports that you white list. IPTables has a lot of features and methods this is the basics:
 
 - Check that IPTables is installed using the following command, if it is, you will see a message saying, if not it will be installed:
 
@@ -154,7 +154,7 @@ and then add the following code and modify to your preference:
 
 ```
 
-- To ensure that the firewall is loaded each and everytime you boot up your Intel Galileo you will need to create a new file in the network adapter hooks:
+- To ensure that the firewall is loaded each and everytime you boot up your Intel® Galileo you will need to create a new file in the network adapter hooks:
 
 ```
     nano /etc/network/if-pre-up.d/firewall
