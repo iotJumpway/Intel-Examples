@@ -126,9 +126,9 @@ This tells us that the SD card is “/dev/mmcblk1” and the partition we’ve c
         #  sudo reboot
     ```
 
-## Connecting To Your Intel Edison 
+## Connecting To Your Intel® Edison 
 
-At this point you will not be able to connect to the Intel Edison with SSH and the device will not be connected to your network. Use the following steps to connect to your Edison.
+At this point you will not be able to connect to the Intel® Edison with SSH and the device will not be connected to your network. Use the following steps to connect to your Edison.
 
 1. You will need screen shell session manager, if you do not have it installed, use the following command:
 
@@ -148,7 +148,7 @@ At this point you will not be able to connect to the Intel Edison with SSH and t
 
 5. Press enter at the password prompt.
 
-## Configuring Your Intel Edison
+## Configuring Your Intel® Edison
 
 You need to enable SSH and setup your WiFi connections, take the following steps to accomplish this.
 
@@ -210,7 +210,7 @@ There are a few more steps to take so you can use the full space available on yo
         # rm '/etc/systemd/system/default.target.wants/media-sdcard.mount'
     ```
 
-## IoT JumpWay Intel Edison Examples Document Contributors
+## IoT JumpWay Intel® Edison Examples Document Contributors
 
 - [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
 
