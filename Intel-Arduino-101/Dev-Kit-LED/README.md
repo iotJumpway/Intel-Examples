@@ -44,12 +44,6 @@ If this is the first time you have used the TechBubble IoT JumpWay in your IoT p
 
 ![IoT JumpWay Intel® Arduino/Genuino 101 Dev Kit LED Example Docs](../../images/Docs/Curie.jpg)
 
-## Cloning The Repo
-
-You will need to clone this repository to a location on your Raspberry Pi 3. Navigate to the directory you would like to download it to and issue the following commands.
-
-    $ git clone https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples.git
-
 ## Install Requirements On Your PC & Arduino/Genuino 101
 
 1. Install the iot_jumpway_mqtt_serial library:
