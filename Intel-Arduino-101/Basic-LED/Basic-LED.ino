@@ -4,13 +4,18 @@
   
   Contributors:  
   Adam Milton-Barker - TechBubble Technologies Limited
+
+  For this project you will need to use the TechBubble IoT JumpWay Python MQTT Serial Library:
+
+  https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Serial-Client
   
 */
 
 #include <ArduinoJson.h>
 
 String inputString = ""; 
-const int actuator1 = 5;
+const int actuator1Pin = 5;
+const int actuator1JumpWayID = 0;
 
 void setup() {
   
@@ -36,33 +41,33 @@ void loop() {
       String Command = root["Command"];
       String CommandValue = root["CommandValue"];
 
-      if(Actuator=="1"){
+      if(Actuator==actuator1JumpWayID){
           
         if(Command=="TOGGLE"){
             
-          digitalWrite(actuator1, HIGH);
+          digitalWrite(actuator1Pin, HIGH);
           
           delay(2000);  
           
-          digitalWrite(actuator1, LOW);
+          digitalWrite(actuator1Pin, LOW);
           
           delay(2000);  
             
-          digitalWrite(actuator1, HIGH);
+          digitalWrite(actuator1Pin, HIGH);
           
           delay(2000);  
 
-          digitalWrite(actuator1, LOW);
+          digitalWrite(actuator1Pin, LOW);
           
         } else {
           
           if(CommandValue=="ON"){
             
-            digitalWrite(actuator1, HIGH);
+            digitalWrite(actuator1Pin, HIGH);
             
           }else{
             
-            digitalWrite(actuator1, LOW);
+            digitalWrite(actuator1Pin, LOW);
             
           }
         
