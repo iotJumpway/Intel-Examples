@@ -37,17 +37,11 @@ If this is the first time you have used the TechBubble IoT JumpWay in your IoT p
 
 ## Adding The Arduino/Genuino Board To Arduino IDE
 
-    ```
-        Tools -> Boards -> Boards Manager
-    ```
+        - Tools -> Boards -> Boards Manager
+        - Search for Curie, or Intel Curie
+        - Right click on the right hand side of the Curie section and install the latest version
 
-    ```
-        Search for Curie, or Intel Curie
-    ```
-
-    ```
-        Right click on the right hand side of the Curie section and install the latest version
-    ```
+![IoT JumpWay Intel® Arduino/Genuino 101 Dev Kit LED Example Docs](../../images/Docs/Curie.jpg)
 
 [TechBubble Technologies IoT JumpWay Developer Program (BETA) Docs](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/ "TechBubble Technologies IoT JumpWay Developer Program (BETA) Docs")
 
@@ -79,8 +73,7 @@ You will need to clone this repository to a location on your Raspberry Pi 3. Nav
         Right click on the right hand side of the ArduinoJson section and install the latest version
     ```
 
-![IoT JumpWay Intel® Arduino/Genuino 101 Dev Kit LED Example Docs](../../images/Docs/Curie.jpg)
-
+![IoT JumpWay Intel® Arduino/Genuino 101 Dev Kit LED Example Docs](../../images/Docs/ArduinoJson.jpg)
 
 ## Setting Up Your Intel® Arduino/Genuino 101
 
