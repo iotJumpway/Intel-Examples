@@ -77,7 +77,7 @@ First of all you need to connect up an LED to your Intel® Arduino/Genuino 101. 
     }
 ```
 
-- Open up the [Arduino/Genuino 101 Dev Kit LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Arduino/Genuino-101/Dev-Kit-LED/Dev-Kit-LED.ino "Arduino/Genuino 101 Dev Kit LED Example") and update the following line with your LED actuator ID retrieved from the steps above, then upload the sketch to your device:
+- Open up the [Arduino/Genuino 101 Dev Kit LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Arduino-101/Dev-Kit-LED/Dev-Kit-LED.ino "Arduino/Genuino 101 Dev Kit LED Example") and update the following line with your LED actuator ID retrieved from the steps above, then upload the sketch to your device:
 
     ```
         const int actuator1JumpWayID = 0;
@@ -88,6 +88,12 @@ First of all you need to connect up an LED to your Intel® Arduino/Genuino 101. 
 As you have already uploaded your sketch, the program will now be running on your Arduino/Genuino 101. All that is left is to start the Python program with the following line:
 
     $ python NameOfYourSerialApplication.py 
+
+## Control Your Device
+
+Now you need an application setup to be able to send commands to the device, via the Python program. Follow the next steps to quickly set up your IoT JumpWay Application.
+
+COMING SOON
 
 ## Viewing Your Data  
 
