@@ -6,7 +6,7 @@
 
 TechBubble Technologies Internet of Things (IoT) JumpWay is an IoT PaaS that allows anyone to connect IoT devices such as Raspberry Pi, Intel® Galileo, Arduino, ESP8266 and even phones,PCs, Macs and laptops to the Internet of Things. The various IoT JumpWay libraries and samples allow you to connect devices and sensors to the IoT JumpWay and control/monitor sensors/actuators and data to and from the devices.
 
-The Intel examples provide example projects that you can use to get started with using the TechBubble IoT JumpWay for your Intel IoT Developer Kit, Intel® Edison board, Intel® Galileo, Intel Joule and Intel IoT Gateway projects.
+The Intel® examples provide example projects that you can use to get started with using the TechBubble IoT JumpWay for your Intel® IoT Developer Kit, Intel® Edison board, Intel® Galileo, Intel® Joule and Intel® IoT Gateway (Nuc) projects.
 
 ## IoT JumpWay Intel® Galileo Examples
 
@@ -19,6 +19,10 @@ The Intel examples provide example projects that you can use to get started with
 - [Intel® Edison Basic LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Basic-LED/Python "Intel® Edison Basic LED Python Example")
 
 - [Intel® Edison Dev Kit LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-LED/Python "Intel® Edison Dev Kit LED Python Example")
+
+## Intel® Arduino 101 Examples
+
+- [Intel® Arduino 101 Basic LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/Basic-LED "Intel® Arduino 101 Basic LED Python Example")
 
 ## IoT JumpWay Intel® Examples Docs
 
