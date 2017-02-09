@@ -6,6 +6,12 @@
 
 Here you will find sample device scripts for connecting Intel® Arduino/Genuino 101 and IoT Dev Kit to the TechBubble Technologies IoT JumpWay using the Python MQTT Serial Library. The codes allow you to set up a basic device that allows control of an LED, and an application to communicate with the device / IoT JumpWay, and make the LED flash on and off. Once you understand how it works you are free to add as many actuators and sensors to your device and modify your code accordingly.
 
+This project uses three applications:
+
+1. A device application (Arduino) which communicates via serial with a Python Serial/MQTT application.
+2. The Python Serial/MQTT application which communicates with the Arduino/Genuio 101 and the IoT JumpWay.
+3. A Python MQTT application that sends commands to Arduino/Genuino 101 via the IoT JumpWay and the Python Serial/MQTT application.
+
 ## Python Versions
 
 - 2.7
