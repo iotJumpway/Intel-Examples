@@ -40,11 +40,26 @@ You will need to clone this repository to a location on your Raspberry Pi 3. Nav
 
 1. Install the iot_jumpway_mqtt_serial library:
 
-    $ pip install iot_jumpway_mqtt_serial
+    ```
+        $ pip install iot_jumpway_mqtt_serial
+    ```
 
-2. Install the iot_jumpway_mqtt_serial library:
+2. Install the ArduinoJson library in the Arduino IDE:
 
-    $ pip install iot_jumpway_mqtt_serial
+    ```
+        Tools -> Boards -> Boards Manager
+    ```
+
+![IoT JumpWay Intel® Arduino/Genuino 101 Dev Kit LED Example Docs](../../images/Docs/Curie.jpg)
+
+    ```
+        Search for Curie, or Intel Curie
+    ```
+
+    ```
+        Right click on the right hand side of the Curie section and install the latest version
+    ```
+
 
 ## Setting Up Your Intel® Arduino/Genuino 101
 
@@ -57,7 +72,7 @@ First of all you need to connect up an LED to your Intel® Arduino/Genuino 101. 
 
 ## Device Connection Credentials & Actuator Settings
 
-- Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc") to set up your device. 
+- Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc") to set up your device, and the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Application Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/5-Location-Applications.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Application Doc") to set up your MQTT application, you will need the MQTT application to communicate with your serial application further on in the tutorial. 
 
 ![IoT JumpWay  Intel® Arduino/Genuino 101 Dev Kit LED Example Docs](../../images/Dev-Kit-LED/Device-Creation.png)  
 
@@ -89,11 +104,39 @@ As you have already uploaded your sketch, the program will now be running on you
 
     $ python NameOfYourSerialApplication.py 
 
-## Control Your Device
+## Control Your Device With Your MQTT Application
 
-Now you need an application setup to be able to send commands to the device, via the Python program. Follow the next steps to quickly set up your IoT JumpWay Application.
+Now it is time to set up your MQTT application mentioned in the steps above.
 
-COMING SOON
+1. For this application you can use the applicationand config file from the [https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-LED/Python](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-LED/Python "https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-LED/Python").
+
+2. Use the application information you received from steps above to fill out the details below:
+
+    ```
+        "IoTJumpWaySettings": {
+            "SystemLocation": 0,
+            "SystemZone": 0,
+            "SystemDeviceID": 0,
+            "SystemDeviceName" : "Your Device Name",
+            "SystemApplicationID": 0,
+            "SystemApplicationName" : "Your Application Name"
+        }
+    ```
+
+    ```
+        "IoTJumpWayMQTTSettings": {
+            "username": "Your Device MQTT Username",
+            "password": "Your Device MQTT Password",
+            "applicationUsername": "Your Application MQTT Username",
+            "applicationPassword": "Your Application MQTT Password"
+        }
+    ```
+
+## Execute The Python Program
+
+Now all you have to do is execute your MQTT application. This application sends a device command to turn on your LED through the IoT JumpWay to your serial application, which inturn sends the command via serial to the relevant actuator on your Arduino/Genuino 101, in this case, your LED:
+
+    $ python/python3 NameOfYourMQTTApplication.py
 
 ## Viewing Your Data  
 
