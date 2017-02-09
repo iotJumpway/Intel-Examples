@@ -24,6 +24,8 @@ The Intel® examples provide example projects that you can use to get started wi
 
 - [Intel® Arduino 101 Basic LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/Basic-LED "Intel® Arduino 101 Basic LED Python Example")
 
+- [Intel® Arduino 101 Dev Kit LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/Basic-LED "Intel® Arduino 101 Dev Kit LED Python Example")
+
 ## IoT JumpWay Intel® Examples Docs
 
 - [Intel® Galileo Docs](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Galileo/_DOCS "Intel® Galileo Docs")
