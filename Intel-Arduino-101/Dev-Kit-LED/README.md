@@ -116,7 +116,7 @@ As you have already uploaded your sketch, the program will now be running on you
 
 Now it is time to set up your MQTT application mentioned in the steps above.
 
-1. For this application you can use the applicationand config file from the [IoT JumpWay Intel® Edison Dev Kit LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-LED/Python "IoT JumpWay Intel® Edison Dev Kit LED Example").
+1. For this application you can use the application and config file from the [IoT JumpWay Intel® Edison Dev Kit LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-LED/Python "IoT JumpWay Intel® Edison Dev Kit LED Example").
 
 2. Use the application information you received from steps above to fill out the details below:
 
