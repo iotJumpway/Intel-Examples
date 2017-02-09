@@ -34,6 +34,7 @@ This project uses three applications:
 
 If this is the first time you have used the TechBubble IoT JumpWay in your IoT projects, you will require a developer account and some basics to be set up before you can start creating your IoT devices. Visit the following link and check out the guides that take you through registration and setting up your Location Space, Zones, Devices and Applications.
 
+[TechBubble Technologies IoT JumpWay Developer Program (BETA) Docs](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/ "TechBubble Technologies IoT JumpWay Developer Program (BETA) Docs")
 
 ## Adding The Arduino/Genuino Board To Arduino IDE
 
@@ -42,8 +43,6 @@ If this is the first time you have used the TechBubble IoT JumpWay in your IoT p
         - Right click on the right hand side of the Curie section and install the latest version
 
 ![IoT JumpWay Intel® Arduino/Genuino 101 Dev Kit LED Example Docs](../../images/Docs/Curie.jpg)
-
-[TechBubble Technologies IoT JumpWay Developer Program (BETA) Docs](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/ "TechBubble Technologies IoT JumpWay Developer Program (BETA) Docs")
 
 ## Cloning The Repo
 
