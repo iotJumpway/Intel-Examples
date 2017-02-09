@@ -18,7 +18,7 @@ Here you will find sample device scripts for connecting Intel® Arduino/Genuino 
 
 ## Hardware Requirements
 
-![IoT JumpWay Intel® Arduino/Genuino 101 Dev Kit LED Example Docs](../../images/Dev-Kit-LED/Arduino/Genuino-101-Hardware.jpg)
+![IoT JumpWay Intel® Arduino/Genuino 101 Dev Kit LED Example Docs](../../images/Dev-Kit-LED/Arduino-101-Hardware.jpg)
 
 1. Intel® Arduino/Genuino 101.
 2. Grove starter kit for Intel® Arduino/Genuino/Genuino 101.
@@ -48,7 +48,7 @@ You will need to clone this repository to a location on your Raspberry Pi 3. Nav
 
 ## Setting Up Your Intel® Arduino/Genuino 101
 
-![IoT JumpWay Intel® Arduino/Genuino 101 Dev Kit LED Example Docs](../../images/Dev-Kit-LED/Arduino/Genuino-101-Setup.jpg)
+![IoT JumpWay Intel® Arduino/Genuino 101 Dev Kit LED Example Docs](../../images/Dev-Kit-LED/Arduino-101-Setup.jpg)
 
 First of all you need to connect up an LED to your Intel® Arduino/Genuino 101. To connect the LED you will need a Grove starter kit for Intel® Arduino/Genuino/Genuino 101. 
 
