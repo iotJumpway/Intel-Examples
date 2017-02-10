@@ -79,7 +79,7 @@ First of all you need to connect up your DFRobot LCD Keypad Shield to your Intel
     }
 ```
 
-- Open up the [Intel® Arduino/Genuino 101 DFRobot LCD Control Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Arduino-101/Basic-LED/Basic-LED.ino "Intel® Arduino/Genuino 101 DFRobot LCD Control Example") and update the following lines with your DFRobot LCD Keypad Shield ID retrieved from the steps above, then upload the sketch to your device:
+- Open up the [Intel® Arduino/Genuino 101 DFRobot LCD Control Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Arduino-101/3RD-PARTY-DFRobot/LCD-Control/LCD-Control.ino "Intel® Arduino/Genuino 101 DFRobot LCD Control Example") and update the following lines with your DFRobot LCD Keypad Shield ID retrieved from the steps above, then upload the sketch to your device:
 
     ```
         String JumpWaySensorID = "0";
