@@ -47,6 +47,14 @@ If this is the first time you have used the TechBubble IoT JumpWay in your IoT p
 
 ![IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Control Example](../../../images/Docs/Curie.jpg)
 
+## Adding The Arduino/Genuino Board To Arduino IDE
+
+        - Tools -> Boards -> Boards Manager
+        - Search for Curie, or Intel Curie
+        - Right click on the right hand side of the Curie section and install the latest version
+
+![IoT JumpWay Intel® Arduino/Genuino 101 Basic LED Example Docs](../../../images/Docs/Curie.jpg)
+
 ## Install Requirements On Your PC
 
 1. For the Python Serial/MQTT application we will need the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Docs](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/ "TechBubble Technologies IoT JumpWay Developer Program (BETA) Docs") installed on our PC/laptop/Mac. To Install the library, issue the following command on your chosen device:
