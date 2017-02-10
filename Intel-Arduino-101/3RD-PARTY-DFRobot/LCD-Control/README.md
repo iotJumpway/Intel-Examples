@@ -4,22 +4,26 @@
 
 ## Introduction
 
-Here you will find sample device scripts for connecting Intel® Arduino/Genuino 101 and DFRobot LCD Keypad Shield to the TechBubble Technologies IoT JumpWay  using the Python MQTT Serial Library. The codes allow you to set up a basic device that allows control of your IoT devices using the LCD Keypad Shield and communication via the IoT JumpWay. Once you understand how it works you are free to add as many actuators and sensors to your device and modify your code accordingly.
+Here you will find sample device scripts for connecting Intel® Arduino/Genuino 101 and DFRobot LCD Keypad Shield to the TechBubble Technologies IoT JumpWay using the Python MQTT Serial Library. The codes allow you to set up a basic device that allows control of your IoT devices using the LCD Keypad Shield and communication via the IoT JumpWay. In addition to using the LCD Keypad Shield, you can also use a an application or autonomous device communication via the IoT JumpWay to switch the states of the buttons on the keypad. 
 
-This project uses three applications:
+Once you understand how it works you are free to add as many actuators and sensors to your device and modify your code accordingly.
+
+##This project uses three applications:
 
 1. A device application (Arduino) which communicates via serial with a Python Serial/MQTT application.
 2. The Python Serial/MQTT application which communicates with the Arduino/Genuio 101 / DFRobot LCD Keypad Shield, and the IoT JumpWay.
+3. A Python commands application / device application that can send commands to the device to toggle the state of the buttons. In this tutorial we will use the [Intel® Edison Dev Kit LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-LED/Python "Intel® Edison Dev Kit LED Python Example") which has both a device application and commands application. (Optional)
 
 ## Python Versions
 
-- 2.7
-- 3.4 or above
+- 2.7 (Python Serial/MQTT application)
+- 3.4 or above (Python commands application)
 
 ## Software requirements
 
 1. iot_jumpway_mqtt_serial
 2. Arduino/Genuino IDE
+3. ArduinoJson
 
 ## Hardware Requirements
 
@@ -27,7 +31,7 @@ This project uses three applications:
 
 1. Intel® Arduino/Genuino 101.
 2. DFRobot LCD Keypad Shield
-5. An IoT device connected to the TechBubble IoT JumpWay
+5. An IoT device connected to the TechBubble IoT JumpWay (Optional)
 
 ## Before You Begin
 
@@ -43,9 +47,9 @@ If this is the first time you have used the TechBubble IoT JumpWay in your IoT p
 
 ![IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Control Example](../../../images/Docs/Curie.jpg)
 
-## Install Requirements On Your PC & Arduino/Genuino 101
+## Install Requirements On Your PC
 
-1. Install the iot_jumpway_mqtt_serial library:
+1. For the Python Serial/MQTT application we will need the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Docs](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/ "TechBubble Technologies IoT JumpWay Developer Program (BETA) Docs") installed on our PC/laptop/Mac. To Install the library, issue the following command on your chosen device:
 
     ```
         $ pip install iot_jumpway_mqtt_serial
@@ -59,7 +63,7 @@ First of all you need to connect up your DFRobot LCD Keypad Shield to your Intel
 
 ## Device Connection Credentials & Actuator Settings
 
-- Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc") to set up your devices, you will need two devices setup for this project, one that has an actionable actuator onboard and one for your DFRobot LCD Keypad Shield. 
+- Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc") to set up your main device, if you want to use a second device to trigger autonomous communication, please follow the [Intel® Edison Dev Kit LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-LED/Python "Intel® Edison Dev Kit LED Python Example") tutorial, we will show you how to set up the autonomous communication later in this tutorial. 
 
 ![IoT JumpWay  Intel® Arduino/Genuino 101 DFRobot LCD Control Example Docs](../../../images/Basic-LED/Device-Creation.png)  
 
