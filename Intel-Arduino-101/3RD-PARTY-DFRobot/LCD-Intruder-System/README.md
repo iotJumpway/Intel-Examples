@@ -4,23 +4,26 @@
 
 ## Introduction
 
-Here you will find sample device scripts for connecting Intel® Arduino/Genuino 101 and DFRobot LCD Keypad Shield to the TechBubble Technologies IoT JumpWay  using the Python MQTT Serial Library. The codes allow you to set up am intruder alarm system that is controlled by the DFRobot LCD Keypad Shield and the IoT JumpWay. Once you understand how it works you are free to add as many actuators and sensors to your device and modify your code accordingly.
+Here you will find sample device scripts for connecting Intel® Arduino/Genuino 101 and DFRobot LCD Keypad Shield to the TechBubble Technologies IoT JumpWay using the Python MQTT Serial Library. The codes allow you to set up am intruder alarm system that is controlled by the DFRobot LCD Keypad Shield and the IoT JumpWay and communication via the IoT JumpWay. In addition to using the LCD Keypad Shield to arm and disarm the system / turn on and off the alarm, you can also use an application or autonomous device communication via the IoT JumpWay to switch the states of the buttons on the keypad.
 
-This project uses three applications:
+Once you understand how it works you are free to add as many actuators and sensors to your device and modify your code accordingly.
+
+##This project uses three applications:
 
 1. A device application (Arduino) which communicates via serial with a Python Serial/MQTT application.
 2. The Python Serial/MQTT application which communicates with the Arduino/Genuio 101 / DFRobot LCD Keypad Shield, and the IoT JumpWay.
-3. A python 
+3. A Python commands application / device application that can send commands to the device to toggle the state of the buttons. In this tutorial we will use the [Intel® Edison Dev Kit LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-LED/Python "Intel® Edison Dev Kit LED Python Example") which has both a device application and commands application. (Optional)
 
 ## Python Versions
 
-- 2.7
-- 3.4 or above
+- 2.7 (Python Serial/MQTT application)
+- 3.4 or above (Python commands application)
 
 ## Software requirements
 
-1. iot_jumpway_mqtt_serial
+1. [TechBubble IoT JumpWay Python MQTT Serial Library](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Serial-Client "TechBubble IoT JumpWay Python MQTT Serial Library")
 2. Arduino/Genuino IDE
+3. ArduinoJson
 
 ## Hardware Requirements
 
@@ -47,13 +50,23 @@ If this is the first time you have used the TechBubble IoT JumpWay in your IoT p
 
 ![IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example](../../../images/Docs/Curie.jpg)
 
-## Install Requirements On Your PC
+## Install Requirements On Your PC & Arduino/Genuino 101
 
-1. Install the iot_jumpway_mqtt_serial library:
+1. For the Python Serial/MQTT application we will need the [TechBubble IoT JumpWay Python MQTT Serial Library](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Serial-Client "TechBubble IoT JumpWay Python MQTT Serial Library") installed on our PC/laptop/Mac. To Install the library, issue the following command on your chosen device:
 
     ```
         $ pip install iot_jumpway_mqtt_serial
     ```
+
+2. Install the ArduinoJson library in the Arduino IDE:
+
+    ```
+        Sketch -> Include Library -> Manage Libraries
+        Search for ArduinoJson
+        Right click on the right hand side of the ArduinoJson section and install the latest version
+    ```
+
+![IoT JumpWay Intel® Arduino/Genuino 101 Basic LED Example Docs](../../../images/Docs/ArduinoJson.jpg)
 
 ## Setting Up Your Intel® Arduino/Genuino 101
 
@@ -67,13 +80,15 @@ First of all you need to connect up your DFRobot LCD Keypad Shield to your Intel
 4. Connect your final male / female jumper wire to the green DFRobot buzzer wire, and the 2 male / male wires to the red and black wires of the buzzer.
 5. Connect the green wire to D3 on the DFRobot LCD Keypad Shield, red to VCC and black to GND.
 
-## Device Connection Credentials & Actuator Settings
+## Device Connection Credentials & Actuator/Sensor Settings
 
-- Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc") to set up your device. 
+- Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc") to set up your main device. You will need to select the "LCD Keypad (4 Buttons)" actuator whilst setting up your device in the developer console. If you want to use a second device to trigger autonomous communication, please follow the [Intel® Edison Dev Kit LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-LED/Python "Intel® Edison Dev Kit LED Python Example") tutorial, we will show you how to set up the autonomous communication later in this tutorial.
 
-![IoT JumpWay  IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example Docs](../../../images/Basic-LED/Device-Creation.png)  
+![IoT JumpWay  Intel® Arduino/Genuino 101 DFRobot LCD Control Example Docs](../../../images/Basic-LED/Device-Creation.png)  
 
-- Download the [TechBubble IoT JumpWay Python MQTT Serial Library Application](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Serial-Client/blob/master/application.py "TechBubble IoT JumpWay Python MQTT Serial Library Application") and the [TechBubble IoT JumpWay Python MQTT Serial Library Config File](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Serial-Client/blob/master/config.json "TechBubble IoT JumpWay Python MQTT Serial Library Config File"). Retrieve your connection credentials by following the link above, and update the config.json file with your new connection  credentials.
+- Download the [TechBubble IoT JumpWay Python MQTT Serial Library Application](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Serial-Client/blob/master/application.py "TechBubble IoT JumpWay Python MQTT Serial Library Application") and the [TechBubble IoT JumpWay Python MQTT Serial Library Config File](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Serial-Client/blob/master/config.json "TechBubble IoT JumpWay Python MQTT Serial Library Config File"), you can put them in a folder and name the folder something relevant so that you remember it, you will be able to reuse this application in the future for other tutorials. 
+
+- Retrieve your connection credentials by following the link above, and update the config.json file with your new connection  credentials.
 
 ```
 	"IoTJumpWaySettings": {
@@ -116,11 +131,11 @@ As you have already uploaded your sketch, the program will now be running on you
 
 ## Autonomous Communication With Second Device
 
-COMING SOON
+When movement is detected, the device will send sensor data and warning data to the  [TechBubble IoT JumpWay](https://iot.techbubbletechnologies.com/ "TechBubble IoT JumpWay"). You can use warning messages to trigger autonomous communication with other devices you have connected to the IoT JumpWay. In this example we will use 
 
 ## Viewing Your Data  
 
-Each time you press a button, it will send data to the [TechBubble IoT JumpWay](https://iot.techbubbletechnologies.com/ "TechBubble IoT JumpWay"). You will be able to access the data in the [TechBubble IoT JumpWay Developers Area](https://iot.techbubbletechnologies.com/developers/dashboard/ "TechBubble IoT JumpWay Developers Area"). Once you have logged into the Developers Area, visit the [TechBubble IoT JumpWay Location Devices Page](https://iot.techbubbletechnologies.com/developers/location-devices "Location Devices page"), find your device and then visit the Sensor/Actuator page and the Warnings page to view the data sent from your device.
+ You will be able to access the data in the [TechBubble IoT JumpWay Developers Area](https://iot.techbubbletechnologies.com/developers/dashboard/ "TechBubble IoT JumpWay Developers Area"). Once you have logged into the Developers Area, visit the [TechBubble IoT JumpWay Location Devices Page](https://iot.techbubbletechnologies.com/developers/location-devices "Location Devices page"), find your device and then visit the Sensor/Actuator page and the Warnings page to view the data sent from your device.
 
 ![IoT JumpWay  IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example Docs](../../../images/Basic-LED/SensorData.png)
 

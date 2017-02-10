@@ -4,12 +4,14 @@
   
   Contributors:  
   Adam Milton-Barker - TechBubble Technologies Limited
+  
   For this project you will need to use the TechBubble IoT JumpWay Python MQTT Serial Library:
   https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Serial-Client
   
 */
 
 #include <LiquidCrystal.h>
+#include <ArduinoJson.h>
 
 LiquidCrystal lcd(8, 9, 4, 5, 6, 7);    
 
@@ -34,6 +36,9 @@ String JumpWaySensorID3 = "3";
 
 byte DFRobotMotionPin = 2;
 byte DFRobotBuzzerPin = 3;
+
+String jsonString = "";
+String inputString = ""; 
 
 int debounceWait = 150;
 int armedStatus = 0;
@@ -63,6 +68,98 @@ void stop_alarm(){
     digitalWrite(DFRobotBuzzerPin, LOW);
     delay(1);
     
+}
+
+void incoming(){ 
+  
+  while (Serial.available()) {
+    
+    char inChar = (char)Serial.read();
+    
+    inputString += inChar;
+    
+    if (inChar == '\n') {
+      
+      StaticJsonBuffer<200> jsonBuffer;
+      JsonObject& root = jsonBuffer.parseObject(inputString);
+      
+      String Actuator = root["ActuatorID"];
+      String Command = root["Command"];
+      int CommandValue = root["CommandValue"];
+          
+      if(Command=="TOGGLE"){
+        
+          commands(CommandValue);
+          
+      }
+      
+    }
+    inputString = "";
+  }
+  
+} 
+
+void commands(int button){  
+   
+   switch (button){   
+       
+       case 1:{
+        
+             lcd.setCursor(0,1);
+             lcd.print("ARMED    ");
+             jsonString = "{\"Sensor\":\""+JumpWaySensorType+"\",\"SensorID\":\""+JumpWaySensorID+"\",\"SensorValue\": \"ARMED\"}";
+             delay(debounceWait);
+             armedStatus = 1;
+             Serial.println(jsonString);
+             break;
+             
+       }
+       
+       case 2:{
+        
+             lcd.setCursor(0,1);
+             lcd.print("NOT ARMED"); 
+             
+             jsonString = "{\"Sensor\":\""+JumpWaySensorType+"\",\"SensorID\":\""+JumpWaySensorID+"\",\"SensorValue\": \"NOT ARMED\"}";
+             delay(debounceWait);
+             armedStatus = 0;
+             Serial.println(jsonString);
+             
+             break;
+             
+       }
+       case 3:{
+        
+             lcd.setCursor(0,1);
+             lcd.print("ALARM ON"); 
+        
+             start_alarm(); 
+             
+             jsonString = "{\"Sensor\":\""+JumpWaySensorType3+"\",\"SensorID\":\""+JumpWaySensorID3+"\",\"SensorValue\": \"ALARM ON\"}";
+             delay(debounceWait);
+             Serial.println(jsonString);
+             
+             break;
+             
+       }     
+
+       case 4:{         
+             
+             lcd.setCursor(0,1);
+             lcd.print("ALARM OFF");  
+        
+             stop_alarm(); 
+        
+             jsonString = "{\"Sensor\":\""+JumpWaySensorType3+"\",\"SensorID\":\""+JumpWaySensorID3+"\",\"SensorValue\": \"ALARM OFF\"}";
+             delay(debounceWait);
+             Serial.println(jsonString);
+             
+            break;
+            
+       }  
+       
+   }  
+   
 }
 
 void setup(){  
@@ -98,7 +195,7 @@ void loop(){
         lcd.setCursor(0,1);          
         lcd.print("INTRUDER!");
         
-        jsonString = "{\"Sensor\":\""+JumpWaySensorType2+"\",\"SensorID\":\""+JumpWaySensorID2+"\",\"SensorValue\": \"INTRUDER\"}";
+        jsonString = "{\"Sensor\":\""+JumpWaySensorType2+"\",\"SensorID\":\""+JumpWaySensorID2+"\",\"SensorValue\": \"MOTION\"}";
         Serial.println(jsonString);
         
         start_alarm();
@@ -106,7 +203,7 @@ void loop(){
         jsonString = "{\"Sensor\":\""+JumpWaySensorType3+"\",\"SensorID\":\""+JumpWaySensorID3+"\",\"SensorValue\": \"ALARM ON\"}";
         Serial.println(jsonString);
       
-        jsonString = "{\"WarningType\":\""+JumpWaySensorType2+"\",\"WarningOrigin\":\""+JumpWaySensorID2+"\",\"WarningValue\": \"INTRUDER\",\"WarningMessage\": \"An intruder has been detected\"}";
+        jsonString = "{\"WarningType\":\""+JumpWaySensorType2+"\",\"WarningOrigin\":\""+JumpWaySensorID2+"\",\"WarningValue\": \"MOTION\",\"WarningMessage\": \"Motion has been detected\"}";
         Serial.println(jsonString);
         
      } else if(state == 0){
@@ -134,55 +231,27 @@ void loop(){
    switch (lcd_key){   
        
        case btnUP:{
-        
-             lcd.setCursor(0,1);
-             lcd.print("ARMED    ");
-             jsonString = "{\"Sensor\":\""+JumpWaySensorType+"\",\"SensorID\":\""+JumpWaySensorID+"\",\"SensorValue\": \"ARMED\"}";
-             delay(debounceWait);
-             armedStatus = 1;
-             Serial.println(jsonString);
+             
+             commands(1);
              break;
              
        }
        case btnDOWN:{
-        
-             lcd.setCursor(0,1);
-             lcd.print("NOT ARMED"); 
              
-             jsonString = "{\"Sensor\":\""+JumpWaySensorType+"\",\"SensorID\":\""+JumpWaySensorID+"\",\"SensorValue\": \"NOT ARMED\"}";
-             delay(debounceWait);
-             armedStatus = 0;
-             Serial.println(jsonString);
-             
+             commands(2);
              break;
              
        }
        case btnLEFT:{
-        
-             lcd.setCursor(0,1);
-             lcd.print("ALARM ON"); 
-        
-             start_alarm(); 
              
-             jsonString = "{\"Sensor\":\""+JumpWaySensorType3+"\",\"SensorID\":\""+JumpWaySensorID3+"\",\"SensorValue\": \"ALARM ON\"}";
-             delay(debounceWait);
-             Serial.println(jsonString);
-             
+             commands(3);
              break;
              
        } 
-       case btnRIGHT:{          
+       case btnRIGHT:{   
              
-             lcd.setCursor(0,1);
-             lcd.print("ALARM OFF");  
-        
-             stop_alarm(); 
-        
-             jsonString = "{\"Sensor\":\""+JumpWaySensorType3+"\",\"SensorID\":\""+JumpWaySensorID3+"\",\"SensorValue\": \"ALARM OFF\"}";
-             delay(debounceWait);
-             Serial.println(jsonString);
-             
-            break;
+             commands(4);
+             break;
             
        }  
        case btnNONE:{          
