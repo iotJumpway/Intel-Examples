@@ -14,17 +14,21 @@ The Intel® examples provide example projects that you can use to get started wi
 
 - [Intel® Galileo Dev Kit LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Galileo/Dev-Kit-LED/Python "Intel® Galileo Dev Kit LED Python Example")
 
-## Intel® Edison Examples
+## IoT JumpWay Intel® Edison Examples
 
 - [Intel® Edison Basic LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Basic-LED/Python "Intel® Edison Basic LED Python Example")
 
 - [Intel® Edison Dev Kit LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-LED/Python "Intel® Edison Dev Kit LED Python Example")
 
-## Intel® Arduino 101 Examples
+## IoT JumpWay Intel® Arduino 101 Examples
 
-- [Intel® Arduino 101 Basic LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/Basic-LED "Intel® Arduino 101 Basic LED Python Example")
+- [Intel® Arduino 101 Basic LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/Basic-LED "Intel® Arduino 101 Basic LED Example")
 
-- [Intel® Arduino 101 Dev Kit LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/Basic-LED "Intel® Arduino 101 Dev Kit LED Python Example")
+- [Intel® Arduino 101 Dev Kit LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/Basic-LED "Intel® Arduino 101 Dev Kit LED Example")
+
+## IoT JumpWay Intel® Arduino 101 DFRobot Examples
+
+- [Intel® Arduino 101 DF Robot LCD Control Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/3RD-PARTY-DFRobot/LCD-Control "Intel® Arduino 101 DF Robot LCD Control Example")
 
 ## IoT JumpWay Intel® Examples Docs
 
