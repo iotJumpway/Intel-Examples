@@ -26,13 +26,13 @@ The Intel® examples provide example projects that you can use to get started wi
 
 ## IoT JumpWay Intel® Arduino 101 Examples
 
-![TechBubble IoT JumpWay Docs](images/Docs/Arduino-101.jpg)
+![TechBubble IoT JumpWay Docs](images/main/Arduino-101.png)
 
 - [Intel® Arduino 101 Basic LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/Basic-LED "Intel® Arduino 101 Basic LED Example")
 
 - [Intel® Arduino 101 Dev Kit LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/Basic-LED "Intel® Arduino 101 Dev Kit LED Example")
 
-## IoT JumpWay Intel® Arduino 101 DFRobot Examples
+## IoT JumpWay Intel® DFRobot Examples
 
 ![TechBubble IoT JumpWay Docs](images/Docs/Arduino-101-DFrobot.jpg)
 
