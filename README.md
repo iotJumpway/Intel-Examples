@@ -10,11 +10,15 @@ The Intel® examples provide example projects that you can use to get started wi
 
 ## IoT JumpWay Intel® Galileo Examples
 
+![TechBubble IoT JumpWay Docs](images/Docs/Intel-Galileo.jpg)
+
 - [Intel® Galileo Basic LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Galileo/Basic-LED/Python "Intel® Galileo Basic LED Python Example")
 
 - [Intel® Galileo Dev Kit LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Galileo/Dev-Kit-LED/Python "Intel® Galileo Dev Kit LED Python Example")
 
 ## IoT JumpWay Intel® Edison Examples
+
+![TechBubble IoT JumpWay Docs](images/Docs/Intel-Edison.jpg)
 
 - [Intel® Edison Basic LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Basic-LED/Python "Intel® Edison Basic LED Python Example")
 
