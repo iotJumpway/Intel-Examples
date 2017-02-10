@@ -115,7 +115,13 @@ As you have already uploaded your sketch, the program will now be running on you
 
 ## Autonomous Communication With Second Device
 
-COMING SOON
+Each time you press a button, the device will send sensor data and warning data to the  [TechBubble IoT JumpWay](https://iot.techbubbletechnologies.com/ "TechBubble IoT JumpWay"). You can use warning messages to trigger autonomous communication with other devices you have connected to the IoT JumpWay. 
+
+(THIS PART OF THE TUTORIAL WILL BE COMPLETED SOON)
+
+## Control Via Command Application
+
+[IoT JumpWay Developer Program (BETA) Location Applications](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/5-Location-Applications.md "IoT JumpWay Developer Program (BETA) Location Applications") give you the ability to plug in control features for all devices connected to your IoT JumpWay locations into your own applications. In this part of the tuturial we will focus on sending commands from our command application to replicate the buttons being pressed on the DFRobot LCD Keypad. This feature means that you could have an Android/iOS/web application and be anywhere in the world and be able to turn on/off whatever device you connected to the keyboard functions in the step above. 
 
 ## Viewing Your Data  
 
