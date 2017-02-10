@@ -18,7 +18,7 @@ The Intel® examples provide example projects that you can use to get started wi
 
 ## IoT JumpWay Intel® Edison Examples
 
-![TechBubble IoT JumpWay Docs](images/Docs/Intel-Edison.jpg)
+![TechBubble IoT JumpWay Docs](images/main/Intel-Edison.png)
 
 - [Intel® Edison Basic LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Basic-LED/Python "Intel® Edison Basic LED Python Example")
 
