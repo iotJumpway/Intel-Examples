@@ -265,6 +265,12 @@ You will be able to access the data in the [TechBubble IoT JumpWay Developers Ar
 
 ![IoT JumpWay  IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example Docs](../../../images/Basic-LED/WarningData.png)
 
+## HACKSTER
+
+For Hackster community members you can follow this project on the IoT JumpWay Hub:
+
+[Follow This Project On Hackster](https://www.hackster.io/AdamMiltonBarker/arduino-101-dfrobot-intruder-system-autonomous-iot-8e3373 "Follow This Project On Hackster")
+
 ## IoT JumpWay Intel® Arduino/Genuino 101 Examples Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come across whilst using the IoT JumpWay Intel® Arduino/Genuino 101 Examples. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel® Arduino/Genuino 101 Examples in your IoT projects.
