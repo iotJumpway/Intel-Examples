@@ -21,7 +21,7 @@ Once you understand how it works you are free to add as many actuators and senso
 
 ## Software requirements
 
-1. iot_jumpway_mqtt_serial
+1. [TechBubble IoT JumpWay Python MQTT Serial Library](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Serial-Client "TechBubble IoT JumpWay Python MQTT Serial Library")
 2. Arduino/Genuino IDE
 3. ArduinoJson
 
@@ -49,7 +49,7 @@ If this is the first time you have used the TechBubble IoT JumpWay in your IoT p
 
 ## Install Requirements On Your PC & Arduino/Genuino 101
 
-1. For the Python Serial/MQTT application we will need the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Docs](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/ "TechBubble Technologies IoT JumpWay Developer Program (BETA) Docs") installed on our PC/laptop/Mac. To Install the library, issue the following command on your chosen device:
+1. For the Python Serial/MQTT application we will need the [TechBubble IoT JumpWay Python MQTT Serial Library](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Serial-Client "TechBubble IoT JumpWay Python MQTT Serial Library") installed on our PC/laptop/Mac. To Install the library, issue the following command on your chosen device:
 
     ```
         $ pip install iot_jumpway_mqtt_serial
