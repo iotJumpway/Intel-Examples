@@ -4,12 +4,14 @@
   
   Contributors:  
   Adam Milton-Barker - TechBubble Technologies Limited
+  
   For this project you will need to use the TechBubble IoT JumpWay Python MQTT Serial Library:
   https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Serial-Client
   
 */
 
 #include <LiquidCrystal.h>
+#include <ArduinoJson.h>
 
 LiquidCrystal lcd(8, 9, 4, 5, 6, 7);    
 
@@ -25,6 +27,10 @@ int adc_key_in  = 0;
 
 String JumpWaySensorType = "LCD Keypad";
 String JumpWaySensorID = "1";
+
+String jsonString = "";
+String inputString = ""; 
+
 int debounceWait = 150;
 
 int read_LCD_buttons(){  
@@ -48,17 +54,42 @@ void setup(){
    lcd.print("ONLINE");  
    
 }
- 
-void loop(){
 
-   lcd.setCursor(0,1);             
-   lcd_key = read_LCD_buttons();
+void incoming(){ 
+  
+  while (Serial.available()) {
+    
+    char inChar = (char)Serial.read();
+    
+    inputString += inChar;
+    
+    if (inChar == '\n') {
+      
+      StaticJsonBuffer<200> jsonBuffer;
+      JsonObject& root = jsonBuffer.parseObject(inputString);
+      
+      String Actuator = root["ActuatorID"];
+      String Command = root["Command"];
+      int CommandValue = root["CommandValue"];
+          
+      if(Command=="TOGGLE"){
+        
+          commands(CommandValue);
+          
+      }
+      
+    }
+    inputString = "";
+  }
+  
+} 
+
+void commands(int button){  
    
-   String jsonString = "";
-   
-   switch (lcd_key){   
+   switch (button){   
        
-       case btnUP:{
+       case 1:{
+        
              lcd.print("COMMAND 1"); 
              jsonString = "{\"Sensor\":\""+JumpWaySensorType+"\",\"SensorID\":\""+JumpWaySensorID+"\",\"SensorValue\": \"1\"}";
              delay(debounceWait);
@@ -67,7 +98,7 @@ void loop(){
              
        }
        
-       case btnDOWN:{
+       case 2:{
         
              lcd.print("COMMAND 2"); 
              jsonString = "{\"Sensor\":\""+JumpWaySensorType+"\",\"SensorID\":\""+JumpWaySensorID+"\",\"SensorValue\": \"2\"}";
@@ -76,7 +107,7 @@ void loop(){
              break;
              
        }
-       case btnLEFT:{
+       case 3:{
         
              lcd.print("COMMAND 3");  
              jsonString = "{\"Sensor\":\""+JumpWaySensorType+"\",\"SensorID\":\""+JumpWaySensorID+"\",\"SensorValue\": \"3\"}";
@@ -86,13 +117,53 @@ void loop(){
              
        }     
 
-       case btnRIGHT:{          
+       case 4:{          
              
-            lcd.print("COMMAND 4"); 
+             lcd.print("COMMAND 4"); 
              jsonString = "{\"Sensor\":\""+JumpWaySensorType+"\",\"SensorID\":\""+JumpWaySensorID+"\",\"SensorValue\": \"4\"}";
              delay(debounceWait);
              Serial.println(jsonString);
             break;
+            
+       }  
+       
+   }  
+   
+}
+ 
+void loop(){
+
+   lcd.setCursor(0,1);             
+   lcd_key = read_LCD_buttons();
+   
+   jsonString = "";
+   
+   switch (lcd_key){   
+       
+       case btnUP:{
+             
+             commands(1);
+             break;
+             
+       }
+       
+       case btnDOWN:{
+             
+             commands(2);
+             break;
+             
+       }
+       case btnLEFT:{
+             
+             commands(3);
+             break;
+             
+       }     
+
+       case btnRIGHT:{ 
+             
+             commands(4);
+             break;
        }  
 
        case btnNONE:{          
