@@ -10,6 +10,7 @@ This project uses three applications:
 
 1. A device application (Arduino) which communicates via serial with a Python Serial/MQTT application.
 2. The Python Serial/MQTT application which communicates with the Arduino/Genuio 101 / DFRobot LCD Keypad Shield, and the IoT JumpWay.
+3. A python 
 
 ## Python Versions
 
@@ -23,12 +24,14 @@ This project uses three applications:
 
 ## Hardware Requirements
 
-![IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example](../../../images/LCD-Control/DF-Robot-101-Hardware.jpg)
+![IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example](../../../images/LCD-Intruder-System/DFRobot-LCD-Intruder-Hardware.jpg)
 
 1. Intel® Arduino/Genuino 101.
 2. DFRobot LCD Keypad Shield
-3. A DFRobot Digital PIR Sensor Module
-4. 3 x male / female jumper wires
+3. 1 x DFRobot Digital PIR Sensor Module
+4. 1 x DFRobot Digital Buzzer Module
+5. 4 x male / female jumper wires
+6. 2 x male / male jumper wires
 
 ## Before You Begin
 
@@ -54,15 +57,21 @@ If this is the first time you have used the TechBubble IoT JumpWay in your IoT p
 
 ## Setting Up Your Intel® Arduino/Genuino 101
 
-![IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example](../../../images/LCD-Control/DF-Robot-101-Setup.jpg)
+![IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example](../../../images/LCD-Intruder-System/DFRobot-LCD-Intruder-Setup.jpg)
 
-First of all you need to connect up your DFRobot LCD Keypad Shield to your Intel® Arduino/Genuino 101 and connect your DFRobot PIR Sensor Module. Place the shield on top of your Arduino as in the image above. Connect your 3 jumper wires to on end of your DFRobot PIR sensor wires, connect the green wire to D2 on the DFRobot LCD Keypad Shield, red to VCC and black to GND.
+First of all you need to connect up your DFRobot LCD Keypad Shield to your Intel® Arduino/Genuino 101 and connect your DFRobot PIR Sensor Module & DFRobot Buzzer Module. Follow the next steps to accomplish this.
+
+1. Place the shield on top of your Arduino as in the image above. 
+2. Connect 3 or your male / female jumper wires to on end of your DFRobot PIR sensor wires.
+3. Connect the green wire to D2 on the DFRobot LCD Keypad Shield, red to VCC and black to GND.
+4. Connect your final male / female jumper wire to the green DFRobot buzzer wire, and the 2 male / male wires to the red and black wires of the buzzer.
+5. Connect the green wire to D3 on the DFRobot LCD Keypad Shield, red to VCC and black to GND.
 
 ## Device Connection Credentials & Actuator Settings
 
 - Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc") to set up your device. 
 
-![IoT JumpWay  Intel® Arduino/Genuino 101 DFRobot LCD Control Example Docs](../../../images/Basic-LED/Device-Creation.png)  
+![IoT JumpWay  IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example Docs](../../../images/Basic-LED/Device-Creation.png)  
 
 - Download the [TechBubble IoT JumpWay Python MQTT Serial Library Application](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Serial-Client/blob/master/application.py "TechBubble IoT JumpWay Python MQTT Serial Library Application") and the [TechBubble IoT JumpWay Python MQTT Serial Library Config File](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Serial-Client/blob/master/config.json "TechBubble IoT JumpWay Python MQTT Serial Library Config File"). Retrieve your connection credentials by following the link above, and update the config.json file with your new connection  credentials.
 
@@ -80,10 +89,17 @@ First of all you need to connect up your DFRobot LCD Keypad Shield to your Intel
     }
 ```
 
-- Open up the [Intel® Arduino/Genuino 101 DFRobot LCD Control Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Arduino-101/Basic-LED/Basic-LED.ino "Intel® Arduino/Genuino 101 DFRobot LCD Control Example") and update the following lines with your DFRobot LCD Keypad Shield ID retrieved from the steps above, then upload the sketch to your device:
+- Open up the [IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Arduino-101/Basic-LED/Basic-LED.ino "IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example") and update the following lines with your DFRobot LCD Keypad Shield  & Module IDs retrieved from the steps above, then upload the sketch to your device:
 
     ```
-        String JumpWaySensorID = "0";
+        String JumpWaySensorType = "LCD Keypad";
+        String JumpWaySensorID = "1";
+
+        String JumpWaySensorType2 = "PIR Sensor";
+        String JumpWaySensorID2 = "2";
+
+        String JumpWaySensorType3 = "Buzzer";
+        String JumpWaySensorID3 = "3";
     ```
 
 - You may also need to alter the debounceWait variable if the buttons trigger multiple times.
@@ -106,9 +122,9 @@ COMING SOON
 
 Each time you press a button, it will send data to the [TechBubble IoT JumpWay](https://iot.techbubbletechnologies.com/ "TechBubble IoT JumpWay"). You will be able to access the data in the [TechBubble IoT JumpWay Developers Area](https://iot.techbubbletechnologies.com/developers/dashboard/ "TechBubble IoT JumpWay Developers Area"). Once you have logged into the Developers Area, visit the [TechBubble IoT JumpWay Location Devices Page](https://iot.techbubbletechnologies.com/developers/location-devices "Location Devices page"), find your device and then visit the Sensor/Actuator page and the Warnings page to view the data sent from your device.
 
-![IoT JumpWay  Intel® Arduino/Genuino 101 DFRobot LCD Control Example Docs](../../../images/Basic-LED/SensorData.png)
+![IoT JumpWay  IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example Docs](../../../images/Basic-LED/SensorData.png)
 
-![IoT JumpWay  Intel® Arduino/Genuino 101 DFRobot LCD Control Example Docs](../../../images/Basic-LED/WarningData.png)
+![IoT JumpWay  IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example Docs](../../../images/Basic-LED/WarningData.png)
 
 ## IoT JumpWay Intel® Arduino/Genuino 101 Examples Bugs/Issues
 

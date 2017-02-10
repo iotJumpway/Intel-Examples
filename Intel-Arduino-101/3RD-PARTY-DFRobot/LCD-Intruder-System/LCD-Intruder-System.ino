@@ -29,7 +29,11 @@ String JumpWaySensorID = "1";
 String JumpWaySensorType2 = "PIR Sensor";
 String JumpWaySensorID2 = "2";
 
+String JumpWaySensorType3 = "Buzzer";
+String JumpWaySensorID3 = "3";
+
 byte DFRobotMotionPin = 2;
+byte DFRobotBuzzerPin = 3;
 
 int debounceWait = 150;
 int armedStatus = 0;
@@ -47,9 +51,27 @@ int read_LCD_buttons(){
     return btnNONE;
 }
 
+void start_alarm(){  
+
+    digitalWrite(DFRobotBuzzerPin, HIGH);
+    delay(1);
+    
+}
+
+void stop_alarm(){  
+
+    digitalWrite(DFRobotBuzzerPin, LOW);
+    delay(1);
+    
+}
+
 void setup(){  
   
    pinMode(DFRobotMotionPin,INPUT);
+   pinMode(DFRobotBuzzerPin, OUTPUT); 
+   
+   start_alarm();
+   stop_alarm();       
    
    Serial.begin(9600); 
    
@@ -78,6 +100,11 @@ void loop(){
         
         jsonString = "{\"Sensor\":\""+JumpWaySensorType2+"\",\"SensorID\":\""+JumpWaySensorID2+"\",\"SensorValue\": \"INTRUDER\"}";
         Serial.println(jsonString);
+        
+        start_alarm();
+        
+        jsonString = "{\"Sensor\":\""+JumpWaySensorType3+"\",\"SensorID\":\""+JumpWaySensorID3+"\",\"SensorValue\": \"ALARM ON\"}";
+        Serial.println(jsonString);
       
         jsonString = "{\"WarningType\":\""+JumpWaySensorType2+"\",\"WarningOrigin\":\""+JumpWaySensorID2+"\",\"WarningValue\": \"INTRUDER\",\"WarningMessage\": \"An intruder has been detected\"}";
         Serial.println(jsonString);
@@ -86,7 +113,13 @@ void loop(){
       
         lcd.setCursor(0,1); 
         lcd.print("ARMED    ");
+        
         jsonString = "{\"Sensor\":\""+JumpWaySensorType2+"\",\"SensorID\":\""+JumpWaySensorID2+"\",\"SensorValue\": \"OK\"}";
+        Serial.println(jsonString);
+        
+        stop_alarm();
+        
+        jsonString = "{\"Sensor\":\""+JumpWaySensorType3+"\",\"SensorID\":\""+JumpWaySensorID3+"\",\"SensorValue\": \"ALARM OFF\"}";
         Serial.println(jsonString);
         
      }
@@ -115,30 +148,40 @@ void loop(){
         
              lcd.setCursor(0,1);
              lcd.print("NOT ARMED"); 
+             
              jsonString = "{\"Sensor\":\""+JumpWaySensorType+"\",\"SensorID\":\""+JumpWaySensorID+"\",\"SensorValue\": \"NOT ARMED\"}";
              delay(debounceWait);
              armedStatus = 0;
              Serial.println(jsonString);
+             
              break;
              
        }
        case btnLEFT:{
         
              lcd.setCursor(0,1);
-             lcd.print("COMMAND 3");  
-             jsonString = "{\"Sensor\":\""+JumpWaySensorType+"\",\"SensorID\":\""+JumpWaySensorID+"\",\"SensorValue\": \"3\"}";
+             lcd.print("ALARM ON"); 
+        
+             start_alarm(); 
+             
+             jsonString = "{\"Sensor\":\""+JumpWaySensorType3+"\",\"SensorID\":\""+JumpWaySensorID3+"\",\"SensorValue\": \"ALARM ON\"}";
              delay(debounceWait);
              Serial.println(jsonString);
+             
              break;
              
        } 
        case btnRIGHT:{          
              
              lcd.setCursor(0,1);
-             lcd.print("COMMAND 4"); 
-             jsonString = "{\"Sensor\":\""+JumpWaySensorType+"\",\"SensorID\":\""+JumpWaySensorID+"\",\"SensorValue\": \"4\"}";
+             lcd.print("ALARM OFF");  
+        
+             stop_alarm(); 
+        
+             jsonString = "{\"Sensor\":\""+JumpWaySensorType3+"\",\"SensorID\":\""+JumpWaySensorID3+"\",\"SensorValue\": \"ALARM OFF\"}";
              delay(debounceWait);
              Serial.println(jsonString);
+             
             break;
             
        }  
