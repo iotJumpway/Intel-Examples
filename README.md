@@ -34,7 +34,7 @@ The Intel® examples provide example projects that you can use to get started wi
 
 ## IoT JumpWay Intel® Arduino 101 DFRobot Examples
 
-![TechBubble IoT JumpWay Docs](images/Docs/Arduino-101-DFRobot.jpg)
+![TechBubble IoT JumpWay Docs](images/Docs/Arduino-101-DFrobot.jpg)
 
 - [Intel® Arduino 101 DF Robot LCD Control Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/3RD-PARTY-DFRobot/LCD-Control "Intel® Arduino 101 DF Robot LCD Control Example")
 
