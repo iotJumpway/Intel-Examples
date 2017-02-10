@@ -1,6 +1,6 @@
 # IoT JumpWay Intel® Examples
 
-![TechBubble IoT JumpWay Docs](images/main/IoT-Jumpway.jpg)  
+![TechBubble IoT JumpWay Docs](images/main/IoT-JumpWay-Intel-Examples.png)  
 
 ## Introduction
 
