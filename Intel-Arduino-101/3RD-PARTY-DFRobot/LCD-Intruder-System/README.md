@@ -131,7 +131,7 @@ As you have already uploaded your sketch, the program will now be running on you
 
 ## Autonomous Communication With Second Device
 
-Each time you press a button, the device will send sensor data and warning data to the  [TechBubble IoT JumpWay](https://iot.techbubbletechnologies.com/ "TechBubble IoT JumpWay"). You can use warning messages to trigger autonomous communication with other devices you have connected to the IoT JumpWay. 
+Each time you press a button, the device will send sensor data to the  [TechBubble IoT JumpWay](https://iot.techbubbletechnologies.com/ "TechBubble IoT JumpWay") and warning alerts will be sent when the motion sensor picks up date. You can use sensor valyes and warning messages to trigger autonomous communication with other devices you have connected to the IoT JumpWay. 
 
 (THIS PART OF THE TUTORIAL WILL BE COMPLETED SOON)
 
