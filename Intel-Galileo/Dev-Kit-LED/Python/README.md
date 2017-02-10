@@ -36,7 +36,7 @@ To help secure your Intel® Galileo Gen 1, follow the [Intel® Galileo Security]
 
 ## Cloning The Repo
 
-You will need to clone this repository to a location on your Raspberry Pi 3. Navigate to the directory you would like to download it to and issue the following commands.
+You will need to clone this repository to a location on your Intel® Galileo Gen 1. Navigate to the directory you would like to download it to and issue the following commands.
 
     $ git clone https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples.git
 
@@ -59,7 +59,7 @@ First of all you need to connect up an LED to your Intel® Galileo Gen 1. To con
 
 - Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc") to set up your device, and the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Application Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/5-Location-Applications.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Application Doc") to set up your application. 
 
-![IoT JumpWay Raspberry Pi Basic LED Example Docs](../../../images/Dev-Kit-LED/Device-Creation.png)  
+![IoT JumpWay Intel® Galileo Gen 1 Basic LED Example Docs](../../../images/Dev-Kit-LED/Device-Creation.png)  
 
 - Retrieve your connection credentials and update the config.json file with your new connection  credentials and actuator (LED) setting.
 
@@ -103,9 +103,9 @@ First of all you need to connect up an LED to your Intel® Galileo Gen 1. To con
 
 Each time your device detects a person or an intruder, it will send data to the [TechBubble IoT JumpWay](https://iot.techbubbletechnologies.com/ "TechBubble IoT JumpWay"). You will be able to access the data in the [TechBubble IoT JumpWay Developers Area](https://iot.techbubbletechnologies.com/developers/dashboard/ "TechBubble IoT JumpWay Developers Area"). Once you have logged into the Developers Area, visit the [TechBubble IoT JumpWay Location Devices Page](https://iot.techbubbletechnologies.com/developers/location-devices "Location Devices page"), find your device and then visit the Sensor/Actuator page and the Warnings page to view the data sent from your device.
 
-![IoT JumpWay Raspberry Pi Basic LED Example Docs](../../../images/Basic-LED/SensorData.png)
+![IoT JumpWay Intel® Galileo Gen 1 Basic LED Example Docs](../../../images/Basic-LED/SensorData.png)
 
-![IoT JumpWay Raspberry Pi Basic LED Example Docs](../../../images/Basic-LED/WarningData.png)
+![IoT JumpWay Intel® Galileo Gen 1 Basic LED Example Docs](../../../images/Basic-LED/WarningData.png)
 
 ## IoT JumpWay Intel® Galileo Examples Bugs/Issues
 
