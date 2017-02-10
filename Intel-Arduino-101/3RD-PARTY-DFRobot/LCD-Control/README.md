@@ -63,7 +63,7 @@ If this is the first time you have used the TechBubble IoT JumpWay in your IoT p
         Right click on the right hand side of the ArduinoJson section and install the latest version
     ```
 
-![IoT JumpWay Intel® Arduino/Genuino 101 Basic LED Example Docs](../../images/Docs/ArduinoJson.jpg)
+![IoT JumpWay Intel® Arduino/Genuino 101 Basic LED Example Docs](../../../images/Docs/ArduinoJson.jpg)
 
 ## Setting Up Your Intel® Arduino/Genuino 101
 
