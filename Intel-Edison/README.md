@@ -1,6 +1,6 @@
 # IoT JumpWay Intel® Edison Examples
 
-![TechBubble IoT JumpWay Docs](../images/main/IoT-Jumpway.jpg)  
+![TechBubble IoT JumpWay Docs](../images/Docs/Intel-Edison-Examples.png)  
 
 ## Introduction
 
@@ -18,15 +18,17 @@ The Intel® Edison examples provide example projects that you can use to get sta
 
 - [Booting Intel® Edison From SD (Linux Guide)](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/_DOCS/1-Booting-From-SD-Linux.md "Booting Intel® Edison From SD (Linux Guide)")
 
-- [Intel® Edison Security (To Be Updated)](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/_DOCS/2-Security.md "Intel® Edison Security (To Be Updated)")
+- [Intel® Edison Security](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/_DOCS/2-Security.md "Intel® Edison Security")
 
 - [Installing Python 3.6 On Intel® Edison](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/_DOCS/3-Installing-Python-3-6.md "Installing Python 3.6 On Intel® Edison")
 
 - [Installing Python OpenCV 3 On Intel® Edison](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/_DOCS/4-Installing-OpenCV.md "Installing Python OpenCV 3 On Intel® Edison")
 
+- [Installing Linux Motion On Intel® Edison](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/_DOCS/5-Installing-Motion.md "Installing Linux Motion On Intel® Edison")
+
 ## IoT JumpWay Intel® Edison Bugs/Issues
 
-Please feel free to create issues for bugs and general issues you come accross whilst using the IoT JumpWay Intel Examples. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel Examples in your IoT projects.
+Please feel free to create issues for bugs and general issues you come across whilst using the IoT JumpWay Intel Examples. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel Examples in your IoT projects.
 
 ## IoT JumpWay Intel® Edison Contributors
 
