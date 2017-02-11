@@ -10,7 +10,7 @@ Here you will find an index of the tutorials available in the IoT JumpWay Intel�
 
 - [Booting Intel® Edison From SD (Linux Guide)](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/_DOCS/1-Booting-From-SD-Linux.md "Booting Intel® Edison From SD (Linux Guide)")
 
-- [Intel® Edison Security (To Be Updated)](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/_DOCS/2-Security.md "Intel® Edison Security (To Be Updated)")
+- [Intel® Edison Security](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/_DOCS/2-Security.md "Intel® Edison Security")
 
 - [Installing Python 3.6 On Intel® Edison](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/_DOCS/3-Installing-Python-3-6.md "Installing Python 3.6 On Intel® Edison")
 
