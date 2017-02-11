@@ -1,6 +1,6 @@
 # IoT JumpWay Intel® Arduino 101 & DFRobot Examples
 
-![TechBubble IoT JumpWay Docs](../../images/main/IoT-Jumpway.jpg)  
+![TechBubble IoT JumpWay Docs](../../images/Docs/Arduino-101-DFRobot-IoT-JumpWay.png)  
 
 ## Introduction
 
@@ -14,7 +14,7 @@ The Intel® Arduino 101 & DFRobot examples provide example projects that you can
 
 ## IoT JumpWay Intel® Arduino 101 & DFRobot Bugs/Issues
 
-Please feel free to create issues for bugs and general issues you come accross whilst using the IoT JumpWay Intel Examples. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel Examples in your IoT projects.
+Please feel free to create issues for bugs and general issues you come across whilst using the IoT JumpWay Intel Examples. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel Examples in your IoT projects.
 
 ## IoT JumpWay Intel® Arduino 101 & DFRobot Contributors
 
