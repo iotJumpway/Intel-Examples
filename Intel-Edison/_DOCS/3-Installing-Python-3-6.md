@@ -1,6 +1,6 @@
 # Installing Python 3.6 On Your Intel® Edison
 
-![TechBubble IoT JumpWay Docs](../../images/main/IoT-Jumpway.jpg)  
+![TechBubble IoT JumpWay Docs](../../images/Docs/Intel-Edison-Documentation.png)  
 
 ## WARNING
 

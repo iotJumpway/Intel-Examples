@@ -1,10 +1,10 @@
 # Installation Of OpenCV On Intel® Edison
 
-![TechBubble IoT JumpWay Docs](../../images/main/IoT-Jumpway.jpg) 
+![TechBubble IoT JumpWay Docs](../../images/Docs/Intel-Edison-Documentation.png)  
 
 ## Introduction
 
-The following information will help you install OpenCV on your Intel® Edison. This installation includes the additional modules required for facial identification.
+The following information will help you install OpenCV on your Intel® Edison. This installation currently does not include the additional modules required for facial identification.
 
 ## Hardware Requirements
 

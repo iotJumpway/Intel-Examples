@@ -1,6 +1,6 @@
 # Securing Intel® Edison Projects
 
-![TechBubble IoT JumpWay Docs](../../images/main/IoT-Jumpway.jpg)  
+![TechBubble IoT JumpWay Docs](../../images/Docs/Intel-Edison-Documentation.png)    
 
 ## Introduction
 
