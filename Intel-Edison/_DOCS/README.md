@@ -16,6 +16,8 @@ Here you will find an index of the tutorials available in the IoT JumpWay Intel�
 
 - [Installing Python OpenCV 3 On Intel® Edison](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/_DOCS/4-Installing-OpenCV.md "Installing Python OpenCV 3 On Intel® Edison")
 
+- [Installing Linux Motion On Intel® Edison](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/_DOCS/5-Installing-Motion.md "Installing Linux Motion On Intel® Edison")
+
 ## IoT JumpWay Intel® Edison Docs Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come across whilst using the Intel® Edison Docs. You may also use the issues area to ask for general help whilst using the Intel® Edison Docs.
