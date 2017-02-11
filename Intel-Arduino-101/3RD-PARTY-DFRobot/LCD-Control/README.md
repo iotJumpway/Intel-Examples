@@ -1,6 +1,6 @@
 # IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Control Example
 
-![IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Control Example](../../../images/main/Arduino-101-DFRobot-LCD-Control.png)  
+![IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Control Example](../../../images/LCD-Control/Arduino-101-DFRobot-LCD-Control.png)  
 
 ## Introduction
 
