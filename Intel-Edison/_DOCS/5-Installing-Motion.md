@@ -1,6 +1,6 @@
 # Installation Of Linux Motion On Intel® Edison
 
-![TechBubble IoT JumpWay Docs](../../images/main/IoT-Jumpway.jpg) 
+![TechBubble IoT JumpWay Docs](../../images/Docs/Intel-Edison-Documentation.png)   
 
 ## Introduction
 
@@ -116,6 +116,9 @@ PLEASE NOTE:
 
     ```
         CTRL C to exit top
+    ```
+
+    ```
         # kill PID_FOR_MOTION
     ```
 
