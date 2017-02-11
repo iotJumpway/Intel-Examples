@@ -4,7 +4,11 @@
 
 ## Introduction
 
-Here you will find sample device scripts for connecting Intel® Arduino/Genuino 101 and DFRobot LCD Keypad Shield to the TechBubble Technologies IoT JumpWay using the Python MQTT Serial Library. The codes allow you to set up am intruder alarm system that is controlled by the DFRobot LCD Keypad Shield and the IoT JumpWay and communication via the IoT JumpWay. In addition to using the LCD Keypad Shield to arm and disarm the system / turn on and off the alarm, you can also use an application or autonomous device communication via the IoT JumpWay to switch the states of the buttons on the keypad.
+Here you will find sample device scripts for connecting Intel® Arduino/Genuino 101 and DFRobot LCD Keypad Shield to the TechBubble Technologies IoT JumpWay using the Python MQTT Serial Library.
+
+The tutorial will allow you to set up an intruder alarm system that is controlled by the DFRobot LCD Keypad Shield, and communication via the IoT JumpWay.
+
+In addition to using the LCD Keypad Shield to arm and disarm the system / turn on and off the alarm, you can also use an application or autonomous device communication via the IoT JumpWay to switch the states of the buttons on the keypad.
 
 Once you understand how it works you are free to add as many actuators and sensors to your device and modify your code accordingly.
 
@@ -38,7 +42,7 @@ Once you understand how it works you are free to add as many actuators and senso
 
 ## Before You Begin
 
-If this is the first time you have used the TechBubble IoT JumpWay in your IoT projects, you will require a developer account and some basics to be set up before you can start creating your IoT devices. Visit the following link and check out the guides that take you through registration and setting up your Location Space, Zones, Devices and Applications.
+If this is the first time you have used the TechBubble IoT JumpWay in your IoT projects, you will require a developer account and some basics to be set up before you can start creating your IoT devices. Visit the following link and check out the guides (Roughly 5 minutes) that take you through registration and setting up your Location Space, Zones, Devices and Applications.
 
 [TechBubble Technologies IoT JumpWay Developer Program (BETA) Docs](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/ "TechBubble Technologies IoT JumpWay Developer Program (BETA) Docs")
 
@@ -72,17 +76,17 @@ If this is the first time you have used the TechBubble IoT JumpWay in your IoT p
 
 ![IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example](../../../images/LCD-Intruder-System/DFRobot-LCD-Intruder-Setup.jpg)
 
-First of all you need to connect up your DFRobot LCD Keypad Shield to your Intel® Arduino/Genuino 101 and connect your DFRobot PIR Sensor Module & DFRobot Buzzer Module. Follow the next steps to accomplish this.
+First of all you need to connect up your DFRobot LCD Keypad Shield to your Intel® Arduino/Genuino 101, and connect your DFRobot PIR Sensor Module & DFRobot Buzzer Module. Follow the next steps to accomplish this.
 
 1. Place the shield on top of your Arduino as in the image above. 
-2. Connect 3 or your male / female jumper wires to on end of your DFRobot PIR sensor wires.
+2. Connect 3 of your male / female jumper wires to on end of your DFRobot PIR sensor wires.
 3. Connect the green wire to D2 on the DFRobot LCD Keypad Shield, red to VCC and black to GND.
 4. Connect your final male / female jumper wire to the green DFRobot buzzer wire, and the 2 male / male wires to the red and black wires of the buzzer.
 5. Connect the green wire to D3 on the DFRobot LCD Keypad Shield, red to VCC and black to GND.
 
 ## Device Connection Credentials & Actuator/Sensor Settings
 
-- Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc") to set up your main device. You will need to select the "LCD Keypad (4 Buttons)", "Motion Sensor" & "Buzzer" actuators/sensors whilst setting up your device in the developer console. If you want to use a second device to trigger autonomous communication, please follow the [Intel® Edison Dev Kit LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-LED/Python "Intel® Edison Dev Kit LED Python Example") tutorial, we will show you how to set up the autonomous communication later in this tutorial.
+- Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc") (About 1 minute) to set up your main device. You will need to select the "LCD Keypad (4 Buttons)", "Motion Sensor" & "Buzzer" actuators/sensors whilst setting up your device in the developer console. If you want to use a second device to trigger autonomous communication, please follow the [Intel® Edison Dev Kit LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-LED/Python "Intel® Edison Dev Kit LED Python Example") tutorial, we will show you how to set up the autonomous communication later in this tutorial.
 
 ![IoT JumpWay  Intel® Arduino/Genuino 101 DFRobot LCD Control Example Docs](../../../images/Basic-LED/Device-Creation.png)  
 
@@ -104,7 +108,7 @@ First of all you need to connect up your DFRobot LCD Keypad Shield to your Intel
     }
 ```
 
-- Open up the [IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Arduino-101/3RD-PARTY-DFRobot/LCD-Intruder-System/LCD-Intruder-System.ino "IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example") and update the following lines with your DFRobot LCD Keypad Shield  & Module IDs retrieved from the steps above, then upload the sketch to your device:
+- Open up the [IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Arduino-101/3RD-PARTY-DFRobot/LCD-Intruder-System/LCD-Intruder-System.ino "IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example") in the Arduino IDE, and update the following lines with your DFRobot LCD Keypad Shield  & Module IDs retrieved from the steps above, then upload the sketch to your device:
 
     ```
         String JumpWaySensorType = "LCD Keypad";
@@ -131,7 +135,7 @@ As you have already uploaded your sketch, the program will now be running on you
 
 ## Autonomous Communication With Second Device
 
-Each time you press a button, the device will send sensor data to the  [TechBubble IoT JumpWay](https://iot.techbubbletechnologies.com/ "TechBubble IoT JumpWay") and warning alerts will be sent when the motion sensor picks up date. You can use sensor valyes and warning messages to trigger autonomous communication with other devices you have connected to the IoT JumpWay. On the device edit page scroll down to the "Create Rules" section under the Actuators / Sensors. Here you can use the dropdown menu to create rules that allow your device email you or to autonomously communicate with other devices on its network in the event of status updates, sensor data and warnings.
+Each time you press a button, the device will send sensor data to the  [TechBubble IoT JumpWay](https://iot.techbubbletechnologies.com/ "TechBubble IoT JumpWay") and warning alerts will be sent when the motion sensor picks up data. You can use sensor values and warning messages to trigger autonomous communication with other devices you have connected to the IoT JumpWay. On the device edit page scroll down to the "Create Rules" section under the "Actuators / Sensors". Here you can use the dropdown menu to create rules that allow your device to email you or to autonomously communicate with other devices on its network in the event of status updates, sensor data and warnings.
 
 ![IoT JumpWay  IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example Docs](../../../images/Docs/Device-Autonomous-Communication.png)
 
@@ -139,13 +143,17 @@ Each time you press a button, the device will send sensor data to the  [TechBubb
 
 [IoT JumpWay Developer Program (BETA) Location Applications](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/5-Location-Applications.md "IoT JumpWay Developer Program (BETA) Location Applications") give you the ability to plug in control features for all devices connected to your IoT JumpWay Locations into your own applications. 
 
-In this part of the tuturial we will focus on sending commands from our command application to replicate the buttons being pressed on the DFRobot LCD Keypad. This feature means that you could have an Android/iOS/web application and be anywhere in the world and be able to turn on/off whatever device you connected to the keyboard functions in the step above. 
+In this part of the tutorial we will focus on sending commands from our command application to replicate the buttons being pressed on the DFRobot LCD Keypad. 
+
+This feature means that you could have an Android/iOS/web application and be anywhere in the world and be able to turn on/off whatever device you connected to the keyboard functions in the steps above. 
 
 Follow the next steps to set up your application:
 
 1. We will be using the [IoT JumpWay Intel® Edison Dev Kit LED Example Application](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/Dev-Kit-LED/Python/Dev-Kit-Led-Application.py "IoT JumpWay Intel® Edison Dev Kit LED Example Application") and the [IoT JumpWay Intel® Edison Dev Kit LED Example Config File](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/Dev-Kit-LED/Python/config.json "IoT JumpWay Intel® Edison Dev Kit LED Example Config File"), you can put them in a folder and name the folder something relevant so that you remember it, you will be able to reuse this application in the future for other tutorials.
 
-2. Update the device related configs with the credentials you created from this tutorial. This will mean that the application will no longer be sending control commands to the Edison Dev Kit LED device, but to the Python Serial/MQTT application we created in this tutorial which will, in turn, send the commands to the device and switch the buttons. You need to update the SystemZone, SystemDeviceID, SystemDeviceName and Actuators settings as below, the Actuator settings should match the ones you modified in the Arduino sketch above:
+2. Update the device related configs with the credentials you created from this tutorial. This will mean that the application will no longer be sending control commands to the Edison Dev Kit LED device, but to the Python Serial/MQTT application we created in this tutorial which will, in turn, send the commands to the device and switch the buttons. 
+
+You need to update the "SystemZone", "SystemDeviceID", "SystemDeviceName" and "Actuators" settings as below, the Actuator settings should match the ones you modified in the Arduino sketch above:
 
     ```
         "IoTJumpWaySettings": {
