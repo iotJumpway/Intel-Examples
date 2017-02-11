@@ -151,9 +151,7 @@ Follow the next steps to set up your application:
 
 1. We will be using the [IoT JumpWay Intel® Edison Dev Kit LED Example Application](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/Dev-Kit-LED/Python/Dev-Kit-Led-Application.py "IoT JumpWay Intel® Edison Dev Kit LED Example Application") and the [IoT JumpWay Intel® Edison Dev Kit LED Example Config File](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/Dev-Kit-LED/Python/config.json "IoT JumpWay Intel® Edison Dev Kit LED Example Config File"), you can put them in a folder and name the folder something relevant so that you remember it, you will be able to reuse this application in the future for other tutorials.
 
-2. Update the device related configs with the credentials you created from this tutorial. This will mean that the application will no longer be sending control commands to the Edison Dev Kit LED device, but to the Python Serial/MQTT application we created in this tutorial which will, in turn, send the commands to the device and switch the buttons. 
-
-You need to update the "SystemZone", "SystemDeviceID", "SystemDeviceName" and "Actuators" settings as below, the Actuator settings should match the ones you modified in the Arduino sketch above:
+2. Update the device related configs with the credentials you created from this tutorial. This will mean that the application will no longer be sending control commands to the Edison Dev Kit LED device, but to the Python Serial/MQTT application we created in this tutorial which will, in turn, send the commands to the device and switch the buttons. You need to update the "SystemZone", "SystemDeviceID", "SystemDeviceName" and "Actuators" settings as below, the Actuator settings should match the ones you modified in the Arduino sketch above:
 
     ```
         "IoTJumpWaySettings": {
