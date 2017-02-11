@@ -1,6 +1,6 @@
 # IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example
 
-![IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example](../../../images/main/IoT-Jumpway.jpg)  
+![IoT JumpWay Intel® Arduino/Genuino 101 DFRobot LCD Intruder System Example](../../../images/LCD-Intruder-System/Arduino-101-DFRobot-Intruder-System.png)  
 
 ## Introduction
 
