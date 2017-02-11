@@ -9,7 +9,6 @@ The following information will help you install Linux Motion on your Intel® Edi
 PLEASE NOTE: 
 
 - This is a basic tutorial that will result in an insecure stream, in project tutorials where we use Linux Motion, we will take you through creating a secure stream. 
-- This tutorial does provide instructions on using the password feature of Linux Motion, please use a secure username and password. 
 - Motion will store images on your Edison, if you do not keep on top of them your diskspace will quickly fill up. 
 
 ## Hardware Requirements
