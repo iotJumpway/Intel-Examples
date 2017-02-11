@@ -1,12 +1,14 @@
 # IoT JumpWay Intel® Arduino/Genuino 101 Dev Kit LED Example
 
-![IoT JumpWay Intel® Arduino/Genuino 101 Dev Kit LED Example Docs](../../images/main/IoT-Jumpway.jpg)  
+![IoT JumpWay Intel® Arduino/Genuino 101 Dev Kit LED Example Docs](../../images/Dev-Kit-LED/Arduino-101-Dev-Kit-LED.png)  
 
 ## Introduction
 
-Here you will find sample device scripts for connecting Intel® Arduino/Genuino 101 and IoT Dev Kit to the TechBubble Technologies IoT JumpWay using the Python MQTT Serial Library. The codes allow you to set up a basic device that allows control of an LED, and an application to communicate with the device / IoT JumpWay, and make the LED flash on and off. Once you understand how it works you are free to add as many actuators and sensors to your device and modify your code accordingly.
+Here you will find sample device scripts for connecting an Intel® Arduino/Genuino 101 and IoT Dev Kit to the TechBubble Technologies IoT JumpWay using the Python MQTT Serial Library.
 
-This project uses three applications:
+This tutorial helps you to set up an Arduino/Genuino 101 that allows control of an LED, and also an application that can control the LED via the IoT JumpWay.
+
+## This project uses three applications:
 
 1. A device application (Arduino) which communicates via serial with a Python Serial/MQTT application.
 2. The Python Serial/MQTT application which communicates with the Arduino/Genuio 101 and the IoT JumpWay.
@@ -18,7 +20,7 @@ This project uses three applications:
 
 ## Software requirements
 
-1. iot_jumpway_mqtt_serial
+1. [TechBubble IoT JumpWay Python MQTT Serial Library](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Serial-Client "TechBubble IoT JumpWay Python MQTT Serial Library")
 2. Arduino/Genuino IDE
 2. ArduinoJson
 
@@ -27,12 +29,12 @@ This project uses three applications:
 ![IoT JumpWay Intel® Arduino/Genuino 101 Dev Kit LED Example Docs](../../images/Dev-Kit-LED/Arduino-101-Hardware.jpg)
 
 1. Intel® Arduino/Genuino 101.
-2. Grove starter kit for Intel® Arduino/Genuino/Genuino 101.
+2. Grove starter kit for Intel® Arduino/Genuino 101.
 3. 1 x LED.
 
 ## Before You Begin
 
-If this is the first time you have used the TechBubble IoT JumpWay in your IoT projects, you will require a developer account and some basics to be set up before you can start creating your IoT devices. Visit the following link and check out the guides that take you through registration and setting up your Location Space, Zones, Devices and Applications.
+If this is the first time you have used the TechBubble IoT JumpWay in your IoT projects, you will require a developer account and some basics to be set up before you can start creating your IoT devices. Visit the following link and check out the guides that take you through registration and setting up your Location Space, Zones, Devices and Applications (About 5 minutes).
 
 [TechBubble Technologies IoT JumpWay Developer Program (BETA) Docs](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/ "TechBubble Technologies IoT JumpWay Developer Program (BETA) Docs")
 
@@ -73,7 +75,7 @@ First of all you need to connect up an LED to your Intel® Arduino/Genuino 101. 
 
 ## Device Connection Credentials & Actuator Settings
 
-- Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc") to set up your device, and the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Application Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/5-Location-Applications.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Application Doc") to set up your MQTT application, you will need the MQTT application to communicate with your serial application further on in the tutorial. 
+- Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc") (About 1 minute) to set up your device, and the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Application Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/5-Location-Applications.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Application Doc") (About 1 minute) to set up your MQTT application, you will need the MQTT application to communicate with your serial application further on in the tutorial. 
 
 ![IoT JumpWay  Intel® Arduino/Genuino 101 Dev Kit LED Example Docs](../../images/Dev-Kit-LED/Device-Creation.png)  
 
@@ -93,7 +95,7 @@ First of all you need to connect up an LED to your Intel® Arduino/Genuino 101. 
     }
 ```
 
-- Open up the [Arduino/Genuino 101 Dev Kit LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Arduino-101/Dev-Kit-LED/Dev-Kit-LED.ino "Arduino/Genuino 101 Dev Kit LED Example") and update the following line with your LED actuator ID retrieved from the steps above, then upload the sketch to your device:
+- Open up the [Arduino/Genuino 101 Dev Kit LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Arduino-101/Dev-Kit-LED/Dev-Kit-LED.ino "Arduino/Genuino 101 Dev Kit LED Example") in the Arduino IDE, and update the following line with your LED actuator ID retrieved from the steps above, then upload the sketch to your device:
 
     ```
         const int actuator1JumpWayID = 0;
@@ -135,17 +137,23 @@ Now it is time to set up your MQTT application mentioned in the steps above.
 
 ## Execute The Python Program
 
-Now all you have to do is execute your MQTT application. This application sends a device command to turn on your LED through the IoT JumpWay to your serial application, which inturn sends the command via serial to the relevant actuator on your Arduino/Genuino 101, in this case, your LED:
+Now all you have to do is execute your MQTT application. This application sends a device command to turn on your LED through the IoT JumpWay to your serial application, which in turn, sends the command via serial to the relevant actuator on your Arduino/Genuino 101, in this case, your LED:
 
     $ python/python3 NameOfYourMQTTApplication.py
 
 ## Viewing Your Data  
 
-Each time your device detects a person or an intruder, it will send data to the [TechBubble IoT JumpWay](https://iot.techbubbletechnologies.com/ "TechBubble IoT JumpWay"). You will be able to access the data in the [TechBubble IoT JumpWay Developers Area](https://iot.techbubbletechnologies.com/developers/dashboard/ "TechBubble IoT JumpWay Developers Area"). Once you have logged into the Developers Area, visit the [TechBubble IoT JumpWay Location Devices Page](https://iot.techbubbletechnologies.com/developers/location-devices "Location Devices page"), find your device and then visit the Sensor/Actuator page and the Warnings page to view the data sent from your device.
+Each command sent to the device is stored in the [TechBubble IoT JumpWay](https://iot.techbubbletechnologies.com/ "TechBubble IoT JumpWay"). You will be able to access the data in the [TechBubble IoT JumpWay Developers Area](https://iot.techbubbletechnologies.com/developers/dashboard/ "TechBubble IoT JumpWay Developers Area"). Once you have logged into the Developers Area, visit the [TechBubble IoT JumpWay Location Devices Page](https://iot.techbubbletechnologies.com/developers/location-devices "Location Devices page"), find your device and then visit the Commands Data page to view the data sent from your device.
 
 ![IoT JumpWay  Intel® Arduino/Genuino 101 Dev Kit LED Example Docs](../../images/Dev-Kit-LED/SensorData.png)
 
 ![IoT JumpWay  Intel® Arduino/Genuino 101 Dev Kit LED Example Docs](../../images/Dev-Kit-LED/WarningData.png)
+
+## HACKSTER
+
+For Hackster community members you can follow this project on the IoT JumpWay Hub:
+
+[Follow This Project On Hackster](https://www.hackster.io/AdamMiltonBarker/intel-arduino-genuino-101-dev-kit-led-example-980afb "Follow This Project On Hackster")
 
 ## IoT JumpWay Intel® Arduino/Genuino 101 Examples Bugs/Issues
 
