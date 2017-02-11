@@ -1,12 +1,14 @@
 # IoT JumpWay Intel® Arduino/Genuino 101 Basic LED Example
 
-![IoT JumpWay Intel® Arduino/Genuino 101 Basic LED Example Docs](../../images/main/IoT-Jumpway.jpg)  
+![IoT JumpWay Intel® Arduino/Genuino 101 Basic LED Example Docs](../../images/Basic-LED/Arduino-101-Basic-LED.png)  
 
 ## Introduction
 
-Here you will find sample device scripts for connecting Intel® Arduino/Genuino 101 to the TechBubble Technologies IoT JumpWay  using the Python MQTT Serial Library. The codes allow you to set up a basic device that allows control of an LED, and an application to communicate with the device / IoT JumpWay, and make the LED flash on and off. Once you understand how it works you are free to add as many actuators and sensors to your device and modify your code accordingly.
+Here you will find sample device scripts for connecting an Intel® Arduino/Genuino 101 and IoT Basic to the TechBubble Technologies IoT JumpWay using the Python MQTT Serial Library.
 
-This project uses three applications:
+This tutorial helps you to set up an Arduino/Genuino 101 that allows control of an LED, and also an application that can control the LED via the IoT JumpWay.
+
+## This project uses three applications:
 
 1. A device application (Arduino) which communicates via serial with a Python Serial/MQTT application.
 2. The Python Serial/MQTT application which communicates with the Arduino/Genuio 101 and the IoT JumpWay.
@@ -14,14 +16,14 @@ This project uses three applications:
 
 ## Python Versions
 
-- 2.7
-- 3.4 or above
+- 2.7 (Python Serial/MQTT application)
+- 3.4 or above (Python commands application)
 
 ## Software requirements
 
-1. iot_jumpway_mqtt_serial
+1. [TechBubble IoT JumpWay Python MQTT Serial Library](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Serial-Client "TechBubble IoT JumpWay Python MQTT Serial Library")
 2. Arduino/Genuino IDE
-2. ArduinoJson
+3. ArduinoJson
 
 ## Hardware Requirements
 
@@ -35,7 +37,7 @@ This project uses three applications:
 
 ## Before You Begin
 
-If this is the first time you have used the TechBubble IoT JumpWay in your IoT projects, you will require a developer account and some basics to be set up before you can start creating your IoT devices. Visit the following link and check out the guides that take you through registration and setting up your Location Space, Zones, Devices and Applications.
+If this is the first time you have used the TechBubble IoT JumpWay in your IoT projects, you will require a developer account and some basics to be set up before you can start creating your IoT devices. Visit the following link and check out the guides that take you through registration and setting up your Location Space, Zones, Devices and Applications (About 5 minutes).
 
 [TechBubble Technologies IoT JumpWay Developer Program (BETA) Docs](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/ "TechBubble Technologies IoT JumpWay Developer Program (BETA) Docs")
 
@@ -49,7 +51,7 @@ If this is the first time you have used the TechBubble IoT JumpWay in your IoT p
 
 ## Install Requirements On Your PC & Arduino/Genuino 101
 
-1. Install the iot_jumpway_mqtt_serial library:
+1. For the Python Serial/MQTT application we will need the [TechBubble IoT JumpWay Python MQTT Serial Library](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Serial-Client "TechBubble IoT JumpWay Python MQTT Serial Library") installed on our PC/laptop/Mac. To Install the library, issue the following command on your chosen device:
 
     ```
         $ pip install iot_jumpway_mqtt_serial
@@ -98,7 +100,7 @@ First of all you need to connect up an LED to your Intel® Arduino/Genuino 101. 
     }
 ```
 
-- Open up the [Arduino/Genuino 101 Basic LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Arduino-101/Basic-LED/Basic-LED.ino "Arduino/Genuino 101 Basic LED Example") and update the following line with your LED actuator ID retrieved from the steps above, then upload the sketch to your device:
+- Open up the [Arduino/Genuino 101 Basic LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Arduino-101/Basic-LED/Basic-LED.ino "Arduino/Genuino 101 Basic LED Example") in the Arduino IDE, and update the following line with your LED actuator ID retrieved from the steps above, then upload the sketch to your device:
 
     ```
         const int actuator1JumpWayID = 0;
@@ -146,7 +148,7 @@ Now all you have to do is execute your MQTT application. This application sends 
 
 ## Viewing Your Data  
 
-Each time your device detects a person or an intruder, it will send data to the [TechBubble IoT JumpWay](https://iot.techbubbletechnologies.com/ "TechBubble IoT JumpWay"). You will be able to access the data in the [TechBubble IoT JumpWay Developers Area](https://iot.techbubbletechnologies.com/developers/dashboard/ "TechBubble IoT JumpWay Developers Area"). Once you have logged into the Developers Area, visit the [TechBubble IoT JumpWay Location Devices Page](https://iot.techbubbletechnologies.com/developers/location-devices "Location Devices page"), find your device and then visit the Sensor/Actuator page and the Warnings page to view the data sent from your device.
+Each command sent to the device is stored in the [TechBubble IoT JumpWay](https://iot.techbubbletechnologies.com/ "TechBubble IoT JumpWay"). You will be able to access the data in the [TechBubble IoT JumpWay Developers Area](https://iot.techbubbletechnologies.com/developers/dashboard/ "TechBubble IoT JumpWay Developers Area"). Once you have logged into the Developers Area, visit the [TechBubble IoT JumpWay Location Devices Page](https://iot.techbubbletechnologies.com/developers/location-devices "Location Devices page"), find your device and then visit the Commands Data page to view the data sent from your device.
 
 ![IoT JumpWay  Intel® Arduino/Genuino 101 Basic LED Example Docs](../../images/Basic-LED/SensorData.png)
 
