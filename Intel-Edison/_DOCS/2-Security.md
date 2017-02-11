@@ -23,7 +23,11 @@ The following information will help you secure your internet accessible Intel® 
 
 You will then be asked to enter a password of a minimum of 5 characters and informed to use a combination of upper and lower case letters and numbers, you should also use symbols as well to make sure your password is as secure as possible. Re enter your new password and a confirmation will be shown that the password has been changed.
 
-2. REGULARLY UPDATE YOUR FIRMWARE: Another important task to carry out regularly is to update your firmware. On the following link you will find some firmware updater software for your Intel® Edison that can be run from Windows, Mac and Linux, use it regularly to update your boards firmware. (https://downloadcenter.intel.com/download/24748/Intel-Galileo-Firmware-and-Drivers-1-0-4)
+2. REGULARLY UPDATE YOUR FIRMWARE: Another important task to carry out regularly is to update your firmware. On the following link you will find some firmware updater software for your Intel® Edison that can be run from Windows, Mac and Linux, use it regularly to update your boards firmware.  At the time of writing this article the latest installers are:
+
+- [Intel® Edison Windows Installer](https://software.intel.com/edison-config/win/latest "Intel® Edison Windows Installer")
+- [Intel® Edison OS X Installer](https://software.intel.com/edison-config/osx/latest "Intel® Edison OS X Installer")
+- [Intel® Edison Linux Installer](https://software.intel.com/edison-config/linux/latest "Intel® Edison Linux Installer")
 
 3. REGULARLY UPDATE YOUR PACKAGES: It is also important to update and upgrade your packages regularly. From the commandline issue the following commands:
 
@@ -46,7 +50,7 @@ You will then be asked to enter a password of a minimum of 5 characters and info
 
 - Set up a port forwarder from your router to the IP address of the Intel® Edison.
 
-- Login to your Galileo via SSH and generate an RSA key and a CSR that will be used to activate your SSL certificate.
+- Login to your Edison via SSH and generate an RSA key and a CSR that will be used to activate your SSL certificate.
 
 - Use the following command to generate your RSA key:
 
@@ -66,7 +70,7 @@ Use the following command to generate your CSR:
 
 - Head over to where you bought the SSL certificate from and activate your SSL cert using the CSR you generated on your Intel® Edison, once verified you will receive your SSL certificate files.
 
-- Connect to your Galileo using SFTP, for this I always WinSCP on Windows but you can use FileZilla or the FTP client of your choice. Once connected upload your SSL cert files to your certs folder and include them in your application to ensure encrypted traffic to and from your Intel® Edison.
+- Connect to your Edison using SFTP, for this I always WinSCP on Windows but you can use FileZilla or the FTP client of your choice. Once connected upload your SSL cert files to your certs folder and include them in your application to ensure encrypted traffic to and from your Intel® Edison.
 
 6. CLOSE ALL PORTS EXCEPT FOR ONES REQUIRED FOR YOUR APPLICATION: Once you have your application accessible via the internet and secured using SSL it is time to check if IPTables is installed. IPTables allows you to specify which ports are accessible on your Intel® Edison by blocking them all and allowing access to only the ports that you white list. IPTables has a lot of features and methods this is the basics:
 
@@ -84,7 +88,7 @@ Use the following command to generate your CSR:
 
 ```
 
-- Create a new config file for IPTables and modify the code to your liking. This will block all traffic to your Galileo except SSH and the specified ports you white list. To create your new config file you would issue the following command: (I am using nano but you can use your favorite text editor)
+- Create a new config file for IPTables and modify the code to your liking. This will block all traffic to your Edison except SSH and the specified ports you white list. To create your new config file you would issue the following command: (I am using nano but you can use your favorite text editor)
 
 ```
     nano /etc/iptables.firewall.rules
@@ -177,4 +181,4 @@ and then add the following code and modify to your preference:
 
 ```
 
-- Reboot your Galileo and your firewall should boot up on startup everytime now.
+- Reboot your Edison and your firewall should boot up on startup everytime now.
