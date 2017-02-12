@@ -29,44 +29,44 @@ PLEASE NOTE:
         # opkg upgrade
     ```
 
-2. Execute the following to create a user group and user for Motion:
+3. Execute the following to create a user group and user for Motion:
 
     ```
         # groupadd -r motion
         # useradd -r -m -s /bin/true -g motion -G video motion
     ```
 
-3. Create the directory required for the daemon to run:
+4. Create the directory required for the daemon to run:
 
     ```
         # mkdir /var/run/motion/
     ```
 
-4. Execute the following command to rename the required config file to the correct name:  
+5. Execute the following command to rename the required config file to the correct name:  
 
     ```
         # mv /etc/motion-dist.conf /etc/motion.conf
     ```
 
-5. Open the configuration file: 
+6. Open the configuration file: 
 
     ```
         # nano /etc/motion.conf
     ```
     
-6. Turn off the feature that only allows streams to be accessed on local host:
+7. Turn off the feature that only allows streams to be accessed on local host:
 
     ```
         webcam_localhost = off
     ```
 
-7. If you want to change the port that the webcam is streamed to change the following value. It is a good idea to change the port so that it does not use the default port.
+8. If you want to change the port that the webcam is streamed to change the following value. It is a good idea to change the port so that it does not use the default port.
 
     ```
         webcam_localhost = off
     ```
 
-8. Check Linux Motion is working, execute the following command and then navigate to YOUR_INTEL_EDISON_IP:8081 
+9. Check Linux Motion is working, execute the following command and then navigate to YOUR_INTEL_EDISON_IP:8081 
 
     ```
         webcam_port YOUR_PORT_NUMBER
@@ -125,4 +125,4 @@ PLEASE NOTE:
 
 - [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
 
-![Adam Milton-Barker,  Intel Software Innovator](../../images/main/Intel-Software-Innovator.jpg)  
+![Adam Milton-Barker,  Intel Software Innovator](../images/main/Intel-Software-Innovator.jpg)  
