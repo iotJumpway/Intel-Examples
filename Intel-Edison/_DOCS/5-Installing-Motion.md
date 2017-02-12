@@ -14,7 +14,7 @@ PLEASE NOTE:
 ## Hardware Requirements
 
 1. Intel® Edison.
-2. 8 - 16 GB Card
+2. 8 - 16 GB Card (Optional)
 
 ## Guide
 
