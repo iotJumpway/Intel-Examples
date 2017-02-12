@@ -165,19 +165,19 @@ and then add the following code and modify to your preference:
 
 ```
 
-- make it executable:
-
-```
-    chmod +x /etc/network/if-pre-up.d/firewall
-
-```
-
-- Enter the following code:
+- Enter the following code and then exit and save:
 
 ```
     #!/bin/sh
 
     /sbin/iptables-restore < /etc/iptables.firewall.rules
+
+```
+
+- Make it executable:
+
+```
+    chmod +x /etc/network/if-pre-up.d/firewall
 
 ```
 
