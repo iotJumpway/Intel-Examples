@@ -18,7 +18,6 @@ The following information will help you secure your internet accessible Intel® 
 
 ```
     passwd
-
 ```
 
 You will then be asked to enter a password of a minimum of 5 characters and informed to use a combination of upper and lower case letters and numbers, you should also use symbols as well to make sure your password is as secure as possible. Re enter your new password and a confirmation will be shown that the password has been changed.
@@ -33,9 +32,7 @@ You will then be asked to enter a password of a minimum of 5 characters and info
 
 ```
     opkg update (Updates the list of available packages)
-
     opkg upgrade (Upgrades all available packages)
-
 ```
 
 4. ADD A DOMAIN NAME AND SSL CERTIFICATE TO YOUR BOARD: To help ensure that data passed between your Intel® Edison and any connecting web services is encrypted, an important thing to do is to add SSL encryption to your requests. Here is the basics of completing this task.
@@ -56,14 +53,12 @@ You will then be asked to enter a password of a minimum of 5 characters and info
 
 ```
     openssl genrsa -out ~/YOUR_CERT_FOLDER/YOUR_KEY_FILE.key 2048
-
 ```
 
 Use the following command to generate your CSR:
 
 ```
     openssl req -new -sha256 -key ~/YOUR_CERT_FOLDER/YOUR_KEY_FILE.key -out ~/YOUR_CERT_FOLDER/YOUR_CSR_FILE.csr
-
 ```
 
 - You will be asked a few questions at this stage, complete them all but ensure to not enter a password when prompted to, just hit enter.
@@ -78,27 +73,23 @@ Use the following command to generate your CSR:
 
 ```
     opkg install iptables
-
 ```
 
 - If/once installed you can check your current configs by running the following command:
 
 ```
     iptables -L or iptables -L -v
-
 ```
 
 - Create a new config file for IPTables and modify the code to your liking. This will block all traffic to your Edison except SSH and the specified ports you white list. To create your new config file you would issue the following command: (I am using nano but you can use your favorite text editor)
 
 ```
     nano /etc/iptables.firewall.rules
-
 ```
 
 and then add the following code and modify to your preference:
 
 ```
-
     *filter
 
     # Allow all loopback (lo0) traffic and drop all traffic to 127/8 that doesn't use lo0
@@ -148,21 +139,18 @@ and then add the following code and modify to your preference:
     -A FORWARD -j DROP
 
     COMMIT
-
 ```
 
 - Once you have modified and saved your config file you can then load the firewall rules by issuing the command:
 
 ```
     iptables-restore < /etc/iptables.firewall.rules
-
 ```
 
 - To ensure that the firewall is loaded each and everytime you boot up your Intel® Edison you will need to create a new file in the network adapter hooks:
 
 ```
     nano /etc/network/if-pre-up.d/firewall
-
 ```
 
 - Enter the following code and then exit and save:
@@ -171,14 +159,22 @@ and then add the following code and modify to your preference:
     #!/bin/sh
 
     /sbin/iptables-restore < /etc/iptables.firewall.rules
-
 ```
 
 - Make it executable:
 
 ```
     chmod +x /etc/network/if-pre-up.d/firewall
-
 ```
 
 - Reboot your Edison and your firewall should boot up on startup everytime now.
+
+## IoT JumpWay Intel® Edison Bugs/Issues
+
+Please feel free to create issues for bugs and general issues you come across whilst using the IoT JumpWay Intel Examples. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel Examples in your IoT projects.
+
+## IoT JumpWay Intel® Edison Examples Document Contributors
+
+- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
+
+![Adam Milton-Barker,  Intel Software Innovator](../../images/main/Intel-Software-Innovator.jpg)  
