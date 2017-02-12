@@ -6,6 +6,8 @@
 
 Want to take your first steps into the magical world of the Internet of Things, or want to find out how easy it is to use the IoT JumpWay as your secure IoT communication platform? This tutorial is for you an will hold your hand through setting up your first Intel® Edison project powered by the TechBubble IoT JumpWay.
 
+## What Will We Build?
+
 This tutorial is a simple tutorial that will help you take your first steps to using the TechBubble IoT JumpWay to connect your IoT devices and applications to the Internet of Things.
 
 The tutorial will use TechBubble Technologies IoT JumpWay Python MQTT Library for communication, an Intel® Edison with an added LED, and an application that can control the LED via the IoT JumpWay.
