@@ -66,7 +66,7 @@ First of all you need to connect up an LED to your Intel® Edison. To connect th
 
 - Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc") to set up your device, and the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Application Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/5-Location-Applications.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Application Doc") to set up your application. 
 
-![IoT JumpWay Intel® Edison Basic LED Example Docs](../../../images/Dev-Kit-LED/Device-Creation.png)  
+![IoT JumpWay Intel® Edison Basic LED Example Docs](../../../images/Docs/Device-Creation.png)   
 
 - Retrieve your connection credentials and update the config.json file with your new connection  credentials and actuator (LED) setting.
 
