@@ -1,6 +1,6 @@
 # IoT JumpWay Intel® Edison Dev Kit LED Example
 
-![IoT JumpWay Intel® Edison Dev Kit LED Example Docs](../../../images/Dev-Kit-LED/Intel-Edison-Dev-LED.png)  
+![IoT JumpWay Intel® Edison Dev Kit LED Example Docs](../../../images/Dev-Kit-LED/Intel-Edison-Dev-Kit-LED.png)  
 
 ## Introduction
 
