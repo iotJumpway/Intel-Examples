@@ -1,10 +1,16 @@
 # IoT JumpWay Intel® Edison Dev Kit LED Example
 
-![IoT JumpWay Intel® Edison Dev Kit LED Example Docs](../../../images/main/IoT-Jumpway.jpg)  
+![IoT JumpWay Intel® Edison Dev Kit LED Example Docs](../../../images/Dev-Kit-LED/Intel-Edison-Basic-LED.png)  
 
 ## Introduction
 
-Here you will find sample device scripts for connecting Intel® Edison and IoT Dev Kit to the TechBubble Technologies IoT JumpWay using the Python MQTT Library. The codes allow you to set up a basic device that allows control of an LED, and an application to communicate with the device and make the LED flash on and off. Once you understand how it works you are free to add as many actuators and sensors to your device and modify your code accordingly.
+Want to take your first steps into the magical world of the Internet of Things, or want to find out how easy it is to use the IoT JumpWay as your secure IoT communication platform? This tutorial is for you an will hold your hand through setting up your first Intel® Edison project powered by the TechBubble IoT JumpWay.
+
+## What Will We Build?
+
+This tutorial is a simple tutorial that will help you take your first steps to using the TechBubble IoT JumpWay to connect your IoT devices and applications to the Internet of Things.
+
+The tutorial will use TechBubble Technologies IoT JumpWay Python MQTT Library for communication, an Intel® Edison and IoT Dev Kit with an added LED, and an application that can control the LED via the IoT JumpWay.
 
 ## Python Versions
 
@@ -13,8 +19,7 @@ Here you will find sample device scripts for connecting Intel® Edison and IoT D
 
 ## Software requirements
 
-1. TechBubbleIoTJumpWayMQTT  
-2. JSon
+1. [TechBubble IoT JumpWay Python MQTT Client](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Clients "TechBubble IoT JumpWay Python MQTT Client")  
 
 ## Hardware Requirements
 
@@ -26,13 +31,15 @@ Here you will find sample device scripts for connecting Intel® Edison and IoT D
 
 ## Before You Begin
 
-If this is the first time you have used the TechBubble IoT JumpWay in your IoT projects, you will require a developer account and some basics to be set up before you can start creating your IoT devices. Visit the following link and check out the guides that take you through registration and setting up your Location Space, Zones, Devices and Applications.
+There are a few tutorials that you should follow before beginning, especially if it is the first time you have followed any of our Raspberry Pi tutorials or if it is the first time you have used the TechBubble IoT JumpWay Developer Program. If this is the first time you have used the TechBubble IoT JumpWay in your IoT projects, you will require a developer account and some basics to be set up before you can start creating your IoT devices. Visit the following [IoT JumpWay Developer Program Docs (5-10 minute read/setup)](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/ "IoT JumpWay Developer Program Docs (5-10 minute read/setup)") and check out the guides that take you through registration and setting up your Location Space, Zones, Devices and Applications (About 5 minutes read).
 
-[TechBubble Technologies IoT JumpWay Developer Program (BETA) Docs](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/ "TechBubble Technologies IoT JumpWay Developer Program (BETA) Docs")
+- [Intel® Edison Security](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/DOCS/1-Security.md "Intel® Edison Security")
+
+- [Intel® Edison Booting From SD (Linux)](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/_DOCS/1-Booting-From-SD-Linux.md "Intel® Edison Booting From SD (Linux)")
 
 ## Preparing Your Intel® Edison
 
-To help secure your Intel® Edison, follow the [Intel® Edison Security](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/DOCS/1-Security.md "Intel® Edison Security") guide.
+To help secure your Intel® Edison, follow the [Intel® Edison Security](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/DOCS/1-Security.md "Intel® Edison Security") and the  [Intel® Edison Booting From SD (Linux)](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/_DOCS/1-Booting-From-SD-Linux.md "Intel® Edison Booting From SD (Linux)") guides.
 
 ## Cloning The Repo
 
@@ -101,7 +108,7 @@ First of all you need to connect up an LED to your Intel® Edison. To connect th
 
 ## Viewing Your Data  
 
-Each time your device detects a person or an intruder, it will send data to the [TechBubble IoT JumpWay](https://iot.techbubbletechnologies.com/ "TechBubble IoT JumpWay"). You will be able to access the data in the [TechBubble IoT JumpWay Developers Area](https://iot.techbubbletechnologies.com/developers/dashboard/ "TechBubble IoT JumpWay Developers Area"). Once you have logged into the Developers Area, visit the [TechBubble IoT JumpWay Location Devices Page](https://iot.techbubbletechnologies.com/developers/location-devices "Location Devices page"), find your device and then visit the Sensor/Actuator page and the Warnings page to view the data sent from your device.
+Each command sent to the device is stored in the [TechBubble IoT JumpWay](https://iot.techbubbletechnologies.com/ "TechBubble IoT JumpWay"). You will be able to access the data in the [TechBubble IoT JumpWay Developers Area](https://iot.techbubbletechnologies.com/developers/dashboard/ "TechBubble IoT JumpWay Developers Area"). Once you have logged into the Developers Area, visit the [TechBubble IoT JumpWay Location Devices Page](https://iot.techbubbletechnologies.com/developers/location-devices "Location Devices page"), find your device and then visit the Commands Data page to view the data sent from your device. 
 
 ![IoT JumpWay Intel® Edison Basic LED Example Docs](../../../images/Basic-LED/SensorData.png)
 
@@ -109,7 +116,7 @@ Each time your device detects a person or an intruder, it will send data to the 
 
 ## IoT JumpWay Intel® Edison Examples Bugs/Issues
 
-Please feel free to create issues for bugs and general issues you come accross whilst using the IoT JumpWay Intel® Edison Examples. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel® Edison Examples in your IoT projects.
+Please feel free to create issues for bugs and general issues you come across whilst using the IoT JumpWay Intel® Edison Examples. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel® Edison Examples in your IoT projects.
 
 ## IoT JumpWay Intel® Edison Examples Contributors
 
