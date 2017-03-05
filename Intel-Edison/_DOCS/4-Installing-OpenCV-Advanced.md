@@ -4,7 +4,7 @@
 
 ## Introduction
 
-The following information will help you install OpenCV on your Intel® Edison. This installation currently does not include the additional modules required for facial identification.
+The following information will help you install OpenCV on your Intel® Edison. This installation currently does include the additional modules required for facial identification.
 
 ###THIS TUTORIAL IS NOT FULLY FUNCTIONING, PLEASE WAIT UNTIL THIS MESSAGE IS REMOVED BEFORE YOU ATTEMPT THIS INSTALLATION
 
