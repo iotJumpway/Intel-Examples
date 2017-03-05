@@ -16,7 +16,8 @@ This tutorial helps you to set up an Arduino/Genuino 101 that allows control of 
 
 ## Python Versions
 
-- 2.7
+- 2.7 (Python Serial/MQTT application)
+- 3.4 or above (Python commands application)
 
 ## Software requirements
 
@@ -48,7 +49,7 @@ If this is the first time you have used the TechBubble IoT JumpWay in your IoT p
 
 ## Install Requirements On Your PC & Arduino/Genuino 101
 
-1. Install the iot_jumpway_mqtt_serial library:
+1. For the Python Serial/MQTT application we will need the [TechBubble IoT JumpWay Python MQTT Serial Library](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Serial-Client "TechBubble IoT JumpWay Python MQTT Serial Library") installed on our PC/laptop/Mac. To Install the library, issue the following command on your chosen device:
 
     ```
         $ pip install iot_jumpway_mqtt_serial

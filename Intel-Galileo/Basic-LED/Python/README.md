@@ -4,6 +4,9 @@
 
 ## Introduction
 
+Want to take your first steps into the magical world of the Internet of Things, or want to find out how easy it is to use the IoT JumpWay as your secure IoT communication platform? This tutorial is for you and will hold your hand through setting up your first Intel® Galileo project powered by the TechBubble IoT JumpWay.
+
+
 Here you will find sample device scripts for connecting Intel® Galileo Gen 1 to the TechBubble Technologies IoT JumpWay using the Python MQTT Library. The codes allow you to set up a basic device that allows control of an LED, and an application to communicate with the device and make the LED flash on and off. Once you understand how it works you are free to add as many actuators and sensors to your device and modify your code accordingly.
 
 ## Python Versions
