@@ -37,7 +37,7 @@ The following information will help you install OpenCV on your Intel® Edison. T
 4. Install GTK development library:
 
     ```
-    $ opkg install libgtk2.0-dev
+    # opkg install libgtk2.0-dev
     ```
 
 5. Install video processing software:
@@ -69,48 +69,48 @@ The following information will help you install OpenCV on your Intel® Edison. T
 8. Install Python 2.7 development libraries:
 
     ```
-    $ sudo apt-get install python2.7-dev
+    # 
     ```
 
 9. Install Numpy:
 
     ```
-    $ pip install numpy
+    # pip install numpy
     ```
 
 8. Checkout current OpenCV 3.1.0:
 
     ```
-    $ cd ~
-    $ git clone https://github.com/Itseez/opencv.git
-    $ cd opencv
-    $ git checkout 3.1.0
+    # cd ~
+    # git clone https://github.com/Itseez/opencv.git
+    # cd opencv
+    # git checkout 3.1.0
     ```
 
 9. Checkout OpenCV Modules  3.1.0:
 
     ```
-    $ cd ~
-    $ git clone https://github.com/Itseez/opencv_contrib.git
-    $ cd opencv_contrib
-    $ git checkout 3.1.0
+    # cd ~
+    # git clone https://github.com/Itseez/opencv_contrib.git
+    # cd opencv_contrib
+    # git checkout 3.1.0
     ```
 
 9. Setup the build:
 
     ```
-    $ cd ~/opencv
-    $ mkdir build
-    $ cd build
-    $ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_C_EXAMPLES=OFF -D INSTALL_PYTHON_EXAMPLES=ON -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules -D BUILD_EXAMPLES=ON ..
+    # cd ~/opencv
+    # mkdir build
+    # cd build
+    # cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_C_EXAMPLES=OFF -D INSTALL_PYTHON_EXAMPLES=ON -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules -D BUILD_EXAMPLES=ON ..
     ```
 
 10. Make and make install the build:
 
     ```
-    $ make -j4
-    $ sudo make install
-    $ sudo ldconfig
+    # make -j4
+    # sudo make install
+    # sudo ldconfig
     ```
 
 
