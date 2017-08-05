@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Here you will find an index of the tutorials available in the IoT JumpWay Intel® NUC Docs
+Here you will find an index of the tutorials available in the IoT JumpWay Intel® NUC DE3815TYKE Docs
 
 ## IoT JumpWay Intel® NUC DE3815TYKE Tutorials
 
