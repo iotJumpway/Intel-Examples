@@ -8,6 +8,8 @@ Here you will find an index of the tutorials available in the IoT JumpWay Intel�
 
 ## IoT JumpWay Intel® NUC DE3815TYKE Tutorials
 
+- [Installing Ubuntu Server 16.04 LTS on Intel® NUC DE3815TYKE](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Nuc/DE3815TYKE/_DOCS/1-Installing-Ubuntu-Server.md "Installing Ubuntu Server 16.04 LTS on Intel® NUC DE3815TYKE")
+
 ## IoT JumpWay Intel® NUC DE3815TYKE Docs Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come across whilst using the Intel® NUC DE3815TYKE Docs. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel® Examples in your IoT projects.

@@ -1,10 +1,10 @@
-# Installing Ubuntu Server 16.04 LTS on Intel NUC DE3815TYKE
+# Installing Ubuntu Server 16.04 LTS on Intel® NUC DE3815TYKE
 
 ![TechBubble IoT JumpWay Docs](../../../images/Docs/Intel-NUC-Documentation.png)
 
 ## Introduction
 
-The following information will help you install Ubunutu Server 16.04 LTS on the Intel Nuc DE3815TYKE.
+The following information will help you install Ubunutu Server 16.04 LTS on the Intel® Nuc DE3815TYKE.
 
 ## Create Bootable USB On Windows
 
