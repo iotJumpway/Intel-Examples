@@ -58,7 +58,7 @@ You will need to clone this repository to a location on your Intel® NUC DE3815T
 
 - Setup an IoT JumpWay Location Device for each IP camera you will be connecting to, and / or your Realsense camera. For this example, we only require the device ID for each camera, we will not be using the MQTT details for each camera as the application is capable of sending data on behalf of any device in its location. Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc") to set up your devices.
 
-![IoT JumpWay Intel® Edison Basic LED Example Docs](../../../images/Docs/Device-Creation.png)
+![IoT JumpWay Device Creation Docs](../../../../../images/Docs/Device-Creation.png)
 
 - Retrieve your connection credentials and update the config.json file with your new connection credentials and camera IDs, add a new entry to CameraList for each IP cam, and add your Realsense camera ID.
 
