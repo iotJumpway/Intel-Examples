@@ -19,7 +19,7 @@ import json
 from TassTools import TassTools
 from TassClassifier import TassClassifier
 
-import techbubbleiotjumpwaymqtt.application
+from techbubbleiotjumpwaymqtt.application import JumpWayPythonMQTTApplicationConnection
 
 class TassRealsense():
 
@@ -39,7 +39,7 @@ class TassRealsense():
         framesPerSecond = 30
 
         serv = pyrs.Service()
-        realsense = serv.Device(device_id = self._configs["RealsenseCam"]["camID"], streams = [pyrs.stream.ColorStream(fps = framesPerSecond)])
+        realsense = serv.Device(device_id = self._configs["RealsenseCam"]["localCamID"], streams = [pyrs.stream.ColorStream(fps = framesPerSecond)])
 
         self.startMQTT()
         self.processFrame(realsense,self._configs["RealsenseCam"]["camID"],self._configs["RealsenseCam"]["camZone"],self._configs["RealsenseCam"]["camSensorID"])
@@ -48,10 +48,10 @@ class TassRealsense():
 
         try:
 
-            self.JumpWayMQTTClient = techbubbleiotjumpwaymqtt.application.JumpWayPythonMQTTApplicationConnection({
-				"locationID": self._configs["IoTJumpWaySettings"]["SystemLocation"],
-				"applicationID": self._configs["IoTJumpWaySettings"]["SystemApplicationID"],
-				"applicationName": self._configs["IoTJumpWaySettings"]["SystemApplicationName"],
+            self.JumpWayMQTTClient = JumpWayPythonMQTTApplicationConnection({
+				"locationID": self._configs["IoTJumpWayMQTTSettings"]["SystemLocation"],
+				"applicationID": self._configs["IoTJumpWayMQTTSettings"]["SystemApplicationID"],
+				"applicationName": self._configs["IoTJumpWayMQTTSettings"]["SystemApplicationName"],
 				"username": self._configs["IoTJumpWayMQTTSettings"]["applicationUsername"],
 				"password": self._configs["IoTJumpWayMQTTSettings"]["applicationPassword"]
 			})
