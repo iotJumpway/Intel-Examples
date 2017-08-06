@@ -18,10 +18,11 @@ The tutorial will use TechBubble Technologies IoT JumpWay Python MQTT Library fo
 
 1. [TechBubble IoT JumpWay Python MQTT Client](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Clients "TechBubble IoT JumpWay Python MQTT Client")
 2. [OpenFace](https://github.com/cmusatyalab/openface "OpenFace")
+3. [Pyrealsense](https://github.com/toinsson/pyrealsense "Pyrealsense")
 
 ## Hardware requirements
 
-1. Intel® NUC DE3815TYKE (Should work with other versions of Intel® NUC).
+1. Intel® NUC DE3815TYKE (Should work with other versions of Intel® NUC, or any Linux box with Ubuntu).
 2. 1 or more IP cameras.  (Tested with 1)
 3. 1 x Realsense camera (OPTIONAL) (Tested with F200 & R200)
 
