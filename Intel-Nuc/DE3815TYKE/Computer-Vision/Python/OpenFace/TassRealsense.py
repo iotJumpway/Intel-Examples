@@ -1,12 +1,24 @@
 ########################################################################################
 # Author: Adam Milton-Barker
 # Contact: adammiltonbarker@eu.techbubbletechnologies.com
+# Copyright 2017, Adam Milton-Barker, TechBubble Technologies, All rights reserved.
 ########################################################################################
 # Module: TassRealsense.py
 # Description: Processes frames from a Realsense camera.
 # Acknowledgements: Uses code from pyrealsense (https://github.com/toinsson/pyrealsense)
-# Last Modified: 8.3.2017
+# Last Modified: 2017/08/06
 ########################################################################################
+# Licensed under the Apache License, Version 2.0 (the "License you may not use this
+# file except in compliance with the License. You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software distributed under
+# the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+# ANY KIND, either express or implied. See the License for the specific language
+# governing permissions and limitations under the License.
+########################################################################################
+
 
 import logging
 logging.basicConfig(level=logging.INFO)
@@ -152,7 +164,7 @@ class TassRealsense():
 
                     for face in detected:
 
-                        persons, confidences = self.TassClassifier.classify(dlframe,face,"Dlib")
+                        persons, confidences = self.TassClassifier.classify(dlframe,face,"CV")
 
                         if len(confidences):
 

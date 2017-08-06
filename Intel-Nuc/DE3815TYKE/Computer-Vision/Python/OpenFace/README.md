@@ -17,7 +17,7 @@ The tutorial will use TechBubble Technologies IoT JumpWay Python MQTT Library fo
 ## Software requirements
 
 1. [TechBubble IoT JumpWay Python MQTT Client](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Clients "TechBubble IoT JumpWay Python MQTT Client")
-1. [OpenFace](https://github.com/cmusatyalab/openface "OpenFace")
+2. [OpenFace](https://github.com/cmusatyalab/openface "OpenFace")
 
 ## Hardware requirements
 
@@ -111,6 +111,14 @@ Before we go any further, we can now test your trained neural network. Add 1 or 
 
 If the images you add to the testing directory are not classified correctly after running TassTest.py, you should re train with more examples.
 
+## Using 1 Or More IP Cameras
+
+Ensure you have set up your IP camera devices and added the settings correctly to your config.json as mentioned above, then navigate to the root of the project and execute the following command:
+
+    $ python TassCore.py
+
+The program will initiate and your live streams will be processed. First the program will detect if there is a face present in the frame, and then will send the frame through the neural network to detect if it is an intruder or a known person. For trouble shooting, see KNOWN ISSUES and TROUBLE SHOOTING below.
+
 ## Using A Realsense Camera
 
 Ensure you have set up your Realsense camera device and adding the settings correctly to your config.json as mentioned above, then navigate to the root of the project and execute the following command:
@@ -140,6 +148,25 @@ When the program detects a known user or intruder, it will send sensor and warni
 ## TROUBLE SHOOTING
 
 1. If the program does not detect known faces, it is likely you need to add more training data to the classes, or play with the lighting.
+
+## ACKNOWLEDGEMENTS
+
+Parts of this project use code from the following projects:
+
+- [OpenFace](https://github.com/cmusatyalab/openface "OpenFace")
+- [Pyrealsense](https://github.com/toinsson/pyrealsense "Pyrealsense")
+
+We would like to acknowledge and thank the creators of these projects.
+
+## LICENSE
+
+Copyright 2016, Adam Milton-Barker, TechBubble Technologies, All rights reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 ## IoT JumpWay Intel® NUC DE3815TYKE Examples Bugs/Issues
 
