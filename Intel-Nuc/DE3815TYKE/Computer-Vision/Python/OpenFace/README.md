@@ -4,7 +4,9 @@
 
 ## Introduction
 
-Want to turn your Intel NUC DE3815TYKE into an Artificially Intelligent, IoT Connected CCTV Hub? This tutorial is for you!.
+Want to turn your Intel® NUC DE3815TYKE into an Artificially Intelligent, IoT Connected CCTV Hub? This tutorial is for you!.
+
+[![View this project on Intel® DevMesh](../../../../../images/main/devmesh.png)](https://devmesh.intel.com/projects/tass-network)
 
 ## What Will We Build?
 
