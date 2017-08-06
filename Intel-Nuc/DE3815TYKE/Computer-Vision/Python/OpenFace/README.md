@@ -4,11 +4,11 @@
 
 ## Introduction
 
-Want to turn your Intel® NUC DE3815TYKE into an Artificially Intelligent, IoT Connected CCTV Hub? This tutorial is for you!.
+Want to turn your Intel® NUC DE3815TYKE, or any Linux Desktop running Ubuntu into an Artificially Intelligent, IoT Connected CCTV Hub? This tutorial is for you!.
 
 ## What Will We Build?
 
-The tutorial will use TechBubble Technologies IoT JumpWay Python MQTT Library for communication, an Intel® NUC DE3815TYKE 1 or more IP Cameras, an optional Realsense camera, and our own deep learning neural network based on the popular OpenFace facial recognition toolkit.
+The tutorial will use TechBubble Technologies IoT JumpWay Python MQTT Library for communication, an Intel® NUC DE3815TYKE or any Linux Desktop running Ubuntu, 1 or more IP Cameras, an optional Realsense camera, and our own deep learning neural network based on the popular OpenFace facial recognition toolkit.
 
 ## Python Versions
 
