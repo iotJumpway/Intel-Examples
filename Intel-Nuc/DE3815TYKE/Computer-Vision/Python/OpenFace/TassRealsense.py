@@ -13,26 +13,56 @@ logging.basicConfig(level=logging.INFO)
 
 import cv2
 import pyrealsense as pyrs
+import sys
+import json
 
 from TassTools import TassTools
 from TassClassifier import TassClassifier
+
+import techbubbleiotjumpwaymqtt.application
 
 class TassRealsense():
 
     def __init__(self):
 
+        self.JumpWayMQTTClient = ""
+
         self.TassTools = TassTools()
         self.TassClassifier = TassClassifier(1)
 
-        realsenseDevice = 0
+        self._configs = {}
+
+        with open('config.json') as configs:
+
+            self._configs = json.loads(configs.read())
+
         framesPerSecond = 30
 
         serv = pyrs.Service()
-        realsense = serv.Device(device_id = realsenseDevice, streams = [pyrs.stream.ColorStream(fps = framesPerSecond)])
+        realsense = serv.Device(device_id = self._configs["RealsenseCam"]["camID"], streams = [pyrs.stream.ColorStream(fps = framesPerSecond)])
 
-        self.processFrame(realsense)
+        self.startMQTT()
+        self.processFrame(realsense,self._configs["RealsenseCam"]["camID"],self._configs["RealsenseCam"]["camZone"],self._configs["RealsenseCam"]["camSensorID"])
 
-    def processFrame(self,realsense):
+    def startMQTT(self):
+
+        try:
+
+            self.JumpWayMQTTClient = techbubbleiotjumpwaymqtt.application.JumpWayPythonMQTTApplicationConnection({
+				"locationID": self._configs["IoTJumpWaySettings"]["SystemLocation"],
+				"applicationID": self._configs["IoTJumpWaySettings"]["SystemApplicationID"],
+				"applicationName": self._configs["IoTJumpWaySettings"]["SystemApplicationName"],
+				"username": self._configs["IoTJumpWayMQTTSettings"]["applicationUsername"],
+				"password": self._configs["IoTJumpWayMQTTSettings"]["applicationPassword"]
+			})
+
+        except Exception as e:
+            print(str(e))
+            sys.exit()
+
+        self.JumpWayMQTTClient.connectToApplication()
+
+    def processFrame(self,realsense,realsenseID,realsenseZone,realsenseSensor):
 
         realsense.apply_ivcam_preset(0)
 
@@ -61,9 +91,55 @@ class TassRealsense():
 
                     if persons[i] == "unknown":
 
+                        self.JumpWayMQTTClient.publishToDeviceChannel(
+                            "Sensors",
+                            realsenseZone,
+                            realsenseID,
+                            {
+                                "Sensor":"CCTV",
+                                "Sensors": realsenseSensor,
+                                "SensorValue":"Intruder"
+                            }
+                        )
+
+                        self.JumpWayMQTTClient.publishToDeviceChannel(
+                            "Warnings",
+                            realsenseZone,
+                            realsenseID,
+                            {
+                                "WarningType":"CCTV",
+                                "WarningOrigin": realsenseSensor,
+                                "WarningValue":"Intruder",
+                                "WarningMessage":"An intruder has been detected"
+                            }
+                        )
+
                         print "Unknown Person Detected With Confidence " + str(c)
 
                     elif persons[i] != "":
+
+                        self.JumpWayMQTTClient.publishToDeviceChannel(
+                            "Sensors",
+                            realsenseZone,
+                            realsenseID,
+                            {
+                                "Sensor":"CCTV",
+                                "Sensors": realsenseSensor,
+                                "SensorValue":persons[i]
+                            }
+                        )
+
+                        self.JumpWayMQTTClient.publishToDeviceChannel(
+                            "Warnings",
+                            realsenseZone,
+                            realsenseID,
+                            {
+                                "WarningType":"CCTV",
+                                "WarningOrigin": realsenseSensor,
+                                "WarningValue":persons[i],
+                                "WarningMessage":"User " + str(persons[i]) + " detected with confidence: " + str(c)
+                            }
+                        )
 
                         print str(persons[i])+" Detected With Confidence " + str(c)
 
@@ -90,9 +166,55 @@ class TassRealsense():
 
                         if persons[i] == "unknown":
 
+                            self.JumpWayMQTTClient.publishToDeviceChannel(
+                                "Sensors",
+                                realsenseZone,
+                                realsenseID,
+                                {
+                                    "Sensor":"CCTV",
+                                    "Sensors": realsenseSensor,
+                                    "SensorValue":"Intruder"
+                                }
+                            )
+
+                            self.JumpWayMQTTClient.publishToDeviceChannel(
+                                "Warnings",
+                                realsenseZone,
+                                realsenseID,
+                                {
+                                    "WarningType":"CCTV",
+                                    "WarningOrigin": realsenseSensor,
+                                    "WarningValue":"Intruder",
+                                    "WarningMessage":"An intruder has been detected"
+                                }
+                            )
+
                             print "Unknown Person Detected With Confidence " + str(c)
 
                         elif persons[i] != "":
+
+                            self.JumpWayMQTTClient.publishToDeviceChannel(
+                                "Sensors",
+                                realsenseZone,
+                                realsenseID,
+                                {
+                                    "Sensor":"CCTV",
+                                    "Sensors": realsenseSensor,
+                                    "SensorValue":persons[i]
+                                }
+                            )
+
+                            self.JumpWayMQTTClient.publishToDeviceChannel(
+                                "Warnings",
+                                realsenseZone,
+                                realsenseID,
+                                {
+                                    "WarningType":"CCTV",
+                                    "WarningOrigin": realsenseSensor,
+                                    "WarningValue":persons[i],
+                                    "WarningMessage":"User " + str(persons[i]) + " detected with confidence: " + str(c)
+                                }
+                            )
 
                             print str(persons[i])+" Detected With Confidence " + str(c)
 

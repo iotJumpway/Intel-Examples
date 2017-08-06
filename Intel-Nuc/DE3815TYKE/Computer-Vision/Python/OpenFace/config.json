@@ -2,9 +2,16 @@
     "CameraList": [
         {
             "camID": "",
+            "camSensorID": "",
+            "camZone": "",
             "camURL": ""
         }
     ],
+    "RealsenseCam": {
+        "camID": "",
+        "camSensorID": "",
+        "camZone": ""
+    },
     "ClassifierSettings": {
         "tassModel": 1,
         "imgDim": 96,
@@ -20,5 +27,13 @@
         "HAAR_SCALE_FACTOR": 1.3,
         "height": 112,
         "width": 92
+    },
+	"IoTJumpWayMQTTSettings": {
+        "host": "https://iot.techbubbletechnologies.com",
+        "port": "8883",
+        "username": "Your Device MQTT Username",
+        "password": "Your Device MQTT Password",
+        "applicationUsername": "Your Application MQTT Username",
+        "applicationPassword": "Your Application MQTT Password"
     }
 }

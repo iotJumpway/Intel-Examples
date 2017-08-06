@@ -52,6 +52,46 @@ You will need to clone this repository to a location on your Intel® NUC DE3815T
 
 2. Follow the [Installing Librealsense & Pyrealsense on Intel® NUC DE3815TYKE](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Nuc/DE3815TYKE/_DOCS/3-Installing-Librealsense.md "Installing Librealsense & Pyrealsense on Intel® NUC DE3815TYKE") guide. (OPTIONAL BUT REQUIRED IF USING REALSENSE CAMERA)
 
+## IoT JumpWay Device / Application Connection Credentials & Settings
+
+- Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Application Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/5-Location-Applications.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Application Doc") to set up your IoT JumpWay Location Application.
+
+- Setup an IoT JumpWay Location Device for each IP camera you will be connecting to, and / or your Realsense camera. For this example, we only require the device ID for each camera, we will not be using the MQTT details for each camera as the application is capable of sending data on behalf of any device in its location. Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc") to set up your devices.
+
+![IoT JumpWay Intel® Edison Basic LED Example Docs](../../../images/Docs/Device-Creation.png)
+
+- Retrieve your connection credentials and update the config.json file with your new connection credentials and camera IDs, add a new entry to CameraList for each IP cam, and add your Realsense camera ID.
+
+```
+    "CameraList": [
+        {
+            "camID": "Your Camera ID from the IoT JumpWay here",
+            "camURL": "URL to your IP camera here"
+        }
+    ],
+    "RealsenseCam": {
+        "camID": "Your Realsense Camera ID from the IoT JumpWay here"
+    }
+```
+
+```
+	"IoTJumpWaySettings": {
+        "SystemLocation": 0,
+        "SystemZone": 0,
+        "SystemApplicationID": 0,
+        "SystemApplicationName" : "Your Application Name"
+	}
+```
+
+```
+	"IoTJumpWayMQTTSettings": {
+        "host": "https://iot.techbubbletechnologies.com",
+        "port": "8883",
+        "applicationUsername": "Your Application MQTT Username",
+        "applicationPassword": "Your Application MQTT Password"
+	}
+```
+
 ## IoT JumpWay Intel® NUC DE3815TYKE Examples Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come across whilst using the Intel® NUC DE3815TYKE Docs. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel® Examples in your IoT projects.
