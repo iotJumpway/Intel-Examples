@@ -123,6 +123,14 @@ The program will initiate and your live stream will be processed. First the prog
 
 In the event that a face is detected, the frame will be saved in the frames folder, bounding boxes will be drawn around all faces that are detected and the frames will be placed into either detected or notdetected folders grouped by date. You can access these images by connecting to your NUC with SFTP and downloading them to your computer.
 
+## Viewing Your Data
+
+When the program detects a known user or intruder, it will send sensor and warning data for the device it was captured from to the [TechBubble IoT JumpWay](https://iot.techbubbletechnologies.com/ "TechBubble IoT JumpWay"). You will be able to access the data in the [TechBubble IoT JumpWay Developers Area](https://iot.techbubbletechnologies.com/developers/dashboard/ "TechBubble IoT JumpWay Developers Area"). Once you have logged into the Developers Area, visit the [TechBubble IoT JumpWay Location Devices Page](https://iot.techbubbletechnologies.com/developers/location-devices "Location Devices page"), find your device and then visit the Warnings & Sensor Data pages to view the data sent from the application.
+
+![IoT JumpWay Sensor Data](../../../../../images/main/SensorData.png)
+
+![IoT JumpWay Warning Data](../../../../../images/main/WarningData.png)
+
 ## KNOWN ISSUES
 
 1. The Open Set Recognition Issue: The Open Set Recognition Issue is where a neural network will identify someone that it has not been trained on, as someone that it has. In this version of TASS we have seemed to have solved this issue with the use of an unknown class consisting of 500 images of random people from the LFW dataset. In larger environments, this may not solve this issue, but in small environments such as a home or office it should.
