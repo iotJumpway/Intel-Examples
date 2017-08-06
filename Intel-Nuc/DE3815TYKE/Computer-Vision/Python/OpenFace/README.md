@@ -6,8 +6,6 @@
 
 Want to turn your Intel® NUC DE3815TYKE into an Artificially Intelligent, IoT Connected CCTV Hub? This tutorial is for you!.
 
-[![View this project on Intel® DevMesh](../../../../../images/main/devmesh.png)](https://devmesh.intel.com/projects/tass-network)
-
 ## What Will We Build?
 
 The tutorial will use TechBubble Technologies IoT JumpWay Python MQTT Library for communication, an Intel® NUC DE3815TYKE 1 or more IP Cameras, an optional Realsense camera, and our own deep learning neural network based on the popular OpenFace facial recognition toolkit.
@@ -169,6 +167,8 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 http://www.apache.org/licenses/LICENSE-2
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+[![View this project on Intel® DevMesh](../../../../../images/main/devmesh.png)](https://devmesh.intel.com/projects/tass-network)
 
 ## IoT JumpWay Intel® NUC DE3815TYKE Examples Bugs/Issues
 
