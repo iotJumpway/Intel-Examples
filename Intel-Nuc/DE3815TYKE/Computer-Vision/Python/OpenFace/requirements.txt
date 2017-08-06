@@ -1,0 +1,7 @@
+techbubbleiotjumpwaymqtt>=0.4.0
+numpy
+pandas
+scipy
+scikit-image
+pycparser
+cython

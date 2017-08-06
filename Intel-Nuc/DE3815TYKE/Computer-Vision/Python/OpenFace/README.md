@@ -39,6 +39,13 @@ You will need to clone this repository to a location on your Intel® NUC DE3815T
 
     $ git clone https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples.git
 
+## Install Requirements
+
+    $ cd IoT-JumpWay-Intel-Examples/Intel-Nuc/DE3815TYKE/Computer-Vision/Python/OpenFace
+    $ sudo apt install python-pip
+    $ pip install --upgrade pip
+    $ sudo pip install -r requirements.txt
+
 ## IoT JumpWay Intel® NUC DE3815TYKE Examples Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come across whilst using the Intel® NUC DE3815TYKE Docs. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel® Examples in your IoT projects.
