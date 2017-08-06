@@ -103,6 +103,12 @@ Now you have added your training data, you should train your neural network, nav
 
     $ python TassTrain.py
 
+## Testing Your Neural Network
+
+Before we go any further, we can now test your trained neural network. Add 1 or more images of each person / class you added to the training data into the testing directory, you should try with images that you did not use in the training data. Navigate to the root of the project and execute the following command:
+
+    $ python TassTest.py
+
 ## IoT JumpWay Intel® NUC DE3815TYKE Examples Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come across whilst using the Intel® NUC DE3815TYKE Docs. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel® Examples in your IoT projects.
