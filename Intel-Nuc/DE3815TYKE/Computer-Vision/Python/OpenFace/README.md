@@ -65,31 +65,30 @@ You will need to clone this repository to a location on your Intel® NUC DE3815T
 ```
     "CameraList": [
         {
-            "camID": "Your Camera ID from the IoT JumpWay here",
+            "camID": Your Camera ID from the IoT JumpWay here,
+            "camSensorID": Your Camera Sensor ID from the IoT JumpWay here,
+            "camZone": Your Camera Zone ID from the IoT JumpWay here,
             "camURL": "URL to your IP camera here"
         }
     ],
     "RealsenseCam": {
-        "camID": "Your Realsense Camera ID from the IoT JumpWay here"
+        "localCamID": 0,
+        "camID": Your Realsense Camera ID from the IoT JumpWay here,
+        "camSensorID": Your Realsense Camera Sensor ID from the IoT JumpWay here,
+        "camZone": Your Realsense Camera Zone ID from the IoT JumpWay here
     }
-```
-
-```
-	"IoTJumpWaySettings": {
-        "SystemLocation": 0,
-        "SystemZone": 0,
-        "SystemApplicationID": 0,
-        "SystemApplicationName" : "Your Application Name"
-	}
 ```
 
 ```
 	"IoTJumpWayMQTTSettings": {
         "host": "https://iot.techbubbletechnologies.com",
         "port": "8883",
-        "applicationUsername": "Your Application MQTT Username",
-        "applicationPassword": "Your Application MQTT Password"
-	}
+        "SystemLocation": Your Location ID from the IoT JumpWay here,
+        "SystemApplicationID": Your Application ID from the IoT JumpWay here,
+        "SystemApplicationName": "Your Application Name Here",
+        "applicationUsername": "Your Application MQTT Username Here",
+        "applicationPassword": "Your Application MQTT Password Here"
+    }
 ```
 
 ## IoT JumpWay Intel® NUC DE3815TYKE Examples Bugs/Issues
