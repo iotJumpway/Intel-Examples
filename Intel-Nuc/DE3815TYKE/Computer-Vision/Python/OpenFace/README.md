@@ -119,6 +119,10 @@ Ensure you have set up your Realsense camera device and adding the settings corr
 
 The program will initiate and your live stream will be processed. First the program will detect if there is a face present in the frame, and then will send the frame through the neural network to detect if it is an intruder or a known person. For trouble shooting, see KNOWN ISSUES and TROUBLE SHOOTING below.
 
+## Seeing What Your Neural Network Sees
+
+In the event that a face is detected, the frame will be saved in the frames folder, bounding boxes will be drawn around all faces that are detected and the frames will be placed into either detected or notdetected folders grouped by date. You can access these images by connecting to your NUC with SFTP and downloading them to your computer.
+
 ## KNOWN ISSUES
 
 1. The Open Set Recognition Issue: The Open Set Recognition Issue is where a neural network will identify someone that it has not been trained on, as someone that it has. In this version of TASS we have seemed to have solved this issue with the use of an unknown class consisting of 500 images of random people from the LFW dataset. In larger environments, this may not solve this issue, but in small environments such as a home or office it should.
