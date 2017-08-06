@@ -1,4 +1,4 @@
-# IoT JumpWay Intel® NUC DE3815TYKE OpenFace Computer Vision Example
+# IoT JumpWay Intel® NUC DE3815TYKE OpenFace TASS Computer Vision Example
 
 ![oT JumpWay Intel® NUC DE3815TYKE OpenFace Computer Vision Example](../../../../../images/NUC-DE3815TYKE/Computer-Vision/OpenFace/Intel-NUC-DE3815TYKE-CV.png)
 
@@ -93,7 +93,7 @@ You will need to clone this repository to a location on your Intel® NUC DE3815T
 
 ## Preparing Training Data For Your Neural Network
 
-To help solve the open set recognition issue, we have provided 500 images from the [Labeled Faces in the Wild Dataset](http://vis-www.cs.umass.edu/lfw/ "Labeled Faces in the Wild Dataset"), this has been tested in small environments, but may not be an accurate solution in larger environments where there is more chance of someone resembling one of the unknown photos. All that remains for you to do is to collect your training data and add it to the training folder ready for training.
+To help solve the open set recognition issue (See KNOWN ISSUES below), we have provided 500 images from the [Labeled Faces in the Wild Dataset](http://vis-www.cs.umass.edu/lfw/ "Labeled Faces in the Wild Dataset"), this has been tested in small environments, but may not be an accurate solution in larger environments where there is more chance of someone resembling one of the unknown photos. All that remains for you to do is to collect your training data and add it to the training folder ready for training.
 
 Create 1 or more folders in the training/1 directory, these folders will represent classes, and there should be 1 folder / class per person, name the folder using something that will allow you identify who the photos are of, the name of the folder / class will be used by the program to let you know who it has detected. You can use names, user IDs or anything you like for the folder / class names, but bear in mind privacy. We have successfully tested with 10 training images per class, but your application may need more or less than this.
 
@@ -115,9 +115,19 @@ If the images you add to the testing directory are not classified correctly afte
 
 Ensure you have set up your Realsense camera device and adding the settings correctly to your config.json as mentioned above, then navigate to the root of the project and execute the following command:
 
-    $ python TassRealsens.py
+    $ python TassRealsense.py
 
-The program will initiate and your live stream will be processed. First the program will detect if there is a face present in the frame, and then will send the frame through the neural network to detect if it is an intruder or a known person. For trouble shooting, see Known Issues below.
+The program will initiate and your live stream will be processed. First the program will detect if there is a face present in the frame, and then will send the frame through the neural network to detect if it is an intruder or a known person. For trouble shooting, see KNOWN ISSUES and TROUBLE SHOOTING below.
+
+## KNOWN ISSUES
+
+1. The Open Set Recognition Issue: The Open Set Recognition Issue is where a neural network will identify someone that it has not been trained on, as someone that it has. In this version of TASS we have seemed to have solved this issue with the use of an unknown class consisting of 500 images of random people from the LFW dataset. In larger environments, this may not solve this issue, but in small environments such as a home or office it should.
+
+2. Lighting: Lighting is unfortunately quite a large problem that we have not been able to solve as of yet. We find we have best results when there is bright light in front of the face.
+
+## TROUBLE SHOOTING
+
+1. If the program does not detect known faces, it is likely you need to add more training data to the classes, or play with the lighting.
 
 ## IoT JumpWay Intel® NUC DE3815TYKE Examples Bugs/Issues
 
