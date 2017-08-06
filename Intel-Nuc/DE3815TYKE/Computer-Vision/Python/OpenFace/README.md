@@ -109,6 +109,16 @@ Before we go any further, we can now test your trained neural network. Add 1 or 
 
     $ python TassTest.py
 
+If the images you add to the testing directory are not classified correctly after running TassTest.py, you should re train with more examples.
+
+## Using A Realsense Camera
+
+Ensure you have set up your Realsense camera device and adding the settings correctly to your config.json as mentioned above, then navigate to the root of the project and execute the following command:
+
+    $ python TassRealsens.py
+
+The program will initiate and your live stream will be processed. First the program will detect if there is a face present in the frame, and then will send the frame through the neural network to detect if it is an intruder or a known person. For trouble shooting, see Known Issues below.
+
 ## IoT JumpWay Intel® NUC DE3815TYKE Examples Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come across whilst using the Intel® NUC DE3815TYKE Docs. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel® Examples in your IoT projects.
