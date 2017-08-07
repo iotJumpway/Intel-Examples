@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Want to turn your Intel® NUC DE3815TYKE, or any Linux Desktop running Ubuntu into an Artificially Intelligent, IoT Connected CCTV Hub? This tutorial is for you!.
+Want to turn your Intel® NUC DE3815TYKE, or any Linux box running Ubuntu into an Artificially Intelligent, IoT Connected CCTV Hub? This tutorial is for you!.
 
 ## What Will We Build?
 
@@ -122,7 +122,7 @@ The program will initiate and your live streams will be processed. First the pro
 
 ## Using A Realsense Camera
 
-Ensure you have set up your Realsense camera device and adding the settings correctly to your config.json as mentioned above, then navigate to the root of the project and execute the following command:
+Ensure you have set up your Realsense camera device and added the settings correctly to your config.json as mentioned above, then navigate to the root of the project and execute the following command:
 
     $ python TassRealsense.py
 
@@ -130,7 +130,7 @@ The program will initiate and your live stream will be processed. First the prog
 
 ## Seeing What Your Neural Network Sees
 
-In the event that a face is detected, the frame will be saved in the frames folder, bounding boxes will be drawn around all faces that are detected and the frames will be placed into either detected or notdetected folders grouped by date. You can access these images by connecting to your NUC with SFTP and downloading them to your computer.
+In the event that a face is detected, the frame will be saved in the frames folder, bounding boxes will be drawn around all faces that are detected and the frames will be placed into either detected or notdetected directories grouped by date, in addition, frames that have faces detected in them will be stored in the identified / notidentified directories of the respective date and time directories, these frames will not have bounding boxes, so you can use them to retrain your model. You can access these images by connecting to your NUC with SFTP and downloading them to your computer.
 
 ## Viewing Your Data
 
@@ -148,7 +148,11 @@ When the program detects a known user or intruder, it will send sensor and warni
 
 ## TROUBLE SHOOTING
 
-1. If the program does not detect known faces, it is likely you need to add more training data to the classes, or play with the lighting.
+1. If the OpenCV or Dlib do not detect known faces, it is likely that you have a lighting issue, play with the lighting and test in different scenarios.
+
+2. If you see Unable To Classify Frame, it means the Open CV or Dlib were able to detect a face, but the classifier was not able to classify the person. There could be two reasons for this, the need for more training, or lighting. You will find the non classified images in the frames directory, there will be a directory for each hour of the day in this directory, look for the notidentified directory and download the images, add them to your training data for the relevant person / class, and retrain the model.
+
+3. If you see the classifier was unable to classify a known person, the reasons for this could be the same as in point 2 above, repreat the steps provided in that point and see if it helps.
 
 ## ACKNOWLEDGEMENTS
 
