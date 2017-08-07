@@ -109,6 +109,8 @@ class TassCore():
 
                 else:
 
+                    self.TassClassifier.moveNotIdentified(frame)
+
                     print "Unable To Classify Frame "
 
                 for i, c in enumerate(confidences):
@@ -138,6 +140,8 @@ class TassCore():
                             }
                         )
 
+                        self.TassClassifier.moveNotIdentified(frame)
+
                         print "Unknown Person Detected With Confidence " + str(c)
 
                     elif persons[i] != "":
@@ -165,6 +169,8 @@ class TassCore():
                             }
                         )
 
+                        self.TassClassifier.moveIdentified(frame)
+
                         print str(persons[i])+" Detected With Confidence " + str(c)
 
             else:
@@ -183,6 +189,8 @@ class TassCore():
                             print "P: " + str(persons) + " C: " + str(confidences)
 
                         else:
+
+                            self.TassClassifier.moveNotIdentified(frame)
 
                             print "Unable To Classify Frame "
 
@@ -213,6 +221,8 @@ class TassCore():
                                 }
                             )
 
+                            self.TassClassifier.moveNotIdentified(frame)
+
                             print "Unknown Person Detected With Confidence " + str(c)
 
                         elif persons[i] != "":
@@ -239,6 +249,8 @@ class TassCore():
                                     "WarningMessage":"User " + str(persons[i]) + " detected with confidence: " + str(c)
                                 }
                             )
+
+                            self.TassClassifier.moveIdentified(frame)
 
                             print str(persons[i])+" Detected With Confidence " + str(c)
 

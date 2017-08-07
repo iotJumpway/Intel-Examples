@@ -81,6 +81,28 @@ class TassClassifier():
         self.align = openface.AlignDlib(self.dlibFacePredictor)
         self.net = openface.TorchNeuralNet(self.networkModel,imgDim=self.imgDim,cuda=self.cuda)
 
+    def moveNotIdentified(self,frame):
+
+        today = time.strftime("%Y-%m-%d-%H")
+
+        if not os.path.exists(os.path.dirname(os.path.abspath(__file__))+'/frames/'+today+'/notidentified/'):
+            os.makedirs(os.path.dirname(os.path.abspath(__file__))+'/frames/'+today+'/notidentified/')
+
+        fileName = datetime.now().strftime('%Y-%m-%d-%H-%M-%S')+'.jpg'
+        fileAddress=os.path.dirname(os.path.abspath(__file__))+'/frames/'+today+'/notidentified/'+fileName
+        cv2.imwrite(fileAddress, frame)
+
+    def moveIdentified(self,frame):
+
+        today = time.strftime("%Y-%m-%d-%H")
+
+        if not os.path.exists(os.path.dirname(os.path.abspath(__file__))+'/frames/'+today+'/identified/'):
+            os.makedirs(os.path.dirname(os.path.abspath(__file__))+'/frames/'+today+'/identified/')
+
+        fileName = datetime.now().strftime('%Y-%m-%d-%H-%M-%S')+'.jpg'
+        fileAddress=os.path.dirname(os.path.abspath(__file__))+'/frames/'+today+'/identified/'+fileName
+        cv2.imwrite(fileAddress, frame)
+
     def openCVDetect(self,frame):
 
         gray = self.TassTools.preProcess(frame)
@@ -132,6 +154,8 @@ class TassClassifier():
 
         if len(faces):
 
+            newframe = frame.copy()
+
             today = time.strftime("%Y-%m-%d-%H")
 
             if not os.path.exists(os.path.dirname(os.path.abspath(__file__))+'/frames/'+today+'/detected/'):
@@ -139,11 +163,11 @@ class TassClassifier():
 
             for (x, y, w, h) in faces:
 
-                cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+                cv2.rectangle(newframe, (x, y), (x+w, y+h), (0, 255, 0), 2)
 
             fileName = datetime.now().strftime('%Y-%m-%d-%H-%M-%S')+'.jpg'
             fileAddress=os.path.dirname(os.path.abspath(__file__))+'/frames/'+today+'/detected/'+fileName
-            cv2.imwrite(fileAddress, frame)
+            cv2.imwrite(fileAddress, newframe)
 
             return fileAddress, faces
 
@@ -162,12 +186,14 @@ class TassClassifier():
 
     def dlibDetect(self,frame):
 
-        frame = self.TassTools.preProcess(frame)
-        faces = self.detector(frame, 1)
+        grey = self.TassTools.preProcess(frame)
+        faces = self.detector(grey, 1)
 
         print("DLIB DETECTED "+ str(len(faces))+" FACES")
 
         if len(faces):
+
+            newframe = frame.copy()
 
             today = time.strftime("%Y-%m-%d-%H")
 
@@ -179,11 +205,11 @@ class TassClassifier():
 
                 x,y,w,h = self.TassTools.convertRect(face)
 
-                cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+                cv2.rectangle(newframe, (x, y), (x+w, y+h), (0, 255, 0), 2)
 
             fileName = datetime.now().strftime('%Y-%m-%d-%H-%M-%S')+'.jpg'
             fileAddress=os.path.dirname(os.path.abspath('__file__'))+'/frames/'+today+'/detected/'+fileName
-            cv2.imwrite(fileAddress, frame)
+            cv2.imwrite(fileAddress, newframe)
 
             return fileAddress, faces
 

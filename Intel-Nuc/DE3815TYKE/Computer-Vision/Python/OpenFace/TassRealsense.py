@@ -97,6 +97,8 @@ class TassRealsense():
 
                     else:
 
+                        self.TassClassifier.moveNotIdentified(frame)
+
                         print "Unable To Classify Frame "
 
                 for i, c in enumerate(confidences):
@@ -126,6 +128,8 @@ class TassRealsense():
                             }
                         )
 
+                        self.TassClassifier.moveNotIdentified(frame)
+
                         print "Unknown Person Detected With Confidence " + str(c)
 
                     elif persons[i] != "":
@@ -153,24 +157,28 @@ class TassRealsense():
                             }
                         )
 
+                        self.TassClassifier.moveIdentified(frame)
+
                         print str(persons[i])+" Detected With Confidence " + str(c)
 
             else:
 
-                dlframe = cv2.flip(frame, 1)
-                currentImage,detected = self.TassClassifier.dlibDetect(dlframe)
+                #dlframe = cv2.flip(frame, 1)
+                currentImage,detected = self.TassClassifier.dlibDetect(frame)
 
                 if detected is not  None:
 
                     for face in detected:
 
-                        persons, confidences = self.TassClassifier.classify(dlframe,face,"CV")
+                        persons, confidences = self.TassClassifier.classify(frame,face,"CV")
 
                         if len(confidences):
 
                             print "P: " + str(persons) + " C: " + str(confidences)
 
                         else:
+
+                            self.TassClassifier.moveNotIdentified(frame)
 
                             print "Unable To Classify Frame "
 
@@ -201,6 +209,8 @@ class TassRealsense():
                                 }
                             )
 
+                            self.TassClassifier.moveNotIdentified(frame)
+
                             print "Unknown Person Detected With Confidence " + str(c)
 
                         elif persons[i] != "":
@@ -227,6 +237,8 @@ class TassRealsense():
                                     "WarningMessage":"User " + str(persons[i]) + " detected with confidence: " + str(c)
                                 }
                             )
+
+                            self.TassClassifier.moveIdentified(frame)
 
                             print str(persons[i])+" Detected With Confidence " + str(c)
 
