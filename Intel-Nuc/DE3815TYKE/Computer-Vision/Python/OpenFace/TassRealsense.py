@@ -111,7 +111,7 @@ class TassRealsense():
                             realsenseID,
                             {
                                 "Sensor":"CCTV",
-                                "Sensors": realsenseSensor,
+                                "SensorID": realsenseSensor,
                                 "SensorValue":"Intruder"
                             }
                         )
@@ -140,7 +140,7 @@ class TassRealsense():
                             realsenseID,
                             {
                                 "Sensor":"CCTV",
-                                "Sensors": realsenseSensor,
+                                "SensorID": realsenseSensor,
                                 "SensorValue":persons[i]
                             }
                         )
@@ -192,7 +192,7 @@ class TassRealsense():
                                 realsenseID,
                                 {
                                     "Sensor":"CCTV",
-                                    "Sensors": realsenseSensor,
+                                    "SensorID": realsenseSensor,
                                     "SensorValue":"Intruder"
                                 }
                             )
@@ -221,7 +221,7 @@ class TassRealsense():
                                 realsenseID,
                                 {
                                     "Sensor":"CCTV",
-                                    "Sensors": realsenseSensor,
+                                    "SensorID": realsenseSensor,
                                     "SensorValue":persons[i]
                                 }
                             )

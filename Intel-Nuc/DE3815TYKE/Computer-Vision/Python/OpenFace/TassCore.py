@@ -123,7 +123,7 @@ class TassCore():
                             camID,
                             {
                                 "Sensor":"CCTV",
-                                "Sensors": camSensorID,
+                                "SensorID": camSensorID,
                                 "SensorValue":"Intruder"
                             }
                         )
@@ -152,7 +152,7 @@ class TassCore():
                             camID,
                             {
                                 "Sensor":"CCTV",
-                                "Sensors": camSensorID,
+                                "SensorID": camSensorID,
                                 "SensorValue":persons[i]
                             }
                         )
@@ -204,7 +204,7 @@ class TassCore():
                                 camID,
                                 {
                                     "Sensor":"CCTV",
-                                    "Sensors": camSensorID,
+                                    "SensorID": camSensorID,
                                     "SensorValue":"Intruder"
                                 }
                             )
@@ -233,7 +233,7 @@ class TassCore():
                                 camID,
                                 {
                                     "Sensor":"CCTV",
-                                    "Sensors": camSensorID,
+                                    "SensorID": camSensorID,
                                     "SensorValue":persons[i]
                                 }
                             )
