@@ -68,7 +68,7 @@ To install Python 3.6 on your Intel® Edison, follow the steps below:
 
 ## Installing Pip 3
 
-WORKING ON THIS, TO BE UPDATED
+Pip 3 will be installed with this method
     
 ## IoT JumpWay Intel® Edison Examples Document Contributors
 
