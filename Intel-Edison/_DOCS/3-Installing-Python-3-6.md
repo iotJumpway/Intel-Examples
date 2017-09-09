@@ -1,14 +1,14 @@
-# Installing Python 3.6 On Your Intel® Edison
+# Installing Python 3.6 (And Most Others) On Your Intel® Edison
 
 ![TechBubble IoT JumpWay Docs](../../images/Docs/Intel-Edison-Documentation.png)  
 
-## WARNING
+## PLEASE NOTE:
 
-This tutorial will replace the existing Python 2.7 with Python 3.6. 
+MRAA will not work with Python 3 or above 
 
 ## Introduction
 
-The following information will help you install Python 3 on your Intel® Edison.
+The following information will help you install Python 3.6 on your Intel® Edison.
 
 ## Installing Python 3.6 
 
@@ -40,11 +40,10 @@ To install Python 3.6 on your Intel® Edison, follow the steps below:
         make -s -j4
     ```
 
-5. Next remove the link for Python 2.7 and add one for Python 3.6
+5. Next issue the following command, thanks to Gerard Vidal, for working this out
 
     ```
-        rm /usr/bin/python
-        ln -s /home/root/Python-3.6.0/python /usr/bin/python
+        sudo make install
     ```
 
 6. Now check that Python 3.6 is being used:
