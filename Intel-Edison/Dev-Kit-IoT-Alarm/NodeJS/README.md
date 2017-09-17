@@ -10,7 +10,7 @@ The tutorial will allow you to set up an IoT alarm system that is controlled by 
 
 Once you understand how it works you are free to add as many actuators and sensors to your device and modify your code accordingly.
 
-## This project uses three applications:
+## This project uses two applications:
 
 1. A device application (Node JS) which communicates with the IoT via the TechBubble Technologies IoT JumpWay.
 2. A Python commands application that can send commands to the device to toggle the state of the LEDs and buzzer, we will use the provided Application.py.
@@ -55,7 +55,7 @@ You will need to clone this repository to a location on your Intel® Edison. Nav
     ```
         $ git clone https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples.git
     ```
-
+    
 ## Setting Up Your Intel® Edison
 
 ![IoT JumpWay Intel® Edison Dev Kit IoT Alarm](../../../images/Dev-Kit-IoT-Alarm/Edsion-Hardware-Setup.jpg)
