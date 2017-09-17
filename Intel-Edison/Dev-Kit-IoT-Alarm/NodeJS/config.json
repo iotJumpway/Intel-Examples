@@ -1,0 +1,33 @@
+{
+	"IoTJumpWaySettings": {
+        "SystemLocation": 0,
+        "SystemZone": 0,
+        "SystemDeviceID": 0,
+        "SystemDeviceName" : "Your Device Name",
+        "SystemApplictaionID" : 0,
+        "SystemApplicationName" : "Your Application Name"
+    },
+	"Sensors": {},
+	"Actuators": {
+        "LED": {
+            "ID": 0,
+            "PIN": 5
+        },
+        "LED2": {
+            "ID": 0,
+            "PIN": 6
+        },
+        "Buzzer": {
+            "ID": 0,
+            "PIN": 7
+        }
+    },
+	"IoTJumpWayMQTTSettings": {
+        "host": "iot.techbubbletechnologies.com",
+        "port": "8883",
+        "dUsername": "Your Device MQTT Username",
+        "dPassword": "Your Device MQTT Password",
+        "aUassword": "Your Application MQTT Username",
+        "aPassword": "Your Application MQTT Password"
+    }
+}
