@@ -26,7 +26,11 @@ var options = {
 	port: config.IoTJumpWayMQTTSettings.port,
 	clientId: config.IoTJumpWaySettings.SystemDeviceName,
 	username: config.IoTJumpWayMQTTSettings.dUsername,
-	password: config.IoTJumpWayMQTTSettings.dPassword 
+	password: config.IoTJumpWayMQTTSettings.dPassword,
+	will: {
+		topic: config.IoTJumpWaySettings.SystemLocation+'/Devices/'+config.IoTJumpWaySettings.SystemZone+'/'+config.IoTJumpWaySettings.SystemDeviceID+'/Status',
+		payload: "OFFLINE"
+	}
 };
 
 var ledOKPin = new mraa.Gpio(config.Actuators.LED.PIN); 
@@ -73,5 +77,6 @@ client.on('error', function (err) {
 })
 
 client.on('connect', function () {
-  console.log('Connected To TechBubble IoT JumpWay')
+	console.log('Connected To TechBubble IoT JumpWay')
+  client.publish(config.IoTJumpWaySettings.SystemLocation+'/Devices/'+config.IoTJumpWaySettings.SystemZone+'/'+config.IoTJumpWaySettings.SystemDeviceID+'/Status', "ONLINE")
 })
