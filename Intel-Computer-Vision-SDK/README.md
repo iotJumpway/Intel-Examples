@@ -8,6 +8,8 @@ The Intel® Computer Vision SDK examples provide example projects that you can u
 
 ## Intel® Computer Vision SDK Windows Examples
 
+- [IoT JumpWay Intel® Computer Vision SDK Windows TASS PVL RealSense Security System](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Realsense "IoT JumpWay Intel® Computer Vision SDK Windows TASS PVL RealSense Security System")
+
 ## Intel® Computer Vision SDK Windows Docs
 
 - [Installing Intel® Computer Vision SDK on Windows 10](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/_Docs/1-Installing-Intel-CV-SDK.md "Installing Intel® Computer Vision SDK on Windows 10")
