@@ -1,4 +1,4 @@
-# Installing Intel® RealsSense SDK on Windows 10
+# Installing Intel® RealSense SDK on Windows 10
 
 ![TechBubble IoT JumpWay Docs](../images/Intel-Computer-Vision-Windows.png)
 
