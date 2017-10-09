@@ -1,4 +1,4 @@
-# Installing CV SDK on Windows 10
+# Installing Intel® Computer Vision SDK on Windows 10
 
 ![TechBubble IoT JumpWay Docs](../images/Intel-Computer-Vision-Windows.png)
 
