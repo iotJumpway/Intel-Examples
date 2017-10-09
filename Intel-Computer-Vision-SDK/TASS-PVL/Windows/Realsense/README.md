@@ -12,22 +12,24 @@ Once you understand how it works you are free to modify the app accordingly.
 
 1. A device application (Node JS) which communicates with the IoT via the TechBubble Technologies IoT JumpWay.
 2. A Windows Computer Vision application that sends commands to the device to toggle the state of the LEDs and buzzer when known or unknown faces are detected.
-3. A Python Flask webserver displaying the real time stream from your camera and allowing you to train known people.
+3. A Python Flask webserver displaying the real time stream from your camera and allowing you to train known people via the TechBubble IoT JumpWay WebSockets Client.
 4. A Node JS application that streams the camera feed via sockets.
 
 ## Software requirements
 
-1. [TechBubble IoT JumpWay Python MQTT Client Libraries](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Clients "TechBubble IoT JumpWay Python MQTT Client Libraries")
+1. [TechBubble IoT JumpWay Node JS MQTT Client Library](https://github.com/TechBubbleTechnologies/IoT-JumpWay-NodeJS-MQTT-Client "TechBubble IoT JumpWay Node JS MQTT Client Library")
 
-2. [Intel® Computer Vision SDK for Windows 10](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/_Docs/1-Installing-Intel-CV-SDK.md "Intel® Computer Vision SDK for Windows 10")
+2. [TechBubble IoT JumpWay WebSocket MQTT Client](https://github.com/TechBubbleTechnologies/IoT-JumpWay-WebSockets-MQTT-Client "TechBubble IoT JumpWay WebSocket MQTT Client")
 
-3. [Intel® RealSense SDK for Windows 10](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/_Docs/2-Installing-Intel-RealSense-SDK.md "Intel® RealSense SDK for Windows 10")
+3. [Intel® Computer Vision SDK for Windows 10](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/_Docs/1-Installing-Intel-CV-SDK.md "Intel® Computer Vision SDK for Windows 10")
 
-3. [Microsoft Vcpkg](https://github.com/Microsoft/vcpkg "Microsoft Vcpkg"), Paho, Json
+4. [Intel® RealSense SDK for Windows 10](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/_Docs/2-Installing-Intel-RealSense-SDK.md "Intel® RealSense SDK for Windows 10")
 
-4. [FFmpeg](http://ffmpeg.zeranoe.com/builds/ "FFmpeg")
+5. [Microsoft Vcpkg](https://github.com/Microsoft/vcpkg "Microsoft Vcpkg"), Paho, Json
 
-5. [Node JS](https://nodejs.org/en/download/ "Node JS")
+6. [FFmpeg](http://ffmpeg.zeranoe.com/builds/ "FFmpeg")
+
+7. [Node JS](https://nodejs.org/en/download/ "Node JS")
 
 ## IoT JumpWay Intel® Computer Vision SDK Bugs/Issues
 
