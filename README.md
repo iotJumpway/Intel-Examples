@@ -1,6 +1,6 @@
 # IoT JumpWay Intel® Examples
 
-![TechBubble IoT JumpWay Docs](images/main/IoT-JumpWay-Intel-Examples.png)  
+![TechBubble IoT JumpWay Docs](images/main/IoT-JumpWay-Intel-Examples.png)
 
 
 ## Introduction
@@ -53,6 +53,12 @@ The Intel® examples provide example projects that you can use to get started wi
 - [Intel® Galileo Docs](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Galileo/_DOCS "Intel® Galileo Docs")
 - [Intel® Edison Docs](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/_DOCS "Intel® Edison Docs")
 
+## Intel® Computer Vision SDK Windows Docs
+
+- [Installing Intel® Computer Vision SDK on Windows 10](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/_Docs/1-Installing-Intel-CV-SDK.md "Installing Intel® Computer Vision SDK on Windows 10")
+
+- [Installing Intel® RealsSense SDK on Windows 10](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/_Docs/2-Installing-Intel-RealSense-SDK.md "Installing Intel® RealsSense SDK on Windows 10")
+
 
 ## IoT JumpWay Intel® Bugs/Issues
 
@@ -63,4 +69,4 @@ Please feel free to create issues for bugs and general issues you come accross w
 
 [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
 
-![Adam Milton-Barker,  Intel Software Innovator](images/main/Intel-Software-Innovator.jpg)  
+![Adam Milton-Barker,  Intel Software Innovator](images/main/Intel-Software-Innovator.jpg)
