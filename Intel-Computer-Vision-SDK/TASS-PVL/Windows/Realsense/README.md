@@ -31,6 +31,8 @@ Once you understand how it works you are free to modify the app accordingly.
 
 7. [Node JS](https://nodejs.org/en/download/ "Node JS")
 
+8. [Virtual Studio 2017](https://www.visualstudio.com/downloads/ "Virtual Studio 2017")
+
 ## Hardware requirements
 
 1. Windows PC with 6th Generation Intel® Core™ Processors with Intel® Iris® Pro Graphics and HD Graphics, In our example we are using an Intel® NUC NUC7i7BNH with Intel® OPtane Memory.
@@ -47,11 +49,13 @@ There are a few tutorials that you should follow before beginning, especially if
 
 - [Install Intel® RealSense SDK](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/_Docs/2-Installing-Intel-RealSense-SDK.md "Install Intel® RealSense SDK")
 
-- [Install Microsoft Vcpkg](https://github.com/Microsoft/vcpkg "Microsoft Vcpkg")
+- [Install Microsoft Vcpkg](https://github.com/Microsoft/vcpkg "Install Microsoft Vcpkg"), Paho, Json
 
-- [Install Microsoft FFmpeg](http://ffmpeg.zeranoe.com/builds/ "Microsoft FFmpeg")
+- [Install FFmpeg](http://ffmpeg.zeranoe.com/builds/ "Install FFmpeg")
 
-- [Node JS](http://ffmpeg.zeranoe.com/builds/ "Node JS")
+- [Install Node JS](https://nodejs.org/en/download/ "Install Node JS")
+
+- [Install Virtual Studio 2017](https://www.visualstudio.com/downloads/ "Install Virtual Studio 2017")
 
 ## IoT JumpWay Intel® Computer Vision SDK Bugs/Issues
 
