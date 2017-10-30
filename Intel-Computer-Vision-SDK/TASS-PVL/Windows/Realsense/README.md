@@ -31,7 +31,7 @@ Once you understand how it works you are free to modify the app accordingly.
 
 7. [Node JS](https://nodejs.org/en/download/ "Node JS")
 
-8. [Virtual Studio 2017](https://www.visualstudio.com/downloads/ "Virtual Studio 2017")
+8. [Visual Studio 2017](https://www.visualstudio.com/downloads/ "Visual Studio 2017")
 
 ## Hardware requirements
 
@@ -55,7 +55,7 @@ There are a few tutorials that you should follow before beginning, especially if
 
 - [Install Node JS](https://nodejs.org/en/download/ "Install Node JS")
 
-- [Install Virtual Studio 2017](https://www.visualstudio.com/downloads/ "Install Virtual Studio 2017")
+- [Install Visual Studio 2017](https://www.visualstudio.com/downloads/ "Install Visual Studio 2017")
 
 ## IoT JumpWay Intel® Computer Vision SDK Bugs/Issues
 
