@@ -1,6 +1,6 @@
-# IoT JumpWay Intel® Computer Vision SDK Windows TASS PVL RealSense Security System
+# IoT JumpWay Intel® Computer Vision SDK Windows Console TASS PVL Webcam Security System
 
-![TechBubble IoT JumpWay Docs](../images/Intel-Computer-Vision-Windows.png)
+![TechBubble IoT JumpWay Docs](../../images/Intel-Computer-Vision-Windows.png)
 
 ## Introduction
 
@@ -8,12 +8,10 @@ Here you will find a sample application for TASS PVL, a Computer Vision security
 
 Once you understand how it works you are free to modify the app accordingly.
 
-## This project uses four applications:
+## This project uses two applications:
 
-1. A device application (Node JS) which communicates with the IoT via the TechBubble Technologies IoT JumpWay.
-2. A Windows Computer Vision application that sends commands to the device to toggle the state of the LEDs and buzzer when known or unknown faces are detected.
-3. A Python Flask webserver displaying the real time stream from your camera and allowing you to train known people via the TechBubble IoT JumpWay WebSockets Client.
-4. A Node JS application that streams the camera feed via sockets.
+1. A Windows Computer Vision application.
+2. A Node JS application on an Intel® Edison that receives commands to activate LEDs and a buzzer when known or unknown faces are detected
 
 ## Software requirements
 
@@ -23,21 +21,19 @@ Once you understand how it works you are free to modify the app accordingly.
 
 3. [Intel® Computer Vision SDK for Windows 10](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/_Docs/1-Installing-Intel-CV-SDK.md "Intel® Computer Vision SDK for Windows 10")
 
-4. [Intel® RealSense SDK for Windows 10](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/_Docs/2-Installing-Intel-RealSense-SDK.md "Intel® RealSense SDK for Windows 10")
+4. [Microsoft Vcpkg](https://github.com/Microsoft/vcpkg "Microsoft Vcpkg"), Paho, Json
 
-5. [Microsoft Vcpkg](https://github.com/Microsoft/vcpkg "Microsoft Vcpkg"), Paho, Json
+5. [Node JS](https://nodejs.org/en/download/ "Node JS")
 
-6. [FFmpeg](http://ffmpeg.zeranoe.com/builds/ "FFmpeg")
-
-7. [Node JS](https://nodejs.org/en/download/ "Node JS")
-
-8. [Visual Studio 2017](https://www.visualstudio.com/downloads/ "Visual Studio 2017")
+6. [Visual Studio 2017](https://www.visualstudio.com/downloads/ "Visual Studio 2017")
 
 ## Hardware requirements
 
 1. Windows PC with 6th Generation Intel® Core™ Processors with Intel® Iris® Pro Graphics and HD Graphics, In our example we are using an Intel® NUC NUC7i7BNH with Intel® OPtane Memory.
 
-2. 1 x Realsense camera (Tested with F200 & R200)
+2. 1 x Intel® Edison
+
+3. 1 x Webcam
 
 ## Before You Begin
 
@@ -47,13 +43,7 @@ There are a few tutorials that you should follow before beginning, especially if
 
 - [Install Intel® Computer Vision SDK](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/_Docs/1-Installing-Intel-CV-SDK.md "Install Intel® Computer Vision SDK")
 
-- [Install Intel® RealSense SDK](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/_Docs/2-Installing-Intel-RealSense-SDK.md "Install Intel® RealSense SDK")
-
 - [Install Microsoft Vcpkg](https://github.com/Microsoft/vcpkg "Install Microsoft Vcpkg"), Paho, Json
-
-- [Install FFmpeg](http://ffmpeg.zeranoe.com/builds/ "Install FFmpeg")
-
-- [Install Node JS](https://nodejs.org/en/download/ "Install Node JS")
 
 - [Install Visual Studio 2017](https://www.visualstudio.com/downloads/ "Install Visual Studio 2017")
 
@@ -65,4 +55,4 @@ Please feel free to create issues for bugs and general issues you come across wh
 
 - [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
 
-![Adam Milton-Barker,  Intel Software Innovator](../../../../images/main/Intel-Software-Innovator.jpg)
+![Adam Milton-Barker,  Intel Software Innovator](../../../../../../../../images/main/Intel-Software-Innovator.jpg)
