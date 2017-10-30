@@ -47,6 +47,44 @@ There are a few tutorials that you should follow before beginning, especially if
 
 - [Install Visual Studio 2017](https://www.visualstudio.com/downloads/ "Install Visual Studio 2017")
 
+- Install Paho MQTT
+
+    ```
+    C:\src\vcpkg> vcpkg install paho-mqtt:x64-windows
+    ```
+
+    Once installed, edit the MQTTAsync.h and MQTTClient.h files in C:\src\vcpkg\installed\x64-windows\include.
+
+    Change:
+
+    ```
+    #if defined(WIN32) || defined(WIN64)
+        #define DLLImport __declspec(dllimport)
+        #define DLLExport __declspec(dllexport)
+    #else
+        #define DLLImport extern
+        #define DLLExport  __attribute__ ((visibility ("default")))
+    #endif
+    ```
+
+    To:
+
+    ```
+    #if defined(_WIN32) || defined(_WIN64)
+        #define DLLImport __declspec(dllimport)
+        #define DLLExport __declspec(dllexport)
+    #else
+        #define DLLImport extern
+        #define DLLExport  __attribute__ ((visibility ("default")))
+    #endif
+    ```
+
+- Install Nlohmann Json
+
+    ```
+    C:\src\vcpkg> vcpkg install nlohmann-json:x64-windows
+    ```
+
 ## IoT JumpWay Intel® Computer Vision SDK Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come across whilst using the IoT JumpWay Intel® Examples. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel® Examples in your IoT projects.
