@@ -85,6 +85,18 @@ There are a few tutorials that you should follow before beginning, especially if
     C:\src\vcpkg> vcpkg install nlohmann-json:x64-windows
     ```
 
+- Plug In Your Webcam 
+
+    Plug in your webcam and make sure that you have all of the relevant drivers installed for your machine to recognise the device.
+
+## Cloning The Repo
+
+You will need to clone this repository to a location on your Intel® Edison. Navigate to the directory you would like to download it to and issue the following command, or use the Windows GitHub GUI.
+
+    ```
+        $ git clone https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples.git
+    ```
+
 ## IoT JumpWay Intel® Computer Vision SDK Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come across whilst using the IoT JumpWay Intel® Examples. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel® Examples in your IoT projects.
