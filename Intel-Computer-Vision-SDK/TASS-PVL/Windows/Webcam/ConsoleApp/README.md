@@ -93,9 +93,9 @@ There are a few tutorials that you should follow before beginning, especially if
 
 You will need to clone this repository to a location on your Intel® Edison. Navigate to the directory you would like to download it to and issue the following command, or use the Windows GitHub GUI.
 
-    ```
+    
         $ git clone https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples.git
-    ```
+    
 
 ## IoT JumpWay Intel® Computer Vision SDK Bugs/Issues
 
