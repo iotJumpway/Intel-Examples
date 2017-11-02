@@ -95,6 +95,34 @@ You will need to clone this repository to a location on your Intel® Edison. Nav
 
     C:\YourChosenLocation> git clone https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples.git
 
+## IoT JumpWay Device Connection Credentials & Settings
+
+- Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Application Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/5-Location-Applications.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Application Doc") to set up your IoT JumpWay Location Application.
+
+- Setup an IoT JumpWay Location Device for TASS PVL, ensuring you set up you camera node,as you will need the ID of the camera for the project to work. Once your create your device, make sure you note the MQTT username and password, the device ID and device name exactly, you will also need the zone and location ID. You will need to edit your device and add the rules that will allow it to communicate autonomously with the Intel Edison, but for now, these are the only steps that need doing at this point.
+
+Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc") to set up your devices.
+
+![IoT JumpWay Device Creation Docs](../../../../../images/Docs/Device-Creation.jpg)
+
+- Locate and update the following code in TASS-PVL-Windows-Console, and replace with your device settings.
+
+```
+    int IntelliLanLocation = 0;
+    int IntelliLanZone = 0;
+    int IntelliLanDevice = 0;
+    int IntelliLanSensor = 0;
+    std::string IntelliLanDeviceN = "YourIoTJumpWayDeviceNameHere";
+    std::string IntelliLanDeviceU = "YourIoTJumpWayDeviceUsernameHere";
+    std::string IntelliLanDeviceP = "YourIoTJumpWayDevicePasswordHere";
+```
+
+- You may also need to edit this value, this allows the application to connect to your webcam, generally the value is either 1 or 0, in my case it is 1 which is the default setting in the provided application. If you receive an error on startup that the application cannot connect to your camera, you will need to modify this setting and ensure that you have installed all the required drivers for your camera.
+
+```
+    int camera = 1;
+```
+
 ## IoT JumpWay Intel® Computer Vision SDK Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come across whilst using the IoT JumpWay Intel® Examples. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel® Examples in your IoT projects.
