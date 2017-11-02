@@ -1,6 +1,6 @@
 # IoT JumpWay Intel® Examples
 
-![TechBubble IoT JumpWay Docs](images/main/IoT-JumpWay-Intel-Examples.png)
+![IoT JumpWay Intel® Examples](images/main/IoT-JumpWay-Intel-Examples.png)
 
 
 ## Introduction
@@ -12,7 +12,7 @@ The Intel® examples provide example projects that you can use to get started wi
 
 ## IoT JumpWay Intel® Galileo Examples
 
-![TechBubble IoT JumpWay Docs](images/main/Intel-Galileo.png)
+![IoT JumpWay Intel® Galileo Examples](images/main/Intel-Galileo.png)
 
 - [Intel® Galileo Basic LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Galileo/Basic-LED/Python "Intel® Galileo Basic LED Python Example")
 
@@ -21,7 +21,7 @@ The Intel® examples provide example projects that you can use to get started wi
 
 ## IoT JumpWay Intel® Edison Examples
 
-![TechBubble IoT JumpWay Docs](images/main/Intel-Edison.png)
+![IoT JumpWay Intel® Edison Examples](images/main/Intel-Edison.png)
 
 - [Intel® Edison Basic LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Basic-LED/Python "Intel® Edison Basic LED Python Example")
 
@@ -32,7 +32,7 @@ The Intel® examples provide example projects that you can use to get started wi
 
 ## IoT JumpWay Intel® Arduino 101 Examples
 
-![TechBubble IoT JumpWay Docs](images/main/Arduino-101.png)
+![IoT JumpWay Intel® Arduino 101 Examples](images/main/Arduino-101.png)
 
 - [Intel® Arduino 101 Basic LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/Basic-LED "Intel® Arduino 101 Basic LED Example")
 
@@ -41,7 +41,7 @@ The Intel® examples provide example projects that you can use to get started wi
 
 ## IoT JumpWay Intel® DFRobot Examples
 
-![TechBubble IoT JumpWay Docs](images/main/DFRobot.png)
+![IoT JumpWay Intel® DFRobot Examples](images/main/DFRobot.png)
 
 - [Intel® Arduino 101 DF Robot LCD Control Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/3RD-PARTY-DFRobot/LCD-Control "Intel® Arduino 101 DF Robot LCD Control Example")
 
@@ -49,19 +49,11 @@ The Intel® examples provide example projects that you can use to get started wi
 
 ## Intel® Computer Vision SDK Windows Examples
 
-- [IoT JumpWay Intel® Computer Vision SDK Windows TASS PVL RealSense Security System](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Realsense "IoT JumpWay Intel® Computer Vision SDK Windows TASS PVL RealSense Security System")
+![Intel® Computer Vision SDK Windows Examples](Intel-Computer-Vision-SDK/TASS-PVL/Windows/images/Intel-Computer-Vision-Windows.png)
 
-## Intel® Computer Vision SDK Windows Docs
+- [IoT JumpWay Intel® Computer Vision SDK Windows Console TASS PVL Webcam Security System](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Webcam/ConsoleApp "IoT JumpWay Intel® Computer Vision SDK Windows Console TASS PVL Webcam Security System")
 
-- [Installing Intel® Computer Vision SDK on Windows 10](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/_Docs/1-Installing-Intel-CV-SDK.md "Installing Intel® Computer Vision SDK on Windows 10")
-
-- [Installing Intel® RealSense SDK on Windows 10](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/_Docs/2-Installing-Intel-RealSense-SDK.md "Installing Intel® RealSense SDK on Windows 10")
-
-
-## IoT JumpWay Intel® Examples Docs
-
-- [Intel® Galileo Docs](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Galileo/_DOCS "Intel® Galileo Docs")
-- [Intel® Edison Docs](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/_DOCS "Intel® Edison Docs")
+- [IoT JumpWay Intel® Computer Vision SDK Windows Console TASS PVL RealSense Security System](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Realsense/ConsoleApp "IoT JumpWay Intel® Computer Vision SDK Windows TASS PVL RealSense Security System")
 
 ## IoT JumpWay Intel® Bugs/Issues
 
