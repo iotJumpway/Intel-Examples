@@ -135,7 +135,7 @@ Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Locatio
 
 If you installed the Intel® Computer Vision SDK to any directory other than the default (C:\Intel\CV SDK\) you will need to update the Additional Include Directories & Library Directories settings to reflect your installed location. 
 
-![Additional Include Directories](../../../../images/CPP-Additional-Include-Directories)
+![Additional Include Directories](../../../../images/CPP-Additional-Include-Directories.PNG)
 
 ![Additional Library Directories](../../../../images/Linker-Additional-Library-Directories.PNG)
 
