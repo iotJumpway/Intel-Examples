@@ -113,7 +113,7 @@ Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Locatio
 
 ![IoT JumpWay Device Creation Docs](../../../../../images/Docs/Device-Creation.jpg)
 
-- Locate and update the following code in TASS-PVL-Windows-Console, and replace with your device settings.
+- Locate and update the following code in TASS-PVL-Windows-Console.cpp, and replace with your device settings.
 
 ```
     int IntelliLanLocation = 0;
