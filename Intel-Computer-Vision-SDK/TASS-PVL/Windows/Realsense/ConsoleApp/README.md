@@ -127,12 +127,6 @@ Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Locatio
     std::string IntelliLanDeviceP = "YourIoTJumpWayDevicePasswordHere";
 ```
 
-- You may also need to edit this value, this allows the application to connect to your webcam, generally the value is either 1 or 0, in my case it is 1 which is the default setting in the provided application. If you receive an error on startup that the application cannot connect to your camera, you will need to modify this setting and ensure that you have installed all the required drivers for your camera.
-
-```
-    int camera = 1;
-```
-
 ## Additional Include Directories & Library Directories
 
 If you installed the Intel® Computer Vision SDK to any directory other than the default (C:\Intel\CV SDK\), or if you installed RealSense to a different directory other than the default (C:\Program Files (x86)\Intel\RSSDK) you will need to update the Additional Include Directories & Library Directories settings to reflect your installed location. 
