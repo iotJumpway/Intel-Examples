@@ -1,4 +1,4 @@
-# IoT JumpWay Intel® Computer Vision SDK Windows Console TASS PVL Webcam Security System
+# IoT JumpWay Intel® Computer Vision SDK Windows Console TASS PVL RealSense Security System
 
 ![TechBubble IoT JumpWay Docs](../../images/Intel-Computer-Vision-Windows.png)
 
@@ -139,7 +139,7 @@ Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Locatio
 
 ## Additional Include Directories & Library Directories
 
-If you installed the Intel® Computer Vision SDK to any directory other than the default (C:\Intel\CV SDK\) you will need to update the Additional Include Directories & Library Directories settings to reflect your installed location. 
+If you installed the Intel® Computer Vision SDK to any directory other than the default (C:\Intel\CV SDK\), or if you installed RealSense to a different directory other than the default (C:\Program Files (x86)\Intel\RSSDK) you will need to update the Additional Include Directories & Library Directories settings to reflect your installed location. 
 
 ![Additional Include Directories](../../../../images/CPP-Additional-Include-Directories.PNG)
 
