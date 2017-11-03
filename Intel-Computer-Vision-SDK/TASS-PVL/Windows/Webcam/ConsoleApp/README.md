@@ -33,7 +33,15 @@ Once you understand how it works you are free to modify the app accordingly.
 
 2. 1 x Intel® Edison
 
-3. 1 x Webcam
+3. 1x Grove starter kit plus - Intel IoT Edition for Intel® Edison
+
+4. 1 x Blue LED (Grove)
+
+5. 1 x Red LED (Grove)
+
+6. 1 x Buzzer (Grove)
+
+7. 1 x Webcam
 
 ## Before You Begin
 
@@ -122,6 +130,26 @@ Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Locatio
 ```
     int camera = 1;
 ```
+
+## Additional Include Directories & Library Directories
+
+If you installed the Intel® Computer Vision SDK to any directory other than the default (C:\Intel\CV SDK\) you will need to update the Additional Include Directories & Library Directories settings to reflect your installed location. 
+
+![Additional Include Directories](../../../../images/CPP-Additional-Include-Directories)
+
+![Additional Library Directories](../../../../images/Linker-Additional-Library-Directories.PNG)
+
+## Setting Up Your Intel® Edison
+
+![IoT JumpWay Intel® Edison Dev Kit IoT Alarm](../../../../images/Edsion-Hardware-Setup.jpg)
+
+The next step is to set up your Intel® Edison so that TASS PVL can communicate with it via the IoT JumpWay. For this, we already created a tutorial, the IoT JumpWay Intel® Edison Dev Kit IoT Alarm, that will guide you through this process. The only difference is that you do not need to set up the Python commands application, as in this project, TASS PVL will replace the Python commands application, to save time, please only follow the steps for the Intel® Edison device Node JS application. 
+
+You will find the tutorial on the following link: 
+
+[IoT JumpWay Intel® Edison Dev Kit IoT Alarm](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-IoT-Alarm/NodeJS "IoT JumpWay Intel® Edison Dev Kit IoT Alarm")
+
+Once you have completed that tutorial and have your device setup, return he to complete the final integration steps.
 
 ## IoT JumpWay Intel® Computer Vision SDK Bugs/Issues
 
