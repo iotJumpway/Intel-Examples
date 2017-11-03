@@ -175,6 +175,14 @@ You should repeat these steps for the red LED and buzzer for the event of NOT RE
 
 And that is it, if you have followed the tutorials correctly, you are now ready to fire up your new security system. Run the Windows console application to begin, and you will see the console window open up and a live stream of your camera, complete with bounding box and emotion status if happy. To train a known user, you simply need them to stand in front of the camera and click R to register their face, and S to save. 
 
+## Viewing Your Data
+
+When the program detects a known user or intruder, it will send sensor and warning data for the device it was captured from to the [TechBubble IoT JumpWay](https://iot.techbubbletechnologies.com/ "TechBubble IoT JumpWay"). You will be able to access the data in the [TechBubble IoT JumpWay Developers Area](https://iot.techbubbletechnologies.com/developers/dashboard/ "TechBubble IoT JumpWay Developers Area"). Once you have logged into the Developers Area, visit the [TechBubble IoT JumpWay Location Devices Page](https://iot.techbubbletechnologies.com/developers/location-devices "Location Devices page"), find your device and then visit the Warnings & Sensor Data pages to view the data sent from the application.
+
+![IoT JumpWay Sensor Data](../../../../../images/main/SensorData.png)
+
+![IoT JumpWay Warning Data](../../../../../images/main/WarningData.png)
+
 ## IoT JumpWay Intel® Computer Vision SDK Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come across whilst using the IoT JumpWay Intel® Examples. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel® Examples in your IoT projects.
