@@ -151,6 +151,30 @@ You will find the tutorial on the following link:
 
 Once you have completed that tutorial and have your device setup, return he to complete the final integration steps.
 
+## Setting Up Your Rules
+
+You are now ready to take the final steps, at this point you should have everything set up and your Intel® Edison Dev Kit IoT Alarm should be running and connected to the IoT JumpWay waiting for instructions. 
+
+Next we are going to set up the rules that allow TASS PVL to control your Intel® Edison Dev Kit IoT Alarm autonomously. Go back to the TAS PVL device page and make sure you are on the edit page. Scroll down to below where you added the camera node and you will see you are able to add rules. 
+
+![IoT JumpWay Intel® Edison Dev Kit IoT Alarm](../../../../images/Automation.PNG)
+
+The rules that we want to add are as follows:
+
+1. When a known person is identified, turn on the blue LED.
+
+2. When an unknown person is identified, turn on the red LED.
+
+3. When an unknown person is identified, turn on the buzzer.
+
+The events are going be triggered by warning messages sent from TASS PVL, so in the On Event Of drop down, select WARNING. Then you need to select the camera node you added to the TASS PVL device, as this is the sensor that the warning will come from. Next choose RECOGNISED in the With Warning Of, which will mean that the rule will be triggered when the IoT JumpWay receives a warning message that a known person has been identified, then select the Send Device Command for the Take The Following Action section, choose the Intel® Edison as the device, the blue LED as the sensor, toggle as the action and on as the command. This will then tell the Edison to turn on the blue light in the event of a known person being detected. 
+
+You should repeat these steps for the red LED and buzzer for the event of NOT RECOGNISED to handle events where an intruder, or unknown person is identified. 
+
+## Ready To Go!
+
+And that is it, if you have followed the tutorials correctly, you are now ready to fire up your new security system. Run the Windows console application to begin, and you will see the console window open up and a live stream of your camera, complete with bounding box and emotion status if happy. To train a known user, you simply need them to stand in front of the camera and click R to register their face, and S to save. 
+
 ## IoT JumpWay Intel® Computer Vision SDK Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come across whilst using the IoT JumpWay Intel® Examples. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel® Examples in your IoT projects.
