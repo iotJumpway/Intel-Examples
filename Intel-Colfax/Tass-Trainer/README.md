@@ -34,5 +34,9 @@ Everything for this tutorial is already provided on Colfax.
 
 ## Upload Structure To Colfax
 
-Once you have completed the steps above, it is time to login to Colfax and upload the structure described above.
+Once you have completed the steps above, it is time to login to Colfax and upload the structure described above. You need to upload all of the files shown in the screen shot below, with exception to the README.
+
+![IoT JumpWay Intel® Nervana AI / Colfax Examples](images/file-structure.jpg)
+
+
 
