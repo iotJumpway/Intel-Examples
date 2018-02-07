@@ -31,6 +31,8 @@ import random
 import re
 import sys
 import tarfile
+import cv2
+import json
 
 import numpy as np
 from six.moves import urllib
@@ -124,6 +126,11 @@ class InceptionFlow():
         self.RESIZED_INPUT_TENSOR_NAME = 'ResizeBilinear:0'
         self.MAX_NUM_IMAGES_PER_CLASS = 2 ** 27 - 1  # ~134M
 
+        self.confs = {}
+        
+        with open('confs.json') as confs:
+            
+            self.confs = json.loads(confs.read())
 
     def create_image_lists(self, image_dir, testing_percentage, validation_percentage):
         if not gfile.Exists(image_dir):
@@ -203,10 +210,9 @@ class InceptionFlow():
         return self.get_image_path(image_lists, label_name, index, bottleneck_dir,category) + '.txt'
 
 
-    def create_inception_graph(self):
+    def createInceptionGraph(self):
         with tf.Session() as sess:
-            model_filename = os.path.join(
-                FLAGS.model_dir, 'classify_image_graph_def.pb')
+            model_filename = FLAGS.output_graph
             with gfile.FastGFile(model_filename, 'rb') as f:
                 graph_def = tf.GraphDef()
                 graph_def.ParseFromString(f.read())
@@ -226,7 +232,7 @@ class InceptionFlow():
         return bottleneck_values
 
 
-    def maybe_download_and_extract(self):
+    def checkModelDownload(self):
         dest_directory = FLAGS.model_dir
         if not os.path.exists(dest_directory):
             os.makedirs(dest_directory)
@@ -410,13 +416,13 @@ class InceptionFlow():
     def variable_summaries(self, var, name):
         with tf.name_scope('summaries'):
             mean = tf.reduce_mean(var)
-            tf.scalar_summary('mean/' + name, mean)
+            tf.summary.scalar('mean/' + name, mean)
             with tf.name_scope('stddev'):
                 stddev = tf.sqrt(tf.reduce_mean(tf.square(var - mean)))
-            tf.scalar_summary('stddev/' + name, stddev)
-            tf.scalar_summary('max/' + name, tf.reduce_max(var))
-            tf.scalar_summary('min/' + name, tf.reduce_min(var))
-            tf.histogram_summary(name, var)
+            tf.summary.scalar('stddev/' + name, stddev)
+            tf.summary.scalar('max/' + name, tf.reduce_max(var))
+            tf.summary.scalar('min/' + name, tf.reduce_min(var))
+            tf.summary.histogram(name, var)
 
 
     def add_final_training_ops(self, class_count, final_tensor_name, bottleneck_tensor):
@@ -439,17 +445,17 @@ class InceptionFlow():
                 self.variable_summaries(layer_biases, layer_name + '/biases')
             with tf.name_scope('Wx_plus_b'):
                 logits = tf.matmul(bottleneck_input, layer_weights) + layer_biases
-                tf.histogram_summary(layer_name + '/pre_activations', logits)
+                tf.summary.histogram(layer_name + '/pre_activations', logits)
 
         final_tensor = tf.nn.sigmoid(logits, name=final_tensor_name)
-        tf.histogram_summary(final_tensor_name + '/activations', final_tensor)
+        tf.summary.histogram(final_tensor_name + '/activations', final_tensor)
 
         with tf.name_scope('cross_entropy'):
             cross_entropy = tf.nn.sigmoid_cross_entropy_with_logits(
-            logits, ground_truth_input)
+            logits=logits, labels=ground_truth_input)
             with tf.name_scope('total'):
                 cross_entropy_mean = tf.reduce_mean(cross_entropy)
-            tf.scalar_summary('cross entropy', cross_entropy_mean)
+            tf.summary.scalar('cross entropy', cross_entropy_mean)
 
         with tf.name_scope('train'):
             train_step = tf.train.GradientDescentOptimizer(FLAGS.learning_rate).minimize(
@@ -466,10 +472,10 @@ class InceptionFlow():
                 tf.argmax(ground_truth_tensor, 1))
             with tf.name_scope('accuracy'):
                 evaluation_step = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
-            tf.scalar_summary('accuracy', evaluation_step)
+            tf.summary.scalar('accuracy', evaluation_step)
         return evaluation_step
 
-
+    
     def trainModel(self):
         # Setup the directory we'll write summaries to for TensorBoard
         if tf.gfile.Exists(FLAGS.summaries_dir):
@@ -477,7 +483,7 @@ class InceptionFlow():
         tf.gfile.MakeDirs(FLAGS.summaries_dir)
 
         # Set up the pre-trained graph.
-        self.maybe_download_and_extract()
+        self.checkModelDownload()
         graph, bottleneck_tensor, jpeg_data_tensor, resized_image_tensor = (
             self.create_inception_graph())
 
@@ -520,10 +526,10 @@ class InceptionFlow():
         evaluation_step = self.add_evaluation_step(final_tensor, ground_truth_input)
 
         # Merge all the summaries and write them out to /tmp/retrain_logs (by default)
-        merged = tf.merge_all_summaries()
-        train_writer = tf.train.SummaryWriter(FLAGS.summaries_dir + '/train',
+        merged = tf.summary.merge_all()
+        train_writer = tf.summary.FileWriter(FLAGS.summaries_dir + '/train',
                                                 sess.graph)
-        validation_writer = tf.train.SummaryWriter(FLAGS.summaries_dir + '/validation')
+        validation_writer = tf.summary.FileWriter(FLAGS.summaries_dir + '/validation')
 
         # Set up all our weights to their initial default values.
         init = tf.initialize_all_variables()
@@ -595,3 +601,66 @@ class InceptionFlow():
             f.write(output_graph_def.SerializeToString())
         with gfile.FastGFile(FLAGS.output_labels, 'w') as f:
             f.write('\n'.join(image_lists.keys()) + '\n')
+            
+    def infer(self,image):
+        
+        """
+        Runs inference on an image.
+        
+        Args:
+            image: Image file name.
+        Returns:
+            Nothing
+        """
+
+        classification = None
+        image = tf.gfile.FastGFile(image,'rb').read()
+
+        with tf.Session() as sess:
+
+            softmaxTensor = sess.graph.get_tensor_by_name('final_result:0')
+            predictions = sess.run(softmaxTensor,{'DecodeJpeg/contents:0': image})
+            predictions = np.squeeze(predictions)
+            topPredictions = predictions.argsort()[-5:][::-1]
+            f = open(FLAGS.output_labels, 'rb')
+            lines = f.readlines()
+            labels = [str(w).replace("\n","") for w in lines]
+
+            for node in topPredictions:
+                classification = labels[node]
+                score = predictions[node]
+                print('%s (score = %.5f)' % (classification, score))
+
+            print("")
+            topClassification = labels[topPredictions[0]]
+            score = predictions[topPredictions[0]]
+            topScore = predictions[topPredictions[0]]
+
+            return topClassification, topScore 
+            
+    def testModel(self):
+        
+        print("TESTING FACIAL REC")
+        print("")
+        rootdir=os.getcwd()+"/model/testing/facial/"
+        
+        for file in os.listdir(rootdir):
+            
+            if file.endswith(".jpg"):
+                
+                print("FILE: "+file)
+                
+                fileName = rootdir+"/"+file
+                Label,Confidence = self.infer(fileName)
+                
+                if Confidence > self.confs["ClassifierSettings"]["FACIAL_THRESHOLD"]:
+                    
+                    print("")
+                    print("PROVIDED IMAGE: "+file)
+                    print("OBJECT DETECTED: "+str(Label))
+                    print("CONFIDENCE: "+str(Confidence))
+                    print("...")
+                    print("")
+                    
+        print("COMPLETED TESTING FACIAL RECOGNITION")
+        print("")
