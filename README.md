@@ -20,9 +20,9 @@ The Intel® examples provide example projects that you can use to get started wi
 
 ![Intel® CV SDK Windows Examples](Intel-Computer-Vision-SDK/TASS-PVL/Windows/images/Intel-Computer-Vision-Windows.png)
 
-- [Windows Console: TASS PVL Webcam Security System](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Webcam/ConsoleApp "Windows Console: TASS PVL Webcam Security System")
+- [Windows Console: TASS PVL Webcam Security System](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Webcam/ConsoleApp "Windows Console: TASS PVL Webcam Security System"). A Computer Vision security system using the Intel® CV SDK & standard webcam.
 
-- [Windows Console: TASS PVL RealSense Security System](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Realsense/ConsoleApp "Windows Console: TASS PVL RealSense Security System")
+- [Windows Console: TASS PVL RealSense Security System](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Realsense/ConsoleApp "Windows Console: TASS PVL RealSense Security System"). A Computer Vision security system using the Intel® CV SDK & RealSense webcam.
 
 ## IoT JumpWay Intel® Arduino 101 Examples
 
