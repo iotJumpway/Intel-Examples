@@ -16,13 +16,13 @@ The Intel® examples provide example projects that you can use to get started wi
 
 ![IoT JumpWay Intel® Nervana AI / Colfax Examples](Intel-Colfax/images/intel-nervana-ai-cluster-colfax.jpg)
 
-## Intel® Computer Vision SDK Windows Examples
+## Intel® CV SDK Windows Examples
 
-![Intel® Computer Vision SDK Windows Examples](Intel-Computer-Vision-SDK/TASS-PVL/Windows/images/Intel-Computer-Vision-Windows.png)
+![Intel® CV SDK Windows Examples](Intel-Computer-Vision-SDK/TASS-PVL/Windows/images/Intel-Computer-Vision-Windows.png)
 
-- [IoT JumpWay Intel® Computer Vision SDK Windows Console TASS PVL Webcam Security System](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Webcam/ConsoleApp "IoT JumpWay Intel® Computer Vision SDK Windows Console TASS PVL Webcam Security System")
+- [Windows Console: TASS PVL Webcam Security System](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Webcam/ConsoleApp "Windows Console: TASS PVL Webcam Security System")
 
-- [IoT JumpWay Intel® Computer Vision SDK Windows Console TASS PVL RealSense Security System](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Realsense/ConsoleApp "IoT JumpWay Intel® Computer Vision SDK Windows TASS PVL RealSense Security System")
+- [Windows Console: TASS PVL RealSense Security System](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Realsense/ConsoleApp "Windows Console: TASS PVL RealSense Security System")
 
 ## IoT JumpWay Intel® Arduino 101 Examples
 
