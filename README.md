@@ -12,6 +12,10 @@ The various IoT JumpWay libraries and samples allow you to connect devices and s
 
 The Intel® examples provide example projects that you can use to get started with using the TechBubble IoT JumpWay for your Intel® IoT Developer Kit, Intel® Edison board, Intel® Galileo, Intel® Joule and Intel® IoT Gateway (Nuc) projects.
 
+## Intel® Movidius Examples
+
+![IoT JumpWay Movidius Examples](Intel-Movidius/Images/movidius.jpg)
+
 ## Intel® Nervana AI / Colfax Examples
 
 ![IoT JumpWay Intel® Nervana AI / Colfax Examples](Intel-Colfax/images/intel-nervana-ai-cluster-colfax.jpg)
