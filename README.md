@@ -22,6 +22,11 @@ The Intel® examples provide example projects that you can use to get started wi
 
 - [Windows Console: TASS PVL Webcam Security System](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Webcam/ConsoleApp "Windows Console: TASS PVL Webcam Security System"). A Computer Vision security system using the Intel® CV SDK & standard webcam.
 
+
+
+Examples of using the IoT JumpWay with the Intel® IoT Developer Kit, Intel® Edison board, Intel® Galileo, Intel® Joule and Intel® IoT Gateway.
+
+
 - [Windows Console: TASS PVL RealSense Security System](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Realsense/ConsoleApp "Windows Console: TASS PVL RealSense Security System"). A Computer Vision security system using the Intel® CV SDK & RealSense webcam.
 
 ## Intel® Arduino 101 DFRobot Examples
@@ -36,19 +41,17 @@ The Intel® examples provide example projects that you can use to get started wi
 
 ![IoT JumpWay Intel® Arduino 101 Examples](images/main/Arduino-101.png)
 
-- [Intel® Arduino 101 Basic LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/Basic-LED "Intel® Arduino 101 Basic LED Example")
+- [Basic LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/Basic-LED "Basic LED Example"). Set up an Arduino/Genuino 101 that allows control of an LED, and also an application that can control the LED via the IoT JumpWay.
 
 ## IoT JumpWay Intel® Edison Examples
 
 ![IoT JumpWay Intel® Edison Examples](images/main/Intel-Edison.png)
 
-- [Intel® Edison Basic LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Basic-LED/Python "Intel® Edison Basic LED Python Example")
+- [Python: Basic LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Basic-LED/Python "Python: Basic LED Example"). Set up an Intel® Edison that allows control of an LED, and also an application that can control the LED via the IoT JumpWay.
 
-- [Intel® Edison Dev Kit LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-LED/Python "Intel® Edison Dev Kit LED Python Example")
+- [Python: Dev Kit LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-LED/Python "Python: Dev Kit LED Example"). Set up an Intel® Edison that allows control of an LED on an IoT Dev Kit and an application that can control the LED via the IoT JumpWay.
 
-- [Intel® Edison Dev Kit IoT Alarm](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-IoT-Alarm/NodeJS "IoT JumpWay Intel® Edison Dev Kit IoT Alarm")
-
-- [Intel® Arduino 101 Dev Kit LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/Basic-LED "Intel® Arduino 101 Dev Kit LED Example")
+- [Python: Dev Kit IoT Alarm](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-IoT-Alarm/NodeJS "Python: Dev Kit IoT Alarm"), Set up an Intel® Edison IoT alarm system that is controlled by the TechBubble Technologies IoT JumpWay.
 
 ## IoT JumpWay Intel® Galileo Examples
 
