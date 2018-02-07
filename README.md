@@ -16,6 +16,8 @@ The Intel® examples provide example projects that you can use to get started wi
 
 ![IoT JumpWay Intel® Nervana AI / Colfax Examples](Intel-Colfax/images/intel-nervana-ai-cluster-colfax.jpg)
 
+- [Python: Intel® Nervana AI / Colfax TASS Trainer](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Colfax/Tass-Trainer "Python: Intel® Nervana AI / Colfax TASS Trainer"). Train TASS on the Intel® Nervana AI / Colfax platform. 
+
 ## Intel® CV SDK Windows Examples
 
 ![Intel® CV SDK Windows Examples](Intel-Computer-Vision-SDK/TASS-PVL/Windows/images/Intel-Computer-Vision-Windows.png)
