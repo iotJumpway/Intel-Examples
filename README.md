@@ -2,7 +2,6 @@
 
 ![IoT JumpWay Intel® Examples](images/main/IoT-JumpWay-Intel-Examples.png)
 
-
 ## Introduction
 
 The IoT JumpWay is an IoT platform that provides a high performance, scalable and efficient solution for IoT developers and Makers. The platform provides the fundamental services that allow you to securely distribute data from IoT devices and manage and control them securely via applications.
@@ -12,6 +11,10 @@ The platform provides an IoT PaaS for IoT communication, tutorials and examples.
 The various IoT JumpWay libraries and samples allow you to connect devices and sensors to the IoT JumpWay and control/monitor sensors/actuators and data to and from the devices.
 
 The Intel® examples provide example projects that you can use to get started with using the TechBubble IoT JumpWay for your Intel® IoT Developer Kit, Intel® Edison board, Intel® Galileo, Intel® Joule and Intel® IoT Gateway (Nuc) projects.
+
+# Intel® Nervana AI / Colfax Examples
+
+![IoT JumpWay Intel® Nervana AI / Colfax Examples](colfax/images/intel-nervana-ai-cluster-colfax.jpg)
 
 ## Intel® Computer Vision SDK Windows Examples
 
