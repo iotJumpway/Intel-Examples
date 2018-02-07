@@ -24,23 +24,19 @@ The Intel® examples provide example projects that you can use to get started wi
 
 - [Windows Console: TASS PVL RealSense Security System](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Realsense/ConsoleApp "Windows Console: TASS PVL RealSense Security System"). A Computer Vision security system using the Intel® CV SDK & RealSense webcam.
 
+## Intel® Arduino 101 DFRobot Examples
+
+![Intel® Arduino 101 DFRobot Examples](images/main/DFRobot.png)
+
+- [LCD Control Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/3RD-PARTY-DFRobot/LCD-Control "LCD Control Example"). Set up an Arduino 101 IoT device that can control other IoT devices on the same network using the LCD Keypad Shield and communication via the IoT JumpWay.
+
+- [LCD Intruder System Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/3RD-PARTY-DFRobot/LCD-Intruder-System "LCD Intruder System Example"). Set up an Arduino 101 intruder alarm system that is controlled by the DFRobot LCD Keypad Shield and communication via the IoT JumpWay.
+
 ## IoT JumpWay Intel® Arduino 101 Examples
 
 ![IoT JumpWay Intel® Arduino 101 Examples](images/main/Arduino-101.png)
 
 - [Intel® Arduino 101 Basic LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/Basic-LED "Intel® Arduino 101 Basic LED Example")
-
-- [Intel® Arduino 101 Dev Kit LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/Basic-LED "Intel® Arduino 101 Dev Kit LED Example")
-
-
-## IoT JumpWay Intel® DFRobot Examples
-
-![IoT JumpWay Intel® DFRobot Examples](images/main/DFRobot.png)
-
-- [Intel® Arduino 101 DF Robot LCD Control Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/3RD-PARTY-DFRobot/LCD-Control "Intel® Arduino 101 DF Robot LCD Control Example")
-
-- [Intel® Arduino 101 DF Robot LCD Intruder System Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/3RD-PARTY-DFRobot/LCD-Intruder-System "Intel® Arduino 101 DF Robot LCD Intruder System Example")
-
 
 ## IoT JumpWay Intel® Edison Examples
 
@@ -52,6 +48,7 @@ The Intel® examples provide example projects that you can use to get started wi
 
 - [Intel® Edison Dev Kit IoT Alarm](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-IoT-Alarm/NodeJS "IoT JumpWay Intel® Edison Dev Kit IoT Alarm")
 
+- [Intel® Arduino 101 Dev Kit LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/Basic-LED "Intel® Arduino 101 Dev Kit LED Example")
 
 ## IoT JumpWay Intel® Galileo Examples
 
