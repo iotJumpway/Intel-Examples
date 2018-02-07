@@ -29,17 +29,17 @@ The Intel® examples provide example projects that you can use to get started wi
 
 ![Intel® Arduino 101 DFRobot Examples](images/main/DFRobot.png)
 
-- [LCD Control Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/3RD-PARTY-DFRobot/LCD-Control "LCD Control Example"). Set up an Arduino 101 IoT device that can control other IoT devices on the same network using the LCD Keypad Shield and communication via the IoT JumpWay.
+- [Arduino: LCD Control Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/3RD-PARTY-DFRobot/LCD-Control "Arduino: LCD Control Example"). Set up an Arduino 101 IoT device that can control other IoT devices on the same network using the LCD Keypad Shield and communication via the IoT JumpWay.
 
-- [LCD Intruder System Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/3RD-PARTY-DFRobot/LCD-Intruder-System "LCD Intruder System Example"). Set up an Arduino 101 intruder alarm system that is controlled by the DFRobot LCD Keypad Shield and communication via the IoT JumpWay.
+- [Arduino: LCD Intruder System Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/3RD-PARTY-DFRobot/LCD-Intruder-System "Arduino: LCD Intruder System Example"). Set up an Arduino 101 intruder alarm system that is controlled by the DFRobot LCD Keypad Shield and communication via the IoT JumpWay.
 
-## IoT JumpWay Intel® Arduino 101 Examples
+## Intel® Arduino 101 Examples
 
 ![IoT JumpWay Intel® Arduino 101 Examples](images/main/Arduino-101.png)
 
-- [Basic LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/Basic-LED "Basic LED Example"). Set up an Arduino/Genuino 101 that allows control of an LED, and also an application that can control the LED via the IoT JumpWay.
+- [Arduino: Basic LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/Basic-LED "Arduino: Basic LED Example"). Set up an Arduino/Genuino 101 that allows control of an LED, and also an application that can control the LED via the IoT JumpWay.
 
-## IoT JumpWay Intel® Edison Examples
+## Intel® Edison Examples
 
 ![IoT JumpWay Intel® Edison Examples](images/main/Intel-Edison.png)
 
@@ -49,18 +49,17 @@ The Intel® examples provide example projects that you can use to get started wi
 
 - [Python: Dev Kit IoT Alarm](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-IoT-Alarm/NodeJS "Python: Dev Kit IoT Alarm"), Set up an Intel® Edison IoT alarm system that is controlled by the TechBubble Technologies IoT JumpWay.
 
-## IoT JumpWay Intel® Galileo Examples
+## Intel® Galileo Examples
 
 ![IoT JumpWay Intel® Galileo Examples](images/main/Intel-Galileo.png)
 
-- [Intel® Galileo Basic LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Galileo/Basic-LED/Python "Intel® Galileo Basic LED Python Example")
+- [Python: Basic LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Galileo/Basic-LED/Python "Python: Basic LED Example"). Set up an Intel® Galileo that allows control of an LED, and also an application that can control the LED via the IoT JumpWay.
 
-- [Intel® Galileo Dev Kit LED Python Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Galileo/Dev-Kit-LED/Python "Intel® Galileo Dev Kit LED Python Example")
+- [Python: Dev Kit LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Galileo/Dev-Kit-LED/Python "Python: Dev Kit LED Example"). Set up an Intel® Galileo that allows control of an LED on an IoT Dev Kit and an application that can control the LED via the IoT JumpWay.
 
 ## IoT JumpWay Intel® Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come accross whilst using the IoT JumpWay Intel Examples. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel Examples in your IoT projects.
-
 
 ## IoT JumpWay Intel® Contributors
 
