@@ -14,7 +14,7 @@ The Intel® examples provide example projects that you can use to get started wi
 
 # Intel® Nervana AI / Colfax Examples
 
-![IoT JumpWay Intel® Nervana AI / Colfax Examples](colfax/images/intel-nervana-ai-cluster-colfax.jpg)
+![IoT JumpWay Intel® Nervana AI / Colfax Examples](Intel-Colfax/images/intel-nervana-ai-cluster-colfax.jpg)
 
 ## Intel® Computer Vision SDK Windows Examples
 
