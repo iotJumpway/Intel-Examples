@@ -58,9 +58,11 @@ You can add as many as classes as you like, each class will slow the training do
 
 Now it is time to start the training, head on over to [Colfax TASS Trainer notebook](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Colfax/Tass-Trainer/Colfax-TASS-Trainer.ipynb "Colfax TASS Trainer notebook") on Colfax. You do not need to execute any of the code blocks except for the first until you get to "Create training job", here you can begin to execute the blocks of code following the guide which will submit a job to train TASS on the Colfax Clusters.
 
-## Testing the trained model
+## Testing The Trained Model
 
-Now time for the crunch, again, you do not need to find any  additional training to test this program, but if you do want to you can add more images to the model/testing directory. The testing data provided for out of the box use of this tutorial include 2 images of Darth, 2 of Yoda, and 2 of a very handsome guy ;) Head on over to [Colfax TASS Trainer Inference notebook](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Colfax/Tass-Trainer/Colfax-TASS-Trainer-Inference.ipynb "Colfax TASS Trainer Inference notebook") on Colfax. You do not need to execute any of the code blocks except for the first until you get to "Create testing job", here you can begin to execute the blocks of code following the guide which will submit a job to test TASS on the Colfax Clusters.
+Now time for the crunch, again, you do not need to find any  additional training to test this program, but if you do want to you can add more images to the model/testing directory. The testing data provided for out of the box use of this tutorial include 2 images of Darth, 2 of Yoda, and 2 of a very handsome guy ;) 
+
+Head on over to [Colfax TASS Trainer Inference notebook](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Colfax/Tass-Trainer/Colfax-TASS-Trainer-Inference.ipynb "Colfax TASS Trainer Inference notebook") on Colfax. You do not need to execute any of the code blocks except for the first until you get to "Create testing job", here you can begin to execute the blocks of code following the guide which will submit a job to test TASS on the Colfax Clusters.
 
 The output for me was as follows:
 
