@@ -32,15 +32,29 @@ Once you have the repo, you will need to find the files in this folder located i
 
 Everything for this tutorial is already provided on Colfax.
 
+## Login To Colfax
+
+Login to your Colfax Notebook area by following [this link](https://access.colfaxresearch.com/?p=connect "this link").
+
 ## Upload Structure To Colfax
 
 Once you have completed the steps above, it is time to login to Colfax and upload the structure described above. You need to upload all of the files shown in the screen shot below, with exception to the README.
 
 ![IoT JumpWay Intel® Nervana AI / Colfax Examples](Images/file-structure.jpg)
 
-## Start The Training
+## Training & Testing Data
 
-The next step is to start the training, for this login to your Colfax Notebook area by following [this link](https://access.colfaxresearch.com/?p=connect "this link"), and then open up the Colfax-TASS-Trainer.ipynb. At this point you do not need to execute any of the blocks, follow the tutorial until you get to "Create training job", here you can begin to execute the blocks of code following the guide which will submit a job to train TASS on the Colfax Clusters.
+You can train and test this example without finding any additional training and testing data, but if you would like to add your own classes you will find the training data in the training/human directory. 
+
+The test data provided (Collected from Google) has two classes, 1 and 2, these folders represent Darth Vader and Yoda, in these directories (classes) are 30 images of each character, directory 1 represents Darth and directory 2 represents Yoda. 
+
+You can name these directories what you like, the name of the directory will be used in the predictions, so if the program detects Darth in an image it will return 1 as the highest prediction. 
+
+You can add as many as classes as you like, each class will slow the training down. Each class should have no less than 30 images, generally any more than 25 but less than 30 will crash the script with devision by 0 right at the end of the training process.
+
+## Start The Training)
+
+The next step is to start the training, for this open up the Colfax-TASS-Trainer.ipynb. At this point you do not need to execute any of the blocks, follow the tutorial until you get to "Create training job", here you can begin to execute the blocks of code following the guide which will submit a job to train TASS on the Colfax Clusters.
 
 ## Intel® Nervana AI / Colfax TASS Trainer Bugs/Issues
 
