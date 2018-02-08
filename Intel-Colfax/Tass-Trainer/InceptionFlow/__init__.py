@@ -485,7 +485,7 @@ class InceptionFlow():
         # Set up the pre-trained graph.
         self.checkModelDownload()
         graph, bottleneck_tensor, jpeg_data_tensor, resized_image_tensor = (
-            self.create_inception_graph())
+            self.createInceptionGraph())
 
         # Look at the folder structure, and create lists of all the images.
         image_lists = self.create_image_lists(FLAGS.image_dir, FLAGS.testing_percentage,
