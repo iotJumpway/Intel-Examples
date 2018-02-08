@@ -44,6 +44,8 @@ Once you have completed the steps above, it is time to login to Colfax and uploa
 
 ## Training & Testing Data
 
+![IoT JumpWay Intel® Nervana AI / Colfax Examples](Images/data.jpg)
+
 You can train and test this example without finding any additional training and testing data, but if you would like to add your own classes you will find the training data in the training/human directory. 
 
 The test data provided (Collected from Google) has two classes, 1 and 2, these folders represent Darth Vader and Yoda, in these directories (classes) are 30 images of each character, directory 1 represents Darth and directory 2 represents Yoda. 
