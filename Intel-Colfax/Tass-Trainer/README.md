@@ -58,6 +58,63 @@ You can add as many as classes as you like, each class will slow the training do
 
 Now it is time to start the training, head on over to [Colfax TASS Trainer notebook](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Colfax/Tass-Trainer/Colfax-TASS-Trainer.ipynb "Colfax TASS Trainer notebook") on Colfax. You do not need to execute any of the code blocks except for the first until you get to "Create training job", here you can begin to execute the blocks of code following the guide which will submit a job to train TASS on the Colfax Clusters.
 
+## Testing the trained model
+
+Now time for the crunch, again, you do not need to find any  additional training to test this program, but if you do want to you can add more images to the model/testing directory. The testing data provided for out of the box use of this tutorial include 2 images of Darth, 2 of Yoda, and 2 of a very handsome guy ;) Head on over to [Colfax TASS Trainer Inference notebook](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Colfax/Tass-Trainer/Colfax-TASS-Trainer-Inference.ipynb "Colfax TASS Trainer Inference notebook") on Colfax. You do not need to execute any of the code blocks except for the first until you get to "Create testing job", here you can begin to execute the blocks of code following the guide which will submit a job to test TASS on the Colfax Clusters.
+
+The output for me was as follows:
+
+```
+
+TESTING FACIAL REC
+
+FILE: Darth1.jpg
+1 (score = 0.99834)
+2 (score = 0.00164)
+
+
+PROVIDED IMAGE: Darth1.jpg
+OBJECT DETECTED: 1
+CONFIDENCE: 0.998343
+...
+
+FILE: Darth2.jpg
+1 (score = 0.99692)
+2 (score = 0.00311)
+
+
+PROVIDED IMAGE: Darth2.jpg
+OBJECT DETECTED: 1
+CONFIDENCE: 0.996923
+...
+
+FILE: Yoda2.jpg
+2 (score = 0.99710)
+1 (score = 0.00293)
+
+
+PROVIDED IMAGE: Yoda2.jpg
+OBJECT DETECTED: 2
+CONFIDENCE: 0.997104
+...
+
+FILE: Yoda1.jpg
+2 (score = 0.99535)
+1 (score = 0.00465)
+
+FILE: VeryHansomeGuy.jpg
+2 (score = 0.72019)
+1 (score = 0.27821)
+
+FILE: VeryHansomeGuy2.jpg
+2 (score = 0.59470)
+1 (score = 0.40845)
+
+COMPLETED TESTING FACIAL RECOGNITION
+```
+
+This means that Darth was identified in each image, Yoda in 1 and the program successfully identified me as an unknown person.
+
 ## Intel® Nervana AI / Colfax TASS Trainer Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come across whilst using the Intel® Nervana AI / Colfax TASS Trainer example. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel® Examples in your IoT projects.
