@@ -54,9 +54,9 @@ You can name these directories what you like, the name of the directory will be 
 
 You can add as many as classes as you like, each class will slow the training down. Each class should have no less than 30 images, generally any more than 25 but less than 30 will crash the script with devision by 0 right at the end of the training process.
 
-## Start The Training)
+## Start The Training
 
-The next step is to start the training, for this open up the Colfax-TASS-Trainer.ipynb. At this point you do not need to execute any of the blocks, follow the tutorial until you get to "Create training job", here you can begin to execute the blocks of code following the guide which will submit a job to train TASS on the Colfax Clusters.
+Now it is time to start the training, head on over to [Colfax TASS Trainer notebook](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Colfax/Tass-Trainer/Colfax-TASS-Trainer.ipynb "Colfax TASS Trainer notebook") on Colfax. You do not need to execute any of the code blocks except for the first until you get to "Create training job", here you can begin to execute the blocks of code following the guide which will submit a job to train TASS on the Colfax Clusters.
 
 ## Intel® Nervana AI / Colfax TASS Trainer Bugs/Issues
 
