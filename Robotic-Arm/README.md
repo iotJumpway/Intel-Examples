@@ -20,7 +20,7 @@ The project consists of three programs:
 
 ## ESP8266 Communication Program
 
-The first step is to setup the ESP8266 communication program. You will find the source code and tutorial in the [ESP8266 directory](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/ESP8266 "ESP8266 directory"). follow the tutorial to get this part of the project set up.  
+The first step is to setup the ESP8266 communication program. You will find the [source code and tutorial](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/ESP8266 "source code and tutorial") in the [ESP8266 directory](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/ESP8266 "ESP8266 directory"). Follow the tutorial to get this part of the project set up.  
 
 
 
