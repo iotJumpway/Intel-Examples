@@ -18,6 +18,18 @@ The project consists of three programs:
 - ESP8266 Communication Program (Arduino)
 - InceptionFlow Computer Vision Program (Python)
 
+# COMPETITION!!!
+
+Want to win your very own robotic arm kit ? We are looking for the best project that utilizes the Computer Vision Controlled IoT Connected Robotic Arm project. To enter your project, you must:
+
+- Star / Fork this repository.
+- Like the [TechBubble Technologies](https://www.facebook.com/TechBubbleInfo "TechBubble Technologies") & [Saft7robotics](https://www.facebook.com/TechBubbleInfo "Saft7robotics") Facebook pages.
+- Use all three of the programs that make up this tutorial.
+- Add your full project idea including description / graphics / video to your project README file in your forked repository.
+- Post the link to your README on the pinned post on the TechBubble Technologies Facebook page.
+
+We are looking for the most innovative, crazy and out of this world projects, but would also like to see a real world use case. The competition is open until March 14th.
+
 ## ESP8266 Communication Program
 
 The first step is to setup the ESP8266 communication program. You will find the [source code and tutorial](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/ESP8266 "source code and tutorial") in the [ESP8266 directory](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/ESP8266 "ESP8266 directory"). Follow the tutorial to get this part of the project set up.  
