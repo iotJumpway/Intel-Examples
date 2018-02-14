@@ -28,7 +28,13 @@ Want to win your very own robotic arm kit ? We are looking for the best project 
 - Add your full project idea including description / graphics / video to your project README file in your forked repository.
 - Post the link to your README on the pinned post on the TechBubble Technologies Facebook page.
 
-We are looking for the most innovative, crazy and out of this world projects, but would also like to see a real world use case. The competition is open until March 14th.
+We are looking for the most innovative, crazy and out of this world projects, but would also like to see a real world use case. 
+
+## BONUS
+
+Use the IoT JumpWay for autonomous communication with other IoT devices connected to the IoT JumpWay for extra browny points ;) 
+
+The competition is open until March 14th.
 
 ## ESP8266 Communication Program
 
