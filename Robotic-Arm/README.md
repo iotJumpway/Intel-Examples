@@ -1,6 +1,6 @@
-# Computer Vision Controlled IoT Connect Robotic Arm
+# Computer Vision Controlled IoT Connected Robotic Arm
 
-![Computer Vision Controlled IoT Connect Robotic Arm](Images/robotic-arm.jpg)
+![Computer Vision Controlled IoT Connected Robotic Arm](Images/robotic-arm.jpg)
 
 ## Introduction
 
