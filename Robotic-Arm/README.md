@@ -32,15 +32,25 @@ We are looking for the most innovative, crazy and out of this world projects, bu
 
 ## ESP8266 Communication Program
 
-The first step is to setup the ESP8266 Communication Program. You will find the [source code and tutorial](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/ESP8266 "source code and tutorial") in the [ESP8266 directory](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/ESP8266 "ESP8266 directory"). Follow the tutorial to get this part of the project set up. 
+The first step is to setup the ESP8266 Communication Program. You will find the [source code and tutorial](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/ESP8266 "source code and tutorial") in the [ESP8266 directory](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/ESP8266 "ESP8266 directory"). 
+
+The ESP8266 Communication Program acts as a bridge between the Robotic Arm and the IoT JumpWay. The program listens for commands sent to the device and forwards them through to the arm via serial.
+
+Follow the tutorial to get this part of the project set up. 
 
 ## Robotic Arm Core Program
 
-The next step is to setup the Robotic Arm Core Program. You will find the [source code and tutorial](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/Arduino "source code and tutorial") in the [Arduino directory](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/Arduino "Arduino directory"). Follow the tutorial to get this part of the project set up.
+The next step is to setup the Robotic Arm Core Program. You will find the [source code and tutorial](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/Arduino "source code and tutorial") in the [Arduino directory](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/Arduino "Arduino directory"). 
+
+Follow the tutorial to get this part of the project set up.
 
 ## Computer Vision Program
 
-The final step is to setup the Computer Vision Program. You will find the [source code and tutorial](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/Python "source code and tutorial") in the [Python directory](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/Python "Python directory"). Follow the tutorial to get this part of the project set up.     
+The final step is to setup the Computer Vision Program. You will find the [source code and tutorial](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/Python "source code and tutorial") in the [Python directory](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/Python "Python directory"). 
+
+The Computer Vision Program is based on Adam Milton-Barker's InceptionFlow and allows you train a neural network to detect faces or objects. In this tutorial, we train the neural network to be able to recognize up, down, left and right arrows, once the program detects an arrow, it will send the relevant command to the robotic arm.
+
+Follow the tutorial to get this part of the project set up.     
 
 ## Bugs & Issues
 
