@@ -36,11 +36,21 @@ The first step is to setup the ESP8266 Communication Program. You will find the 
 
 ## Robotic Arm Core Program
 
-The next step is to setup the Robotic Arm Core Program. You will find the [source code and tutorial](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/Arduino "source code and tutorial") in the [Arduino directory](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/Arduino "Arduino directory"). Follow the tutorial to get this part of the project set up.   
+The next step is to setup the Robotic Arm Core Program. You will find the [source code and tutorial](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/Arduino "source code and tutorial") in the [Arduino directory](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/Arduino "Arduino directory"). Follow the tutorial to get this part of the project set up.
 
 ## Computer Vision Program
 
-The final step is to setup the Computer Vision Program. You will find the [source code and tutorial](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/Python "source code and tutorial") in the [Python directory](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/Python "Python directory"). Follow the tutorial to get this part of the project set up.   
+The final step is to setup the Computer Vision Program. You will find the [source code and tutorial](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/Python "source code and tutorial") in the [Python directory](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/Python "Python directory"). Follow the tutorial to get this part of the project set up.     
+
+## Bugs & Issues
+
+Please feel free to create issues for bugs and general issues you come across whilst using this project. For issues with using the IoT JumpWay please visit the TechBubble GitHub repo.
+
+## Contributors
+
+- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
+
+![Adam Milton-Barker,  Intel Software Innovator](../images/main/Intel-Software-Innovator.jpg)   
 
 
 
