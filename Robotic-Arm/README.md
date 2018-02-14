@@ -11,3 +11,9 @@ The project combines 3 main projects which are as follows:
 - Saft7robotics: Arduino Powered Robotic Arm
 - Adam Milton-Barker: InceptionFlow
 - TechBubble Technologies: TASS AI
+
+The project consists of three programs:
+
+- Robotic Arm Program (Arduino)
+- ESP8266 Communication Program (Arduino)
+- InceptionFlow Computer Vision Program (Python)
