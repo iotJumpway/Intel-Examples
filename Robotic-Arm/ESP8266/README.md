@@ -49,3 +49,7 @@ There are a few tutorials that you should follow before beginning, especially if
     char deviceName[] = "YourDeviceName"; 
     char mqttUsername[]   = "YourDeviceMQTTUsername"; 
     char mqttPassword[]  = "YourDeviceMQTTPassword";
+
+## Wiring
+
+To connect the ESP8266 to the Arduino Uno is very easy. All you need to do is connect the RX of the ESP8266 to the TX of the Arduino Uno, and the TX of the ESP8266 to the RX of the Arduino Uno.
