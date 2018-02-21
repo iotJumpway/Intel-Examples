@@ -66,6 +66,15 @@ Now that everything is working, you can execute the following command which will
 python3 tass.py
 ```
 
+If all went well, it should of taken about 0.3 seconds to identify each image, and out of the 11 images tested 10 were identified with a confidence higher than 50%, and the whole process should take around 4 or 5 seconds. 
+
+```
+TESTING ENDED
+TESTED: 11
+IDENTIFIED: 10
+TESTING TIME: 4.594240665435791
+```
+
 ## Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come across whilst using this or any other Intel related IoT JumpWay issues. You may also use the issues area to ask for general help whilst using the IoT JumpWay in your IoT projects.
