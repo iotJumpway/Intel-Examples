@@ -23,7 +23,7 @@ all: profile check compile
 
 .PHONY: prereqs
 prereqs:
-	(cd ../../data/ilsvrc12; make)
+	(cd data/ilsvrc12; make)
 	@sed -i 's/\r//' tass.py
 	@chmod +x tass.py
 
@@ -48,15 +48,15 @@ compile: weights
 
 .PHONY: check
 check: weights
-	-${NCCHECK} -s 12 ${MODEL_FILENAME} ${INPUT_NODE_FLAG} ${OUTPUT_NODE_FLAG} -i ../../data/images/cat.jpg -id 917 -M 128 -S 2 -cs 0,1,2 -metric top1
+	-${NCCHECK} -s 12 ${MODEL_FILENAME} ${INPUT_NODE_FLAG} ${OUTPUT_NODE_FLAG} -i data/testing/images/cat.jpg -id 917 -M 128 -S 2 -cs 0,1,2 -metric top1
 
 .PHONY: run
 run: compile
-	./tass.py
+	tass.py
 
 .PHONY: run_py
 run_py: compile
-	./tass.py
+	tass.py
 
 .PHONY: help
 help:
