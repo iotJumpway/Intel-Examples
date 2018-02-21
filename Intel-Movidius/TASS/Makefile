@@ -24,8 +24,8 @@ all: profile check compile
 .PHONY: prereqs
 prereqs:
 	(cd ../../data/ilsvrc12; make)
-	@sed -i 's/\r//' run.py
-	@chmod +x run.py
+	@sed -i 's/\r//' tass.py
+	@chmod +x tass.py
 
 .PHONY: profile
 profile: weights
@@ -52,11 +52,11 @@ check: weights
 
 .PHONY: run
 run: compile
-	./run.py
+	./tass.py
 
 .PHONY: run_py
 run_py: compile
-	./run.py
+	./tass.py
 
 .PHONY: help
 help:
@@ -68,7 +68,7 @@ help:
 	@echo "  make check - runs SDK checker tool to verify an NCS graph file";
 	@echo "  make profile - runs the SDK profiler tool to profile the network creating output_report.html";
 	@echo "  make browse_profile - runs the SDK profiler tool and brings up report in browser.";
-	@echo "  make run_py - runs the run.py python example program";
+	@echo "  make run_py - runs the tass.py python example program";
 	@echo "  make clean - removes all created content"
 
 clean: 
