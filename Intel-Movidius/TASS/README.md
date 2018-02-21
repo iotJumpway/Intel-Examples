@@ -1,6 +1,5 @@
 
-# TASS Movidius Example
-## IoT Connected Computer Vision
+# TASS Movidius Example: IoT Connected Computer Vision
 
 ![TASS Movidius Example](images/tass-movidius.jpg)
 
@@ -39,5 +38,15 @@ You will need to clone this repository to a location on your development termina
 
     $ git clone https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples.git
 	
-Once you have the repo, you will need to find the files in this folder located in [Intel-Movidius/TASS directory](# "Intel-Movidius/TASS directory")
+Once you have the repo, you will need to find the files in this folder located in [Intel-Movidius/TASS directory](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS "Intel-Movidius/TASS directory")
 
+
+## Bugs/Issues
+
+Please feel free to create issues for bugs and general issues you come across whilst using the Intel® Nervana AI / Colfax TASS Trainer example. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel® Examples in your IoT projects.
+
+## Contributors
+
+[![Adam Milton-Barker, Intel® Software Innovator](../../images/main/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
+
+ 
