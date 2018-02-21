@@ -66,7 +66,33 @@ Now that everything is working, you can execute the following command which will
 python3 tass.py
 ```
 
-If all went well, it should of taken about 0.3 seconds to identify each image, and out of the 11 images tested 10 were identified with a confidence higher than 50%, and the whole process should take around 4 or 5 seconds. 
+If all went well, it should of taken about 0.3 seconds to identify each image, and out of the 11 images tested 10 were identified with a confidence higher than 50%, and the whole process should take around 4 or 5 seconds on an Intel® NUC. 
+
+### Intel® NUC
+
+```
+- Loaded Test Image data/testing/images/512_InkjetPrinter.jpg
+
+- DETECTION STARTED:  1519248012.519896
+- Loaded Tensor
+- DETECTION ENDED: 0.3664424419403076
+
+TASS Detected Image ID 743 printer With A Confidence Of 0.97266
+
+Published: 11
+Published to Device Sensors Channel
+Published To IoT JumpWay
+
+*******************************************************************************
+inception-v3 on NCS
+*******************************************************************************
+743 printer 0.97266
+714 photocopier 0.024628
+663 modem 0.00094414
+733 Polaroid camera, Polaroid Land camera 0.00045657
+746 projector 0.00042224
+*******************************************************************************
+```
 
 ```
 TESTING ENDED
