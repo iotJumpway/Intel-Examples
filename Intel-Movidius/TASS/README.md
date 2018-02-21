@@ -57,7 +57,14 @@ This will run ncprofile, nccompile and run:
 1. Downloads the TensorFlow checkpoint file.
 2. Runs the conversion/save python script to generate network.meta file.
 3. Profiles, Compiles and Checks the network using the Neural Compute SDK.
-4. Runs tass.py
+
+## Test Local Object Recognition
+
+Now that everything is working, you can execute the following command which will start the program in testing mode. To be in test mode you must edit the ClassifierSettings-MODE setting in data/confs.json to be Test.
+
+```
+python3 tass.py
+```
 
 ## Bugs/Issues
 
