@@ -1,0 +1,37 @@
+{
+    "IoTJumpWay": {
+        "Location": YourLocationID,
+        "Zone": YourZoneID,
+        "Device": YourDeviceID,
+        "App": YourAppID
+    },
+    "IoTJumpWayApp": {
+        "Name" : "YourAppName"
+    },
+    "IoTJumpWayDevice": {
+        "Name" : "YourDeviceName"
+    },
+    "IoTJumpWayMQTT": {
+        "Username": "YourMQTTusername",
+        "Password": "YourMQTTpassword"
+    },
+    "Actuators": {},
+    "Cameras": [
+        {
+            "ID": YourCameraID,
+            "URL": 0,
+            "Name": "YourCameraName"
+        }
+    ],
+    "Sensors": {},
+    "ClassifierSettings":{
+        "MODE":"LIVE",
+        "TestThreshold": 0.50,
+        "NetworkPath":"",
+        "ImagePath":"data/testing/images/",
+        "Graph":"graph",
+        "Mean": 128,
+        "Std": 0.0357142857142857,
+        "Image":"nps_electric_guitar.png"
+    }
+}
