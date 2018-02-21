@@ -10,10 +10,12 @@ print("Welcome to TASS Movidius, please wait while the program initiates...")
 print('')
 
 from mvnc import mvncapi as mvnc
+import os
 import sys
 import numpy
 import cv2
 import json
+import time 
 import techbubbleiotjumpwaymqtt.device as iotJumpway 
 
 print("- Imported Required Modules")
@@ -35,6 +37,10 @@ class TassMovidius():
         self.graphfile = None
         self.graph = None
         self.reqsize = None
+
+        self.extensions = [
+            ".jpg"
+        ]
 
         with open("data/confs.json") as configs:
 
@@ -134,6 +140,96 @@ class TassMovidius():
         self.cameraStream = cv2.VideoCapture(self._configs["Cameras"][0]["URL"])
         
         print("- Camera Stream Initiated")
+                
+    def testModel(self):
+                
+        testingStart = time.time()
+        print("- TESTING STARTED: ",testingStart)
+        print("")
+            
+        rootdir=self._configs["ClassifierSettings"]["NetworkPath"] + self._configs["ClassifierSettings"]["ImagePath"]
+            
+        files = 0
+        identified = 0
+        for file in os.listdir(rootdir):
+            
+            if file.endswith(".jpg"):
+                
+                files = files + 1
+                fileName = rootdir+file
+        
+                print('')
+                print("- Loaded Test Image", fileName)
+                img = cv2.imread(fileName).astype(numpy.float32)
+                print("")
+
+                detectionStart = time.time()
+                print("- DETECTION STARTED: ",detectionStart)
+                
+                dx,dy,dz= img.shape
+                delta=float(abs(dy-dx))
+                
+                if dx > dy: 
+                    
+                    img=img[int(0.5*delta):dx-int(0.5*delta),0:dy]
+                    
+                else:
+                    
+                    img=img[0:dx,int(0.5*delta):dy-int(0.5*delta)]
+                    
+                img = cv2.resize(img, (self.reqsize, self.reqsize))
+                img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
+
+                for i in range(3):
+                    
+                    img[:,:,i] = (img[:,:,i] - self.mean) * self.std
+
+                self.graph.LoadTensor(img.astype(numpy.float16), 'user object')
+                print('- Loaded Tensor')
+                output, userobj = self.graph.GetResult()
+
+                top_inds = output.argsort()[::-1][:5]
+    
+                now = time.time()
+                print("- DETECTION ENDED: {0}".format(now - detectionStart))
+                print('')
+                print("TASS Detected Image ID", top_inds[0], self.categories[top_inds[0]], "With A Confidence Of", output[top_inds[0]])
+                print('')
+                
+                if output[top_inds[0]] > self._configs["ClassifierSettings"]["TestThreshold"]:
+                    
+                    identified = identified + 1
+
+                    self.jumpwayClient.publishToDeviceChannel(
+                            "Sensors",
+                            {
+                                "Sensor":"CCTV",
+                                "SensorID": self._configs["Cameras"][0]["ID"],
+                                "SensorValue":"OBJECT: " + self.categories[top_inds[0]] + " (Confidence: " + str(output[top_inds[0]]) + ")"
+                            }
+                        )
+                    
+                    print('Published To IoT JumpWay')
+                    print('')
+
+                print(''.join(['*' for i in range(79)]))
+                print('inception-v3 on NCS')
+                print(''.join(['*' for i in range(79)]))
+                
+                for i in range(5):
+                    
+                    print(top_inds[i], self.categories[top_inds[i]], output[top_inds[i]])
+
+                print(''.join(['*' for i in range(79)]))
+    
+        now = time.time()
+        print('')
+        print("TESTING ENDED")
+        print("TESTED:",files)
+        print("IDENTIFIED:",identified)
+        print("TESTING TIME: {0}".format(now - testingStart))
+        print('')
+        sys.exit()
         
 TassMovidius = TassMovidius()
 
@@ -144,74 +240,12 @@ while True:
         print("TEST MODE")
         print('')
         
-        img = cv2.imread(TassMovidius.imagePath).astype(numpy.float32)
-        print("- Loaded Test Image", TassMovidius.imagePath)
-        
-        dx,dy,dz= img.shape
-        delta=float(abs(dy-dx))
-        
-        if dx > dy: 
-            
-            img=img[int(0.5*delta):dx-int(0.5*delta),0:dy]
-            
-        else:
-            
-            img=img[0:dx,int(0.5*delta):dy-int(0.5*delta)]
-            
-        img = cv2.resize(img, (TassMovidius.reqsize, TassMovidius.reqsize))
-        img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
-
-        for i in range(3):
-            
-            img[:,:,i] = (img[:,:,i] - TassMovidius.mean) * TassMovidius.std
-
-        TassMovidius.graph.LoadTensor(img.astype(numpy.float16), 'user object')
-        print('- Loaded Tensor')
-        output, userobj = TassMovidius.graph.GetResult()
-
-        top_inds = output.argsort()[::-1][:5]
-
-        print('')
-        print(''.join(['*' for i in range(79)]))
-        print('inception-v3 on NCS')
-        print(''.join(['*' for i in range(79)]))
-        
-        for i in range(5):
-            
-            print(top_inds[i], TassMovidius.categories[top_inds[i]], output[top_inds[i]])
-
-        print(''.join(['*' for i in range(79)]))
-        
-        print('')
-        print("TASS Detected Image ID", top_inds[0], TassMovidius.categories[top_inds[0]], "With A Confidence Of", output[top_inds[0]])
-        print('')
-        
-        if output[top_inds[0]] > TassMovidius._configs["ClassifierSettings"]["TestThreshold"]:
-
-            TassMovidius.jumpwayClient.publishToDeviceChannel(
-                    "Sensors",
-                    {
-                        "Sensor":"CCTV",
-                        "SensorID": TassMovidius._configs["Cameras"][0]["ID"],
-                        "SensorValue":"OBJECT: " + TassMovidius.categories[top_inds[0]] + " (Confidence: " + str(output[top_inds[0]]) + ")"
-                    }
-                )
-            
-            print('Published To IoT JumpWay')
-            print('')
-        
-        TassMovidius.graph.DeallocateGraph()
-        TassMovidius.movidius.CloseDevice()
-        
-        print("TEST MODE ENDED")
-        print("Good Bye")
-        print('')
-        
-        sys.exit()
+        TassMovidius.testModel()
         
     else:
     
         print("LIVE MODE")
+        print("Coming Soon")
         print('')
         
         pass
