@@ -10,7 +10,7 @@ The platform provides an IoT PaaS for IoT communication, tutorials and examples.
 
 The various IoT JumpWay libraries and samples allow you to connect devices and sensors to the IoT JumpWay and control/monitor sensors/actuators and data to and from the devices.
 
-The Intel® examples provide example projects that you can use to get started with using the TechBubble IoT JumpWay for your Intel® IoT Developer Kit, Intel® Edison board, Intel® Galileo, Intel® Joule and Intel® IoT Gateway (Nuc) projects.
+The Intel® examples provide example projects that you can use to get started with using the IoT JumpWay for your Intel® IoT Developer Kit, Intel® Edison board, Intel® Galileo, Intel® Joule and Intel® IoT Gateway (Nuc) projects.
 
 ## Intel® Movidius Examples
 
@@ -53,7 +53,7 @@ The Intel® examples provide example projects that you can use to get started wi
 
 - [Python: Dev Kit LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-LED/Python "Python: Dev Kit LED Example"). Set up an Intel® Edison that allows control of an LED on an IoT Dev Kit and an application that can control the LED via the IoT JumpWay.
 
-- [Python: Dev Kit IoT Alarm](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-IoT-Alarm/NodeJS "Python: Dev Kit IoT Alarm"), Set up an Intel® Edison IoT alarm system that is controlled by the TechBubble Technologies IoT JumpWay.
+- [Python: Dev Kit IoT Alarm](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-IoT-Alarm/NodeJS "Python: Dev Kit IoT Alarm"), Set up an Intel® Edison IoT alarm system that is controlled by the IoT JumpWay.
 
 ## Intel® Galileo Examples
 
@@ -63,12 +63,10 @@ The Intel® examples provide example projects that you can use to get started wi
 
 - [Python: Dev Kit LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Galileo/Dev-Kit-LED/Python "Python: Dev Kit LED Example"). Set up an Intel® Galileo that allows control of an LED on an IoT Dev Kit and an application that can control the LED via the IoT JumpWay.
 
-## IoT JumpWay Intel® Bugs/Issues
+## Bugs/Issues
 
-Please feel free to create issues for bugs and general issues you come accross whilst using the IoT JumpWay Intel Examples. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel Examples in your IoT projects.
+Please feel free to create issues for bugs and general issues you come across whilst using this or any other Intel® related IoT JumpWay issues. You may also use the issues area to ask for general help whilst using the IoT JumpWay in your IoT projects.
 
-## IoT JumpWay Intel® Contributors
+## Contributors
 
-[Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
-
-![Adam Milton-Barker,  Intel Software Innovator](images/main/Intel-Software-Innovator.jpg)
+[![Adam Milton-Barker, Intel® Software Innovator](images/main/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
