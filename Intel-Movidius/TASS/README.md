@@ -3,12 +3,14 @@
 
 ![TASS Movidius Example](images/tass-movidius.jpg)
 
-- Acknowledgement: Uses code from Intel movidius/ncsdk ([movidius/ncsdk Github](https://github.com/movidius/ncsdk "movidius/ncsdk Github"))
-- Acknowledgement: Uses code from Intel gudovskiy/yoloNCS ([gudovskiy/yoloNCS Github](https://github.com/gudovskiy/yoloNCS "gudovskiy/yoloNCS Github"))
+- **Acknowledgement:** Uses code from Intel **movidius/ncsdk** ([movidius/ncsdk Github](https://github.com/movidius/ncsdk "movidius/ncsdk Github"))
+- **Acknowledgement:** Uses code from Intel **gudovskiy/yoloNCS** ([gudovskiy/yoloNCS Github](https://github.com/gudovskiy/yoloNCS "gudovskiy/yoloNCS Github"))
 
 ## Introduction
 
 TASS Movidius uses a pretrained **Inception V3 model** and an **Intel® Movidius** to carry out object and **facial classification**, both locally and on a live webcam stream.
+
+![Test Yolo Object Recognition](images/movidius.jpg)
 
 ## Python Versions
 
@@ -110,6 +112,8 @@ This will run ncprofile, nccompile and run:
 
 ## TASS Movidius Configuration Modes
 
+This tutorial provides a number of configuration modes. For ease, all of the classes and functions that allow the different modes to work have been provided in **tass.py** and **yolo.py**. You are free to create your own projects and modules from these codes. 
+
 - **InceptionTest:** This mode sets the program to classify testing images using Inception V3
 - **InceptionLive:** TODO
 - **YoloTest:** This mode sets the program to classify testing images using Yolo
@@ -124,6 +128,8 @@ python3 tass.py
 ```
 
 If all went well, it should of taken about 0.3 seconds to identify each image, and out of the 11 images tested 10 were identified with a confidence higher than 50%, and the whole process should take around 4 or 5 seconds on an Intel® NUC. 
+
+![Test Inception V3 Object Recognition](images/InceptionTest.jpg)
 
 ### Intel® NUC
 
@@ -177,6 +183,8 @@ python3 tass.py
 ```
 
 If all went well, it should of taken about 0.7 seconds to identify the car and the bicycle, it does not however identify the dog. The **TESTING TIME** includes the time to publish the notification to the IoT JumpWay, the whole process should take around 1.4 seconds on an Intel® NUC. 
+
+![Test Yolo Object Recognition](images/YoloTest.jpg)
 
 ### Intel® NUC
 
