@@ -35,6 +35,14 @@ This tutorial can be used on a number of devices:
 
 There are a few tutorials that you should follow before beginning, especially if it is the first time you have used the **IoT JumpWay Developer Program**. If you do not already have one, you will require an **IoT JumpWay Developer Program developer account**, and some basics to be set up before you can start creating your IoT devices. Visit the following [IoT JumpWay Developer Program Docs (5-10 minute read/setup)](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/ "IoT JumpWay Developer Program Docs (5-10 minute read/setup)") and check out the guides that take you through registration and setting up your Location Space, Zones, Devices and Applications (About 5 minutes read).
 
+## Install IoT JumpWay MQTT Client
+
+Next install the IoT JumpWay MQTT Client. For this you can execute the following command:
+
+```
+pip3 install techbubbleiotjumpwaymqtt 
+```
+
 ## IoT JumpWay Device Connection Credentials & Settings
 
 - Setup an IoT JumpWay Location Device for TASS, ensuring you set up you camera node,as you will need the ID of the camera for the project to work. Once your create your device, make sure you note the MQTT username and password, the device ID and device name exactly, you will also need the zone and location ID. You will need to edit your device and add the rules that will allow it to communicate autonomously with the other devices and applications on the network, but for now, these are the only steps that need doing at this point.
@@ -82,14 +90,29 @@ Follow the [IoT JumpWay Developer Program (BETA) Location Device Doc](https://gi
 
 ## Install NCSDK
 
-The first thing you will need to do once you have your operating system on your device is to install the **NCSDK**. For this you can follow the [official Github Repo README](https://github.com/movidius/ncsdk "official Github Repo README"). Once you have completed the instructions in the **README** and all is working correctly having run the examples, you can move to the next step in this tutorial. Some helpful advice here maybe to make sure that you use python3 if you run the run.py example as if you do not it may classify the image as a ringworm. 
+The first thing you will need to do once you have your operating system on your device is to install the **NCSDK**. For this you can follow the code below.
 
-## Install IoT JumpWay MQTT Client
-
-Next install the IoT JumpWay MQTT Client. For this you can execute the following command:
+On the Raspbery Pi 3 I had to:
 
 ```
-pip3 install techbubbleiotjumpwaymqtt 
+sudo apt install make
+```
+
+After installing make, or for all other devices continue with:
+
+```
+mkdir -p ~/workspace
+cd ~/workspace
+git clone https://github.com/movidius/ncsdk.git
+cd ~/workspace/ncsdk
+make install
+```
+
+Next plug your Movidius into your device and issue the following commands:
+
+```
+cd ~/workspace/ncsdk
+make examples
 ```
 
 ## Cloning The Repo
@@ -101,7 +124,7 @@ You will need to clone this repository to a location on your development termina
 Once you have the repo, you will need to find the files in this folder located in [Intel-Movidius/TASS directory](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS "Intel-Movidius/TASS directory"). You will need to navigate to this directory in your terminal also, once you are there, execute the following command:
 
 ```
-make all
+make run
 ```
 
 This will run ncprofile, nccompile and run:
