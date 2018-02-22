@@ -7,7 +7,7 @@ Acknowledgements: Uses code from Intel movidius/ncsdk ([movidius/ncsdk Github](h
 
 ## Introduction
 
-TASS Movidius uses a pretrained Inception V3 model and an Intel® Movidius to carry out object and facial classification, both locally and on a live webcam stream. 
+TASS Movidius uses a pretrained **Inception V3 model** and an **Intel® Movidius** to carry out object and **facial classification**, both locally and on a live webcam stream.
 
 ## Python Versions
 
@@ -26,11 +26,60 @@ This tutorial can be used on a number of devices:
 
 - Laptop / PC running Ubuntu
 - Intel® NUC running Ubuntu / Ubuntu LTS
-- Raspberry Pi running Ubuntu LTS
+- Raspberry Pi running Ubuntu LTS 
+
+## Before You Begin
+
+There are a few tutorials that you should follow before beginning, especially if it is the first time you have used the TechBubble IoT JumpWay Developer Program. If you do not already have one, you will require a TechBubble IoT JumpWay Developer Program developer account, and some basics to be set up before you can start creating your IoT devices. Visit the following [IoT JumpWay Developer Program Docs (5-10 minute read/setup)](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/ "IoT JumpWay Developer Program Docs (5-10 minute read/setup)") and check out the guides that take you through registration and setting up your Location Space, Zones, Devices and Applications (About 5 minutes read).
+
+## IoT JumpWay Device Connection Credentials & Settings
+
+- Setup an IoT JumpWay Location Device for TASS, ensuring you set up you camera node,as you will need the ID of the camera for the project to work. Once your create your device, make sure you note the MQTT username and password, the device ID and device name exactly, you will also need the zone and location ID. You will need to edit your device and add the rules that will allow it to communicate autonomously with the other devices and applications on the network, but for now, these are the only steps that need doing at this point.
+
+Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc") to set up your devices.
+
+```
+{
+    "IoTJumpWay": {
+        "Location": YourLocationID,
+        "Zone": YourZoneID,
+        "Device": YourDeviceID,
+        "App": YourAppID
+    },
+    "IoTJumpWayApp": {
+        "Name" : "YourAppName"
+    },
+    "IoTJumpWayDevice": {
+        "Name" : "YourDeviceName"
+    },
+    "IoTJumpWayMQTT": {
+        "Username": "YourMQTTusername",
+        "Password": "YourMQTTpassword"
+    },
+    "Actuators": {},
+    "Cameras": [
+        {
+            "ID": YourCameraID,
+            "URL": 0,
+            "Name": "YourCameraName"
+        }
+    ],
+    "Sensors": {},
+    "ClassifierSettings":{
+        "MODE":"YoloTest",
+        "NetworkPath":"",
+        "InceptionImagePath":"data/testing/inception/",
+        "InceptionThreshold": 0.50,
+        "YoloImagePath":"data/testing/yolo/",
+        "YoloThreshold": 0,
+        "Graph":"graph"
+    }
+}
+```
 
 ## Install NCSDK
 
-The first thing you will need to do once you have your operating system on your device is to install the NCSDK. For this you can follow the [official Github Repo README](https://github.com/movidius/ncsdk "official Github Repo README"). Once you have completed the instructions in the README and all is working correctly having run the examples, you can move to the next step in this tutorial. Some helpful advice here maybe to make sure that you use python3 if you run the run.py example as if you do not it may classify the image as a ringworm. 
+The first thing you will need to do once you have your operating system on your device is to install the **NCSDK**. For this you can follow the [official Github Repo README](https://github.com/movidius/ncsdk "official Github Repo README"). Once you have completed the instructions in the **README** and all is working correctly having run the examples, you can move to the next step in this tutorial. Some helpful advice here maybe to make sure that you use python3 if you run the run.py example as if you do not it may classify the image as a ringworm. 
 
 ## Install IoT JumpWay MQTT Client
 
