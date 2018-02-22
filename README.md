@@ -24,14 +24,15 @@ The platform provides an **IoT PaaS** for **IoT communication**, **tutorials** a
 
 - [Python: Intel® AI DevCloud TASS Trainer](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Colfax/Tass-Trainer "Python: Intel® AI DevCloud TASS Trainer"). Train TASS on the Intel® AI DevCloud platform. 
 
-## Intel® CV SDK Windows Examples
+## Intel® Computer Vision SDK Examples
 
-![Intel® CV SDK Windows Examples](Intel-Computer-Vision-SDK/TASS-PVL/Windows/images/Intel-Computer-Vision-Windows.png)
+[![Intel® Computer Vision SDK Windows Examples](Intel-Computer-Vision-SDK/images/Intel-Computer-Vision-SDK.png)](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK)
 
-- [Windows Console: TASS PVL Webcam Security System](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Webcam/ConsoleApp "Windows Console: TASS PVL Webcam Security System"). A Computer Vision security system using the Intel® CV SDK & standard webcam.
+"The Intel® Computer Vision SDK is a comprehensive toolkit that can be used for developing and deploying computer vision solutions on Intel® platforms, including autonomous vehicles, digital surveillance cameras, robotics, and mixed-reality headsets."
 
+- [Windows Console: TASS PVL Webcam](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Webcam/ConsoleApp "Windows Console: TASS PVL Webcam"). A Computer Vision security system using the Intel® CV SDK & standard webcam.
 
-- [Windows Console: TASS PVL RealSense Security System](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Realsense/ConsoleApp "Windows Console: TASS PVL RealSense Security System"). A Computer Vision security system using the Intel® CV SDK & RealSense webcam.
+- [Windows Console: TASS PVL RealSense](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Realsense/ConsoleApp "Windows Console: TASS PVL RealSense"). A Computer Vision security system using the Intel® CV SDK & RealSense webcam.
 
 ## Intel® Arduino 101 DFRobot Examples
 
