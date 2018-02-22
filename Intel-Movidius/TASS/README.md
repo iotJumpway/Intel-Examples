@@ -31,7 +31,7 @@ This tutorial can be used on a number of devices:
 
 ## Before You Begin
 
-There are a few tutorials that you should follow before beginning, especially if it is the first time you have used the TechBubble IoT JumpWay Developer Program. If you do not already have one, you will require a TechBubble IoT JumpWay Developer Program developer account, and some basics to be set up before you can start creating your IoT devices. Visit the following [IoT JumpWay Developer Program Docs (5-10 minute read/setup)](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/ "IoT JumpWay Developer Program Docs (5-10 minute read/setup)") and check out the guides that take you through registration and setting up your Location Space, Zones, Devices and Applications (About 5 minutes read).
+There are a few tutorials that you should follow before beginning, especially if it is the first time you have used the **IoT JumpWay Developer Program**. If you do not already have one, you will require an **IoT JumpWay Developer Program developer account**, and some basics to be set up before you can start creating your IoT devices. Visit the following [IoT JumpWay Developer Program Docs (5-10 minute read/setup)](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/ "IoT JumpWay Developer Program Docs (5-10 minute read/setup)") and check out the guides that take you through registration and setting up your Location Space, Zones, Devices and Applications (About 5 minutes read).
 
 ## IoT JumpWay Device Connection Credentials & Settings
 
@@ -110,14 +110,14 @@ This will run ncprofile, nccompile and run:
 
 ## TASS Movidius Configuration Modes
 
-- InceptionTest: This mode sets the program to classify testing images using Inception V3
-- InceptionLive: TODO
-- YoloTest: This mode sets the program to classify testing images using Yolo
-- YoloLive: TODO
+- **InceptionTest:** This mode sets the program to classify testing images using Inception V3
+- **InceptionLive:** TODO
+- **YoloTest:** This mode sets the program to classify testing images using Yolo
+- **YoloLive:** TODO
 
 ## Test Inception V3 Object Recognition
 
-Now that everything is working, you can execute the following command which will start the program in Inception V3 object detection testing mode. To be in test mode you must edit the ClassifierSettings-MODE setting in data/confs.json to be InceptionTest. You can add new images to the testing folder by adding images to data/testing/inception.
+Now that everything is working, you can execute the following command which will start the program in Inception V3 object detection testing mode. To be in test mode you must edit the **ClassifierSettings->MODE** setting in **data/confs.json** to be **InceptionTest**. You can add new images to the testing folder by adding images to **data/testing/inception**.
 
 ```
 python3 tass.py
@@ -170,13 +170,13 @@ Then compile the graph:
 mvNCCompile prototxt/yolo_tiny_deploy.prototxt -w weights/yolo_tiny.caffemodel -s 12
 ```
 
-You can execute the following command which will start the program in Yolo object detection testing mode. To be in Yolo object detection testing mode you must edit the ClassifierSettings-MODE setting in data/confs.json to be YoloTest. You can add new images to the testing folder by adding images to data/testing/yolo.
+You can execute the following command which will start the program in Yolo object detection testing mode. To be in Yolo object detection testing mode you must edit the **ClassifierSettings->MODE** setting in **data/confs.json** to be **YoloTest**. You can add new images to the testing folder by adding images to **data/testing/yolo**.
 
 ```
 python3 tass.py
 ```
 
-If all went well, it should of taken about 0.7 seconds to identify the car and the bicycle, it does not however identify the dog. The TESTING TIME includes the time to publish the notification to the IoT JumpWay, the whole process should take around 1.4 seconds on an Intel® NUC. 
+If all went well, it should of taken about 0.7 seconds to identify the car and the bicycle, it does not however identify the dog. The **TESTING TIME** includes the time to publish the notification to the IoT JumpWay, the whole process should take around 1.4 seconds on an Intel® NUC. 
 
 ### Intel® NUC
 
