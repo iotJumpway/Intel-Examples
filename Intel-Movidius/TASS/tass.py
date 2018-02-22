@@ -1,8 +1,9 @@
 ############################################################################################
 # Title: TASS Movidius Core
 # Description: Test classification of a local image or classifies live webcam stream.
-# Acknowledgements: Uses code from Intel movidius/ncsdk (https://github.com/movidius/ncsdk)
-# Last Modified: 2018/02/21
+# Acknowledgement: Uses code from Intel movidius/ncsdk (https://github.com/movidius/ncsdk)
+# Acknowledgement: Uses code from gudovskiy/yoloNCS (https://github.com/gudovskiy/yoloNCS)
+# Last Modified: 2018/02/22
 ############################################################################################
         
 print("")

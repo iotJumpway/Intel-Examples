@@ -1,8 +1,8 @@
 ############################################################################################
 # Title: TASS Movidius Yolo
 # Description: Uses Yolo for object recognition using the Intel Movidius.
-# Acknowledgements: Uses code from gudovskiy/yoloNCS (https://github.com/gudovskiy/yoloNCS)
-# Last Modified: 2018/02/21
+# Acknowledgement: Uses code from gudovskiy/yoloNCS (https://github.com/gudovskiy/yoloNCS)
+# Last Modified: 2018/02/22
 ############################################################################################
 
 import os,cv2,json
