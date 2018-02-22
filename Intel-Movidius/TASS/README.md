@@ -90,29 +90,56 @@ Follow the [IoT JumpWay Developer Program (BETA) Location Device Doc](https://gi
 
 ## Install NCSDK
 
-The first thing you will need to do once you have your operating system on your device is to install the **NCSDK**. For this you can follow the code below.
+The first thing you will need to do once you have your operating system on your device is to install the **NCSDK**. 
 
-On the Raspbery Pi 3 I had to:
-
-```
-sudo apt install make
-```
-
-After installing make, or for all other devices continue with:
+### Install NCSDK On Raspbery Pi 3:
 
 ```
-mkdir -p ~/workspace
-cd ~/workspace
-git clone https://github.com/movidius/ncsdk.git
-cd ~/workspace/ncsdk
-make install
+ $ sudo apt install make
+ $ sudo apt-get install -y libusb-1.0-0-dev libprotobuf-dev
+ $ sudo apt-get install -y libleveldb-dev libsnappy-dev
+ $ sudo apt-get install -y libopencv-dev
+ $ sudo apt-get install -y libhdf5-serial-dev protobuf-compiler
+ $ sudo apt-get install -y libatlas-base-dev git automake 
+ $ sudo apt-get install -y byacc lsb-release cmake 
+ $ sudo apt-get install -y libgflags-dev libgoogle-glog-dev 
+ $ sudo apt-get install -y liblmdb-dev swig3.0 graphviz 
+ $ sudo apt-get install -y libxslt-dev libxml2-dev 
+ $ sudo apt-get install -y gfortran 
+ $ sudo apt-get install -y python3-dev python-pip python3-pip 
+ $ sudo apt-get install -y python3-setuptools python3-markdown 
+ $ sudo apt-get install -y python3-pillow python3-yaml python3-pygraphviz
+ $ sudo apt-get install -y python3-h5py python3-nose python3-lxml 
+ $ sudo apt-get install -y python3-matplotlib python3-numpy 
+ $ sudo apt-get install -y python3-protobuf python3-dateutil 
+ $ sudo apt-get install -y python3-skimage python3-scipy 
+ $ sudo apt-get install -y python3-six python3-networkx
+```
+
+```
+ $ mkdir -p ~/workspace
+ $ cd ~/workspace
+ $ git clone https://github.com/movidius/ncsdk.git
+ $ cd ~/workspace/ncsdk/api/src
+ $ make 
+ $ sudo make install
+```
+
+### Install NCSDK On Other Linux Device:
+
+```
+ $ mkdir -p ~/workspace
+ $ cd ~/workspace
+ $ git clone https://github.com/movidius/ncsdk.git
+ $ cd ~/workspace/ncsdk
+ $ make install
 ```
 
 Next plug your Movidius into your device and issue the following commands:
 
 ```
-cd ~/workspace/ncsdk
-make examples
+ $ cd ~/workspace/ncsdk
+ $ make examples
 ```
 
 ## Cloning The Repo
@@ -121,10 +148,11 @@ You will need to clone this repository to a location on your development termina
 
     $ git clone https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples.git
 	
-Once you have the repo, you will need to find the files in this folder located in [Intel-Movidius/TASS directory](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS "Intel-Movidius/TASS directory"). You will need to navigate to this directory in your terminal also, once you are there, execute the following command:
+Once you have the repo, you will need to find the files in this folder located in [Intel-Movidius/TASS directory](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS "Intel-Movidius/TASS directory"). You will need to navigate to this directory in your terminal also. Execute the following commands:
 
 ```
-make run
+ $ cd IoT-JumpWay-Intel-Examples/Intel-Movidius/TASS
+ $ make run
 ```
 
 This will run ncprofile, nccompile and run:
@@ -311,6 +339,6 @@ Please feel free to create issues for bugs and general issues you come across wh
 
 ## Contributors
 
-[![Adam Milton-Barker, Intel® Software Innovator](../../images/main/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
+[![Adam Milton-Barker, Intel® Software Innovator](images/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
 
  
