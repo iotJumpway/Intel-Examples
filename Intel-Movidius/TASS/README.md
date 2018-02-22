@@ -58,9 +58,9 @@ This will run ncprofile, nccompile and run:
 2. Runs the conversion/save python script to generate network.meta file.
 3. Profiles, Compiles and Checks the network using the Neural Compute SDK.
 
-## Test Local Object Recognition
+## Test Inception V3 Object Recognition
 
-Now that everything is working, you can execute the following command which will start the program in testing mode. To be in test mode you must edit the ClassifierSettings-MODE setting in data/confs.json to be Test.
+Now that everything is working, you can execute the following command which will start the program in Inception V3 object detection testing mode. To be in test mode you must edit the ClassifierSettings-MODE setting in data/confs.json to be InceptionTest.
 
 ```
 python3 tass.py
@@ -99,6 +99,50 @@ TESTING ENDED
 TESTED: 11
 IDENTIFIED: 10
 TESTING TIME: 4.594240665435791
+```
+
+## Test Yolo Object Recognition
+
+You can execute the following command which will start the program in Yolo object detection testing mode. To be in Yolo object detection testing mode you must edit the ClassifierSettings-MODE setting in data/confs.json to be YoloTest.
+
+```
+python3 tass.py
+```
+
+If all went well, it should of taken about 0.7 seconds to identify the car and the bicycle. The TESTING TIME includes the time to publish the notification to the IoT JumpWay, the whole process should take around 1.4 seconds on an Intel® NUC. 
+
+### Intel® NUC
+
+```
+- Loaded Test Image data/testing/yolo/dog.jpg
+
+- DETECTION STARTED:  2018-02-22 02:00:50.509681
+/usr/local/lib/python3.5/dist-packages/skimage/transform/_warps.py:84: UserWarning: The default mode, 'constant', will be changed to 'reflect' in skimage 0.15.
+  warn("The default mode, 'constant', will be changed to 'reflect' in "
+- Loaded Tensor
+- DETECTION ENDED: 0.7135429382324219
+
+- SAVED IMAGE/FRAME
+- SAVED IMAGE/FRAME
+
+TASS Detected  car With A Confidence Of 0.293343544006
+
+Published: 2
+Published to Device Sensors Channel
+Published To IoT JumpWay
+
+
+TASS Detected  bicycle With A Confidence Of 0.23780977726
+
+Published: 3
+Published to Device Sensors Channel
+Published To IoT JumpWay
+
+
+TESTING YOLO ENDED
+TESTED: 1
+IDENTIFIED: 2
+TESTING TIME: 1.4020063877105713
 ```
 
 ## Bugs/Issues

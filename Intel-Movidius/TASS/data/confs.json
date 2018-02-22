@@ -25,13 +25,12 @@
     ],
     "Sensors": {},
     "ClassifierSettings":{
-        "MODE":"Test",
-        "TestThreshold": 0.50,
+        "MODE":"YoloTest",
         "NetworkPath":"",
-        "ImagePath":"data/testing/images/",
-        "Graph":"graph",
-        "Mean": 128,
-        "Std": 0.0357142857142857,
-        "Image":"nps_electric_guitar.png"
+        "InceptionImagePath":"data/testing/inception/",
+        "InceptionThreshold": 0.50,
+        "YoloImagePath":"data/testing/yolo/",
+        "YoloThreshold": 0,
+        "Graph":"graph"
     }
 }
