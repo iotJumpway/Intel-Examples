@@ -14,7 +14,11 @@ The Intel® examples provide example projects that you can use to get started wi
 
 ## Intel® Movidius Examples
 
-![IoT JumpWay Movidius Examples](Intel-Movidius/Images/movidius.jpg)
+[![IoT JumpWay Movidius Examples](Intel-Movidius/Images/movidius.jpg)](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius)
+
+"The Intel Movidius Neural Compute Stick (NCS) is a tiny fanless deep learning device that you can use to learn AI programming at the edge. NCS is powered by the same low power high performance Intel Movidius Vision Processing Unit (VPU) that can be found in millions of smart security cameras, gesture controlled drones, industrial machine vision equipment, and more."
+
+- [Python: TASS Movidius Example](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS "Python: TASS Movidius Example"). Uses pretrained Inception V3 & Yolo models with an Intel® Movidius to carry out object and facial classification, both locally and on a live webcam stream.
 
 ## Intel® Nervana AI / Colfax Examples
 
