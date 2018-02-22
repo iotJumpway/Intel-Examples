@@ -252,6 +252,36 @@ python3 tass.py
 
 ![Live Yolo Object Recognition](images/YoloTestFrame.jpg)
 
+Using a picture with New York Taxis on it, TASS was able to detect a taxi taking about 0.6 seconds to classify the taxi.
+
+![Live Yolo Object Recognition](images/YoloLive.jpg)
+
+```
+- DETECTION STARTED:  2018-02-22 13:15:19.184130
+- Loaded Tensor
+- DETECTION ENDED: 0.5821969509124756
+
+- SAVED IMAGE/FRAME
+
+TASS Detected  car With A Confidence Of 0.246294021606
+
+Published: 2
+Published to Device Sensors Channel
+Published To IoT JumpWay
+
+- DETECTION STARTED:  2018-02-22 13:15:19.823934
+- Loaded Tensor
+- DETECTION ENDED: 0.5944797992706299
+
+- SAVED IMAGE/FRAME
+
+TASS Detected  car With A Confidence Of 0.260350584984
+
+Published: 3
+Published to Device Sensors Channel
+Published To IoT JumpWay
+```
+
 ## Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come across whilst using this or any other Intel related IoT JumpWay issues. You may also use the issues area to ask for general help whilst using the IoT JumpWay in your IoT projects.
