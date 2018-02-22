@@ -29,7 +29,7 @@ This tutorial can be used on a number of devices:
 
 - Laptop / PC running Ubuntu
 - Intel® NUC running Ubuntu / Ubuntu LTS
-- Raspberry Pi running Ubuntu LTS 
+- Raspberry Pi running Ubuntu LTS ([Ubuntu Classic Server 16.04 Raspberry Pi 3](https://ubuntu-pi-flavour-maker.org/download/ "Ubuntu Classic Server 16.04 Raspberry Pi 3") ) 
 
 ## Before You Begin
 
