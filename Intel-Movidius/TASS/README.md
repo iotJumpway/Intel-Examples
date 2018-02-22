@@ -103,7 +103,11 @@ TESTING TIME: 4.594240665435791
 
 ## Test Yolo Object Recognition
 
-First of all you need to compile graph:
+First of all you need to download the weights:
+
+* YOLO_tiny: https://drive.google.com/file/d/0Bzy9LxvTYIgKNFEzOEdaZ3U0Nms/view?usp=sharing
+
+Then compile the graph:
 
 ```
 mvNCCompile prototxt/yolo_tiny_deploy.prototxt -w weights/yolo_tiny.caffemodel -s 12
