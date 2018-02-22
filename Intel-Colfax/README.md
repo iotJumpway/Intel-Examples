@@ -1,13 +1,15 @@
-# IoT JumpWay Intel® Nervana AI / Colfax Examples
+# IoT JumpWay Intel® AI DevCloud Examples
 
-![IoT JumpWay Intel® Nervana AI / Colfax Examples](images/intel-nervana-ai-cluster-colfax.jpg)
+[![IoT JumpWay Intel® AI DevCloud Examples](images/intel-nervana-ai-cluster-colfax.jpg)](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Colfax)
 
 ## Introduction
 
+"The Intel® AI DevCloud is a cluster of Intel® Xeon® Scalable Processors that will assist you with your machine learning and deep learning training and inference compute needs. It provides access to precompiled software optimized for Intel® architecture on Intel® Xeon® Scalable Processors."
+
 Colfax Research is a department of Colfax International, a Silicon Valley-based provider of novel computing systems. Our research team works to help you leverage new hardware and software tools to harness the full power of computational innovations.
 
-## Intel® Nervana AI / Colfax Examples
+## Examples
 
-![Python: Intel® Nervana AI / Colfax TASS Trainer](images/tass-trainer.jpg)
+[![Python: Intel® AI DevCloud TASS Trainer](images/tass-trainer.jpg)](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Colfax/Tass-Trainer)
 
-- [Python: Intel® Nervana AI / Colfax TASS Trainer](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Colfax/Tass-Trainer "Python: Intel® Nervana AI / Colfax TASS Trainer")
+- [Python: Intel® AI DevCloud TASS Trainer](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Colfax/Tass-Trainer "Python: Intel® AI DevCloud TASS Trainer"). Train TASS on the Intel® AI DevCloud platform. 

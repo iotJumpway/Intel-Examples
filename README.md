@@ -22,7 +22,7 @@ The platform provides an **IoT PaaS** for **IoT communication**, **tutorials** a
 
 "The Intel® AI DevCloud is a cluster of Intel® Xeon® Scalable Processors that will assist you with your machine learning and deep learning training and inference compute needs. It provides access to precompiled software optimized for Intel® architecture on Intel® Xeon® Scalable Processors."
 
-- [Python: Intel® AI DevCloud TASS Trainer](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Colfax/Tass-Trainer "Python: Intel® AI DevCloud TASS Trainer"). Train TASS on the Intel® AI DevCloud TASS Trainer platform. 
+- [Python: Intel® AI DevCloud TASS Trainer](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Colfax/Tass-Trainer "Python: Intel® AI DevCloud TASS Trainer"). Train TASS on the Intel® AI DevCloud platform. 
 
 ## Intel® CV SDK Windows Examples
 
