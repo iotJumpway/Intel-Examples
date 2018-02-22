@@ -108,6 +108,13 @@ This will run ncprofile, nccompile and run:
 2. Runs the conversion/save python script to generate network.meta file.
 3. Profiles, Compiles and Checks the network using the Neural Compute SDK.
 
+## TASS Movidius Configuration Modes
+
+- InceptionTest: This mode sets the program to classify testing images using Inception V3
+- InceptionLive: TODO
+- YoloTest: This mode sets the program to classify testing images using Yolo
+- YoloLive: TODO
+
 ## Test Inception V3 Object Recognition
 
 Now that everything is working, you can execute the following command which will start the program in Inception V3 object detection testing mode. To be in test mode you must edit the ClassifierSettings-MODE setting in data/confs.json to be InceptionTest. You can add new images to the testing folder by adding images to data/testing/inception.

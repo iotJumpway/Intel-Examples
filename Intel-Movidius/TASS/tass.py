@@ -31,7 +31,7 @@ class TassMovidius():
             
                 - InceptionTest: This mode sets the program to classify testing images using Inception V3
                 - InceptionLive: TODO
-                - YoloTest: TODO
+                - YoloTest: This mode sets the program to classify testing images using Yolo
                 - YoloLive: TODO
         """
         
