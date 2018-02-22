@@ -8,6 +8,8 @@ Intel® Movidius™ VPUs drive the demanding workloads of  modern computer visio
 
 ![IoT JumpWay Intel® Movidius Examples](TASS/images/movidius.jpg)
 
+## Examples
+
 [![TASS Movidius Example](TASS/images/tass-movidius.jpg)](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS)
 
 - [Python: TASS Movidius Example](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS "Python: TASS Movidius Example"). Uses pretrained Inception V3 & Yolo models with an Intel® Movidius to carry out object and facial classification, both locally and on a live webcam stream.
