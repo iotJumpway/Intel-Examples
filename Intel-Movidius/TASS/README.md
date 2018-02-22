@@ -60,7 +60,7 @@ This will run ncprofile, nccompile and run:
 
 ## Test Inception V3 Object Recognition
 
-Now that everything is working, you can execute the following command which will start the program in Inception V3 object detection testing mode. To be in test mode you must edit the ClassifierSettings-MODE setting in data/confs.json to be InceptionTest.
+Now that everything is working, you can execute the following command which will start the program in Inception V3 object detection testing mode. To be in test mode you must edit the ClassifierSettings-MODE setting in data/confs.json to be InceptionTest. You can add new images to the testing folder by adding images to data/testing/inception.
 
 ```
 python3 tass.py
@@ -103,13 +103,19 @@ TESTING TIME: 4.594240665435791
 
 ## Test Yolo Object Recognition
 
-You can execute the following command which will start the program in Yolo object detection testing mode. To be in Yolo object detection testing mode you must edit the ClassifierSettings-MODE setting in data/confs.json to be YoloTest.
+First of all you need to compile graph:
+
+```
+mvNCCompile prototxt/yolo_tiny_deploy.prototxt -w weights/yolo_tiny.caffemodel -s 12
+```
+
+You can execute the following command which will start the program in Yolo object detection testing mode. To be in Yolo object detection testing mode you must edit the ClassifierSettings-MODE setting in data/confs.json to be YoloTest. You can add new images to the testing folder by adding images to data/testing/yolo.
 
 ```
 python3 tass.py
 ```
 
-If all went well, it should of taken about 0.7 seconds to identify the car and the bicycle. The TESTING TIME includes the time to publish the notification to the IoT JumpWay, the whole process should take around 1.4 seconds on an Intel® NUC. 
+If all went well, it should of taken about 0.7 seconds to identify the car and the bicycle, it does not however identify the dog. The TESTING TIME includes the time to publish the notification to the IoT JumpWay, the whole process should take around 1.4 seconds on an Intel® NUC. 
 
 ### Intel® NUC
 
