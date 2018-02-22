@@ -6,9 +6,7 @@
 
 The **IoT JumpWay** is an IoT platform that provides a high performance, scalable and efficient solution for IoT developers and Makers. The platform provides the fundamental services that allow you to securely distribute data from IoT devices and manage and control them securely via applications.
 
-The platform provides an **IoT PaaS** for **IoT communication**, **tutorials** and **examples**. Connect IoT devices such as **Raspberry Pi**, **Intel® NUC**, **Intel® Edison**, **Intel® Galileo**, **Arduino**, **ESP8266** and even **phones**,**PCs**, **Macs** and **laptops** to the **Internet of Things**. 
-
-The various IoT JumpWay libraries and samples allow you to connect devices and sensors to the IoT JumpWay and control/monitor sensors/actuators and data to and from the devices.
+The platform provides an **IoT PaaS** for **IoT communication**, **tutorials** and **examples**. Connect IoT devices such as **Raspberry Pi**, **Intel® NUC**, **Intel® Edison**, **Intel® Galileo**, **Arduino**, **ESP8266** and even **phones**,**PCs**, **Macs** and **laptops** to the **Internet of Things**.  The various IoT JumpWay libraries and samples allow you to connect devices and sensors to the IoT JumpWay and control/monitor sensors/actuators and data to and from the devices.
 
 The **Intel® examples** provide example projects that you can use to get started with using the **IoT JumpWay** for your **Intel®** IoT projects.
 
