@@ -39,7 +39,7 @@ There are a few tutorials that you should follow before beginning, especially if
 
 - Setup an IoT JumpWay Location Device for TASS, ensuring you set up you camera node,as you will need the ID of the camera for the project to work. Once your create your device, make sure you note the MQTT username and password, the device ID and device name exactly, you will also need the zone and location ID. You will need to edit your device and add the rules that will allow it to communicate autonomously with the other devices and applications on the network, but for now, these are the only steps that need doing at this point.
 
-Follow the [TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "TechBubble Technologies IoT JumpWay Developer Program (BETA) Location Device Doc") to set up your devices.
+Follow the [IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "IoT JumpWay Developer Program (BETA) Location Device Doc") to set up your devices.
 
 ```
 {
@@ -117,7 +117,7 @@ This tutorial provides a number of configuration modes. For ease, all of the cla
 - **InceptionTest:** This mode sets the program to classify testing images using Inception V3
 - **InceptionLive:** TODO
 - **YoloTest:** This mode sets the program to classify testing images using Yolo
-- **YoloLive:** TODO
+- **YoloLive:** This mode sets the program to classify from the live webcam feed using Yolo
 
 ## Test Inception V3 Object Recognition
 
@@ -219,6 +219,38 @@ TESTED: 1
 IDENTIFIED: 2
 TESTING TIME: 1.4020063877105713
 ```
+
+## Live Yolo Object Recognition
+
+First of all make sure your camera is connected and update **data/confs.json** with your sensor information from the IoT JumpWay. You can also point to live stream on an IP cam using the URL field below, leaving it as 0 will connect to the webcam attached to your device. 
+
+```
+"Cameras": [
+    {
+        "ID": YourCameraID,
+        "URL": 0,
+        "Name": "YourCameraName"
+    }
+],
+```
+
+Next, if you have not already done so by using **YoloTest** mode, you need to download the weights:
+
+* YOLO_tiny: https://drive.google.com/file/d/0Bzy9LxvTYIgKNFEzOEdaZ3U0Nms/view?usp=sharing
+
+Then compile the graph:
+
+```
+mvNCCompile prototxt/yolo_tiny_deploy.prototxt -w weights/yolo_tiny.caffemodel -s 12
+```
+
+You can execute the following command which will start the program in Yolo object detection live mode. To be in Yolo object detection live mode you must edit the **ClassifierSettings->MODE** setting in **data/confs.json** to be **YoloLive**.
+
+```
+python3 tass.py
+```
+
+![Live Yolo Object Recognition](images/YoloTestFrame.jpg)
 
 ## Bugs/Issues
 

@@ -32,7 +32,7 @@ class TassMovidius():
                 - InceptionTest: This mode sets the program to classify testing images using Inception V3
                 - InceptionLive: TODO
                 - YoloTest: This mode sets the program to classify testing images using Yolo
-                - YoloLive: TODO
+                - YoloLive: This mode sets the program to classify from the live webcam feed using Yolo
         """
         
         self._configs = {}
@@ -60,16 +60,11 @@ class TassMovidius():
 
             self._configs = json.loads(configs.read())
         
-        self.CheckDevices()
-        self.startMQTT()
-        
-        print("")
-        print("-- TassMovidius Initiated")
-        
         if self._configs["ClassifierSettings"]["MODE"] == "InceptionLive" or self._configs["ClassifierSettings"]["MODE"] == "YoloLive":
             
             print("-- YOU ARE IN LIVE MODE, EDIT data/confs.json TO CHANGE MODE TO TEST --")
             print("")
+            
             self.startStream()
         
         else:
@@ -77,6 +72,22 @@ class TassMovidius():
             print("-- YOU ARE IN TEST MODE, EDIT data/confs.json TO CHANGE MODE TO LIVE --")
             print("")
         
+        self.CheckDevices()
+        self.startMQTT()
+
+        if self._configs["ClassifierSettings"]["MODE"] == "InceptionLive":
+            
+            pass
+            
+        elif self._configs["ClassifierSettings"]["MODE"] == "YoloLive":
+            
+            self.TassMovidiusYolo = TassMovidiusYolo()
+            self.loadYoloRequirements()
+        
+        print("")
+        print("-- TassMovidius Initiated")
+        print("")
+            
     def CheckDevices(self):
         
         #mvnc.SetGlobalOption(mvnc.GlobalOption.LOGLEVEL, 2)
@@ -222,12 +233,6 @@ class TassMovidius():
         self.graph.DeallocateGraph()
         self.movidius.CloseDevice()
         sys.exit()
-    
-    def inceptionLive(self):
-        
-        print("TODO")
-        print("")
-        sys.exit()
         
     def loadYoloRequirements(self):
 
@@ -323,9 +328,7 @@ class TassMovidius():
                         
                         print('Published To IoT JumpWay')
                         print("")
-                    
 
-    
         now = time.time()
         print("")
         print("TESTING YOLO ENDED")
@@ -336,12 +339,6 @@ class TassMovidius():
         
         self.graph.DeallocateGraph()
         self.movidius.CloseDevice()
-        sys.exit()
-    
-    def yoloLive(self):
-        
-        print("TODO")
-        print("")
         sys.exit()
             
     def startMQTT(self):
@@ -402,8 +399,6 @@ while True:
         print("INCEPTION LIVE MODE")
         print("")
         
-        TassMovidius.inceptionLive()
-        
         pass
         
     elif TassMovidius._configs["ClassifierSettings"]["MODE"] == "YoloTest":
@@ -417,12 +412,101 @@ while True:
         
     elif TassMovidius._configs["ClassifierSettings"]["MODE"] == "YoloLive":
     
-        print("YOLO LIVE MODE")
+        print("- YOLO LIVE MODE")
+        print("")
+                
+        yoloStart = time.time()
+        identified = 0
+        files = 0
+        print("- YOLO STARTED: ",yoloStart)
+        print("")
+
+        
+        while True:
+        
+            try:
+                
+                ret, img = TassMovidius.cameraStream.read()
+                if not ret: continue
+
+                files = files + 1
+
+                detectionStartHuman = datetime.now()
+                detectionStart = time.time()
+                print("- DETECTION STARTED: ",detectionStartHuman)
+                
+                dim=(448,448)
+                im = resize(img.copy()/255.0,dim,1)
+                #im = cv2.cvtColor(im, cv2.COLOR_RGB2BGR)
+                im = im[:,:,(2,1,0)]
+
+                #print('NEW shape:',im.shape)
+                #print(img[0,0,:],im[0,0,:])
+                
+                TassMovidius.graph.LoadTensor(im.astype(np.float16), 'user object')
+                print('- Loaded Tensor')
+                out, userobj = TassMovidius.graph.GetResult()
+                
+                results = TassMovidius.TassMovidiusYolo.processImage(
+                    out.astype(np.float32), 
+                    img.shape[1], 
+                    img.shape[0]) # fc27 instead of fc12 for yolo_small
+                #print (results)
+                #cv2.imshow('YOLO detection',img_cv)
+
+                now = time.time()
+                print("- DETECTION ENDED: {0}".format(now - detectionStart))
+                print("")
+
+                savedFrames = TassMovidius.TassMovidiusYolo.saveFrame(
+                    img, 
+                    results, 
+                    img.shape[1], 
+                    img.shape[0])
+
+                if len(savedFrames) == 0:
+                    
+                    print("- Nothing Detected")
+                    print("")
+
+                    continue
+                    
+                for i in range(len(savedFrames)):
+                    
+                    print("")
+                    print("TASS Detected ", savedFrames[i]["class"], "With A Confidence Of", str(savedFrames[i]["Confidence"]))
+                    print("")
+                    
+                    if savedFrames[i]["Confidence"] > TassMovidius._configs["ClassifierSettings"]["YoloThreshold"]:
+                        
+                        identified = identified + 1
+
+                        TassMovidius.jumpwayClient.publishToDeviceChannel(
+                                "Sensors",
+                                {
+                                    "Sensor":"CCTV",
+                                    "SensorID": TassMovidius._configs["Cameras"][0]["ID"],
+                                    "SensorValue":"OBJECT: " + savedFrames[i]["class"] + " (Confidence: " + str(savedFrames[i]["Confidence"]) + ")"
+                                }
+                            )
+                        
+                        print('Published To IoT JumpWay')
+                        print("")
+                    
+            except cv2.error as e:
+                print(e)
+                    
+        now = time.time()
+        print("")
+        print("YOLO ENDED")
+        print("PROCESSED:",files)
+        print("IDENTIFIED:",identified)
+        print("TIME: {0}".format(now - testingStart))
         print("")
         
-        TassMovidius.yoloLive()
-        
-        pass
+        TassMovidius.graph.DeallocateGraph()
+        TassMovidius.movidius.CloseDevice()
+        sys.exit()
                 
 print("SHUTTING DOWN")
 print("")

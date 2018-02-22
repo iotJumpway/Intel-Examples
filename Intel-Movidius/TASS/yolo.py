@@ -142,18 +142,20 @@ class TassMovidiusYolo():
 			#print ((xmin, ymin, xmax, ymax))
 			cv2.rectangle(img_cp,(xmin,ymin-20),(xmax,ymin),(125,125,125),-1)
 			cv2.putText(img_cp,results[i][0] + ' : %.2f' % results[i][5],(xmin+5,ymin-7),cv2.FONT_HERSHEY_SIMPLEX,0.5,(0,0,0),1)
+
+		if len(results):
 			
 			timeDirectory =  self._configs["ClassifierSettings"]["NetworkPath"] + "data/captures/"+datetime.now().strftime('%Y-%m-%d')+'/'+datetime.now().strftime('%H')
 			
 			if not os.path.exists(timeDirectory):
-    				
+					
 				os.makedirs(timeDirectory)
 
 			currentImage=timeDirectory+'/'+datetime.now().strftime('%M-%S')+'.jpg'
 			cv2.imwrite(currentImage, img_cp)
 			print("- SAVED IMAGE/FRAME")
 
-			#print(dicts)
+		#print(dicts)
 			
 		if imshow :
 			cv2.imshow('YOLO detection',img_cp)
