@@ -13,7 +13,7 @@ WEIGHTS_FILENAME = inception_v3_2016_08_28.tar.gz
 GET_WEIGHTS = (wget http://download.tensorflow.org/models/${WEIGHTS_FILENAME} && tar zxf ${WEIGHTS_FILENAME} && rm ${WEIGHTS_FILENAME})
 
 MODEL_FILENAME = output/inception-v3.meta
-CONV_SCRIPT = ./inception-v3.py
+CONV_SCRIPT = inception-v3.py
 
 INPUT_NODE_FLAG = -in=input
 OUTPUT_NODE_FLAG = -on=InceptionV3/Predictions/Reshape_1
