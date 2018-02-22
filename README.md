@@ -16,11 +16,13 @@ The platform provides an **IoT PaaS** for **IoT communication**, **tutorials** a
 
 - [Python: TASS Movidius Example](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS "Python: TASS Movidius Example"). Uses pretrained Inception V3 & Yolo models with an Intel® Movidius to carry out object and facial classification, both locally and on a live webcam stream.
 
-## Intel® Nervana AI / Colfax Examples
+## Intel® AI DevCloud Examples
 
-![IoT JumpWay Intel® Nervana AI / Colfax Examples](Intel-Colfax/images/intel-nervana-ai-cluster-colfax.jpg)
+[![IoT JumpWay Intel® AI DevCloud Examples](Intel-Colfax/images/intel-nervana-ai-cluster-colfax.jpg)](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Colfax)
 
-- [Python: Intel® Nervana AI / Colfax TASS Trainer](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Colfax/Tass-Trainer "Python: Intel® Nervana AI / Colfax TASS Trainer"). Train TASS on the Intel® Nervana AI / Colfax platform. 
+"The Intel® AI DevCloud is a cluster of Intel® Xeon® Scalable Processors that will assist you with your machine learning and deep learning training and inference compute needs. It provides access to precompiled software optimized for Intel® architecture on Intel® Xeon® Scalable Processors."
+
+- [Python: Intel® AI DevCloud TASS Trainer](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Colfax/Tass-Trainer "Python: Intel® AI DevCloud TASS Trainer"). Train TASS on the Intel® AI DevCloud TASS Trainer platform. 
 
 ## Intel® CV SDK Windows Examples
 
