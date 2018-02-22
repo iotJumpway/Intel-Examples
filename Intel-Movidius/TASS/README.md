@@ -3,8 +3,8 @@
 
 ![TASS Movidius Example](images/tass-movidius.jpg)
 
-Acknowledgement: Uses code from Intel movidius/ncsdk ([movidius/ncsdk Github](https://github.com/movidius/ncsdk "movidius/ncsdk Github"))
-Acknowledgement: Uses code from Intel gudovskiy/yoloNCS ([gudovskiy/yoloNCS Github](https://github.com/gudovskiy/yoloNCS "gudovskiy/yoloNCS Github"))
+- Acknowledgement: Uses code from Intel movidius/ncsdk ([movidius/ncsdk Github](https://github.com/movidius/ncsdk "movidius/ncsdk Github"))
+- Acknowledgement: Uses code from Intel gudovskiy/yoloNCS ([gudovskiy/yoloNCS Github](https://github.com/gudovskiy/yoloNCS "gudovskiy/yoloNCS Github"))
 
 ## Introduction
 
