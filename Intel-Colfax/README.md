@@ -13,3 +13,11 @@ Colfax Research is a department of Colfax International, a Silicon Valley-based 
 [![Python: Intel® AI DevCloud TASS Trainer](images/tass-trainer.jpg)](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Colfax/Tass-Trainer)
 
 - [Python: Intel® AI DevCloud TASS Trainer](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Colfax/Tass-Trainer "Python: Intel® AI DevCloud TASS Trainer"). Train TASS on the Intel® AI DevCloud platform. 
+
+## Bugs/Issues
+
+Please feel free to create issues for bugs and general issues you come across whilst using this or any other Intel® related IoT JumpWay issues. You may also use the issues area to ask for general help whilst using the IoT JumpWay in your IoT projects.
+
+## Contributors
+
+[![Adam Milton-Barker, Intel® Software Innovator](../images/main/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)

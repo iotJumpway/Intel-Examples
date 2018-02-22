@@ -6,26 +6,24 @@
 
 The Intel® Computer Vision SDK examples provide example projects that you can use to get started with using the TechBubble IoT JumpWay for your Intel® Computer Vision SDK projects.
 
-## Intel® Computer Vision SDK Windows Examples
+## Windows Examples
 
 ![Intel® Computer Vision SDK Windows Examples](TASS-PVL/Windows/images/Intel-Computer-Vision-Windows.png)
 
-- [IoT JumpWay Intel® Computer Vision SDK Windows Console TASS PVL Webcam Security System](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Webcam/ConsoleApp "IoT JumpWay Intel® Computer Vision SDK Windows Console TASS PVL Webcam Security System")
+- [Windows Console: TASS PVL Webcam](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Webcam/ConsoleApp "Windows Console: TASS PVL Webcam"). A Computer Vision security system using the Intel® CV SDK & webcam.
 
-- [IoT JumpWay Intel® Computer Vision SDK Windows Console TASS PVL RealSense Security System](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Realsense/ConsoleApp "IoT JumpWay Intel® Computer Vision SDK Windows TASS PVL RealSense Security System")
+- [Windows Console: TASS PVL RealSense](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Realsense/ConsoleApp "Windows Console: TASS PVL RealSense"). A Computer Vision security system using the Intel® CV SDK & RealSense.
 
-## Intel® Computer Vision SDK Windows Docs
+## Windows Docs
 
 - [Installing Intel® Computer Vision SDK on Windows 10](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/_Docs/1-Installing-Intel-CV-SDK.md "Installing Intel® Computer Vision SDK on Windows 10")
 
 - [Installing Intel® RealSense SDK on Windows 10](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/_Docs/2-Installing-Intel-RealSense-SDK.md "Installing Intel® RealSense SDK on Windows 10")
 
-## IoT JumpWay Intel® Computer Vision SDK Bugs/Issues
+## Bugs/Issues
 
-Please feel free to create issues for bugs and general issues you come across whilst using the IoT JumpWay Intel® Examples. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel® Examples in your IoT projects.
+Please feel free to create issues for bugs and general issues you come across whilst using this or any other Intel® related IoT JumpWay issues. You may also use the issues area to ask for general help whilst using the IoT JumpWay in your IoT projects.
 
-## IoT JumpWay Intel® Computer Vision SDK Contributors
+## Contributors
 
-- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
-
-![Adam Milton-Barker,  Intel Software Innovator](../images/main/Intel-Software-Innovator.jpg)
+[![Adam Milton-Barker, Intel® Software Innovator](../images/main/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
