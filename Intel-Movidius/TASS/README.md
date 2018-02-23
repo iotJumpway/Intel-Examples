@@ -31,7 +31,32 @@ This tutorial can be used on a number of devices:
 - Intel® NUC running Ubuntu / Ubuntu LTS
 - Raspberry Pi running Raspian Stretch ([Raspian Stretch](https://www.raspberrypi.org/downloads/raspbian/ "Raspian Stretch") ) 
 
-## Before You Begin
+## Install NCSDK
+
+The first thing you will need to do once you have your operating system on your device is to install the **NCSDK**. 
+
+### Install NCSDK On Raspbery Pi 3:
+
+TO BE CONTINUED 
+
+### Install NCSDK On Other Linux Device:
+
+```
+ $ mkdir -p ~/workspace
+ $ cd ~/workspace
+ $ git clone https://github.com/movidius/ncsdk.git
+ $ cd ~/workspace/ncsdk
+ $ make install
+```
+
+Next plug your Movidius into your device and issue the following commands:
+
+```
+ $ cd ~/workspace/ncsdk
+ $ make examples
+```
+
+## Getting Started With The IoT JumpWay
 
 There are a few tutorials that you should follow before beginning, especially if it is the first time you have used the **IoT JumpWay Developer Program**. If you do not already have one, you will require an **IoT JumpWay Developer Program developer account**, and some basics to be set up before you can start creating your IoT devices. Visit the following [IoT JumpWay Developer Program Docs (5-10 minute read/setup)](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/ "IoT JumpWay Developer Program Docs (5-10 minute read/setup)") and check out the guides that take you through registration and setting up your Location Space, Zones, Devices and Applications (About 5 minutes read).
 
@@ -86,31 +111,6 @@ Follow the [IoT JumpWay Developer Program (BETA) Location Device Doc](https://gi
         "Graph":"graph"
     }
 }
-```
-
-## Install NCSDK
-
-The first thing you will need to do once you have your operating system on your device is to install the **NCSDK**. 
-
-### Install NCSDK On Raspbery Pi 3:
-
-TO BE CONTINUED 
-
-### Install NCSDK On Other Linux Device:
-
-```
- $ mkdir -p ~/workspace
- $ cd ~/workspace
- $ git clone https://github.com/movidius/ncsdk.git
- $ cd ~/workspace/ncsdk
- $ make install
-```
-
-Next plug your Movidius into your device and issue the following commands:
-
-```
- $ cd ~/workspace/ncsdk
- $ make examples
 ```
 
 ## Cloning The Repo
