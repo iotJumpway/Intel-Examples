@@ -143,7 +143,8 @@ Follow the [IoT JumpWay Developer Program (BETA) Location Device Doc](https://gi
         "InceptionThreshold": 0.50,
         "YoloImagePath":"data/testing/yolo/",
         "YoloThreshold": 0,
-        "Graph":"graph"
+        "InceptionGraph":"igraph",
+        "YoloGraph":"graph"
     }
 }
 ```
