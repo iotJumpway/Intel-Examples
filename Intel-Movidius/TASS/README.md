@@ -17,7 +17,7 @@ TASS Movidius uses pretrained **Inception V3 & Yolo models** and an **Intel® Mo
 This tutorial will result in two IoT devices:
 
 1. IoT connected computer vision device using a **Raspberry Pi 3** & **Intel® Movidius**.
-2. IoT connected alarm system using an **Intel Edison** and an **IoT Dev Kit**.
+2. IoT connected alarm system using an **Intel Edison** and an **IoT Dev Kit**. (OPTIONAL)
 
 ## What Will We Do?
 
@@ -47,7 +47,7 @@ This tutorial can be used on a number of devices:
 
 - Laptop / PC running Ubuntu
 - Intel® NUC running Ubuntu / Ubuntu LTS
-- Raspberry Pi running Raspian Stretch ([Raspian Stretch](https://www.raspberrypi.org/downloads/raspbian/ "Raspian Stretch") ) 
+- Raspberry Pi running Raspian Stretch (16gb) ([Raspian Stretch](https://www.raspberrypi.org/downloads/raspbian/ "Raspian Stretch") ) 
 
 If you are completing the full tutorial: 
 
@@ -63,7 +63,7 @@ The first thing you will need to do once you have your operating system on your 
 
 ### Install NCSDK On Raspbery Pi 3:
 
-Make sure you have [Raspian Stretch](https://www.raspberrypi.org/downloads/raspbian/ "Raspian Stretch") installed as the operating system on your Raspberry Pi 3.
+Make sure you have [Raspian Stretch](https://www.raspberrypi.org/downloads/raspbian/ "Raspian Stretch") installed as the operating system on your Raspberry Pi 3, then continue with the normal install. You will need at least a 16gb SD card on your Raspberry Pi 3.
 
 ```
  $ sudo apt-get update && sudo apt-get upgrade
@@ -184,9 +184,10 @@ Now that everything is working, you can execute the following command which will
  $ python3 tass.py
 ```
 
-If all went well, it should of taken about 0.3 seconds to identify each image, and out of the 11 images tested 10 were identified with a confidence higher than 50%, and the whole process should take around 4 or 5 seconds on an Intel® NUC. 
+If all went well, with a NUC it should of taken about 0.3 seconds to identify each image and with a Raspberry Pi 3 it should of taken about 0.3 / 0.4 seconds. Out of the 11 images tested 10 were identified with a confidence higher than 50%, and the whole process should take around 4 or 5 seconds on an Intel® NUC and 5 - 6 seconds on a Raspberry Pi. 
 
 ![Test Inception V3 Object Recognition](images/InceptionTest.jpg)
+![Test Inception V3 Object Recognition](images/InceptionTestRPI.jpg)
 
 ### Intel® NUC
 
