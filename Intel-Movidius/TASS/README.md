@@ -52,7 +52,7 @@ This tutorial can be used on a number of devices:
 If you are completing the full tutorial: 
 
 - 1 x Intel® Edison
-- 1x Grove starter kit plus - Intel IoT Edition for Intel® Edison
+- 1x Grove starter kit plus - Intel® IoT Edition for Intel® Edison
 - 1 x Blue LED (Grove)
 - 1 x Red LED (Grove)
 - 1 x Buzzer (Grove)
@@ -184,10 +184,17 @@ Now that everything is working, you can execute the following command which will
  $ python3 tass.py
 ```
 
-If all went well, with a NUC it should of taken about 0.3 seconds to identify each image and with a Raspberry Pi 3 it should of taken about 0.3 / 0.4 seconds. Out of the 11 images tested 10 were identified with a confidence higher than 50%, and the whole process should take around 4 or 5 seconds on an Intel® NUC and 5 - 6 seconds on a Raspberry Pi. 
+### Raspberry Pi 3 Results
+
+![Test Inception V3 Object Recognition](images/InceptionTestRPI.jpg)
+
+Using a Raspberry Pi, it should of taken about 0.3 / 0.4 seconds to classify each image.  Out of the 11 images tested 10 were identified with a confidence higher than 50%, the whole process should take around 5 - 6 seconds on a Raspberry Pi.
+
+### Intel® NUC 3 Results
 
 ![Test Inception V3 Object Recognition](images/InceptionTest.jpg)
-![Test Inception V3 Object Recognition](images/InceptionTestRPI.jpg)
+
+Using a Raspberry Pi, it should of taken about 0.3 seconds to classify each image.  Out of the 11 images tested 10 were identified with a confidence higher than 50%, the whole process should take around 4 or 5 seconds on a Raspberry Pi.
 
 ### Intel® NUC
 
