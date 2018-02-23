@@ -40,7 +40,7 @@ There are a few tutorials that you should follow before beginning, especially if
 Next install the IoT JumpWay MQTT Client. For this you can execute the following command:
 
 ```
-pip3 install techbubbleiotjumpwaymqtt 
+ $ pip3 install techbubbleiotjumpwaymqtt 
 ```
 
 ## IoT JumpWay Device Connection Credentials & Settings
