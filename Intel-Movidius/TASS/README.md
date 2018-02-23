@@ -29,7 +29,7 @@ This tutorial can be used on a number of devices:
 
 - Laptop / PC running Ubuntu
 - Intel® NUC running Ubuntu / Ubuntu LTS
-- Raspberry Pi running Ubuntu LTS ([Ubuntu Classic Server 16.04 Raspberry Pi 3](https://ubuntu-pi-flavour-maker.org/download/ "Ubuntu Classic Server 16.04 Raspberry Pi 3") ) 
+- Raspberry Pi running Raspian Stretch ([Raspian Stretch](https://www.raspberrypi.org/downloads/raspbian/ "Raspian Stretch") ) 
 
 ## Before You Begin
 
@@ -94,36 +94,7 @@ The first thing you will need to do once you have your operating system on your 
 
 ### Install NCSDK On Raspbery Pi 3:
 
-```
- $ sudo apt install make
- $ sudo apt-get install -y libusb-1.0-0-dev libprotobuf-dev
- $ sudo apt-get install -y libleveldb-dev libsnappy-dev
- $ sudo apt-get install -y libopencv-dev
- $ sudo apt-get install -y libhdf5-serial-dev protobuf-compiler
- $ sudo apt-get install -y libatlas-base-dev git automake 
- $ sudo apt-get install -y byacc lsb-release cmake 
- $ sudo apt-get install -y libgflags-dev libgoogle-glog-dev 
- $ sudo apt-get install -y liblmdb-dev swig3.0 graphviz 
- $ sudo apt-get install -y libxslt-dev libxml2-dev 
- $ sudo apt-get install -y gfortran 
- $ sudo apt-get install -y python3-dev python-pip python3-pip 
- $ sudo apt-get install -y python3-setuptools python3-markdown 
- $ sudo apt-get install -y python3-pillow python3-yaml python3-pygraphviz
- $ sudo apt-get install -y python3-h5py python3-nose python3-lxml 
- $ sudo apt-get install -y python3-matplotlib python3-numpy 
- $ sudo apt-get install -y python3-protobuf python3-dateutil 
- $ sudo apt-get install -y python3-skimage python3-scipy 
- $ sudo apt-get install -y python3-six python3-networkx
-```
-
-```
- $ mkdir -p ~/workspace
- $ cd ~/workspace
- $ git clone https://github.com/movidius/ncsdk.git
- $ cd ~/workspace/ncsdk/api/src
- $ make 
- $ sudo make install
-```
+TO BE CONTINUED 
 
 ### Install NCSDK On Other Linux Device:
 
@@ -175,7 +146,7 @@ This tutorial provides a number of configuration modes. For ease, all of the cla
 Now that everything is working, you can execute the following command which will start the program in Inception V3 object detection testing mode. To be in test mode you must edit the **ClassifierSettings->MODE** setting in **data/confs.json** to be **InceptionTest**. You can add new images to the testing folder by adding images to **data/testing/inception**.
 
 ```
-python3 tass.py
+ $ python3 tass.py
 ```
 
 If all went well, it should of taken about 0.3 seconds to identify each image, and out of the 11 images tested 10 were identified with a confidence higher than 50%, and the whole process should take around 4 or 5 seconds on an Intel® NUC. 
@@ -224,13 +195,13 @@ First of all you need to download the weights:
 Then compile the graph:
 
 ```
-mvNCCompile prototxt/yolo_tiny_deploy.prototxt -w weights/yolo_tiny.caffemodel -s 12
+ $ mvNCCompile prototxt/yolo_tiny_deploy.prototxt -w weights/yolo_tiny.caffemodel -s 12
 ```
 
 You can execute the following command which will start the program in Yolo object detection testing mode. To be in Yolo object detection testing mode you must edit the **ClassifierSettings->MODE** setting in **data/confs.json** to be **YoloTest**. You can add new images to the testing folder by adding images to **data/testing/yolo**.
 
 ```
-python3 tass.py
+ $ python3 tass.py
 ```
 
 If all went well, it should of taken about 0.7 seconds to identify the car and the bicycle, it does not however identify the dog. The **TESTING TIME** includes the time to publish the notification to the IoT JumpWay, the whole process should take around 1.4 seconds on an Intel® NUC. 
@@ -292,13 +263,13 @@ Next, if you have not already done so by using **YoloTest** mode, you need to do
 Then compile the graph:
 
 ```
-mvNCCompile prototxt/yolo_tiny_deploy.prototxt -w weights/yolo_tiny.caffemodel -s 12
+ $ mvNCCompile prototxt/yolo_tiny_deploy.prototxt -w weights/yolo_tiny.caffemodel -s 12
 ```
 
 You can execute the following command which will start the program in Yolo object detection live mode. To be in Yolo object detection live mode you must edit the **ClassifierSettings->MODE** setting in **data/confs.json** to be **YoloLive**.
 
 ```
-python3 tass.py
+ $ python3 tass.py
 ```
 
 ![Live Yolo Object Recognition](images/YoloTestFrame.jpg)
@@ -339,6 +310,6 @@ Please feel free to create issues for bugs and general issues you come across wh
 
 ## Contributors
 
-[![Adam Milton-Barker, Intel® Software Innovator](images/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
+[![Adam Milton-Barker, Intel® Software Innovator](../../images/main/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
 
  
