@@ -188,7 +188,7 @@ Now that everything is working, you can execute the following command which will
 
 ![Test Inception V3 Object Recognition](images/InceptionTestRPI.jpg)
 
-Using a Raspberry Pi, it should of taken about 0.3 / 0.4 seconds to classify each image.  Out of the 11 images tested 10 were identified with a confidence higher than 50%, the whole process should take around 5 - 6 seconds on a Raspberry Pi.
+Using a Raspberry Pi, it should of taken about 0.3 / 0.4 seconds to classify each image.  Out of the 11 images tested 10 were identified with a confidence higher than 50%, the whole process should take around 5 - 6 seconds on a Raspberry Pi. **TESTING TIME** includes the time it took to process the 11 images, classify them, and send a notification to the IoT JumpWay for each object identified.
 
 ```
 - Loaded Test Image data/testing/inception/512_InkjetPrinter.jpg
@@ -221,11 +221,11 @@ IDENTIFIED: 10
 TESTING TIME: 6.34046483039856
 ```
 
-### Intel® NUC 3 Results
+### Intel® NUC  Results
 
 ![Test Inception V3 Object Recognition](images/InceptionTest.jpg)
 
-Using a Raspberry Pi, it should of taken about 0.3 seconds to classify each image.  Out of the 11 images tested 10 were identified with a confidence higher than 50%, the whole process should take around 4 or 5 seconds on a Raspberry Pi.
+Using a Raspberry Pi, it should of taken about 0.3 seconds to classify each image.  Out of the 11 images tested 10 were identified with a confidence higher than 50%, the whole process should take around 4 or 5 seconds on a Raspberry Pi. **TESTING TIME** includes the time it took to process the 11 images, classify them, and send a notification to the IoT JumpWay for each object identified.
 
 ```
 - Loaded Test Image data/testing/images/512_InkjetPrinter.jpg
@@ -276,11 +276,64 @@ You can execute the following command which will start the program in Yolo objec
  $ python3 tass.py
 ```
 
-If all went well, it should of taken about 0.7 seconds to identify the car and the bicycle, it does not however identify the dog. The **TESTING TIME** includes the time to publish the notification to the IoT JumpWay, the whole process should take around 1.4 seconds on an Intel® NUC. 
+### Raspberry Pi 3 Results
+
+![Test Inception V3 Object Recognition](images/YoloTestRPI.jpg)
+
+Using a Raspberry Pi, it should of taken about 0.7 seconds to identify the car and the bicycle, it does not however identify the dog. **TESTING TIME** includes the time it took to process the image, classify it, and send a notification to the IoT JumpWay for each object identified.
+
+```
+Welcome to TASS Movidius, please wait while the program initiates...
+
+- Imported Required Modules
+-- YOU ARE IN TEST MODE, EDIT data/confs.json TO CHANGE MODE TO LIVE --
+
+- Movidius Connected
+- IoT JumpWay Initiated
+
+-- TassMovidius Initiated
+
+YOLO TEST MODE
+
+- TESTING YOLO STARTED:  1519407014.1893709
+
+Published to Device Status
+rc: 0
+Published: 1
+- Allocated Graph OK
+
+- Loaded Test Image data/testing/yolo/dog.jpg
+
+- DETECTION STARTED:  2018-02-23 17:30:16.818646
+- Loaded Tensor
+- DETECTION ENDED: 0.701134204864502
+
+- SAVED IMAGE/FRAME
+
+TASS Detected  car With A Confidence Of 0.29334354400634766
+
+Published to Device Sensors Channel
+Published To IoT JumpWay
+
+
+TASS Detected  bicycle With A Confidence Of 0.23780977725982666
+
+Published: 2
+Published to Device Sensors Channel
+Published To IoT JumpWay
+
+
+TESTING YOLO ENDED
+TESTED: 1
+IDENTIFIED: 2
+TESTING TIME: 3.3891067504882812
+```
+
+### Intel® NUC  Results
 
 ![Test Yolo Object Recognition](images/YoloTest.jpg)
 
-### Intel® NUC
+Using a Intel® NUC, it should of taken about 0.7 seconds to identify the car and the bicycle, it does not however identify the dog. **TESTING TIME** includes the time it took to process the image, classify it, and send a notification to the IoT JumpWay for each object identified.
 
 ```
 - Loaded Test Image data/testing/yolo/dog.jpg
