@@ -178,7 +178,7 @@ This tutorial provides a number of configuration modes. For ease, all of the cla
 - **InceptionLive:** This mode sets the program to classify from the live webcam feed using Inception V3
 - **YoloTest:** This mode sets the program to classify testing images using Yolo
 - **YoloLive:** This mode sets the program to classify from the live webcam feed using Yolo
-- **Facial:** TODO 
+- **InceptionFacial:** TODO 
 
 ## Test Inception V3 Object Recognition
 

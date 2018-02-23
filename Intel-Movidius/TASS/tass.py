@@ -31,9 +31,10 @@ class TassMovidius():
             Classifier configuration can be found in data/confs.json
             
                 - InceptionTest: This mode sets the program to classify testing images using Inception V3
-                - InceptionLive: TODO
+                - InceptionLive: This mode sets the program to classify from the live webcam feed using Inception V3
                 - YoloTest: This mode sets the program to classify testing images using Yolo
                 - YoloLive: This mode sets the program to classify from the live webcam feed using Yolo
+                - InceptionFacial: TODO 
         """
         
         self._configs = {}
