@@ -175,9 +175,10 @@ Once you have done this you should see a file called **graph**, for this tutoria
 This tutorial provides a number of configuration modes. For ease, all of the classes and functions that allow the different modes to work have been provided in **tass.py** and **yolo.py**. You are free to create your own projects and modules from these codes. 
 
 - **InceptionTest:** This mode sets the program to classify testing images using Inception V3
-- **InceptionLive:** TODO
+- **InceptionLive:** This mode sets the program to classify from the live webcam feed using Inception V3
 - **YoloTest:** This mode sets the program to classify testing images using Yolo
 - **YoloLive:** This mode sets the program to classify from the live webcam feed using Yolo
+- **Facial:** TODO 
 
 ## Test Inception V3 Object Recognition
 
