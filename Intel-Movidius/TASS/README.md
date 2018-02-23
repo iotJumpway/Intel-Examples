@@ -41,12 +41,21 @@ This tutorial will result in two IoT devices:
 ## Hardware Requirements
 
 - Intel® Movidius
+- 1 x Webcam / IP cam
 
 This tutorial can be used on a number of devices: 
 
 - Laptop / PC running Ubuntu
 - Intel® NUC running Ubuntu / Ubuntu LTS
 - Raspberry Pi running Raspian Stretch ([Raspian Stretch](https://www.raspberrypi.org/downloads/raspbian/ "Raspian Stretch") ) 
+
+If you are completing the full tutorial: 
+
+- 1 x Intel® Edison
+- 1x Grove starter kit plus - Intel IoT Edition for Intel® Edison
+- 1 x Blue LED (Grove)
+- 1 x Red LED (Grove)
+- 1 x Buzzer (Grove)
 
 ## Install NCSDK
 
