@@ -2,8 +2,8 @@
 
 ![TASS Movidius Example](images/tass-movidius.jpg)
 
-- **Acknowledgement:** Uses code from Intel **movidius/ncsdk** ([movidius/ncsdk Github](https://github.com/movidius/ncsdk "movidius/ncsdk Github"))
-- **Acknowledgement:** Uses code from Intel **gudovskiy/yoloNCS** ([gudovskiy/yoloNCS Github](https://github.com/gudovskiy/yoloNCS "gudovskiy/yoloNCS Github"))
+- **Acknowledgement:** Uses code from Intel® **movidius/ncsdk** ([movidius/ncsdk Github](https://github.com/movidius/ncsdk "movidius/ncsdk Github"))
+- **Acknowledgement:** Uses code from Intel® **gudovskiy/yoloNCS** ([gudovskiy/yoloNCS Github](https://github.com/gudovskiy/yoloNCS "gudovskiy/yoloNCS Github"))
 
 
 ## Introduction
@@ -11,6 +11,23 @@
 TASS Movidius uses pretrained **Inception V3 & Yolo models** and an **Intel® Movidius** to carry out object and **facial classification**, both locally and on a live webcam stream. TASS Movidius uses the [IoT JumpWay](https://iot.techbubbletechnologies.com "IoT JumpWay") for IoT communication and publishes messages to the broker when an object is identified.
 
 ![Test Yolo Object Recognition](images/movidius.jpg)
+
+## IoT Devices:
+
+This tutorial will result in two IoT devices:
+
+1. IoT connected computer vision device using a **Raspberry Pi 3** & **Intel® Movidius**.
+2. IoT connected alarm system using an **Intel Edison** and an **IoT Dev Kit**.
+
+## What Will We Do?
+
+1. Install the [Intel® NCSDK](https://github.com/movidius/ncsdk "Intel® NCSDK")
+2. Install the [IoT JumpWay MQTT Client](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Clients "IoT JumpWay MQTT Client") 
+3. Clone and set up the repo
+4. Test Inception V3 Object Recognition
+5. Test Yolo Object Recognition
+6. Live Yolo Object Recognition
+7. Communication with IoT alarm via rules
 
 ## Python Versions
 
@@ -327,7 +344,7 @@ When the program detects an object, it will send sensor data to the [IoT JumpWay
 
 ## Bugs/Issues
 
-Please feel free to create issues for bugs and general issues you come across whilst using this or any other Intel related IoT JumpWay issues. You may also use the issues area to ask for general help whilst using the IoT JumpWay in your IoT projects.
+Please feel free to create issues for bugs and general issues you come across whilst using this or any other Intel® related IoT JumpWay issues. You may also use the issues area to ask for general help whilst using the IoT JumpWay in your IoT projects.
 
 ## Contributors
 
