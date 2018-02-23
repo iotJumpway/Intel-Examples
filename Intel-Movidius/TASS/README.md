@@ -37,9 +37,18 @@ The first thing you will need to do once you have your operating system on your 
 
 ### Install NCSDK On Raspbery Pi 3:
 
-TO BE CONTINUED 
+Make sure you have [Raspian Stretch](https://www.raspberrypi.org/downloads/raspbian/ "Raspian Stretch") installed as the operating system on your Raspberry Pi 3.
 
-### Install NCSDK On Other Linux Device:
+```
+ $ sudo apt-get update && sudo apt-get upgrade
+```
+
+```
+ $ wget https://github.com/lhelontra/tensorflow-on-arm/releases/download/v1.3.1/tensorflow-1.3.1-cp35-none-linux_armv7l.whl
+ $ pip3 install tensorflow-1.3.1-cp35-none-linux_armv7l.whl
+```
+
+### Install NCSDK:
 
 ```
  $ mkdir -p ~/workspace
@@ -49,7 +58,7 @@ TO BE CONTINUED
  $ make install
 ```
 
-Next plug your Movidius into your device and issue the following commands:
+Next plug your Movidius into your device and issue the following commands, this will take a while if you are installing on a Raspberry Pi 3
 
 ```
  $ cd ~/workspace/ncsdk
