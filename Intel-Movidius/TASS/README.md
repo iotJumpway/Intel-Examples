@@ -158,14 +158,16 @@ Once you have the repo, you will need to find the files in this folder located i
 
 ```
  $ cd IoT-JumpWay-Intel-Examples/Intel-Movidius/TASS
- $ make run
+ $ make all
 ```
 
-This will run ncprofile, nccompile and run:
+This will:
 
-1. Downloads the TensorFlow checkpoint file.
-2. Runs the conversion/save python script to generate network.meta file.
-3. Profiles, Compiles and Checks the network using the Neural Compute SDK.
+1. Download the TensorFlow checkpoint file.
+2. Run the conversion/save python script to generate network.meta file.
+3. Profile, Compile and Check the network using the Neural Compute SDK.
+
+Once you have done this you should see a file called **graph**, for this tutorial to work you need to rename this file on your device to **igraph**. This will allow you to switch between the Inception V3 model and the Yolo model without having to recompile the graph every time.
 
 ## TASS Movidius Configuration Modes
 
@@ -188,29 +190,29 @@ Now that everything is working, you can execute the following command which will
 
 ![Test Inception V3 Object Recognition](images/InceptionTestRPI.jpg)
 
-Using a Raspberry Pi, it should of taken about 0.3 / 0.4 seconds to classify each image.  Out of the 11 images tested 10 were identified with a confidence higher than 50%, the whole process should take around 5 - 6 seconds on a Raspberry Pi. **TESTING TIME** includes the time it took to process the 11 images, classify them, and send a notification to the IoT JumpWay for each object identified.
+Using a Raspberry Pi, it should of taken about 0.3 / 0.4 seconds to classify each image.  Out of the 11 images tested 10 were identified with a confidence higher than 50%, the whole process should take around 4-5 seconds on a Raspberry Pi. **TESTING TIME** includes the time it took to process the 11 images, classify them, and send a notification to the IoT JumpWay for each object identified.
 
 ```
-- Loaded Test Image data/testing/inception/512_InkjetPrinter.jpg
+- Loaded Test Image data/testing/inception/512_Monitor.jpg
 
-- DETECTION STARTED:  1519400522.717097
+- DETECTION STARTED:  1519415423.247995
 - Loaded Tensor
-- DETECTION ENDED: 0.3797774314880371
+- DETECTION ENDED: 0.4072284698486328
 
-TASS Detected Image ID 743 printer With A Confidence Of 0.9727
+TASS Detected Image ID 783 screen, CRT screen With A Confidence Of 0.5747
 
 Published to Device Sensors Channel
 Published To IoT JumpWay
 
 *******************************************************************************
-Published: 7
 inception-v3 on NCS
 *******************************************************************************
-743 printer 0.9727
-714 photocopier 0.02463
-663 modem 0.000944
-733 Polaroid camera, Polaroid Land camera 0.0004566
-746 projector 0.0004222
+783 screen, CRT screen 0.5747
+665 monitor 0.2395
+Published: 11
+528 desktop computer 0.1376
+509 computer keyboard, keypad 0.00651
+852 television, television system 0.006233
 *******************************************************************************
 ```
 
@@ -218,7 +220,7 @@ inception-v3 on NCS
 TESTING INCEPTION V3 ENDED
 TESTED: 11
 IDENTIFIED: 10
-TESTING TIME: 6.34046483039856
+TESTING TIME: 4.765908241271973
 ```
 
 ### Intel® NUC  Results
@@ -286,47 +288,44 @@ Using a Raspberry Pi, it should of taken about 0.7 seconds to identify the car a
 Welcome to TASS Movidius, please wait while the program initiates...
 
 - Imported Required Modules
+- Movidius Connected
+- Allocated Graph OK
+- Allocated Graph OK
 -- YOU ARE IN TEST MODE, EDIT data/confs.json TO CHANGE MODE TO LIVE --
 
-- Movidius Connected
 - IoT JumpWay Initiated
 
 -- TassMovidius Initiated
 
-YOLO TEST MODE
+- YOLO TEST MODE STARTED:  1519415604.1698081
 
-- TESTING YOLO STARTED:  1519407014.1893709
-
-Published to Device Status
-rc: 0
-Published: 1
-- Allocated Graph OK
 
 - Loaded Test Image data/testing/yolo/dog.jpg
 
-- DETECTION STARTED:  2018-02-23 17:30:16.818646
+- DETECTION STARTED:  2018-02-23 19:53:24.172337
+Published to Device Status
+rc: 0
+Published: 1
 - Loaded Tensor
-- DETECTION ENDED: 0.701134204864502
+- DETECTION ENDED: 0.777153491973877
 
 - SAVED IMAGE/FRAME
 
 TASS Detected  car With A Confidence Of 0.29334354400634766
 
 Published to Device Sensors Channel
-Published To IoT JumpWay
-
 
 TASS Detected  bicycle With A Confidence Of 0.23780977725982666
 
 Published: 2
 Published to Device Sensors Channel
-Published To IoT JumpWay
+```
 
-
-TESTING YOLO ENDED
+```
+YOLO TEST MODE ENDED
 TESTED: 1
 IDENTIFIED: 2
-TESTING TIME: 3.3891067504882812
+TESTING TIME: 0.8514771461486816
 ```
 
 ### Intel® NUC  Results

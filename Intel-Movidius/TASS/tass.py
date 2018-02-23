@@ -102,7 +102,7 @@ class TassMovidius():
         
     def loadInceptionRequirements(self):
         
-        with open(self._configs["ClassifierSettings"]["NetworkPath"] + self._configs["ClassifierSettings"]["Graph"], mode='rb') as f:
+        with open(self._configs["ClassifierSettings"]["NetworkPath"] + self._configs["ClassifierSettings"]["InceptionGraph"], mode='rb') as f:
             
             self.graphfile = f.read()
 
@@ -132,15 +132,16 @@ class TassMovidius():
         
     def loadYoloRequirements(self):
 
-        network_blob='graph'
         opt = self.movidius.GetDeviceOption(mvnc.DeviceOption.OPTIMISATION_LIST)
-
-        # load blob
-        with open(network_blob, mode='rb') as f:
+        
+        with open(self._configs["ClassifierSettings"]["YoloGraph"], mode='rb') as f:
 
             blob = f.read()
 
         self.allocateGraph(blob)
+        
+        print("- Allocated Graph OK")
+        
         self.graph.SetGraphOption(mvnc.GraphOption.ITERATIONS, 1)
         self.iterations = self.graph.GetGraphOption(mvnc.GraphOption.ITERATIONS)
             
