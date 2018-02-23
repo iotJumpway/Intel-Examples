@@ -190,13 +190,42 @@ Now that everything is working, you can execute the following command which will
 
 Using a Raspberry Pi, it should of taken about 0.3 / 0.4 seconds to classify each image.  Out of the 11 images tested 10 were identified with a confidence higher than 50%, the whole process should take around 5 - 6 seconds on a Raspberry Pi.
 
+```
+- Loaded Test Image data/testing/inception/512_InkjetPrinter.jpg
+
+- DETECTION STARTED:  1519400522.717097
+- Loaded Tensor
+- DETECTION ENDED: 0.3797774314880371
+
+TASS Detected Image ID 743 printer With A Confidence Of 0.9727
+
+Published to Device Sensors Channel
+Published To IoT JumpWay
+
+*******************************************************************************
+Published: 7
+inception-v3 on NCS
+*******************************************************************************
+743 printer 0.9727
+714 photocopier 0.02463
+663 modem 0.000944
+733 Polaroid camera, Polaroid Land camera 0.0004566
+746 projector 0.0004222
+*******************************************************************************
+```
+
+```
+TESTING INCEPTION V3 ENDED
+TESTED: 11
+IDENTIFIED: 10
+TESTING TIME: 6.34046483039856
+```
+
 ### Intel® NUC 3 Results
 
 ![Test Inception V3 Object Recognition](images/InceptionTest.jpg)
 
 Using a Raspberry Pi, it should of taken about 0.3 seconds to classify each image.  Out of the 11 images tested 10 were identified with a confidence higher than 50%, the whole process should take around 4 or 5 seconds on a Raspberry Pi.
-
-### Intel® NUC
 
 ```
 - Loaded Test Image data/testing/images/512_InkjetPrinter.jpg
