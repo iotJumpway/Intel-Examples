@@ -93,6 +93,8 @@ If you follow this step you should move to Getting Started With The IoT JumpWay 
 
 ### Install NCSDK:
 
+If you are not installating on a Raspberry Pi 3, or you did not choose to use the Raspberry Pi installation method above, you should use the following commands to install the NCSDK normally
+
 ```
  $ mkdir -p ~/workspace
  $ cd ~/workspace
