@@ -1,12 +1,12 @@
-# IoT JumpWay Intel® Nervana AI / Colfax TASS Trainer
+# IoT JumpWay Intel® AI DevCloud / Colfax TASS Trainer
 
-![IoT JumpWay Intel® Nervana AI / Colfax Examples](../images/tass-trainer.jpg)
+![IoT JumpWay Intel® AI DevCloud / Colfax Examples](../images/tass-trainer.jpg)
 
 ## Introduction
 
 There have been many versions of the TASS computer vision projects over the years, one being a version built on a Raspberry Pi 3 using a program based on the Tensorflow Inception V3 transfer learning example. 
 
-The Colfax TASS Trainer replicates the transfer learning side of the original program and is trained on the Intel Nervana AI HPC Cluster (Colfax Cluster).
+The Colfax TASS Trainer replicates the transfer learning side of the original program and is trained on the Intel AI DevCloud HPC Cluster (Colfax Cluster).
 
 ## Python Versions
 
@@ -18,7 +18,7 @@ The Colfax TASS Trainer replicates the transfer learning side of the original pr
 
 ## Hardware requirements
 
-- Access to the Intel Nervana AI HPC Cluster (Colfax Cluster)
+- Access to the Intel AI DevCloud HPC Cluster (Colfax Cluster)
 
 ## Cloning The Repo
 
@@ -40,11 +40,11 @@ Login to your Colfax Notebook area by following [this link](https://access.colfa
 
 Once you have completed the steps above, it is time to login to Colfax and upload the structure described above. You need to upload all of the files shown in the screen shot below, with exception to the README.
 
-![IoT JumpWay Intel® Nervana AI / Colfax Examples](Images/file-structure.jpg)
+![IoT JumpWay Intel® AI DevCloud / Colfax Examples](Images/file-structure.jpg)
 
 ## Training & Testing Data
 
-![IoT JumpWay Intel® Nervana AI / Colfax Examples](Images/data.jpg)
+![IoT JumpWay Intel® AI DevCloud / Colfax Examples](Images/data.jpg)
 
 You can train and test this example without finding any additional training and testing data, but if you would like to add your own classes you will find the training data in the training/human directory. 
 
@@ -117,15 +117,13 @@ COMPLETED TESTING FACIAL RECOGNITION
 
 This means that Darth was identified in each image, Yoda in 1 and the program successfully identified me as an unknown person.
 
-## Intel® Nervana AI / Colfax TASS Trainer Bugs/Issues
+## Bugs/Issues
 
-Please feel free to create issues for bugs and general issues you come across whilst using the Intel® Nervana AI / Colfax TASS Trainer example. You may also use the issues area to ask for general help whilst using the IoT JumpWay Intel® Examples in your IoT projects.
+Please feel free to create issues for bugs and general issues you come across whilst using this or any other Intel® related IoT JumpWay issues. You may also use the issues area to ask for general help whilst using the IoT JumpWay in your IoT projects.
 
-## Intel® Nervana AI / Colfax TASS Trainer Contributors
+## Contributors
 
-- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
-
-![Adam Milton-Barker,  Intel Software Innovator](../../images/main/Intel-Software-Innovator.jpg) 
+[![Adam Milton-Barker, Intel® Software Innovator](../../images/main/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
 
 
 
