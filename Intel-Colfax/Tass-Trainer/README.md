@@ -1,4 +1,4 @@
-# IoT JumpWay Intel® AI DevCloud / Colfax TASS Trainer
+# IoT JumpWay Intel® AI DevCloud / TASS Colfax Trainer
 
 ![IoT JumpWay Intel® AI DevCloud / Colfax Examples](../images/tass-trainer.jpg)
 
@@ -6,7 +6,7 @@
 
 There have been many versions of the TASS computer vision projects over the years, one being a version built on a Raspberry Pi 3 using a program based on the Tensorflow Inception V3 transfer learning example. 
 
-The Colfax TASS Trainer replicates the transfer learning side of the original program and is trained on the Intel AI DevCloud HPC Cluster (Colfax Cluster).
+The TASS Colfax Trainer replicates the transfer learning side of the original program and is trained on the Intel AI DevCloud HPC Cluster (Colfax Cluster).
 
 ## Python Versions
 
@@ -56,13 +56,13 @@ You can add as many as classes as you like, each class will slow the training do
 
 ## Start The Training
 
-Now it is time to start the training, head on over to [Colfax TASS Trainer notebook](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Colfax/Tass-Trainer/Colfax-TASS-Trainer.ipynb "Colfax TASS Trainer notebook") on Colfax. You do not need to execute any of the code blocks except for the first until you get to "Create training job", here you can begin to execute the blocks of code following the guide which will submit a job to train TASS on the Colfax Clusters.
+Now it is time to start the training, head on over to [TASS Colfax Trainer notebook](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Colfax/Tass-Trainer/Colfax-TASS-Trainer.ipynb "TASS Colfax Trainer notebook") on Colfax. You do not need to execute any of the code blocks except for the first until you get to "Create training job", here you can begin to execute the blocks of code following the guide which will submit a job to train TASS on the Colfax Clusters.
 
 ## Testing The Trained Model
 
 Now time for the crunch, again, you do not need to find any  additional training to test this program, but if you do want to you can add more images to the model/testing directory. The testing data provided for out of the box use of this tutorial include 2 images of Darth, 2 of Yoda, and 2 of a very handsome guy ;) 
 
-Head on over to [Colfax TASS Trainer Inference notebook](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Colfax/Tass-Trainer/Colfax-TASS-Trainer-Inference.ipynb "Colfax TASS Trainer Inference notebook") on Colfax. You do not need to execute any of the code blocks except for the first until you get to "Create testing job", here you can begin to execute the blocks of code following the guide which will submit a job to test TASS on the Colfax Clusters.
+Head on over to [TASS Colfax Trainer Inference notebook](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Colfax/Tass-Trainer/Colfax-TASS-Trainer-Inference.ipynb "TASS Colfax Trainer Inference notebook") on Colfax. You do not need to execute any of the code blocks except for the first until you get to "Create testing job", here you can begin to execute the blocks of code following the guide which will submit a job to test TASS on the Colfax Clusters.
 
 The output for me was as follows:
 
