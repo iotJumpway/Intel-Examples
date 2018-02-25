@@ -25,9 +25,12 @@ This tutorial will result in two IoT devices:
 2. Install the [IoT JumpWay MQTT Client](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Clients "IoT JumpWay MQTT Client") 
 3. Clone and set up the repo
 4. Test Inception V3 Object Recognition
+6. Live Inception V3 Object Recognition
 5. Test Yolo Object Recognition
 6. Live Yolo Object Recognition
-7. Communication with IoT alarm via rules
+7. Custom training an Inception V3 model
+8. Using a custom trained model
+9. Communication with IoT alarm via rules
 
 ## Python Versions
 
@@ -63,7 +66,7 @@ The first thing you will need to do once you have your operating system on your 
 
 ### Install NCSDK On Raspbery Pi 3:
 
-Make sure you have [Raspian Stretch](https://www.raspberrypi.org/downloads/raspbian/ "Raspian Stretch") installed as the operating system on your Raspberry Pi 3, then continue with the normal install. You will need at least a 16gb SD card on your Raspberry Pi 3.
+Make sure you have [Raspian Stretch](https://www.raspberrypi.org/downloads/raspbian/ "Raspian Stretch") installed as the operating system on your Raspberry Pi 3, install Tensorflow 1.3.1, then continue with the normal install. You will need at least a 16gb SD card on your Raspberry Pi 3.
 
 ```
  $ sudo apt-get update && sudo apt-get upgrade
@@ -72,6 +75,20 @@ Make sure you have [Raspian Stretch](https://www.raspberrypi.org/downloads/raspb
 ```
  $ wget https://github.com/lhelontra/tensorflow-on-arm/releases/download/v1.3.1/tensorflow-1.3.1-cp35-none-linux_armv7l.whl
  $ pip3 install tensorflow-1.3.1-cp35-none-linux_armv7l.whl
+```
+
+#### Optional For Raspberry Pi 3
+
+When using the Raspberry Pi 3 you can choose to only install the API. This will mean that the core features of the NCSDK will not be installed on your Raspberry Pi 3. If you choose this option you will need to set up another device with the full installation, convert your model on that device and upload/download the files to the Raspberry Pi 3 manually. 
+
+If you follow this step you should move to Getting Started With The IoT JumpWay once this step is completed.
+
+```
+ $ mkdir -p ~/workspace
+ $ cd ~/workspace
+ $ git clone https://github.com/movidius/ncsdk.git
+ $ ~/workspace/ncsdk/api/src
+ $ make install
 ```
 
 ### Install NCSDK:
@@ -178,7 +195,8 @@ This tutorial provides a number of configuration modes. For ease, all of the cla
 - **InceptionLive:** This mode sets the program to classify from the live webcam feed using Inception V3
 - **YoloTest:** This mode sets the program to classify testing images using Yolo
 - **YoloLive:** This mode sets the program to classify from the live webcam feed using Yolo
-- **InceptionFacial:** TODO 
+- **FacialTest:** TODO 
+- **FacialLive:** TODO 
 
 ## Test Inception V3 Object Recognition
 
