@@ -8,6 +8,7 @@
 import os,cv2,json
 import numpy as np
 from datetime import datetime
+from helpers import TassMovidiusHelpers
 
 class TassMovidiusYolo():
     	
@@ -37,9 +38,8 @@ class TassMovidiusYolo():
 			"tvmonitor"
 		]
 		
-		with open("data/confs.json") as configs:
-			
-			self._configs = json.loads(configs.read())
+		self.TassMovidiusHelpers = TassMovidiusHelpers()
+		self._configs = self.TassMovidiusHelpers.loadConfigs()
 		
 	def processImage(self, output, img_width, img_height):
     		
@@ -109,12 +109,10 @@ class TassMovidiusYolo():
 		else : intersection =  tb*lr
 		return intersection / (box1[2]*box1[3] + box2[2]*box2[3] - intersection)
 
-	def saveFrame(self, img, results, img_width, img_height):
+	def saveFrame(self, img, results, img_width, img_height, imshow = False):
+    		
 		img_cp = img.copy()
-		disp_console = True
-		imshow = False
-	#	if self.filewrite_txt :
-	#		ftxt = open(self.tofile_txt,'w')
+		
 		dicts = {}
 		for i in range(len(results)):
     			

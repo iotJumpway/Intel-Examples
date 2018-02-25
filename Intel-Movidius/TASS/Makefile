@@ -48,7 +48,7 @@ compile: weights
 
 .PHONY: check
 check: weights
-	-${NCCHECK} -s 12 ${MODEL_FILENAME} ${INPUT_NODE_FLAG} ${OUTPUT_NODE_FLAG} -i data/testing/images/cat.jpg -id 917 -M 128 -S 2 -cs 0,1,2 -metric top1
+	-${NCCHECK} -s 12 ${MODEL_FILENAME} ${INPUT_NODE_FLAG} ${OUTPUT_NODE_FLAG} -i data/testing/inception/cat.jpg -id 917 -M 128 -S 2 -cs 0,1,2 -metric top1
 
 .PHONY: run
 run: compile
