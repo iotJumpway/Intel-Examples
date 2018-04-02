@@ -1,6 +1,6 @@
 # Installation Of OpenCV On Intel® Edison
 
-![TechBubble IoT JumpWay Docs](../../images/Docs/Intel-Edison-Documentation.png)  
+![IoT JumpWay Docs](../../images/Docs/Intel-Edison-Documentation.png)
 
 ## Introduction
 
@@ -69,7 +69,7 @@ The following information will help you install OpenCV on your Intel® Edison. T
 8. Install Python 2.7 development libraries:
 
     ```
-    # 
+    #
     ```
 
 9. Install Numpy:
@@ -120,6 +120,6 @@ Please feel free to create issues for bugs and general issues you come across wh
 
 ## IoT JumpWay Intel® Edison Examples Document Contributors
 
-- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
+- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/iotJumpway "Adam Milton-Barker, TechBubble Technologies Founder")
 
-![Adam Milton-Barker,  Intel Software Innovator](../../images/main/Intel-Software-Innovator.jpg) 
+![Adam Milton-Barker,  Intel Software Innovator](../../images/main/Intel-Software-Innovator.jpg)

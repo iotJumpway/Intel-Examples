@@ -1,15 +1,15 @@
 # Installation Of Linux Motion On Intel® Edison
 
-![TechBubble IoT JumpWay Docs](../../images/Docs/Intel-Edison-Documentation.png)   
+![IoT JumpWay Docs](../../images/Docs/Intel-Edison-Documentation.png)
 
 ## Introduction
 
 The following information will help you install Linux Motion on your Intel® Edison.
 
-PLEASE NOTE: 
+PLEASE NOTE:
 
-- This is a basic tutorial that will result in an insecure stream, in project tutorials where we use Linux Motion, we will take you through creating a secure stream. 
-- Motion will store images on your Edison, if you do not keep on top of them your diskspace will quickly fill up. 
+- This is a basic tutorial that will result in an insecure stream, in project tutorials where we use Linux Motion, we will take you through creating a secure stream.
+- Motion will store images on your Edison, if you do not keep on top of them your diskspace will quickly fill up.
 
 ## Hardware Requirements
 
@@ -20,7 +20,7 @@ PLEASE NOTE:
 
 1. Before you can install Linux Motion on your Intel® Edison, you may want to setup your Edison to boot from an SD card. Use the following tutorial to accomplish this:
 
-    [Booting Your Intel® Edison From An SD (Linux)](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/_DOCS/1-Booting-From-SD-Linux.md "Booting Your Intel® Edison From An SD (Linux)")
+    [Booting Your Intel® Edison From An SD (Linux)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/_DOCS/1-Booting-From-SD-Linux.md "Booting Your Intel® Edison From An SD (Linux)")
 
 2. Update your packages:
 
@@ -42,18 +42,18 @@ PLEASE NOTE:
         # mkdir /var/run/motion/
     ```
 
-5. Execute the following command to rename the required config file to the correct name:  
+5. Execute the following command to rename the required config file to the correct name:
 
     ```
         # mv /etc/motion-dist.conf /etc/motion.conf
     ```
 
-6. Open the configuration file: 
+6. Open the configuration file:
 
     ```
         # nano /etc/motion.conf
     ```
-    
+
 7. Turn off the feature that only allows streams to be accessed on local host:
 
     ```
@@ -66,7 +66,7 @@ PLEASE NOTE:
         webcam_localhost = off
     ```
 
-9. Check Linux Motion is working, execute the following command and then navigate to YOUR_INTEL_EDISON_IP:8081 
+9. Check Linux Motion is working, execute the following command and then navigate to YOUR_INTEL_EDISON_IP:8081
 
     ```
         webcam_port YOUR_PORT_NUMBER
@@ -75,7 +75,7 @@ PLEASE NOTE:
 9. In my case I am using a camera that is 1280 x 780, motion may not work if you do not have the correct resolution set for your camera, to modify the dimensions find and edit the following in the config file:
 
     ```
-        width 640 
+        width 640
         height 380
     ```
 
@@ -127,6 +127,6 @@ Please feel free to create issues for bugs and general issues you come across wh
 
 ## IoT JumpWay Intel® Edison Examples Document Contributors
 
-- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
+- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/iotJumpway "Adam Milton-Barker, TechBubble Technologies Founder")
 
-![Adam Milton-Barker,  Intel Software Innovator](../../images/main/Intel-Software-Innovator.jpg)   
+![Adam Milton-Barker,  Intel Software Innovator](../../images/main/Intel-Software-Innovator.jpg)

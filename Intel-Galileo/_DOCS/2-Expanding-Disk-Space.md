@@ -1,6 +1,6 @@
 # Expanding The Available Disk Space On Intel® Galileo Gen 1
 
-![TechBubble IoT JumpWay Docs](../../images/main/IoT-Jumpway.jpg)  
+![IoT JumpWay Docs](../../images/main/IoT-Jumpway.jpg)
 
 ## Introduction
 
@@ -53,9 +53,9 @@ To expand the disk space available you need to have an external Linux machine wi
 
 ## IoT JumpWay Intel® Galileo Examples Document Contributors
 
-- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
+- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/iotJumpway "Adam Milton-Barker, TechBubble Technologies Founder")
 
-![Adam Milton-Barker,  Intel Software Innovator](../../images/main/Intel-Software-Innovator.jpg)  
+![Adam Milton-Barker,  Intel Software Innovator](../../images/main/Intel-Software-Innovator.jpg)
 
 
 

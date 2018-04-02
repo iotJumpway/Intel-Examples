@@ -1,6 +1,6 @@
 # Installation Of OpenCV On Intel® Edison
 
-![TechBubble IoT JumpWay Docs](../../images/Docs/Intel-Edison-Documentation.png)  
+![IoT JumpWay Docs](../../images/Docs/Intel-Edison-Documentation.png)
 
 ## Introduction
 
@@ -15,7 +15,7 @@ The following information will help you install OpenCV on your Intel® Edison. T
 
 1. Before you can install OpenCV on your Intel® Edison, you need to setup your Edison to boot from an SD card. Use the following tutorial to accomplish this:
 
-    [Booting Your Intel® Edison From An SD (Linux)](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/_DOCS/1-Booting-From-SD-Linux.md "Booting Your Intel® Edison From An SD (Linux)")
+    [Booting Your Intel® Edison From An SD (Linux)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/blob/master/Intel-Edison/_DOCS/1-Booting-From-SD-Linux.md "Booting Your Intel® Edison From An SD (Linux)")
 
 2. Execute the following:
 
@@ -33,7 +33,7 @@ The following information will help you install OpenCV on your Intel® Edison. T
         # opkg update
     ```
 
-4. Install the required packages for facial identification:  
+4. Install the required packages for facial identification:
 
     ```
         # opkg install python-numpy opencv python-opencv
@@ -49,6 +49,6 @@ Please feel free to create issues for bugs and general issues you come across wh
 
 ## IoT JumpWay Intel® Edison Examples Document Contributors
 
-- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
+- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/iotJumpway "Adam Milton-Barker, TechBubble Technologies Founder")
 
-![Adam Milton-Barker,  Intel Software Innovator](../../images/main/Intel-Software-Innovator.jpg)  
+![Adam Milton-Barker,  Intel Software Innovator](../../images/main/Intel-Software-Innovator.jpg)

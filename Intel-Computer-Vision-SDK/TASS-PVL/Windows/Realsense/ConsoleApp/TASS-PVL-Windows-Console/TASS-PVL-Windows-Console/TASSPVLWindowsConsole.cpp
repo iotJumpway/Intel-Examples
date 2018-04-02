@@ -26,7 +26,7 @@
 * TechBubble Technologies
 * https://eu.techbubbletechnologies.com
 *
-* IoT Connectivity Powered By TechBubble IoT JumpWay
+* IoT Connectivity Powered By IoT JumpWay
 * https://iot.techbubbletechnologies.com
 *
 */
@@ -175,7 +175,7 @@ int msgarrvd(void *context, char *topicName, int topicLen, MQTTAsync_message *me
 
 void onDisconnect(void* context, MQTTAsync_successData* response)
 {
-	printf("Successful disconnection from TechBubble IoT JumpWay\n");
+	printf("Successful disconnection from IoT JumpWay\n");
 	finished = 1;
 }
 
@@ -191,7 +191,7 @@ void onSend(void* context, MQTTAsync_successData* response)
 
 void onConnectFailure(void* context, MQTTAsync_failureData* response)
 {
-	printf("Connect to TechBubble IoT JumpWay failed, rc %d\n", response ? response->code : 0);
+	printf("Connect to IoT JumpWay failed, rc %d\n", response ? response->code : 0);
 	finished = 1;
 }
 
@@ -202,7 +202,7 @@ void onConnect(void* context, MQTTAsync_successData* response)
 	MQTTAsync_message pubmsg = MQTTAsync_message_initializer;
 	int rc;
 
-	printf("Connected to TechBubble IoT JumpWay\n");
+	printf("Connected to IoT JumpWay\n");
 
 	opts.onSuccess = onSend;
 	opts.context = client;

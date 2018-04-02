@@ -1,16 +1,16 @@
 # Installing Python 3.6 (And Most Others) On Your Intel® Edison
 
-![TechBubble IoT JumpWay Docs](../../images/Docs/Intel-Edison-Documentation.png)  
+![IoT JumpWay Docs](../../images/Docs/Intel-Edison-Documentation.png)
 
 ## PLEASE NOTE:
 
-MRAA will not work with Python 3 or above 
+MRAA will not work with Python 3 or above
 
 ## Introduction
 
 The following information will help you install Python 3.6 on your Intel® Edison.
 
-## Installing Python 3.6 
+## Installing Python 3.6
 
 To install Python 3.6 on your Intel® Edison, follow the steps below:
 
@@ -69,12 +69,12 @@ To install Python 3.6 on your Intel® Edison, follow the steps below:
 ## Installing Pip 3
 
 Pip 3 will be installed with this method
-    
+
 ## IoT JumpWay Intel® Edison Examples Document Contributors
 
-- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
+- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/iotJumpway "Adam Milton-Barker, TechBubble Technologies Founder")
 
-![Adam Milton-Barker,  Intel Software Innovator](../../images/main/Intel-Software-Innovator.jpg)  
+![Adam Milton-Barker,  Intel Software Innovator](../../images/main/Intel-Software-Innovator.jpg)
 
 
 

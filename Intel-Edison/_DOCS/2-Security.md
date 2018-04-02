@@ -1,6 +1,6 @@
 # Securing Intel® Edison Projects
 
-![TechBubble IoT JumpWay Docs](../../images/Docs/Intel-Edison-Documentation.png)    
+![IoT JumpWay Docs](../../images/Docs/Intel-Edison-Documentation.png)
 
 ## Introduction
 
@@ -12,7 +12,7 @@ The following information will help you secure your internet accessible Intel® 
 
 [Is Your Router Secure ?](https://www.techbubble.info/blog/web/online-security/entry/Is-Your-Router-Secure "Is Your Router Secure ?")
 
-## Secure Your Intel® Edison 
+## Secure Your Intel® Edison
 
 1. CHANGE ROOT PASSWORD: The first stage with any new device should always be to change the default password. Lists are easily accessible on the internet that give hackers the default passwords of pretty much every type of device, and if you do not change your password to a secure password anyone can easily access your device if it is connected to the internet. Once logged into the Intel® Edison via SSH issue the following command from commandline:
 
@@ -175,6 +175,6 @@ Please feel free to create issues for bugs and general issues you come across wh
 
 ## IoT JumpWay Intel® Edison Examples Document Contributors
 
-- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
+- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/iotJumpway "Adam Milton-Barker, TechBubble Technologies Founder")
 
-![Adam Milton-Barker,  Intel Software Innovator](../../images/main/Intel-Software-Innovator.jpg)  
+![Adam Milton-Barker,  Intel Software Innovator](../../images/main/Intel-Software-Innovator.jpg)

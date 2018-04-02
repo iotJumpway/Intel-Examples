@@ -2,7 +2,7 @@
   Robotic Arm ESP8266 Communication Program
   Copyright (c) 2018 Adam Milton-Barker - AdamMiltonBarker.com
   Based on Paho MQTT
-  Uses TechBubble IoT JumpWay MQTT Client
+  Uses IoT JumpWay MQTT Client
 */
 
 WiFiClientSecure espClient;
@@ -17,9 +17,9 @@ const char* password = "YourWiFiPassword";
 String locationID = "YourLocationID";
 String zoneID = "YourZoneID";
 String deviceID = "YourDeviceID";
-char deviceName[] = "YourDeviceName"; 
-char mqttUsername[]   = "YourDeviceMQTTUsername"; 
-char mqttPassword[]  = "YourDeviceMQTTPassword"; 
+char deviceName[] = "YourDeviceName";
+char mqttUsername[]   = "YourDeviceMQTTUsername";
+char mqttPassword[]  = "YourDeviceMQTTPassword";
 
 void setupWiFi() {
   delay(10);
@@ -38,7 +38,7 @@ void setupWiFi() {
 }
 
 void callback(char* topic, byte* payload, unsigned int length) {
-  String readString = ""; 
+  String readString = "";
   for (int i = 0; i < length; i++) {
     readString += (char)payload[i];
   }
@@ -62,13 +62,13 @@ void publishToDeviceStatus(const char* data){
 
 void reconnect() {
   while (!client.connected()) {
-    Serial.println("Attempting connection to TechBubble IoT JumpWay...");
+    Serial.println("Attempting connection to IoT JumpWay...");
     if (client.connect(deviceName, mqttUsername, mqttPassword)) {
-      Serial.println("Connected to TechBubble IoT JumpWay!");
+      Serial.println("Connected to IoT JumpWay!");
       publishToDeviceStatus("ONLINE");
       subscribeToDeviceCommands();
     } else {
-      Serial.print("Failed to connect to TechBubble IoT JumpWay, rc=");
+      Serial.print("Failed to connect to IoT JumpWay, rc=");
       Serial.print(client.state());
       Serial.println("... trying again in 5 seconds");
       delay(5000);
@@ -76,7 +76,7 @@ void reconnect() {
   }
 }
 
-void setup() {   
+void setup() {
   Serial.begin(115200);
   setupWiFi();
   client.setServer(mqtt_server,mqttPort);

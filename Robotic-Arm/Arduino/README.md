@@ -16,6 +16,6 @@ Here you will find the core Arduino program for the robotic arm.  The codes allo
 
 You will need to clone this repository to a location on your development terminal. Navigate to the directory you would like to download it to and issue the following commands.
 
-    $ git clone https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples.git
-	
-Once you have the repo, you will need to find the files in this folder located in [this location](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/Arduino "this location")
+    $ git clone https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples.git
+
+Once you have the repo, you will need to find the files in this folder located in [this location](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Robotic-Arm/Arduino "this location")

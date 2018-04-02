@@ -1,6 +1,6 @@
 # Installing Librealsense & Pyrealsense on Intel® NUC DE3815TYKE
 
-![TechBubble IoT JumpWay Docs](../../../images/Docs/Intel-NUC-Documentation.png)
+![IoT JumpWay Docs](../../../images/Docs/Intel-NUC-Documentation.png)
 
 ## Introduction
 
@@ -38,7 +38,7 @@ Please feel free to create issues for bugs and general issues you come across wh
 
 ## IoT JumpWay Intel® NUC DE3815TYKE Examples Document Contributors
 
-- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
+- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/iotJumpway "Adam Milton-Barker, TechBubble Technologies Founder")
 
 ![Adam Milton-Barker,  Intel® Software Innovator](../../../images/main/Intel-Software-Innovator.jpg)
 

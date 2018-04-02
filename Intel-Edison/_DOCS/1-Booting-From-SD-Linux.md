@@ -1,6 +1,6 @@
 # Booting Your Edison From An SD (Linux)
 
-![TechBubble IoT JumpWay Docs](../../images/Docs/Intel-Edison-Documentation.png)   
+![IoT JumpWay Docs](../../images/Docs/Intel-Edison-Documentation.png)
 
 ## Introduction
 
@@ -14,13 +14,13 @@ Before we can setup your SD card, you need to have your Edison already setup. Th
 - [Intel® Edison OS X Installer](https://software.intel.com/edison-config/osx/latest "Intel® Edison OS X Installer")
 - [Intel® Edison Linux Installer](https://software.intel.com/edison-config/linux/latest "Intel® Edison Linux Installer")
 
-![Intel® Edison Windows Installer](../../images/Docs/Edison-Installer.jpg)  
+![Intel® Edison Windows Installer](../../images/Docs/Edison-Installer.jpg)
 
 ## Formatting Your SD card
 
-First of all you need to format your SD card, for this section of the guide we will be using a Linux computer running Ubuntu and the GParted software. 
+First of all you need to format your SD card, for this section of the guide we will be using a Linux computer running Ubuntu and the GParted software.
 
-1. Open up a terminal and install GParted if it is not already installed. 
+1. Open up a terminal and install GParted if it is not already installed.
 
     ```
         $ sudo apt install gparted
@@ -38,7 +38,7 @@ First of all you need to format your SD card, for this section of the guide we w
 
 5. Create a new Primary Partition by right clicking, selecting new and filling out the information, make sure you have  EXT4 selected as the filesystem.
 
-6. When you have filled out the options, click Add and wait for the process to complete. 
+6. When you have filled out the options, click Add and wait for the process to complete.
 
 ## Download The Latest Yocto
 
@@ -126,7 +126,7 @@ This tells us that the SD card is “/dev/mmcblk1” and the partition we’ve c
         #  sudo reboot
     ```
 
-## Connecting To Your Intel® Edison 
+## Connecting To Your Intel® Edison
 
 At this point you will not be able to connect to the Intel® Edison with SSH and the device will not be connected to your network. Use the following steps to connect to your Edison.
 
@@ -155,7 +155,7 @@ You need to enable SSH and setup your WiFi connections, take the following steps
 1. In your existing screen session that you created above, enter the following command:
 
     ```
-        # configure_edison --setup 
+        # configure_edison --setup
     ```
 
 2. You will be prompted for a password. Use a secure password!
@@ -216,9 +216,9 @@ Please feel free to create issues for bugs and general issues you come across wh
 
 ## IoT JumpWay Intel® Edison Examples Document Contributors
 
-- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/AdamMiltonBarker "Adam Milton-Barker, TechBubble Technologies Founder")
+- [Adam Milton-Barker, TechBubble Technologies Founder](https://github.com/iotJumpway "Adam Milton-Barker, TechBubble Technologies Founder")
 
-![Adam Milton-Barker,  Intel Software Innovator](../../images/main/Intel-Software-Innovator.jpg)  
+![Adam Milton-Barker,  Intel Software Innovator](../../images/main/Intel-Software-Innovator.jpg)
 
 
 

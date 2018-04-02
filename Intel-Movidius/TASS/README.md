@@ -22,7 +22,7 @@ This tutorial will result in two IoT devices:
 ## What Will We Do?
 
 1. Install the [Intel® NCSDK](https://github.com/movidius/ncsdk "Intel® NCSDK")
-2. Install the [IoT JumpWay MQTT Client](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Clients "IoT JumpWay MQTT Client") 
+2. Install the [IoT JumpWay MQTT Client](https://github.com/iotJumpway/IoT-JumpWay-Python-MQTT-Clients "IoT JumpWay MQTT Client")
 3. Clone and set up the repo
 4. Test Inception V3 Object Recognition
 6. Live Inception V3 Object Recognition
@@ -38,21 +38,21 @@ This tutorial will result in two IoT devices:
 
 ## Software Requirements
 
-- [Intel® NCSDK](https://github.com/movidius/ncsdk "Intel® NCSDK") 
-- [IoT JumpWay MQTT Client](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Python-MQTT-Clients "IoT JumpWay MQTT Client") 
+- [Intel® NCSDK](https://github.com/movidius/ncsdk "Intel® NCSDK")
+- [IoT JumpWay MQTT Client](https://github.com/iotJumpway/IoT-JumpWay-Python-MQTT-Clients "IoT JumpWay MQTT Client")
 
 ## Hardware Requirements
 
 - Intel® Movidius
 - 1 x Webcam / IP cam
 
-This tutorial can be used on a number of devices: 
+This tutorial can be used on a number of devices:
 
 - Laptop / PC running Ubuntu
 - Intel® NUC running Ubuntu / Ubuntu LTS
-- Raspberry Pi running Raspian Stretch (16/32gb) ([Raspian Stretch](https://www.raspberrypi.org/downloads/raspbian/ "Raspian Stretch") ) 
+- Raspberry Pi running Raspian Stretch (16/32gb) ([Raspian Stretch](https://www.raspberrypi.org/downloads/raspbian/ "Raspian Stretch") )
 
-If you are completing the full tutorial: 
+If you are completing the full tutorial:
 
 - 1 x Intel® Edison
 - 1x Grove starter kit plus - Intel® IoT Edition for Intel® Edison
@@ -62,7 +62,7 @@ If you are completing the full tutorial:
 
 ## Install NCSDK
 
-The first thing you will need to do once you have your operating system on your device is to install the **NCSDK**. 
+The first thing you will need to do once you have your operating system on your device is to install the **NCSDK**.
 
 ### Install NCSDK On Raspbery Pi 3:
 
@@ -79,7 +79,7 @@ Make sure you have [Raspian Stretch](https://www.raspberrypi.org/downloads/raspb
 
 #### Optional For Raspberry Pi 3
 
-When using the Raspberry Pi 3 you can choose to only install the API. This will mean that the core features of the NCSDK will not be installed on your Raspberry Pi 3. If you choose this option you will need to set up another device with the full installation, convert your model on that device and upload/download the files to the Raspberry Pi 3 manually. 
+When using the Raspberry Pi 3 you can choose to only install the API. This will mean that the core features of the NCSDK will not be installed on your Raspberry Pi 3. If you choose this option you will need to set up another device with the full installation, convert your model on that device and upload/download the files to the Raspberry Pi 3 manually.
 
 If you follow this step you should move to Getting Started With The IoT JumpWay once this step is completed.
 
@@ -112,21 +112,21 @@ Next plug your Movidius into your device and issue the following commands, this 
 
 ## Getting Started With The IoT JumpWay
 
-There are a few tutorials that you should follow before beginning, especially if it is the first time you have used the **IoT JumpWay Developer Program**. If you do not already have one, you will require an **IoT JumpWay Developer Program developer account**, and some basics to be set up before you can start creating your IoT devices. Visit the following [IoT JumpWay Developer Program Docs (5-10 minute read/setup)](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/ "IoT JumpWay Developer Program Docs (5-10 minute read/setup)") and check out the guides that take you through registration and setting up your Location Space, Zones, Devices and Applications (About 5 minutes read).
+There are a few tutorials that you should follow before beginning, especially if it is the first time you have used the **IoT JumpWay Developer Program**. If you do not already have one, you will require an **IoT JumpWay Developer Program developer account**, and some basics to be set up before you can start creating your IoT devices. Visit the following [IoT JumpWay Developer Program Docs (5-10 minute read/setup)](https://github.com/iotJumpway/IoT-JumpWay-Docs/ "IoT JumpWay Developer Program Docs (5-10 minute read/setup)") and check out the guides that take you through registration and setting up your Location Space, Zones, Devices and Applications (About 5 minutes read).
 
 ## Install IoT JumpWay MQTT Client
 
 Next install the IoT JumpWay MQTT Client. For this you can execute the following command:
 
 ```
- $ pip3 install techbubbleiotjumpwaymqtt 
+ $ pip3 install techbubbleiotjumpwaymqtt
 ```
 
 ## IoT JumpWay Device Connection Credentials & Settings
 
 - Setup an IoT JumpWay Location Device for TASS, ensuring you set up you camera node,as you will need the ID of the camera for the project to work. Once your create your device, make sure you note the MQTT username and password, the device ID and device name exactly, you will also need the zone and location ID. You will need to edit your device and add the rules that will allow it to communicate autonomously with the other devices and applications on the network, but for now, these are the only steps that need doing at this point.
 
-Follow the [IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "IoT JumpWay Developer Program (BETA) Location Device Doc") to set up your devices.
+Follow the [IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/iotJumpway/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "IoT JumpWay Developer Program (BETA) Location Device Doc") to set up your devices.
 
 ```
 {
@@ -172,9 +172,9 @@ Follow the [IoT JumpWay Developer Program (BETA) Location Device Doc](https://gi
 
 You will need to clone this repository to a location on your development terminal. Navigate to the directory you would like to download it to and issue the following commands.
 
-    $ git clone https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples.git
-	
-Once you have the repo, you will need to find the files in this folder located in [Intel-Movidius/TASS directory](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS "Intel-Movidius/TASS directory"). You will need to navigate to this directory in your terminal also. Execute the following commands:
+    $ git clone https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples.git
+
+Once you have the repo, you will need to find the files in this folder located in [Intel-Movidius/TASS directory](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS "Intel-Movidius/TASS directory"). You will need to navigate to this directory in your terminal also. Execute the following commands:
 
 ```
  $ cd IoT-JumpWay-Intel-Examples/Intel-Movidius/TASS
@@ -191,14 +191,14 @@ Once you have done this you should see a file called **graph**, for this tutoria
 
 ## TASS Movidius Configuration Modes
 
-This tutorial provides a number of configuration modes. For ease, all of the classes and functions that allow the different modes to work have been provided in **tass.py** and **yolo.py**. You are free to create your own projects and modules from these codes. 
+This tutorial provides a number of configuration modes. For ease, all of the classes and functions that allow the different modes to work have been provided in **tass.py** and **yolo.py**. You are free to create your own projects and modules from these codes.
 
 - **InceptionTest:** This mode sets the program to classify testing images using Inception V3
 - **InceptionLive:** This mode sets the program to classify from the live webcam feed using Inception V3
 - **YoloTest:** This mode sets the program to classify testing images using Yolo
 - **YoloLive:** This mode sets the program to classify from the live webcam feed using Yolo
-- **FacialTest:** TODO 
-- **FacialLive:** TODO 
+- **FacialTest:** TODO
+- **FacialLive:** TODO
 
 ## Test Inception V3 Object Recognition
 
@@ -390,7 +390,7 @@ TESTING TIME: 1.4020063877105713
 
 ## Live Yolo Object Recognition
 
-First of all make sure your camera is connected and update **data/confs.json** with your sensor information from the IoT JumpWay. You can also point to live stream on an IP cam using the URL field below, leaving it as 0 will connect to the webcam attached to your device. 
+First of all make sure your camera is connected and update **data/confs.json** with your sensor information from the IoT JumpWay. You can also point to live stream on an IP cam using the URL field below, leaving it as 0 will connect to the webcam attached to your device.
 
 ```
 "Cameras": [
@@ -454,19 +454,19 @@ Published To IoT JumpWay
 
 ![IoT JumpWay Intel® Edison Dev Kit IoT Alarm](../../images/Dev-Kit-IoT-Alarm/Edsion-Hardware-Setup.jpg)
 
-The next step is to set up your Intel® Edison so that TASS can communicate with it via the IoT JumpWay. For this, I already created a tutorial for the IoT JumpWay Intel® Edison Dev Kit IoT Alarm that will guide you through this process. The only difference is that you do not need to set up the Python commands application, as in this project, TASS will replace the Python commands application, to save time, please only follow the steps for the Intel® Edison device Node JS application. 
+The next step is to set up your Intel® Edison so that TASS can communicate with it via the IoT JumpWay. For this, I already created a tutorial for the IoT JumpWay Intel® Edison Dev Kit IoT Alarm that will guide you through this process. The only difference is that you do not need to set up the Python commands application, as in this project, TASS will replace the Python commands application, to save time, please only follow the steps for the Intel® Edison device Node JS application.
 
-You will find the tutorial on the following link: 
+You will find the tutorial on the following link:
 
-[IoT JumpWay Intel® Edison Dev Kit IoT Alarm](https://github.com/AdamMiltonBarker/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-IoT-Alarm/NodeJS "IoT JumpWay Intel® Edison Dev Kit IoT Alarm")
+[IoT JumpWay Intel® Edison Dev Kit IoT Alarm](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-IoT-Alarm/NodeJS "IoT JumpWay Intel® Edison Dev Kit IoT Alarm")
 
 Once you have completed that tutorial and have your device setup, return here to complete the final integration steps.
 
 ## Setting Up Your Rules
 
-You are now ready to take the final steps, at this point you should have everything set up and your Intel® Edison Dev Kit IoT Alarm should be running and connected to the IoT JumpWay waiting for instructions. 
+You are now ready to take the final steps, at this point you should have everything set up and your Intel® Edison Dev Kit IoT Alarm should be running and connected to the IoT JumpWay waiting for instructions.
 
-Next we are going to set up the rules that allow TASS PVL to control your Intel® Edison Dev Kit IoT Alarm autonomously. Go back to the TAS PVL device page and make sure you are on the edit page. Scroll down to below where you added the camera node and you will see you are able to add rules. 
+Next we are going to set up the rules that allow TASS PVL to control your Intel® Edison Dev Kit IoT Alarm autonomously. Go back to the TAS PVL device page and make sure you are on the edit page. Scroll down to below where you added the camera node and you will see you are able to add rules.
 
 ![IoT JumpWay Intel® Edison Dev Kit IoT Alarm](../../images/Automation.PNG)
 
@@ -476,7 +476,7 @@ The rules that we want to add are as follows:
 
 3. When an object is identified, turn on the buzzer.
 
-The events are going be triggered by warning messages sent from TASS, so in the On Event Of drop down, select WARNING. Then you need to select the camera node you added to the TASS device, as this is the sensor that the warning will come from. Next choose RECOGNISED in the With Warning Of, which will mean that the rule will be triggered when the IoT JumpWay receives a warning message that an object has been identified, then select the Send Device Command for the Take The Following Action section, choose the Intel® Edison as the device, the red LED as the sensor, toggle as the action and on as the command. This will then tell the Edison to turn on the red light in the event of an object being detected, repeat this process for the buzzer. 
+The events are going be triggered by warning messages sent from TASS, so in the On Event Of drop down, select WARNING. Then you need to select the camera node you added to the TASS device, as this is the sensor that the warning will come from. Next choose RECOGNISED in the With Warning Of, which will mean that the rule will be triggered when the IoT JumpWay receives a warning message that an object has been identified, then select the Send Device Command for the Take The Following Action section, choose the Intel® Edison as the device, the red LED as the sensor, toggle as the action and on as the command. This will then tell the Edison to turn on the red light in the event of an object being detected, repeat this process for the buzzer.
 
 ## Seeing What Your Neural Network Sees
 
@@ -496,6 +496,5 @@ Please feel free to create issues for bugs and general issues you come across wh
 
 ## Contributors
 
-[![Adam Milton-Barker, Intel® Software Innovator](../../images/main/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
+[![Adam Milton-Barker, Intel® Software Innovator](../../images/main/Intel-Software-Innovator.jpg)](https://github.com/iotJumpway)
 
- 

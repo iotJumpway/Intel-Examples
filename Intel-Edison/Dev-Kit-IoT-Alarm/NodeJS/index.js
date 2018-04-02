@@ -1,23 +1,23 @@
 ////////////////////////////////////////////////////////////////////////////////
-// Copyright (c) 2016 TechBubble Technologies and other Contributors.
+// Copyright (c) 2014 Adam Milton-Barker.
 //
 // All rights reserved. This program and the accompanying materials
 // are made available under the terms of the Eclipse Public License v1.0
 // which accompanies this distribution, and is available at
-// http://www.eclipse.org/legal/epl-v10.html 
+// http://www.eclipse.org/legal/epl-v10.html
 //
 // Contributors:
-//   Adam Milton-Barker - TechBubble Technologies Limited
+//   Adam Milton-Barker
 ////////////////////////////////////////////////////////////////////////////////
 
 var mqtt    = require('mqtt');
 var fs = require('fs');
-const mraa = require('mraa'); 
+const mraa = require('mraa');
 var config = require(__dirname + '/config.json');
 var TRUSTED_CA_LIST = fs.readFileSync(__dirname + '/certs/ca.pem');
 
 var options = {
-	protocol: 'mqtts',    
+	protocol: 'mqtts',
 	protocolId: 'MQIsdp',
 	secureProtocol: 'TLSv1_method',
 	protocolVersion: 3,
@@ -33,13 +33,13 @@ var options = {
 	}
 };
 
-var ledOKPin = new mraa.Gpio(config.Actuators.LED.PIN); 
-var ledWarnPin = new mraa.Gpio(config.Actuators.LED2.PIN); 
-var ledAlarmPin = new mraa.Gpio(config.Actuators.Buzzer.PIN); 
+var ledOKPin = new mraa.Gpio(config.Actuators.LED.PIN);
+var ledWarnPin = new mraa.Gpio(config.Actuators.LED2.PIN);
+var ledAlarmPin = new mraa.Gpio(config.Actuators.Buzzer.PIN);
 
-ledOKPin.dir(mraa.DIR_OUT); 
-ledWarnPin.dir(mraa.DIR_OUT); 
-ledAlarmPin.dir(mraa.DIR_OUT); 
+ledOKPin.dir(mraa.DIR_OUT);
+ledWarnPin.dir(mraa.DIR_OUT);
+ledAlarmPin.dir(mraa.DIR_OUT);
 
 var client = mqtt.connect(options)
 
@@ -69,7 +69,7 @@ client.on('message', function (topic, message) {
 			ledAlarmPin.write(0);
 		}, 3000);
 	}
-	
+
 })
 
 client.on('error', function (err) {
@@ -77,6 +77,6 @@ client.on('error', function (err) {
 })
 
 client.on('connect', function () {
-	console.log('Connected To TechBubble IoT JumpWay')
+	console.log('Connected To IoT JumpWay')
   client.publish(config.IoTJumpWaySettings.SystemLocation+'/Devices/'+config.IoTJumpWaySettings.SystemZone+'/'+config.IoTJumpWaySettings.SystemDeviceID+'/Status', "ONLINE")
 })
