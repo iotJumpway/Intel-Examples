@@ -375,7 +375,7 @@ INFO:tensorflow:Global Step 32: Streaming Accuracy: 0.7944 (0.72 sec/step)
 INFO:tensorflow:Final Streaming Accuracy: 0.7969
 ```
 
-Comparing the evaluation from local training with training on the AI DevCloud we can see that the accuracy has decreased quite a lot.
+Comparing the evaluation from local training with training on the AI DevCloud we can see that the accuracy of the model trained on AI DevCloud has decreased quite a lot.
 
 ## Testing Your IDC Model
 
@@ -486,7 +486,7 @@ inception-v3 on NCS
 -- TIME(secs): 5.103212356567383
 ```
 
-By comparing the locally trained model with the model trained on AI DevCloud we can see that the model miss classifies the test slides.
+By comparing the locally trained model with the model trained on AI DevCloud we can see that the model trained on AI DevCloud miss classifies the test slides.
 
 ## Serving Your Live IDC Model
 
@@ -679,7 +679,7 @@ inception-v3 on NCS
 127.0.0.1 - - [22/Apr/2018 08:02:41] "POST /api/infer HTTP/1.1" 200 -
 ```
 
-By comparing the locally trained model with the model trained on AI DevCloud we can see that the model miss classifies the test slides.
+By comparing the locally trained model with the model trained on AI DevCloud we can see that the model trained on AI DevCloud miss classifies the test slides.
 
 ## Bugs/Issues
 
