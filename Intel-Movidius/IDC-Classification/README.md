@@ -296,6 +296,32 @@ If you are training on a development device, once training has finished and the 
 ```
 LOCAL TRAINING:
 
+INFO:tensorflow:Restoring parameters from model/_logs/model.ckpt-37333
+INFO:tensorflow:Starting standard services.
+INFO:tensorflow:Saving checkpoint to path model/_logs_eval/model.ckpt
+INFO:tensorflow:Starting queue runners.
+INFO:tensorflow:global_step/sec: 0
+INFO:tensorflow:Epoch: 1.0/1
+INFO:tensorflow:Current Streaming Accuracy: 0.0000
+INFO:tensorflow:Global Step 1: Streaming Accuracy: 0.0000 (4.08 sec/step)
+INFO:tensorflow:Global Step 2: Streaming Accuracy: 0.8611 (0.87 sec/step)
+INFO:tensorflow:Global Step 3: Streaming Accuracy: 0.8889 (0.87 sec/step)
+INFO:tensorflow:Global Step 4: Streaming Accuracy: 0.8981 (0.91 sec/step)
+INFO:tensorflow:Global Step 5: Streaming Accuracy: 0.9028 (1.01 sec/step)
+INFO:tensorflow:Global Step 6: Streaming Accuracy: 0.9000 (0.98 sec/step)
+INFO:tensorflow:Global Step 7: Streaming Accuracy: 0.9167 (1.00 sec/step)
+
+INFO:tensorflow:Global Step 68: Streaming Accuracy: 0.9163 (1.01 sec/step)
+INFO:tensorflow:Global Step 69: Streaming Accuracy: 0.9158 (0.99 sec/step)
+INFO:tensorflow:Global Step 70: Streaming Accuracy: 0.9159 (1.00 sec/step)
+INFO:tensorflow:Global Step 71: Streaming Accuracy: 0.9155 (0.99 sec/step)
+INFO:tensorflow:Global Step 72: Streaming Accuracy: 0.9155 (1.00 sec/step)
+INFO:tensorflow:Global Step 73: Streaming Accuracy: 0.9151 (0.99 sec/step)
+INFO:tensorflow:Global Step 74: Streaming Accuracy: 0.9144 (0.99 sec/step)
+INFO:tensorflow:Final Streaming Accuracy: 0.9144
+
+---------------------------------------------------------------------------
+
 INFO:tensorflow:Restoring parameters from model/_logs_eval/model.ckpt-2
 INFO:tensorflow:Starting standard services.
 INFO:tensorflow:Saving checkpoint to path model/_logs_eval/model.ckpt
@@ -343,7 +369,6 @@ INFO:tensorflow:Global Step 23: Streaming Accuracy: 0.7917 (0.78 sec/step)
 
 ---------------------------------------------------------------------------
 
-
 INFO:tensorflow:Global Step 26: Streaming Accuracy: 0.8086 (0.72 sec/step)
 INFO:tensorflow:Global Step 27: Streaming Accuracy: 0.8028 (0.74 sec/step)
 INFO:tensorflow:Global Step 28: Streaming Accuracy: 0.8030 (0.70 sec/step)
@@ -361,45 +386,104 @@ Comparing the evaluation from local training with training on the AI DevCloud we
 Once the relevant shell script has finished the testing program will start. In my example I had two classes 0 and 1 (IDC negative & IDC positive), a classification of 0 shows that the AI thinks the image is not IDC positive, and a classification of 1 is positive.
 
 ```
--- Loaded Test Image model/test/8980_idx5_x751_y1051_class1.png
+LOCAL TRAINING
+
+-- Loaded Test Image model/test/negative.png
 
 -- DETECTION STARTING
--- STARTED: :  2018-03-06 15:40:00.464726
+-- STARTED: :  2018-04-22 13:44:13.125506
 
 
 -- DETECTION ENDING
--- ENDED:  2018-03-06 15:40:02.386694
--- TIME: 1.9219634532928467
+-- ENDED:  2018-04-22 13:44:15.047193
+-- TIME: 1.921682357788086
 
-TASS Identified IDC with A Confidence Of 0.9707
+*******************************************************************************
+inception-v3 on NCS
+*******************************************************************************
+0 0 0.973
+1 1 0.02698
+*******************************************************************************
+
+-- Loaded Test Image model/test/positive.png
+
+-- DETECTION STARTING
+-- STARTED: :  2018-04-22 13:44:15.050704
+
+
+-- DETECTION ENDING
+-- ENDED:  2018-04-22 13:44:16.941829
+-- TIME: 1.8911287784576416
+
+
+TASS Identified IDC with a confidence of 0.934
+
+-- Published to Device Sensors Channel
+-- Published: 2
+
+*******************************************************************************
+inception-v3 on NCS
+*******************************************************************************
+1 1 0.934
+0 0 0.0661
+*******************************************************************************
+
+-- INCEPTION V3 TEST MODE ENDING
+-- ENDED:  2018-04-22 13:44:16.942708
+-- TESTED:  2
+-- IDENTIFIED:  1
+-- TIME(secs): 5.102577447891235
+```
+
+```
+AI DEV CLOUD
+
+-- Loaded Test Image model/test/negative.png
+
+-- DETECTION STARTING
+-- STARTED: :  2018-04-22 07:48:43.088229
+
+
+-- DETECTION ENDING
+-- ENDED:  2018-04-22 07:48:45.000522
+-- TIME: 1.9122660160064697
+
+*******************************************************************************
+inception-v3 on NCS
+*******************************************************************************
+0 0 0.973
+1 1 0.02698
+*******************************************************************************
+
+-- Loaded Test Image model/test/positive.png
+
+-- DETECTION STARTING
+-- STARTED: :  2018-04-22 07:48:45.008997
+
+
+-- DETECTION ENDING
+-- ENDED:  2018-04-22 07:48:46.887676
+-- TIME: 1.8786835670471191
+
+
+TASS Identified IDC with a confidence of 0.934
 
 -- Published to Device Sensors Channel
 
 *******************************************************************************
 inception-v3 on NCS
 *******************************************************************************
-1 1 0.9707
-0 0 0.02898
+1 1 0.934
+0 0 0.0661
 *******************************************************************************
 
--- Published: 2
--- Loaded Test Image model/test/8980_idx5_x101_y1051_class0.png
-
--- DETECTION STARTING
--- STARTED: :  2018-03-06 15:40:02.390235
-
-
--- DETECTION ENDING
--- ENDED:  2018-03-06 15:40:04.281153
--- TIME: 1.8909223079681396
-
-*******************************************************************************
-inception-v3 on NCS
-*******************************************************************************
-0 0 0.9873
-1 1 0.01263
-*******************************************************************************
+-- INCEPTION V3 TEST MODE ENDING
+-- ENDED:  2018-04-22 07:48:46.889912
+-- TESTED:  2
+-- IDENTIFIED:  1
+-- TIME(secs): 3.986531972885132
 ```
+
 
 ## Serving Your Live IDC Model
 
@@ -437,81 +521,83 @@ $ python3.5 Client.py
 This will send a positive and negative histology slide to the Raspberry Pi 3 / UP Squared which will return the predictions.
 
 ```
-!! Welcome to IDC Classification, please wait while the program initiates !!
+!! Welcome to IDC Classification Client, please wait while the program initiates !!
 
 -- Running on Python 3.5.2 (default, Nov 23 2017, 16:37:01)
 [GCC 5.4.0 20160609]
 
 -- Imported Required Modules
--- TassMovidiusClient Initiated
+-- IDC Classification Client Initiated
 
-{'Response': 'OK', 'ResponseMessage': 'IDC Detected!', 'Results': 1}
-{'Response': 'OK', 'ResponseMessage': 'IDC Not Detected!', 'Results': 0}
-
+{'ResponseMessage': 'IDC Detected!', 'Response': 'OK', 'Results': 1}
+{'ResponseMessage': 'IDC Not Detected!', 'Response': 'OK', 'Results': 0}
 ```
 
 ```
--- INCEPTION V3 LIVE INFERENCE STARTING
--- STARTED: :  2018-03-06 17:10:38.826920
+-- IDC CLASSIFIER LIVE INFERENCE STARTING
+-- STARTED: :  2018-04-22 07:52:45.543548
 
-Server.py:148: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+Server.py:149: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
   nparr = np.fromstring(r.data, np.uint8)
 -- Loading Sample
 -- Loaded Sample
 -- DETECTION STARTING
--- STARTED: :  2018-03-06 17:10:38.830703
+-- STARTED: :  2018-04-22 07:52:45.552020
 
 
 -- DETECTION ENDING
--- ENDED:  2018-03-06 17:10:40.751271
--- TIME: 1.9205756187438965
+-- ENDED:  2018-04-22 07:52:47.462421
+-- TIME: 1.9104082584381104
 
 
-TASS Identified IDC with a confidence of 0.816
+TASS Identified IDC with a confidence of 0.934
 
 -- Published to Device Sensors Channel
-
+-- Published to Device Sensors Channel
 *******************************************************************************
--- Published: 2
 inception-v3 on NCS
+-- Published: 2
 *******************************************************************************
-1 1 0.816
-0 0 0.1838
+-- Published: 3
+1 1 0.934
+0 0 0.0661
 *******************************************************************************
 
--- INCEPTION V3 LIVE INFERENCE ENDING
--- ENDED:  2018-03-06 17:10:40.752129
+-- IDC CLASSIFIER LIVE INFERENCE ENDING
+-- ENDED:  2018-04-22 07:52:47.466131
 -- TESTED:  1
 -- IDENTIFIED:  1
--- TIME(secs): 1.9252095222473145
-```
+-- TIME(secs): 1.9226033687591553
 
-```
--- INCEPTION V3 LIVE INFERENCE STARTING
--- STARTED: :  2018-03-06 17:10:45.777470
+127.0.0.1 - - [22/Apr/2018 07:52:47] "POST /api/infer HTTP/1.1" 200 -
+-- IDC CLASSIFIER LIVE INFERENCE STARTING
+-- STARTED: :  2018-04-22 07:52:52.688387
 
 -- Loading Sample
 -- Loaded Sample
 -- DETECTION STARTING
--- STARTED: :  2018-03-06 17:10:45.781196
+-- STARTED: :  2018-04-22 07:52:52.693952
 
 
 -- DETECTION ENDING
--- ENDED:  2018-03-06 17:10:47.671904
--- TIME: 1.8907184600830078
+-- ENDED:  2018-04-22 07:52:54.572789
+-- TIME: 1.8788421154022217
 
+-- Published to Device Warnings Channel
+
+-- Published to Device Sensors Channel
 *******************************************************************************
 inception-v3 on NCS
 *******************************************************************************
-0 0 0.994
-1 1 0.00566
+0 0 0.973
+1 1 0.02698
 *******************************************************************************
 
--- INCEPTION V3 LIVE INFERENCE ENDING
--- ENDED:  2018-03-06 17:10:47.672187
+-- IDC CLASSIFIER LIVE INFERENCE ENDING
+-- ENDED:  2018-04-22 07:52:54.574605
 -- TESTED:  1
 -- IDENTIFIED:  0
--- TIME(secs): 1.8947057723999023
+-- TIME(secs): 1.8862202167510986
 ```
 
 ## Bugs/Issues
