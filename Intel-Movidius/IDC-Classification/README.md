@@ -289,11 +289,13 @@ python3.5 Classifier.py InceptionTest
 6. Evaluate
 7. Test
 
-## Evaluating & Testing Your Model On A Local Device (CPU or GPU)
+## Evaluating & Testing Your Model
 
 If you are training on a development device, once training has finished and the Movidius compatible graph has been generated, the shell script will execute the evaluation program and start the classifier in test mode.  If you are training on AI DevCloud the evaluation part is included in the notebook. The output of the program will be shown in your terminal. After just a few hours training, the model was performing very well with a final streaming accuracy of 0.9060.
 
 ```
+LOCAL TRAINING:
+
 INFO:tensorflow:Restoring parameters from model/_logs_eval/model.ckpt-2
 INFO:tensorflow:Starting standard services.
 INFO:tensorflow:Saving checkpoint to path model/_logs_eval/model.ckpt
@@ -311,10 +313,6 @@ INFO:tensorflow:Global Step 10: Streaming Accuracy: 0.8704 (1.00 sec/step)
 
 ---------------------------------------------------------------------------
 
-INFO:tensorflow:Global Step 66: Streaming Accuracy: 0.9059 (0.99 sec/step)
-INFO:tensorflow:Global Step 67: Streaming Accuracy: 0.9061 (0.99 sec/step)
-INFO:tensorflow:Global Step 68: Streaming Accuracy: 0.9058 (1.00 sec/step)
-INFO:tensorflow:Global Step 69: Streaming Accuracy: 0.9043 (1.01 sec/step)
 INFO:tensorflow:Global Step 70: Streaming Accuracy: 0.9045 (0.98 sec/step)
 INFO:tensorflow:Global Step 71: Streaming Accuracy: 0.9046 (0.99 sec/step)
 INFO:tensorflow:Global Step 72: Streaming Accuracy: 0.9048 (0.99 sec/step)
@@ -325,9 +323,40 @@ INFO:tensorflow:Global Step 76: Streaming Accuracy: 0.9062 (0.99 sec/step)
 INFO:tensorflow:Final Streaming Accuracy: 0.9060
 ```
 
-## Testing Your IDC Model On A Local Device (CPU or GPU)
+```
+AI DEV CLOUD (CLEANED)
 
-If you are training on a development device, once evaluation has finished the testing program will start. In my example I had two classes 0 and 1 (IDC negative & IDC positive), a classification of 0 shows that the AI thinks the image is not IDC positive, and a classification of 1 is positive.
+INFO:tensorflow:Restoring parameters from model/_logs_eval/model.ckpt-16
+INFO:tensorflow:Starting standard services.
+INFO:tensorflow:Saving checkpoint to path model/_logs_eval/model.ckpt
+INFO:tensorflow:Starting queue runners.
+INFO:tensorflow:global_step/sec: 0
+INFO:tensorflow:Epoch: 1.0/1
+INFO:tensorflow:Current Streaming Accuracy: 0.0000
+INFO:tensorflow:Global Step 17: Streaming Accuracy: 0.0000 (1.80 sec/step)
+INFO:tensorflow:Global Step 18: Streaming Accuracy: 0.8056 (0.65 sec/step)
+INFO:tensorflow:Global Step 19: Streaming Accuracy: 0.7778 (0.63 sec/step)
+INFO:tensorflow:Global Step 20: Streaming Accuracy: 0.7500 (0.75 sec/step)
+INFO:tensorflow:Global Step 21: Streaming Accuracy: 0.7708 (0.59 sec/step)
+INFO:tensorflow:Global Step 22: Streaming Accuracy: 0.7833 (0.66 sec/step)
+INFO:tensorflow:Global Step 23: Streaming Accuracy: 0.7917 (0.78 sec/step)
+
+---------------------------------------------------------------------------
+
+
+INFO:tensorflow:Global Step 26: Streaming Accuracy: 0.8086 (0.72 sec/step)
+INFO:tensorflow:Global Step 27: Streaming Accuracy: 0.8028 (0.74 sec/step)
+INFO:tensorflow:Global Step 28: Streaming Accuracy: 0.8030 (0.70 sec/step)
+INFO:tensorflow:Global Step 29: Streaming Accuracy: 0.7986 (0.70 sec/step)
+INFO:tensorflow:Global Step 30: Streaming Accuracy: 0.8013 (0.74 sec/step)
+INFO:tensorflow:Global Step 31: Streaming Accuracy: 0.7937 (0.71 sec/step)
+INFO:tensorflow:Global Step 32: Streaming Accuracy: 0.7944 (0.72 sec/step)
+INFO:tensorflow:Final Streaming Accuracy: 0.7969
+```
+
+## Testing Your IDC Model
+
+Once the relevant shell script has finished the testing program will start. In my example I had two classes 0 and 1 (IDC negative & IDC positive), a classification of 0 shows that the AI thinks the image is not IDC positive, and a classification of 1 is positive.
 
 ```
 -- Loaded Test Image model/test/8980_idx5_x751_y1051_class1.png
