@@ -19,7 +19,7 @@ This is a project I created as an extension to one of my facial recognition proj
 
 1.  Install the [Intel® NCSDK](https://github.com/movidius/ncsdk "Intel® NCSDK") on a Linux development device.
 2.  Install the [Intel® NCSDK API](https://github.com/movidius/ncsdk "Intel® NCSDK API") on a Raspberry Pi 3 / UP Squared.
-3.  Install the [IoT JumpWay Python MQTT Client](https://github.com/AdamMiltonBarker/JumpWayMQTT "IoT JumpWay Python MQTT Client") on the Raspberry Pi / UP Squared and configure the IoT JumpWay configuration.
+3.  Install the [IoT JumpWay Python MQTT Client](https://github.com/AdamMiltonBarker/JumpWayMQTT "IoT JumpWay Python MQTT Client") on the Raspberry Pi / UP Squared and configure the IoT JumpWay.
 4.  Clone & Set Up The Repo.
 5.  Prepare your training dataset.
 6.  Finetuning your training parameters.
@@ -34,7 +34,7 @@ This is a project I created as an extension to one of my facial recognition proj
 
 **Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT** is made up of 7 core applications:
 
-- **Trainer:** A training program that allows you to train a convolutional neural network using a local Linux machine (CPU or GPU).
+- **Trainer:** A training program that allows you to train a convolutional neural network using a local Linux machine.
 - **DevCloudTrainer:** A training program that allows you to train a convolutional neural network using Intel® AI DevCloud.
 - **Evaluator:** An evaluation program for evaluating your model.
 - **Classifier:** A classification program for testing your model.
@@ -56,7 +56,7 @@ This is a project I created as an extension to one of my facial recognition proj
 ## Hardware Requirements
 
 - 1 x [Intel® Movidius](https://www.movidius.com/ "Intel® Movidius")
-- 1 x Linux Device for training & converting the trained model to a Movidius friendly model. (NVIDIA GPU recommended for faster training but not required)
+- 1 x Linux Device for training & converting the trained model to a Movidius friendly model.
 - 1 x Raspberry Pi 3 / UP Squared for the classifier / server.
 - 1 x Raspberry Pi 3 for IoT connected alarm.
 - 1 x Grove starter kit for IoT, Raspberry Pi edition.
@@ -106,7 +106,7 @@ Next you will need to install the **NCSDK** on your Raspberry Pi 3 / UP Squared 
 
 There are a few tutorials that you should follow before beginning, especially if it is the first time you have used the **IoT JumpWay Developer Program**. If you do not already have one, you will require an **IoT JumpWay Developer Program developer account**, and some basics to be set up before you can start creating your IoT devices. Visit the following [IoT JumpWay Developer Program Docs (5-10 minute read/setup)](https://github.com/iotJumpWay/IoT-JumpWay-Docs/ "IoT JumpWay Developer Program Docs (5-10 minute read/setup)") and check out the guides that take you through registration and setting up your Location Space, Zones, Devices and Applications (About 5 minutes read).
 
-## Install IoT JumpWay Python MQTT Client on your Raspberry Pi 3 / UP Squared
+## Install IoT JumpWay Python MQTT Client On Your Raspberry Pi 3 / UP Squared
 
 Next install the IoT JumpWay Python MQTT Client on your Raspberry Pi 3 / UP Squared. For this you can execute the following command:
 
@@ -146,27 +146,27 @@ Follow the [IoT JumpWay Developer Program (BETA) Location Device Doc](https://gi
         "MQTTPassword": ""
     },
 	"ClassifierSettings":{
-		"dataset_dir":"model/train/",
-		"log_dir":"model/_logs",
-		"log_eval":"model/_logs_eval",
-		"classes":"model/classes.txt",
-		"labels":"labels.txt",
-		"labels_file":"model/train/labels.txt",
-		"validation_size":0.3,
-		"num_shards":2,
-		"random_seed":50,
-		"tfrecord_filename":"200label",
-		"file_pattern":"200label_%s_*.tfrecord",
-		"image_size":299,
-		"num_classes":2,
-		"num_epochs":60,
-		"dev_cloud_epochs":20,
-		"test_num_epochs":1,
-		"batch_size":10,
-		"test_batch_size":36,
-		"initial_learning_rate":0.0001,
-		"learning_rate_decay_factor":0.96,
-		"num_epochs_before_decay":10,
+        "dataset_dir":"model/train/",
+        "log_dir":"model/_logs",
+        "log_eval":"model/_logs_eval",
+        "classes":"model/classes.txt",
+        "labels":"labels.txt",
+        "labels_file":"model/train/labels.txt",
+        "validation_size":0.3,
+        "num_shards":2,
+        "random_seed":50,
+        "tfrecord_filename":"200label",
+        "file_pattern":"200label_%s_*.tfrecord",
+        "image_size":299,
+        "num_classes":2,
+        "num_epochs":60,
+        "dev_cloud_epochs":20,
+        "test_num_epochs":1,
+        "batch_size":10,
+        "test_batch_size":36,
+        "initial_learning_rate":0.0001,
+        "learning_rate_decay_factor":0.96,
+        "num_epochs_before_decay":10,
         "NetworkPath":"",
         "InceptionImagePath":"model/test/",
         "InceptionThreshold": 0.54,
@@ -187,6 +187,8 @@ Once you have the repo, you will need to find the files in this folder located i
 
 For this tutorial, I used a dataset from Kaggle ( [Predict IDC in Breast Cancer Histology Images](https://www.kaggle.com/paultimothymooney/predict-idc-in-breast-cancer-histology-image "Predict IDC in Breast Cancer Histology Images") ), but you are free to use any dataset you like. I have uploaded the collection I used for positive and negative images which you will find in the **model/train** directory. Once you decide on your dataset you need to arrange your data into the **model/train** directory. Each subdirectory should be entitled with integers, I used 0 and 1 to represent positive and negative. In my testing I used 4400 positive and 4400 negative examples giving an overall training accuracy of 0.8716 and an average confidence of 0.96 on correct identifications. The data provided is 50px x 50px, as Inception V3 was trained on images of size 299px x 299px, the images are resized to 299px x 299px, ideally the images would be that size already so you may want to try different datasets and see how your results vary.
 
+**If you are training your model on the Intel® AI DevCloud you need to reduce your dataset to 1000 images per class before uploading the dataset.**
+
 ## Finetuning Your Training Parameters
 
 You can finetune the settings of the network at any time by editing the classifier settings in the **model/confs.json** file.
@@ -195,6 +197,7 @@ You can finetune the settings of the network at any time by editing the classifi
 "ClassifierSettings":{
     "dataset_dir":"model/train/",
     "log_dir":"model/_logs",
+    "log_eval":"model/_logs_eval",
     "classes":"model/classes.txt",
     "labels":"labels.txt",
     "labels_file":"model/train/labels.txt",
@@ -206,16 +209,50 @@ You can finetune the settings of the network at any time by editing the classifi
     "image_size":299,
     "num_classes":2,
     "num_epochs":60,
+    "dev_cloud_epochs":20,
+    "test_num_epochs":1,
     "batch_size":10,
+    "test_batch_size":36,
     "initial_learning_rate":0.0001,
     "learning_rate_decay_factor":0.96,
     "num_epochs_before_decay":10,
     "NetworkPath":"",
-    "InceptionImagePath":"model/inception/test/",
+    "InceptionImagePath":"model/test/",
     "InceptionThreshold": 0.54,
     "InceptionGraph":"igraph"
 }
 ```
+
+## Training Your IDC Model On Intel® AI DevCloud
+
+Ensure that you have reduced the dataset to 1000 images per class then upload the files and folders outlined below to AI DevCloud.
+
+```
+model
+tools
+DevCloudTrainer.ipynb
+DevCloudTrainer.py
+```
+
+Once uploaded follow the instructions in **DevCloudTrainer.ipynb**, when the training completes you need to download **model/DevCloudIDC.pb** to the **model** directory on your development machine, ensure the Movidius is setup and connected and then run the following commands on your development machine:
+
+```
+$ cd ~/IoT-JumpWay-Intel-Examples/master/Intel-Movidius/IDC-Classification
+$ ./DevCloudTrainer.sh
+```
+
+The contents of DevCloudTrainer.sh are as follows:
+
+```
+#IDC Classification Trainer
+mvNCCompile model/DevCloudIDC.pb -in=input -on=InceptionV3/Predictions/Softmax
+mv graph igraphdc
+python3.5 Classifier.py InceptionTest
+```
+
+1. Compile the model for Movidius
+2. Rename the graph file
+3. Test
 
 ## Training Your IDC Model On A Local Device (CPU or GPU)
 
