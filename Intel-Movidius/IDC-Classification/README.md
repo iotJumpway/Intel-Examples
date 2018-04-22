@@ -441,49 +441,56 @@ AI DEV CLOUD
 -- Loaded Test Image model/test/negative.png
 
 -- DETECTION STARTING
--- STARTED: :  2018-04-22 07:48:43.088229
+-- STARTED: :  2018-04-22 13:59:15.598747
 
 
 -- DETECTION ENDING
--- ENDED:  2018-04-22 07:48:45.000522
--- TIME: 1.9122660160064697
-
-*******************************************************************************
-inception-v3 on NCS
-*******************************************************************************
-0 0 0.973
-1 1 0.02698
-*******************************************************************************
-
--- Loaded Test Image model/test/positive.png
-
--- DETECTION STARTING
--- STARTED: :  2018-04-22 07:48:45.008997
+-- ENDED:  2018-04-22 13:59:17.521458
+-- TIME: 1.9227015972137451
 
 
--- DETECTION ENDING
--- ENDED:  2018-04-22 07:48:46.887676
--- TIME: 1.8786835670471191
-
-
-TASS Identified IDC with a confidence of 0.934
+TASS Identified IDC with a confidence of 0.8706
 
 -- Published to Device Sensors Channel
 
 *******************************************************************************
 inception-v3 on NCS
 *******************************************************************************
-1 1 0.934
-0 0 0.0661
+1 1 0.8706
+0 0 0.1292
+*******************************************************************************
+
+-- Loaded Test Image model/test/positive.png
+-- Published: 2
+
+-- DETECTION STARTING
+-- STARTED: :  2018-04-22 13:59:17.525141
+
+
+-- DETECTION ENDING
+-- ENDED:  2018-04-22 13:59:19.416355
+-- TIME: 1.8912181854248047
+
+
+TASS Identified IDC with a confidence of 0.88
+
+-- Published to Device Sensors Channel
+
+*******************************************************************************
+inception-v3 on NCS
+*******************************************************************************
+1 1 0.88
+0 0 0.1203
 *******************************************************************************
 
 -- INCEPTION V3 TEST MODE ENDING
--- ENDED:  2018-04-22 07:48:46.889912
+-- ENDED:  2018-04-22 13:59:19.417033
 -- TESTED:  2
--- IDENTIFIED:  1
--- TIME(secs): 3.986531972885132
+-- IDENTIFIED:  2
+-- TIME(secs): 5.103212356567383
 ```
 
+By comparing the locally trained model with the model trained on AI DevCloud we can see that the model miss classifies the test slides.
 
 ## Serving Your Live IDC Model
 
@@ -534,6 +541,8 @@ This will send a positive and negative histology slide to the Raspberry Pi 3 / U
 ```
 
 ```
+LOCAL TRAINING
+
 -- IDC CLASSIFIER LIVE INFERENCE STARTING
 -- STARTED: :  2018-04-22 07:52:45.543548
 
@@ -544,16 +553,15 @@ Server.py:149: DeprecationWarning: The binary mode of fromstring is deprecated, 
 -- DETECTION STARTING
 -- STARTED: :  2018-04-22 07:52:45.552020
 
-
 -- DETECTION ENDING
 -- ENDED:  2018-04-22 07:52:47.462421
 -- TIME: 1.9104082584381104
-
 
 TASS Identified IDC with a confidence of 0.934
 
 -- Published to Device Sensors Channel
 -- Published to Device Sensors Channel
+
 *******************************************************************************
 inception-v3 on NCS
 -- Published: 2
@@ -599,6 +607,83 @@ inception-v3 on NCS
 -- IDENTIFIED:  0
 -- TIME(secs): 1.8862202167510986
 ```
+
+```
+AI DEV CLOUD
+
+-- IDC CLASSIFIER LIVE INFERENCE STARTING
+-- STARTED: :  2018-04-22 08:02:32.243193
+
+Server.py:149: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  nparr = np.fromstring(r.data, np.uint8)
+-- Loading Sample
+-- Loaded Sample
+-- DETECTION STARTING
+-- STARTED: :  2018-04-22 08:02:32.411434
+
+
+-- DETECTION ENDING
+-- ENDED:  2018-04-22 08:02:34.319536
+-- TIME: 1.9080839157104492
+
+
+TASS Identified IDC with a confidence of 0.88
+
+-- Published to Device Sensors Channel
+-- Published: 2
+-- Published: 3
+-- Published to Device Sensors Channel
+*******************************************************************************
+inception-v3 on NCS
+*******************************************************************************
+1 1 0.88
+0 0 0.1203
+*******************************************************************************
+
+-- IDC CLASSIFIER LIVE INFERENCE ENDING
+-- ENDED:  2018-04-22 08:02:34.322498
+-- TESTED:  1
+-- IDENTIFIED:  1
+-- TIME(secs): 2.0793039798736572
+
+127.0.0.1 - - [22/Apr/2018 08:02:34] "POST /api/infer HTTP/1.1" 200 -
+-- IDC CLASSIFIER LIVE INFERENCE STARTING
+-- STARTED: :  2018-04-22 08:02:39.366247
+
+-- Loading Sample
+-- Loaded Sample
+-- DETECTION STARTING
+-- STARTED: :  2018-04-22 08:02:39.372829
+
+
+-- DETECTION ENDING
+-- ENDED:  2018-04-22 08:02:41.250966
+-- TIME: 1.8781416416168213
+
+
+TASS Identified IDC with a confidence of 0.8706
+
+-- Published to Device Sensors Channel
+-- Published: 4
+-- Published to Device Sensors Channel
+-- Published: 5
+*******************************************************************************
+inception-v3 on NCS
+*******************************************************************************
+1 1 0.8706
+0 0 0.1292
+*******************************************************************************
+
+-- IDC CLASSIFIER LIVE INFERENCE ENDING
+-- ENDED:  2018-04-22 08:02:41.256489
+-- TESTED:  1
+-- IDENTIFIED:  1
+-- TIME(secs): 1.8902666568756104
+
+127.0.0.1 - - [22/Apr/2018 08:02:41] "POST /api/infer HTTP/1.1" 200 -
+```
+
+By comparing the locally trained model with the model trained on AI DevCloud we can see that the model miss classifies the test slides.
 
 ## Bugs/Issues
 
