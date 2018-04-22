@@ -1,5 +1,7 @@
 # Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT
 
+![Intel® Movidius](images/IDC-Classification.png)
+
 ## Introduction
 
 **Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT** combines **Computer Vision** and the **Internet of Things** to provide researchers, doctors and students with a way to train a neural network with labelled breast cancer histology images to detect Invasive Ductal Carcinoma (IDC) in unseen/unlabelled images.
@@ -387,15 +389,13 @@ igraph
 Server.py
 ```
 
-4. Open up a terminal and navigate to the to the folder containing Server.py then issue the following command:
+4. Open up a terminal and navigate to the to the folder containing Server.py then issue the following command. This will start the server and wait to receive images for classification.
 
 ```
 $ python3.5 Server.py
 ```
 
-This will start the server and wait to receive images for classification.
-
-4. If you have followed all of the above steps, you can now start the client on your development machine with the following commands:
+5. If you have followed all of the above steps, you can now start the client on your development machine with the following commands:
 
 ```
 $ python3.5 Client.py
