@@ -87,6 +87,8 @@ Next plug your Movidius into your device and issue the following commands:
 
 ## Install NCSDK On Your Raspberry Pi 3 / UP Squared
 
+![Intel® Movidius](images/UP2.jpg)
+
 Next you will need to install the **NCSDK** on your Raspberry Pi 3 / UP Squared device, this will be used by the classifier to carry out inference on local images or images received via the API we will create.
 
 ```
