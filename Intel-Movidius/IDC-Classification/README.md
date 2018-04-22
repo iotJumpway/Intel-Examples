@@ -354,6 +354,8 @@ INFO:tensorflow:Global Step 32: Streaming Accuracy: 0.7944 (0.72 sec/step)
 INFO:tensorflow:Final Streaming Accuracy: 0.7969
 ```
 
+Comparing the evaluation from local training with training on the AI DevCloud we can see that the accuracy has decreased.
+
 ## Testing Your IDC Model
 
 Once the relevant shell script has finished the testing program will start. In my example I had two classes 0 and 1 (IDC negative & IDC positive), a classification of 0 shows that the AI thinks the image is not IDC positive, and a classification of 1 is positive.
