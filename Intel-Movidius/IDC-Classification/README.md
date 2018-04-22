@@ -145,7 +145,7 @@ Follow the [IoT JumpWay Developer Program (BETA) Location Device Doc](https://gi
         "MQTTUsername": "",
         "MQTTPassword": ""
     },
-	"ClassifierSettings":{
+    "ClassifierSettings":{
         "dataset_dir":"model/train/",
         "log_dir":"model/_logs",
         "log_eval":"model/_logs_eval",
@@ -171,7 +171,7 @@ Follow the [IoT JumpWay Developer Program (BETA) Location Device Doc](https://gi
         "InceptionImagePath":"model/test/",
         "InceptionThreshold": 0.54,
         "InceptionGraph":"igraph"
-	}
+    }
 }
 ```
 
@@ -232,9 +232,10 @@ model
 tools
 DevCloudTrainer.ipynb
 DevCloudTrainer.py
+Eval.py
 ```
 
-Once uploaded follow the instructions in **DevCloudTrainer.ipynb**, when the training completes you need to download **model/DevCloudIDC.pb** to the **model** directory on your development machine, ensure the Movidius is setup and connected and then run the following commands on your development machine:
+Once uploaded follow the instructions in **DevCloudTrainer.ipynb**, when the training completes you need to download **model/DevCloudIDC.pb** and **model/classes.txt** to the **model** directory on your development machine, ensure the Movidius is setup and connected and then run the following commands on your development machine:
 
 ```
 $ cd ~/IoT-JumpWay-Intel-Examples/master/Intel-Movidius/IDC-Classification
@@ -246,7 +247,7 @@ The contents of DevCloudTrainer.sh are as follows:
 ```
 #IDC Classification Trainer
 mvNCCompile model/DevCloudIDC.pb -in=input -on=InceptionV3/Predictions/Softmax
-mv graph igraphdc
+mv graph igraph
 python3.5 Classifier.py InceptionTest
 ```
 
@@ -284,9 +285,9 @@ python3.5 Classifier.py InceptionTest
 6. Evaluate
 7. Test
 
-## Evaluating & Testing Your Model
+## Evaluating & Testing Your Model On A Local Device (CPU or GPU)
 
-Once training has finished and the Movidius compatible graph has been generated, the shell script will execute the evaluation program and start the classifier in test mode. The output of the program will be shown in your terminal. After just a few hours training, the model was performing very well with a final streaming accuracy of 0.9060.
+If you are training on a development device, once training has finished and the Movidius compatible graph has been generated, the shell script will execute the evaluation program and start the classifier in test mode.  If you are training on AI DevCloud the evaluation part is included in the notebook. The output of the program will be shown in your terminal. After just a few hours training, the model was performing very well with a final streaming accuracy of 0.9060.
 
 ```
 INFO:tensorflow:Restoring parameters from model/_logs_eval/model.ckpt-2
@@ -320,9 +321,9 @@ INFO:tensorflow:Global Step 76: Streaming Accuracy: 0.9062 (0.99 sec/step)
 INFO:tensorflow:Final Streaming Accuracy: 0.9060
 ```
 
-## Testing Your IDC Model
+## Testing Your IDC Model On A Local Device (CPU or GPU)
 
-Once evaluation has finished the testing program will start. In my example I had two classes 0 and 1 (IDC negative & IDC positive), a classification of 0 shows that the AI thinks the image is not IDC positive, and a classification of 1 is positive.
+If you are training on a development device, once evaluation has finished the testing program will start. In my example I had two classes 0 and 1 (IDC negative & IDC positive), a classification of 0 shows that the AI thinks the image is not IDC positive, and a classification of 1 is positive.
 
 ```
 -- Loaded Test Image model/test/8980_idx5_x751_y1051_class1.png
@@ -334,7 +335,6 @@ Once evaluation has finished the testing program will start. In my example I had
 -- DETECTION ENDING
 -- ENDED:  2018-03-06 15:40:02.386694
 -- TIME: 1.9219634532928467
-1
 
 TASS Identified IDC with A Confidence Of 0.9707
 
@@ -357,7 +357,7 @@ inception-v3 on NCS
 -- DETECTION ENDING
 -- ENDED:  2018-03-06 15:40:04.281153
 -- TIME: 1.8909223079681396
-0
+
 *******************************************************************************
 inception-v3 on NCS
 *******************************************************************************
@@ -368,15 +368,26 @@ inception-v3 on NCS
 
 ## Serving Your Live IDC Model
 
-Now that we are all trained and tested, it is time to set up the server that will answer to the Android application and provide a classification. For this I have provided **Server.py** and **Client.py**
+Now that we are all trained and tested, it is time to set up the server that will serve the API. For this I have provided **Server.py** and **Client.py**
 
 The following instructions will help you set up your server and test a positive and negative prediction:
 
 1. If you used the [Predict IDC in Breast Cancer Histology Images](https://www.kaggle.com/paultimothymooney/predict-idc-in-breast-cancer-histology-image "Predict IDC in Breast Cancer Histology Images") dataset, you can use the **positive.png** & **negative.png** as they are from that dataset, if not you should chose a positive and negative example from your testing set and replace these images.
 
-2. The server is currently set to start up on localhost, if you would like to change this you need to edit line 259 of **Server.py** and line 25 of **Client.py** to match your desired host. Once you have things working, if you are going to be leaving this running and access it from the outside world you shoud secure it with LetsEncrypt or similar.
+2. The server is currently set to start up on localhost, if you would like to change this you need to edit line 281 of **Server.py** and line 38 of **Client.py** to match your desired host. Once you have things working, if you are going to be leaving this running and access it from the outside world you shoud secure it with LetsEncrypt or similar.
 
-3. Open a terminal and navigate to this directory, then issue the following commands:
+3. Upload the following files and folders to the UP Squared or Raspberry Pi 3 that you are going to use for the server.
+
+```
+model/test/
+model/classes.txt
+model/confs.json
+tools
+igraph
+Server.py
+```
+
+4. Open up a terminal and navigate to the to the folder containing Server.py then issue the following command:
 
 ```
 $ python3.5 Server.py
