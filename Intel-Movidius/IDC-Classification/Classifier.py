@@ -224,15 +224,39 @@ def main(argv):
                     print("")
 
                     Classifier.jumpwayClient.publishToDeviceChannel(
-                            "Sensors",
-                           {
-                               "Sensor":"CCTV",
-                               "SensorID": Classifier._configs["Cameras"][0]["ID"],
-                               "SensorValue":"IDC: " + Classifier.categories[top_inds[0]] + " (Confidence: " + str(output[top_inds[0]]) + ")"
-                        }
-                       )
+                            "Warnings",
+                            {
+                                "WarningType":"CCTV",
+                                "WarningOrigin": Server._configs["Cameras"][0]["ID"],
+                                "WarningValue": "RECOGNISED",
+                                "WarningMessage":"IDC Detected"
+                            }
+                        )
 
                     print("")
+
+                else:
+
+                    Classifier.jumpwayClient.publishToDeviceChannel(
+                        "Warnings",
+                        {
+                            "WarningType":"CCTV",
+                            "WarningOrigin": Classifier._configs["Cameras"][0]["ID"],
+                            "WarningValue": "NOT RECOGNISED",
+                            "WarningMessage":"IDC Not Detected"
+                        }
+                    )
+
+                    print("")
+
+                Classifier.jumpwayClient.publishToDeviceChannel(
+                    "Sensors",
+                    {
+                        "Sensor":"CCTV",
+                        "SensorID": Classifier._configs["Cameras"][0]["ID"],
+                        "SensorValue":"IDC: " + Classifier.categories[top_inds[0]] + " (Confidence: " + str(output[top_inds[0]]) + ")"
+                    }
+                )
 
                 #print(top_inds)
                 #print(Classifier.categories)

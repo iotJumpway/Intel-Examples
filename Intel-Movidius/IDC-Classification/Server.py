@@ -205,13 +205,16 @@ def test():
         print("")
 
         Server.jumpwayClient.publishToDeviceChannel(
-            "Sensors",
-            {
-                "Sensor":"CCTV",
-                "SensorID": Server._configs["Cameras"][0]["ID"],
-                "SensorValue":"IDC: " + Server.categories[top_inds[0]] + " (Confidence: " + str(output[top_inds[0]]) + ")"
-            }
-        )
+                "Warnings",
+                {
+                    "WarningType":"CCTV",
+                    "WarningOrigin": Server._configs["Cameras"][0]["ID"],
+                    "WarningValue": "RECOGNISED",
+                    "WarningMessage":"IDC Detected"
+                }
+            )
+
+        print("")
 
     else:
 
@@ -221,7 +224,7 @@ def test():
                 "WarningType":"CCTV",
                 "WarningOrigin": Server._configs["Cameras"][0]["ID"],
                 "WarningValue": "NOT RECOGNISED",
-                "WarningMessage":"IDC Detected"
+                "WarningMessage":"IDC Not Detected"
             }
         )
 
