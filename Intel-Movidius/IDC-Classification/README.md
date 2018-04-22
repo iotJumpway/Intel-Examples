@@ -287,7 +287,7 @@ python3.5 Classifier.py InceptionTest
 
 ## Evaluating & Testing Your Model
 
-If you are training on a development device, once training has finished and the Movidius compatible graph has been generated, the shell script will execute the evaluation program and start the classifier in test mode.  If you are training on AI DevCloud the evaluation part is included in the notebook. The output of the program will be shown in your terminal. After just a few hours training, the model was performing very well with a final streaming accuracy of 0.9060.
+If you are training on a development device, once training has finished and the Movidius compatible graph has been generated, the shell script will execute the evaluation program and start the classifier in test mode.  If you are training on AI DevCloud the evaluation part is included in the notebook. The output of the program will be shown in your terminal. After just a few hours training, the model was performing very well with a final streaming accuracy of 0.9144.
 
 ```
 LOCAL TRAINING:
@@ -315,34 +315,6 @@ INFO:tensorflow:Global Step 72: Streaming Accuracy: 0.9155 (1.00 sec/step)
 INFO:tensorflow:Global Step 73: Streaming Accuracy: 0.9151 (0.99 sec/step)
 INFO:tensorflow:Global Step 74: Streaming Accuracy: 0.9144 (0.99 sec/step)
 INFO:tensorflow:Final Streaming Accuracy: 0.9144
-
----------------------------------------------------------------------------
-
-INFO:tensorflow:Restoring parameters from model/_logs_eval/model.ckpt-2
-INFO:tensorflow:Starting standard services.
-INFO:tensorflow:Saving checkpoint to path model/_logs_eval/model.ckpt
-INFO:tensorflow:Starting queue runners.
-INFO:tensorflow:global_step/sec: 0
-INFO:tensorflow:Epoch: 1.0/1
-INFO:tensorflow:Current Streaming Accuracy: 0.0000
-INFO:tensorflow:Global Step 4: Streaming Accuracy: 0.0000 (4.15 sec/step)
-INFO:tensorflow:Global Step 5: Streaming Accuracy: 0.8611 (0.86 sec/step)
-INFO:tensorflow:Global Step 6: Streaming Accuracy: 0.8611 (0.87 sec/step)
-INFO:tensorflow:Global Step 7: Streaming Accuracy: 0.8796 (0.94 sec/step)
-INFO:tensorflow:Global Step 8: Streaming Accuracy: 0.8889 (1.00 sec/step)
-INFO:tensorflow:Global Step 9: Streaming Accuracy: 0.8778 (0.99 sec/step)
-INFO:tensorflow:Global Step 10: Streaming Accuracy: 0.8704 (1.00 sec/step)
-
----------------------------------------------------------------------------
-
-INFO:tensorflow:Global Step 70: Streaming Accuracy: 0.9045 (0.98 sec/step)
-INFO:tensorflow:Global Step 71: Streaming Accuracy: 0.9046 (0.99 sec/step)
-INFO:tensorflow:Global Step 72: Streaming Accuracy: 0.9048 (0.99 sec/step)
-INFO:tensorflow:Global Step 73: Streaming Accuracy: 0.9058 (0.98 sec/step)
-INFO:tensorflow:Global Step 74: Streaming Accuracy: 0.9067 (0.99 sec/step)
-INFO:tensorflow:Global Step 75: Streaming Accuracy: 0.9065 (1.00 sec/step)
-INFO:tensorflow:Global Step 76: Streaming Accuracy: 0.9062 (0.99 sec/step)
-INFO:tensorflow:Final Streaming Accuracy: 0.9060
 ```
 
 ```
