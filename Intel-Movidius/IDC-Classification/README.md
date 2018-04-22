@@ -250,8 +250,7 @@ The contents of DevCloudTrainer.sh are as follows:
 
 ```
 #IDC Classification Trainer
-mvNCCompile model/DevCloudIDC.pb -in=input -on=InceptionV3/Predictions/Softmax
-mv graph igraph
+mvNCCompile model/DevCloudIDC.pb -in=input -on=InceptionV3/Predictions/Softmax -o igraph
 python3.5 Classifier.py InceptionTest
 ```
 
@@ -275,8 +274,7 @@ The contents of Trainer.sh are as follows:
 pip3 install -r requirements.txt
 python3.5 Trainer.py DataSort
 python3.5 Trainer.py Train
-mvNCCompile model/MovidiusInception.pb -in=input -on=InceptionV3/Predictions/Softmax
-mv graph igraph
+mvNCCompile model/MovidiusInception.pb -in=input -on=InceptionV3/Predictions/Softmax -o igraph
 python3.5 Eval.py
 python3.5 Classifier.py InceptionTest
 ```
@@ -379,7 +377,7 @@ INFO:tensorflow:Global Step 32: Streaming Accuracy: 0.7944 (0.72 sec/step)
 INFO:tensorflow:Final Streaming Accuracy: 0.7969
 ```
 
-Comparing the evaluation from local training with training on the AI DevCloud we can see that the accuracy has decreased.
+Comparing the evaluation from local training with training on the AI DevCloud we can see that the accuracy has decreased quite a lot.
 
 ## Testing Your IDC Model
 
