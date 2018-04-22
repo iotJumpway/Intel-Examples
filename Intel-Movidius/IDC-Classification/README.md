@@ -255,8 +255,7 @@ python3.5 Classifier.py InceptionTest
 ```
 
 1. Compile the model for Movidius
-2. Rename the graph file
-3. Test
+2. Test
 
 ## Training Your IDC Model On A Local Device (CPU or GPU)
 
@@ -283,9 +282,8 @@ python3.5 Classifier.py InceptionTest
 2. Sort our training data
 3. Train the model
 4. Compile the model for Movidius
-5. Rename the graph file
-6. Evaluate
-7. Test
+5. Evaluate
+6. Test
 
 ## Evaluating & Testing Your Model
 
