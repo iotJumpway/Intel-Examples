@@ -64,7 +64,7 @@ This is a project I created as an extension to one of my facial recognition proj
 - 1 x Red LED (Grove)
 - 1 x Buzzer (Grove)
 
-## Install NCSDK on your development device
+## Install NCSDK On Your Development Device
 
 The first thing you will need to do is to install the **NCSDK** on your development device, this will be used to convert the trained model into a format that is compatible with the Movidius.
 
@@ -83,7 +83,7 @@ Next plug your Movidius into your device and issue the following commands:
  $ make examples
 ```
 
-## Install NCSDK on your Raspberry Pi 3 / UP Squared
+## Install NCSDK On Your Raspberry Pi 3 / UP Squared
 
 Next you will need to install the **NCSDK** on your Raspberry Pi 3 / UP Squared device, this will be used by the classifier to carry out inference on local images or images received via the API we will create.
 
@@ -395,17 +395,33 @@ $ python3.5 Server.py
 
 This will start the server and wait to receive images for classification.
 
-4. If you have followed all of the above steps, you can now start the client with the following commands:
+4. If you have followed all of the above steps, you can now start the client on your development machine with the following commands:
 
 ```
 $ python3.5 Client.py
+```
+
+This will send a positive and negative histology slide to the Raspberry Pi 3 / UP Squared which will return the predictions.
+
+```
+!! Welcome to IDC Classification, please wait while the program initiates !!
+
+-- Running on Python 3.5.2 (default, Nov 23 2017, 16:37:01)
+[GCC 5.4.0 20160609]
+
+-- Imported Required Modules
+-- TassMovidiusClient Initiated
+
+{'Response': 'OK', 'ResponseMessage': 'IDC Detected!', 'Results': 1}
+{'Response': 'OK', 'ResponseMessage': 'IDC Not Detected!', 'Results': 0}
+
 ```
 
 ```
 -- INCEPTION V3 LIVE INFERENCE STARTING
 -- STARTED: :  2018-03-06 17:10:38.826920
 
-TassMovidiusServer.py:148: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+Server.py:148: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
   nparr = np.fromstring(r.data, np.uint8)
 -- Loading Sample
 -- Loaded Sample
@@ -463,20 +479,6 @@ inception-v3 on NCS
 -- TESTED:  1
 -- IDENTIFIED:  0
 -- TIME(secs): 1.8947057723999023
-```
-
-```
-!! Welcome to IDC Classification, please wait while the program initiates !!
-
--- Running on Python 3.5.2 (default, Nov 23 2017, 16:37:01)
-[GCC 5.4.0 20160609]
-
--- Imported Required Modules
--- TassMovidiusClient Initiated
-
-{'Response': 'OK', 'ResponseMessage': 'IDC Detected!', 'Results': 1}
-{'Response': 'OK', 'ResponseMessage': 'IDC Not Detected!', 'Results': 0}
-
 ```
 
 ## Bugs/Issues
