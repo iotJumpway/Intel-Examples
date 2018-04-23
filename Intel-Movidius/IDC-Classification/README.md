@@ -26,17 +26,15 @@ This is a project I created as an extension to one of my facial recognition proj
 5.  Prepare your training dataset.
 6.  Finetuning your training parameters.
 7.  Train Inception V3 IDC Classification model on Intel® AI DevCloud.
-8.  Train Inception V3 IDC Classification model on a local machine (CPU or GPU).
-9.  Convert the model to a format suitable for the Movidius.
-10.  Test the IDC classifier locally on the Linux development device.
-11. Live IDC classification via the server / client.
-12. Build an IoT connected alarm that will be triggered when IDC is detected.
+8.  Convert the model to a format suitable for the Movidius.
+9.  Test the IDC classifier locally on the Linux development device.
+10. Live IDC classification via the server / client.
+11. Build an IoT connected alarm that will be triggered when IDC is detected.
 
 ## Applications
 
 **Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT** is made up of 7 core applications:
 
-- **Trainer:** A training program that allows you to train a convolutional neural network using a local Linux machine.
 - **DevCloudTrainer:** A training program that allows you to train a convolutional neural network using Intel® AI DevCloud.
 - **Evaluator:** An evaluation program for evaluating your model.
 - **Classifier:** A classification program for testing your model.
@@ -57,6 +55,7 @@ This is a project I created as an extension to one of my facial recognition proj
 
 ## Hardware Requirements
 
+- 1 x [Access to Intel® AI DevCloud](https://software.intel.com/en-us/ai-academy/tools/devcloud "Access to Intel® AI DevCloud")
 - 1 x [Intel® Movidius](https://www.movidius.com/ "Intel® Movidius")
 - 1 x Linux Device for training & converting the trained model to a Movidius friendly model.
 - 1 x Raspberry Pi 3 / UP Squared for the classifier / server.
@@ -89,7 +88,7 @@ Next plug your Movidius into your device and issue the following commands:
 
 ![Intel® Movidius](images/UP2.jpg)
 
-Next you will need to install the **NCSDK** on your Raspberry Pi 3 / UP Squared device, this will be used by the classifier to carry out inference on local images or images received via the API we will create.
+Next you will need to install the **NCSDK** on your Raspberry Pi 3 / UP Squared device, this will be used by the classifier to carry out inference on local images or images received via the API we will create. Make sure you have the Movidius plugged in.
 
 ```
  $ mkdir -p ~/workspace
@@ -257,69 +256,11 @@ python3.5 Classifier.py InceptionTest
 1. Compile the model for Movidius
 2. Test
 
-## Training Your IDC Model On A Local Device (CPU or GPU)
-
-Once you have prepared your training data and have Tensorflow & NCSDK installed on your device, you are ready to start training. For training I suggest using an NVIDIA GPU, if you do use a GPU make sure you install Tensorflow GPU and not Tensorflow CPU. To begin training, you simply need to issue the following commands:
-
-```
-$ cd ~/IoT-JumpWay-Intel-Examples/master/Intel-Movidius/IDC-Classification
-$ ./Trainer.sh
-```
-
-The contents of Trainer.sh are as follows:
-
-```
-#TASS Movidius Trainer
-pip3 install -r requirements.txt
-python3.5 Trainer.py DataSort
-python3.5 Trainer.py Train
-mvNCCompile model/MovidiusInception.pb -in=input -on=InceptionV3/Predictions/Softmax -o igraph
-python3.5 Eval.py
-python3.5 Classifier.py InceptionTest
-```
-
-1. Install any requirements
-2. Sort our training data
-3. Train the model
-4. Compile the model for Movidius
-5. Evaluate
-6. Test
-
 ## Evaluating & Testing Your Model
 
-If you are training on a development device, once training has finished and the Movidius compatible graph has been generated, the shell script will execute the evaluation program and start the classifier in test mode.  If you are training on AI DevCloud the evaluation part is included in the notebook. The output of the program will be shown in your terminal. After just a few hours training, the model was performing very well with a final streaming accuracy of 0.9144.
+Once you have completed your training on the AI DevCloud, complete the notebook by running the evaluation job.
 
 ```
-LOCAL TRAINING:
-
-INFO:tensorflow:Restoring parameters from model/_logs/model.ckpt-37333
-INFO:tensorflow:Starting standard services.
-INFO:tensorflow:Saving checkpoint to path model/_logs_eval/model.ckpt
-INFO:tensorflow:Starting queue runners.
-INFO:tensorflow:global_step/sec: 0
-INFO:tensorflow:Epoch: 1.0/1
-INFO:tensorflow:Current Streaming Accuracy: 0.0000
-INFO:tensorflow:Global Step 1: Streaming Accuracy: 0.0000 (4.08 sec/step)
-INFO:tensorflow:Global Step 2: Streaming Accuracy: 0.8611 (0.87 sec/step)
-INFO:tensorflow:Global Step 3: Streaming Accuracy: 0.8889 (0.87 sec/step)
-INFO:tensorflow:Global Step 4: Streaming Accuracy: 0.8981 (0.91 sec/step)
-INFO:tensorflow:Global Step 5: Streaming Accuracy: 0.9028 (1.01 sec/step)
-INFO:tensorflow:Global Step 6: Streaming Accuracy: 0.9000 (0.98 sec/step)
-INFO:tensorflow:Global Step 7: Streaming Accuracy: 0.9167 (1.00 sec/step)
-
-INFO:tensorflow:Global Step 68: Streaming Accuracy: 0.9163 (1.01 sec/step)
-INFO:tensorflow:Global Step 69: Streaming Accuracy: 0.9158 (0.99 sec/step)
-INFO:tensorflow:Global Step 70: Streaming Accuracy: 0.9159 (1.00 sec/step)
-INFO:tensorflow:Global Step 71: Streaming Accuracy: 0.9155 (0.99 sec/step)
-INFO:tensorflow:Global Step 72: Streaming Accuracy: 0.9155 (1.00 sec/step)
-INFO:tensorflow:Global Step 73: Streaming Accuracy: 0.9151 (0.99 sec/step)
-INFO:tensorflow:Global Step 74: Streaming Accuracy: 0.9144 (0.99 sec/step)
-INFO:tensorflow:Final Streaming Accuracy: 0.9144
-```
-
-```
-AI DEV CLOUD (CLEANED)
-
 INFO:tensorflow:Restoring parameters from model/_logs_eval/model.ckpt-16
 INFO:tensorflow:Starting standard services.
 INFO:tensorflow:Saving checkpoint to path model/_logs_eval/model.ckpt
@@ -347,65 +288,11 @@ INFO:tensorflow:Global Step 32: Streaming Accuracy: 0.7944 (0.72 sec/step)
 INFO:tensorflow:Final Streaming Accuracy: 0.7969
 ```
 
-Comparing the evaluation from local training with training on the AI DevCloud we can see that the accuracy of the model trained on AI DevCloud has decreased quite a lot.
-
 ## Testing Your IDC Model
 
-Once the relevant shell script has finished the testing program will start. In my example I had two classes 0 and 1 (IDC negative & IDC positive), a classification of 0 shows that the AI thinks the image is not IDC positive, and a classification of 1 is positive.
+Once the shell script has finished the testing program will start. In my example I had two classes 0 and 1 (IDC negative & IDC positive), a classification of 0 shows that the AI thinks the image is not IDC positive, and a classification of 1 is positive.
 
 ```
-LOCAL TRAINING
-
--- Loaded Test Image model/test/negative.png
-
--- DETECTION STARTING
--- STARTED: :  2018-04-22 13:44:13.125506
-
-
--- DETECTION ENDING
--- ENDED:  2018-04-22 13:44:15.047193
--- TIME: 1.921682357788086
-
-*******************************************************************************
-inception-v3 on NCS
-*******************************************************************************
-0 0 0.973
-1 1 0.02698
-*******************************************************************************
-
--- Loaded Test Image model/test/positive.png
-
--- DETECTION STARTING
--- STARTED: :  2018-04-22 13:44:15.050704
-
-
--- DETECTION ENDING
--- ENDED:  2018-04-22 13:44:16.941829
--- TIME: 1.8911287784576416
-
-
-TASS Identified IDC with a confidence of 0.934
-
--- Published to Device Sensors Channel
--- Published: 2
-
-*******************************************************************************
-inception-v3 on NCS
-*******************************************************************************
-1 1 0.934
-0 0 0.0661
-*******************************************************************************
-
--- INCEPTION V3 TEST MODE ENDING
--- ENDED:  2018-04-22 13:44:16.942708
--- TESTED:  2
--- IDENTIFIED:  1
--- TIME(secs): 5.102577447891235
-```
-
-```
-AI DEV CLOUD
-
 -- Loaded Test Image model/test/negative.png
 
 -- DETECTION STARTING
@@ -415,7 +302,6 @@ AI DEV CLOUD
 -- DETECTION ENDING
 -- ENDED:  2018-04-22 13:59:17.521458
 -- TIME: 1.9227015972137451
-
 
 TASS Identified IDC with a confidence of 0.8706
 
@@ -439,7 +325,6 @@ inception-v3 on NCS
 -- ENDED:  2018-04-22 13:59:19.416355
 -- TIME: 1.8912181854248047
 
-
 TASS Identified IDC with a confidence of 0.88
 
 -- Published to Device Sensors Channel
@@ -457,8 +342,6 @@ inception-v3 on NCS
 -- IDENTIFIED:  2
 -- TIME(secs): 5.103212356567383
 ```
-
-By comparing the locally trained model with the model trained on AI DevCloud we can see that the model trained on AI DevCloud miss classifies the test slides.
 
 ## Serving Your Live IDC Model
 
@@ -505,75 +388,7 @@ This will send a positive and negative histology slide to the Raspberry Pi 3 / U
 -- IDC Classification Client Initiated
 
 {'ResponseMessage': 'IDC Detected!', 'Response': 'OK', 'Results': 1}
-{'ResponseMessage': 'IDC Not Detected!', 'Response': 'OK', 'Results': 0}
-```
-
-```
-LOCAL TRAINING
-
--- IDC CLASSIFIER LIVE INFERENCE STARTING
--- STARTED: :  2018-04-22 07:52:45.543548
-
-Server.py:149: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
-  nparr = np.fromstring(r.data, np.uint8)
--- Loading Sample
--- Loaded Sample
--- DETECTION STARTING
--- STARTED: :  2018-04-22 07:52:45.552020
-
--- DETECTION ENDING
--- ENDED:  2018-04-22 07:52:47.462421
--- TIME: 1.9104082584381104
-
-TASS Identified IDC with a confidence of 0.934
-
--- Published to Device Sensors Channel
--- Published to Device Sensors Channel
-
-*******************************************************************************
-inception-v3 on NCS
--- Published: 2
-*******************************************************************************
--- Published: 3
-1 1 0.934
-0 0 0.0661
-*******************************************************************************
-
--- IDC CLASSIFIER LIVE INFERENCE ENDING
--- ENDED:  2018-04-22 07:52:47.466131
--- TESTED:  1
--- IDENTIFIED:  1
--- TIME(secs): 1.9226033687591553
-
-127.0.0.1 - - [22/Apr/2018 07:52:47] "POST /api/infer HTTP/1.1" 200 -
--- IDC CLASSIFIER LIVE INFERENCE STARTING
--- STARTED: :  2018-04-22 07:52:52.688387
-
--- Loading Sample
--- Loaded Sample
--- DETECTION STARTING
--- STARTED: :  2018-04-22 07:52:52.693952
-
-
--- DETECTION ENDING
--- ENDED:  2018-04-22 07:52:54.572789
--- TIME: 1.8788421154022217
-
--- Published to Device Warnings Channel
-
--- Published to Device Sensors Channel
-*******************************************************************************
-inception-v3 on NCS
-*******************************************************************************
-0 0 0.973
-1 1 0.02698
-*******************************************************************************
-
--- IDC CLASSIFIER LIVE INFERENCE ENDING
--- ENDED:  2018-04-22 07:52:54.574605
--- TESTED:  1
--- IDENTIFIED:  0
--- TIME(secs): 1.8862202167510986
+{'ResponseMessage': 'IDC Not Detected!', 'Response': 'OK', 'Results': 1}
 ```
 
 ```
@@ -589,11 +404,9 @@ Server.py:149: DeprecationWarning: The binary mode of fromstring is deprecated, 
 -- DETECTION STARTING
 -- STARTED: :  2018-04-22 08:02:32.411434
 
-
 -- DETECTION ENDING
 -- ENDED:  2018-04-22 08:02:34.319536
 -- TIME: 1.9080839157104492
-
 
 TASS Identified IDC with a confidence of 0.88
 
@@ -650,8 +463,6 @@ inception-v3 on NCS
 
 127.0.0.1 - - [22/Apr/2018 08:02:41] "POST /api/infer HTTP/1.1" 200 -
 ```
-
-By comparing the locally trained model with the model trained on AI DevCloud we can see that the model trained on AI DevCloud miss classifies the test slides.
 
 ## Build an IoT connected alarm
 
