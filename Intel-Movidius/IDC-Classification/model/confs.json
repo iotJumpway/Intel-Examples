@@ -35,7 +35,7 @@
 		"image_size":299,
 		"num_classes":2,
 		"num_epochs":60,
-		"dev_cloud_epochs":60,
+		"dev_cloud_epochs":40,
 		"test_num_epochs":1,
 		"batch_size":10,
 		"test_batch_size":36,

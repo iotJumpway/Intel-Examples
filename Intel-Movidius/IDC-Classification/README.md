@@ -190,8 +190,6 @@ Once you have the repo, you will need to find the files in this folder located i
 
 For this tutorial, I used a dataset from Kaggle ( [Predict IDC in Breast Cancer Histology Images](https://www.kaggle.com/paultimothymooney/predict-idc-in-breast-cancer-histology-image "Predict IDC in Breast Cancer Histology Images") ), but you are free to use any dataset you like. I have uploaded the collection I used for positive and negative images which you will find in the **model/train** directory. Once you decide on your dataset you need to arrange your data into the **model/train** directory. Each subdirectory should be entitled with integers, I used 0 and 1 to represent positive and negative. In my testing I used 4400 positive and 4400 negative examples giving an overall training accuracy of 0.8716 and an average confidence of 0.96 on correct identifications. The data provided is 50px x 50px, as Inception V3 was trained on images of size 299px x 299px, the images are resized to 299px x 299px, ideally the images would be that size already so you may want to try different datasets and see how your results vary.
 
-**If you are training your model on the Intel® AI DevCloud you need to reduce your dataset to 1000 images per class before uploading the dataset.**
-
 ## Finetuning Your Training Parameters
 
 You can finetune the settings of the network at any time by editing the classifier settings in the **model/confs.json** file.
@@ -228,7 +226,7 @@ You can finetune the settings of the network at any time by editing the classifi
 
 ## Training Your IDC Model On Intel® AI DevCloud
 
-Ensure that you have reduced the dataset to 1000 images per class then upload the files and folders outlined below to AI DevCloud.
+Now you are ready to upload the files and folders outlined below to AI DevCloud.
 
 ```
 model
@@ -261,31 +259,24 @@ python3.5 Classifier.py InceptionTest
 Once you have completed your training on the AI DevCloud, complete the notebook by running the evaluation job.
 
 ```
-INFO:tensorflow:Restoring parameters from model/_logs_eval/model.ckpt-16
-INFO:tensorflow:Starting standard services.
-INFO:tensorflow:Saving checkpoint to path model/_logs_eval/model.ckpt
-INFO:tensorflow:Starting queue runners.
-INFO:tensorflow:global_step/sec: 0
-INFO:tensorflow:Epoch: 1.0/1
-INFO:tensorflow:Current Streaming Accuracy: 0.0000
-INFO:tensorflow:Global Step 17: Streaming Accuracy: 0.0000 (1.80 sec/step)
-INFO:tensorflow:Global Step 18: Streaming Accuracy: 0.8056 (0.65 sec/step)
-INFO:tensorflow:Global Step 19: Streaming Accuracy: 0.7778 (0.63 sec/step)
-INFO:tensorflow:Global Step 20: Streaming Accuracy: 0.7500 (0.75 sec/step)
-INFO:tensorflow:Global Step 21: Streaming Accuracy: 0.7708 (0.59 sec/step)
-INFO:tensorflow:Global Step 22: Streaming Accuracy: 0.7833 (0.66 sec/step)
-INFO:tensorflow:Global Step 23: Streaming Accuracy: 0.7917 (0.78 sec/step)
+INFO:tensorflow:Global Step 1: Streaming Accuracy: 0.0000 (2.03 sec/step)
+INFO:tensorflow:Global Step 2: Streaming Accuracy: 0.8889 (0.59 sec/step)
+INFO:tensorflow:Global Step 3: Streaming Accuracy: 0.8750 (0.67 sec/step)
+INFO:tensorflow:Global Step 4: Streaming Accuracy: 0.8981 (0.65 sec/step)
+INFO:tensorflow:Global Step 5: Streaming Accuracy: 0.8681 (0.76 sec/step)
+INFO:tensorflow:Global Step 6: Streaming Accuracy: 0.8722 (0.64 sec/step)
+INFO:tensorflow:Global Step 7: Streaming Accuracy: 0.8843 (0.64 sec/step)
 
----------------------------------------------------------------------------
+-------------------------------------------------------------------------
 
-INFO:tensorflow:Global Step 26: Streaming Accuracy: 0.8086 (0.72 sec/step)
-INFO:tensorflow:Global Step 27: Streaming Accuracy: 0.8028 (0.74 sec/step)
-INFO:tensorflow:Global Step 28: Streaming Accuracy: 0.8030 (0.70 sec/step)
-INFO:tensorflow:Global Step 29: Streaming Accuracy: 0.7986 (0.70 sec/step)
-INFO:tensorflow:Global Step 30: Streaming Accuracy: 0.8013 (0.74 sec/step)
-INFO:tensorflow:Global Step 31: Streaming Accuracy: 0.7937 (0.71 sec/step)
-INFO:tensorflow:Global Step 32: Streaming Accuracy: 0.7944 (0.72 sec/step)
-INFO:tensorflow:Final Streaming Accuracy: 0.7969
+INFO:tensorflow:Global Step 68: Streaming Accuracy: 0.8922 (0.81 sec/step)
+INFO:tensorflow:Global Step 69: Streaming Accuracy: 0.8926 (0.70 sec/step)
+INFO:tensorflow:Global Step 70: Streaming Accuracy: 0.8921 (0.63 sec/step)
+INFO:tensorflow:Global Step 71: Streaming Accuracy: 0.8929 (0.84 sec/step)
+INFO:tensorflow:Global Step 72: Streaming Accuracy: 0.8932 (0.75 sec/step)
+INFO:tensorflow:Global Step 73: Streaming Accuracy: 0.8935 (0.61 sec/step)
+INFO:tensorflow:Global Step 74: Streaming Accuracy: 0.8942 (0.67 sec/step)
+INFO:tensorflow:Final Streaming Accuracy: 0.8941
 ```
 
 ## Testing Your IDC Model
@@ -296,51 +287,44 @@ Once the shell script has finished the testing program will start. In my example
 -- Loaded Test Image model/test/negative.png
 
 -- DETECTION STARTING
--- STARTED: :  2018-04-22 13:59:15.598747
-
+-- STARTED: :  2018-04-24 14:14:26.780554
 
 -- DETECTION ENDING
--- ENDED:  2018-04-22 13:59:17.521458
--- TIME: 1.9227015972137451
-
-TASS Identified IDC with a confidence of 0.8706
-
--- Published to Device Sensors Channel
+-- ENDED:  2018-04-24 14:14:28.691870
+-- TIME: 1.9114031791687012
 
 *******************************************************************************
 inception-v3 on NCS
 *******************************************************************************
-1 1 0.8706
-0 0 0.1292
+0 0 0.9873
+1 1 0.01238
 *******************************************************************************
 
 -- Loaded Test Image model/test/positive.png
--- Published: 2
 
 -- DETECTION STARTING
--- STARTED: :  2018-04-22 13:59:17.525141
-
+-- STARTED: :  2018-04-24 14:14:28.699254
 
 -- DETECTION ENDING
--- ENDED:  2018-04-22 13:59:19.416355
--- TIME: 1.8912181854248047
+-- ENDED:  2018-04-24 14:14:30.577683
+-- TIME: 1.878432035446167ß
 
-TASS Identified IDC with a confidence of 0.88
+TASS Identified IDC with a confidence of 0.945
 
 -- Published to Device Sensors Channel
 
 *******************************************************************************
 inception-v3 on NCS
 *******************************************************************************
-1 1 0.88
-0 0 0.1203
+1 1 0.945
+0 0 0.05542
 *******************************************************************************
 
 -- INCEPTION V3 TEST MODE ENDING
--- ENDED:  2018-04-22 13:59:19.417033
+-- ENDED:  2018-04-24 14:14:30.579247
 -- TESTED:  2
--- IDENTIFIED:  2
--- TIME(secs): 5.103212356567383
+-- IDENTIFIED:  1
+-- TIME(secs): 3.984593152999878
 ```
 
 ## Serving Your Live IDC Model
@@ -387,81 +371,80 @@ This will send a positive and negative histology slide to the Raspberry Pi 3 / U
 -- Imported Required Modules
 -- IDC Classification Client Initiated
 
-{'ResponseMessage': 'IDC Detected!', 'Response': 'OK', 'Results': 1}
-{'ResponseMessage': 'IDC Not Detected!', 'Response': 'OK', 'Results': 1}
+{'Response': 'OK', 'ResponseMessage': 'IDC Detected!', 'Results': 1}
+{'Response': 'OK', 'ResponseMessage': 'IDC Not Detected!', 'Results': 0}
 ```
 
 ```
-AI DEV CLOUD
+* Running on http://0.0.0.0:7455/ (Press CTRL+C to quit)
 
 -- IDC CLASSIFIER LIVE INFERENCE STARTING
--- STARTED: :  2018-04-22 08:02:32.243193
+-- STARTED: :  2018-04-24 14:25:36.465183
 
-Server.py:149: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
-  nparr = np.fromstring(r.data, np.uint8)
 -- Loading Sample
 -- Loaded Sample
 -- DETECTION STARTING
--- STARTED: :  2018-04-22 08:02:32.411434
+-- STARTED: :  2018-04-24 14:25:36.476371
 
 -- DETECTION ENDING
--- ENDED:  2018-04-22 08:02:34.319536
--- TIME: 1.9080839157104492
+-- ENDED:  2018-04-24 14:25:38.386121
+-- TIME: 1.9097554683685303
 
-TASS Identified IDC with a confidence of 0.88
+TASS Identified IDC with a confidence of 0.945
 
--- Published to Device Sensors Channel
 -- Published: 2
+-- Published to Device Warnings Channel
+
 -- Published: 3
 -- Published to Device Sensors Channel
+
 *******************************************************************************
 inception-v3 on NCS
 *******************************************************************************
-1 1 0.88
-0 0 0.1203
+1 1 0.945
+0 0 0.05542
 *******************************************************************************
 
 -- IDC CLASSIFIER LIVE INFERENCE ENDING
--- ENDED:  2018-04-22 08:02:34.322498
+-- ENDED:  2018-04-24 14:25:38.389217
 -- TESTED:  1
 -- IDENTIFIED:  1
--- TIME(secs): 2.0793039798736572
+-- TIME(secs): 1.9240257740020752
 
-127.0.0.1 - - [22/Apr/2018 08:02:34] "POST /api/infer HTTP/1.1" 200 -
+192.168.1.40 - - [24/Apr/2018 14:25:38] "POST /api/infer HTTP/1.1" 200 -
+
 -- IDC CLASSIFIER LIVE INFERENCE STARTING
--- STARTED: :  2018-04-22 08:02:39.366247
+-- STARTED: :  2018-04-24 14:25:43.422319
 
 -- Loading Sample
 -- Loaded Sample
 -- DETECTION STARTING
--- STARTED: :  2018-04-22 08:02:39.372829
-
+-- STARTED: :  2018-04-24 14:25:43.432647
 
 -- DETECTION ENDING
--- ENDED:  2018-04-22 08:02:41.250966
--- TIME: 1.8781416416168213
+-- ENDED:  2018-04-24 14:25:45.310354
+-- TIME: 1.877711534500122
 
-
-TASS Identified IDC with a confidence of 0.8706
-
--- Published to Device Sensors Channel
 -- Published: 4
--- Published to Device Sensors Channel
+-- Published to Device Warnings Channel
+
 -- Published: 5
+-- Published to Device Sensors Channel
+
 *******************************************************************************
 inception-v3 on NCS
 *******************************************************************************
-1 1 0.8706
-0 0 0.1292
+0 0 0.9873
+1 1 0.01238
 *******************************************************************************
 
 -- IDC CLASSIFIER LIVE INFERENCE ENDING
--- ENDED:  2018-04-22 08:02:41.256489
+-- ENDED:  2018-04-24 14:25:45.313174
 -- TESTED:  1
--- IDENTIFIED:  1
--- TIME(secs): 1.8902666568756104
+-- IDENTIFIED:  0
+-- TIME(secs): 1.89084792137146
 
-127.0.0.1 - - [22/Apr/2018 08:02:41] "POST /api/infer HTTP/1.1" 200 -
+192.168.1.40 - - [24/Apr/2018 14:25:45] "POST /api/infer HTTP/1.1" 200 -
 ```
 
 ## Build an IoT connected alarm
