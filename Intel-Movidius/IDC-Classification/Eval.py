@@ -230,6 +230,13 @@ def run():
 
             logits, end_points = inception_v3(images, num_classes = dataset.num_classes, is_training = False)
 
+        #Perform one-hot-encoding of the labels (Try one-hot-encoding within the load_batch function!)
+        one_hot_labels = slim.one_hot_encoding(labels, dataset.num_classes)
+
+        #Performs the equivalent to tf.nn.sparse_softmax_cross_entropy_with_logits but enhanced with checks
+        loss = tf.losses.softmax_cross_entropy(onehot_labels = one_hot_labels, logits = logits)
+        total_loss = tf.losses.get_total_loss()    #obtain the regularization losses as well
+
         # #get all the variables to restore from the checkpoint file and create the saver function to restore
         variables_to_restore = slim.get_variables_to_restore()
         saver = tf.train.Saver(variables_to_restore)
@@ -264,7 +271,8 @@ def run():
             return accuracy_value
 
         #Define some scalar quantities to monitor
-        tf.summary.scalar('Validation_Accuracy', accuracy)
+        tf.summary.scalar('Validation Accuracy', accuracy)
+        tf.summary.scalar('Validation losses/Total_Loss', total_loss)
         my_summary_op = tf.summary.merge_all()
 
         #Get your supervisor

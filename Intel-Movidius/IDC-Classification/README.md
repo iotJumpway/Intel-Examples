@@ -188,7 +188,7 @@ Once you have the repo, you will need to find the files in this folder located i
 
 ## Preparing Your IDC Training Data
 
-For this tutorial, I used a dataset from Kaggle ( [Predict IDC in Breast Cancer Histology Images](https://www.kaggle.com/paultimothymooney/predict-idc-in-breast-cancer-histology-image "Predict IDC in Breast Cancer Histology Images") ), but you are free to use any dataset you like. I have uploaded the collection I used for positive and negative images which you will find in the **model/train** directory. Once you decide on your dataset you need to arrange your data into the **model/train** directory. Each subdirectory should be entitled with integers, I used 0 and 1 to represent positive and negative. In my testing I used 4400 positive and 4400 negative examples giving an overall training accuracy of 0.8716 and an average confidence of 0.96 on correct identifications. The data provided is 50px x 50px, as Inception V3 was trained on images of size 299px x 299px, the images are resized to 299px x 299px, ideally the images would be that size already so you may want to try different datasets and see how your results vary.
+For this tutorial, I used a dataset from Kaggle ( [Predict IDC in Breast Cancer Histology Images](https://www.kaggle.com/paultimothymooney/predict-idc-in-breast-cancer-histology-image "Predict IDC in Breast Cancer Histology Images") ), but you are free to use any dataset you like. I have uploaded the collection I used for positive and negative images which you will find in the **model/train** directory. Once you decide on your dataset you need to arrange your data into the **model/train** directory. Each subdirectory should be named with integers, I used 0 and 1 to represent positive and negative. In my testing I used 4400 positive and 4400 negative examples giving an overall training accuracy of 0.8596 (See Training Results below) and an average confidence of 0.96 on correct identifications. The data provided is 50px x 50px, as Inception V3 was trained on images of size 299px x 299px, the images are resized to 299px x 299px, ideally the images would be that size already so you may want to try different datasets and see how your results vary.
 
 ## Finetuning Your Training Parameters
 
@@ -236,25 +236,15 @@ DevCloudTrainer.py
 Eval.py
 ```
 
-Once uploaded follow the instructions in **DevCloudTrainer.ipynb**, when the training completes you need to download **model/DevCloudIDC.pb** and **model/classes.txt** to the **model** directory on your development machine, ensure the Movidius is setup and connected and then run the following commands on your development machine:
+Once uploaded, follow the instructions in **DevCloudTrainer.ipynb**, this notebook will help you sort your data, train your model and evaluate it.
 
-```
-$ cd ~/IoT-JumpWay-Intel-Examples/master/Intel-Movidius/IDC-Classification
-$ ./DevCloudTrainer.sh
-```
+## Training Results
 
-The contents of DevCloudTrainer.sh are as follows:
+![Training Accuracy](images/training-accuracy.jpg)
 
-```
-#IDC Classification Trainer
-mvNCCompile model/DevCloudIDC.pb -in=input -on=InceptionV3/Predictions/Softmax -o igraph
-python3.5 Classifier.py InceptionTest
-```
+![Training Accuracy](images/training-total-loss.jpg)
 
-1. Compile the model for Movidius
-2. Test
-
-## Evaluating & Testing Your Model
+## Evaluating Your Model
 
 Once you have completed your training on the AI DevCloud, complete the notebook by running the evaluation job.
 
@@ -278,6 +268,30 @@ INFO:tensorflow:Global Step 73: Streaming Accuracy: 0.8935 (0.61 sec/step)
 INFO:tensorflow:Global Step 74: Streaming Accuracy: 0.8942 (0.67 sec/step)
 INFO:tensorflow:Final Streaming Accuracy: 0.8941
 ```
+
+![Training Accuracy](images/validation-accuracy.jpg)
+
+![Training Accuracy](images/validation-total-loss.jpg)
+
+## Download Your Model
+
+When the training completes you need to download **model/DevCloudIDC.pb** and **model/classes.txt** to the **model** directory on your development machine, ensure the Movidius is setup and connected and then run the following commands on your development machine:
+
+```
+$ cd ~/IoT-JumpWay-Intel-Examples/master/Intel-Movidius/IDC-Classification
+$ ./DevCloudTrainer.sh
+```
+
+The contents of DevCloudTrainer.sh are as follows:
+
+```
+#IDC Classification Trainer
+mvNCCompile model/DevCloudIDC.pb -in=input -on=InceptionV3/Predictions/Softmax -o igraph
+python3.5 Classifier.py InceptionTest
+```
+
+1. Compile the model for Movidius
+2. Test
 
 ## Testing Your IDC Model
 
