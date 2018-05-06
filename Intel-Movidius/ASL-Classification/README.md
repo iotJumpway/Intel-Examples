@@ -42,13 +42,13 @@ The project uses the power of the **Intel® Movidius** and uses a custom trained
 ## Software Requirements
 
 - [Intel® NCSDK](https://github.com/movidius/ncsdk "Intel® NCSDK")
-- [Tensorflow](https://www.tensorflow.org/install "Tensorflow")
+- [Tensorflow](https://www.tensorflow.org/install "Tensorflow") 1.4.0
 - [IoT JumpWay Python MQTT Client](https://github.com/iotJumpway/JumpWayMQTT "IoT JumpWay Python MQTT Client")
 
 ## Hardware Requirements
 
-- 1 x [Access to Intel® AI DevCloud](https://software.intel.com/en-us/ai-academy/tools/devcloud "Access to Intel® AI DevCloud").
-- 1 x [Intel® Movidius](https://www.movidius.com/ "Intel® Movidius")
+- 1 x Intel® Realsense or compatible webcam.
+- 1 x [Intel® Movidius](https://www.movidius.com/ "Intel® Movidius").
 - 1 x Linux Device for training & converting the trained model to a Movidius friendly model.
 - 1 x Raspberry Pi 3 / UP Squared for the classifier / server.
 
