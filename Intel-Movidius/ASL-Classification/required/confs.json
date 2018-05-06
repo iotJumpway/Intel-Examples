@@ -5,7 +5,7 @@
         "Device": 0,
         "DeviceName" : "",
         "App": 0
-    },
+    }, 
     "Actuators": {},
     "Cameras": [
         {
