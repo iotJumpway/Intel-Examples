@@ -179,7 +179,7 @@ Once you have the repo, you will need to find the files in this folder located i
 
 
 
-## Preparing Your IDC Training Data
+## Preparing Your ASL Training Data
 
 For this tutorial, I used a dataset from Kaggle ( [ASL Alphabet](https://www.kaggle.com/grassknoted/asl-alphabet "ASL Alphabet") ), but you are free to use any dataset you like. Once you decide on your dataset you need to arrange your data into the **model/train** directory. Each subdirectory should be named with integers, I used 0 to 29 to represent each letter in the alphabet plus 3 additional classes representng delete, nothing and space. Each class should have an equal amount of training samples, in my case I had 3000 examples for each class. The data provided is 200px x 200px, as Inception V3 was trained on images of size 299px x 299px, the images are resized to 299px x 299px, ideally the images would be that size already so you may want to try different datasets and see how your results vary.
 
