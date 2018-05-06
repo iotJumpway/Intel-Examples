@@ -28,7 +28,7 @@ The project uses the power of the **Intel® Movidius** and uses a custom trained
 
 ## Applications
 
-**American Sign Language (ASL) Classification Using Computer Vision & IoT** is made up of 8 core applications:
+**American Sign Language (ASL) Classification Using Computer Vision & IoT** is made up of 4 core applications:
 
 - **Trainer:** A training program that allows you to train a convolutional neural network using a local CPU / GPU.
 - **Evaluator:** An evaluation program for evaluating your model.
