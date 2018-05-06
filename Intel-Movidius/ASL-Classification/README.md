@@ -177,8 +177,6 @@ You will need to clone this repository to a location on your development termina
 
 Once you have the repo, you will need to find the files in this folder located in [IoT-JumpWay-Intel-Examples/master/Intel-Movidius/ASL-Classification](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/ASL-Classification "IoT-JumpWay-Intel-Examples/master/Intel-Movidius/ASL-Classification").
 
-
-
 ## Preparing Your ASL Training Data
 
 For this tutorial, I used a dataset from Kaggle ( [ASL Alphabet](https://www.kaggle.com/grassknoted/asl-alphabet "ASL Alphabet") ), but you are free to use any dataset you like. Once you decide on your dataset you need to arrange your data into the **model/train** directory. Each subdirectory should be named with integers, I used 0 to 29 to represent each letter in the alphabet plus 3 additional classes representng delete, nothing and space. Each class should have an equal amount of training samples, in my case I had 3000 examples for each class. The data provided is 200px x 200px, as Inception V3 was trained on images of size 299px x 299px, the images are resized to 299px x 299px, ideally the images would be that size already so you may want to try different datasets and see how your results vary.
@@ -247,7 +245,7 @@ python3.5 Classifier.py InceptionTest
 
 ## Evaluating & Testing Your Model
 
-Ince training has finished and the Movidius compatible graph has been generated, the shell script will execute the evaluation program and start the classifier in test mode.  The output of the program will be shown in your terminal. 
+Once training has finished and the Movidius compatible graph has been generated, the shell script will execute the evaluation program and start the classifier in test mode.  The output of the program will be shown in your terminal. 
 
 ## Bugs/Issues
 
