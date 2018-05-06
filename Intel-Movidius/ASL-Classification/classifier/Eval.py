@@ -1,6 +1,6 @@
 ############################################################################################
-# Title: IDC Classification Evaluator
-# Description: Evaluates an Inception V3 neural network trained for IDC Classification.
+# Title: ASL Classification Evaluator
+# Description: Evaluates an Inception V3 neural network trained for ASL Classification.
 # Acknowledgements: Uses code from chesterkuo imageclassify-movidius (https://github.com/chesterkuo/imageclassify-movidius)
 # Last Modified: 2018-04-21
 ############################################################################################
@@ -9,7 +9,7 @@
 #
 #    CLASSIFIER MODE:
 #
-#       Classifier & IoT JumpWay configuration can be found in data/confs.json
+#       Classifier & IoT JumpWay configuration can be found in ../required/confs.json
 #
 #    Example Usage:
 #
@@ -19,7 +19,7 @@
 
 print("")
 print("")
-print("!! Welcome to the IDC Classification Evaluator, please wait while the program initiates !!")
+print("!! Welcome to the ASL Classification Evaluator, please wait while the program initiates !!")
 print("")
 
 import os, sys
