@@ -1,11 +1,11 @@
 from __future__ import print_function
 
 ############################################################################################
-# Title: IDC Classification Trainer
-# Description: Trains a custom Inception V3 model for classification of invasive ductal carcinoma (IDC).
+# Title: ASL Classification Trainer
+# Description: Trains a custom Inception V3 model for classification of American sign language (ASL).
 # Acknowledgements: Uses code from chesterkuo imageclassify-movidius (https://github.com/chesterkuo/imageclassify-movidius)
-#                   Uses data from paultimothymooney Predict IDC in Breast Cancer Histology Images (Kaggle)
-# Last Modified: 2018-04-21
+#                   Uses data from Akash ASL Alphabet (Kaggle)
+# Last Modified: 2018-05-06
 ############################################################################################
 
 ############################################################################################
@@ -28,7 +28,7 @@ from __future__ import print_function
 
 print("")
 print("")
-print("!! Welcome to the IDC Classification Trainer, please wait while the program initiates !!")
+print("!! Welcome to the ASL Classification Trainer, please wait while the program initiates !!")
 print("")
 
 import os, sys
@@ -58,11 +58,7 @@ slim = tf.contrib.slim
 print("-- Imported Required Modules")
 print("")
 
-#os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-
-print("-- Setup Environment Settings")
-print("")
-
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 config = tf.ConfigProto(log_device_placement=True)
 config.gpu_options.allow_growth = True
 
