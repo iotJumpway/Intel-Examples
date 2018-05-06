@@ -70,18 +70,12 @@ while True:
         ret, img = Webcam.OpenCVCapture.read()
         if not ret: continue
 
-        font                   = cv2.FONT_HERSHEY_SIMPLEX
-        bottomLeftCornerOfText = (20,450)
-        fontScale              = 1
-        fontColor              = (255,255,255)
-        lineType               = 2
-
         cv2.putText(img,'ASL Classifier', 
-            bottomLeftCornerOfText, 
-            font, 
-            fontScale,
-            fontColor,
-            lineType)
+            (20,450), 
+            cv2.FONT_HERSHEY_SIMPLEX, 
+            1,
+            (255,255,255),
+            2)
 
         cv2.imwrite('../server/public/images/img.png', img)
         Webcam.socketIO.emit('newFrame')
