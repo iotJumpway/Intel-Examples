@@ -14,15 +14,13 @@
 
 print("")
 print("")
-print("!! Welcome to the ASL Classifier Webam, please wait while the program initiates !!")
+print("!! Welcome to the ASL Classifier Webcam, please wait while the program initiates !!")
 print("")
 
 import os, sys, cv2, logging, json
 
 print("-- Running on Python "+sys.version)
 print("")
-
-import pytesseract
 
 from PIL import Image
 from datetime import datetime
@@ -71,14 +69,6 @@ while True:
         Webcam.nextCapture = Webcam.nextCapture + timedelta(seconds=0.3) 
         ret, img = Webcam.OpenCVCapture.read()
         if not ret: continue
-
-        cv2.imwrite("test.jpg", img)
-    
-        # load image
-        readImage = Image.open("test.jpg")
-        print("")
-        print(pytesseract.image_to_string(readImage))
-        print("")
 
         font                   = cv2.FONT_HERSHEY_SIMPLEX
         bottomLeftCornerOfText = (20,450)
