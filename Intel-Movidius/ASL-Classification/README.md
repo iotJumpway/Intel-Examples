@@ -11,7 +11,7 @@ The project uses the power of the **Intel® Movidius** and uses a custom trained
 - **Acknowledgement:** Uses code from Intel® **movidius/ncsdk** ([movidius/ncsdk Github](https://github.com/movidius/ncsdk "movidius/ncsdk Github"))
 - **Acknowledgement:** Uses code from chesterkuo **imageclassify-movidius** ([imageclassify-movidius Github](https://github.com/chesterkuo/imageclassify-movidius "imageclassify-movidius Github"))
 
-![Intel® Movidius](../Images/movidius.jpg) 
+![Intel® Movidius](../Images/movidius.jpg)
 
 ## What Will We Do?
 

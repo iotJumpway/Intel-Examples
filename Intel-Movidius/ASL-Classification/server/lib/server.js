@@ -5,7 +5,7 @@
     
     Configuration:
     Update your socket server configuration in ../../required/confs.json 
-*/ 
+*/
 
 var socket = require('socket.io');
 var io;
