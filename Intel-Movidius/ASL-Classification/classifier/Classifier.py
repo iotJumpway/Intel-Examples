@@ -1,15 +1,15 @@
 ############################################################################################
-# Title: IDC Classification Classifier
+# Title: ASL Classification Classifier
 # Description: Test classification of local testing images.
 # Acknowledgements: Uses code from Intel movidius/ncsdk (https://github.com/movidius/ncsdk)
-# Last Modified: 2018-04-21
+# Last Modified: 2018-05-06
 ############################################################################################
 
 ############################################################################################
 #
 #    CLASSIFIER MODE:
 #
-#       Classifier & IoT JumpWay configuration can be found in data/confs.json
+#       Classifier & IoT JumpWay configuration can be found in ../required/confs.json
 #
 #    Example Usage:
 #
@@ -19,7 +19,7 @@
 
 print("")
 print("")
-print("!! Welcome to the IDC Classification Classifier, please wait while the program initiates !!")
+print("!! Welcome to the ASL Classification Classifier, please wait while the program initiates !!")
 print("")
 
 import os, sys
