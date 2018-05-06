@@ -1,6 +1,6 @@
 # American Sign Language (ASL) Classification Using Computer Vision & IoT
 
-![Intel® Movidius](images/IDC-Classification.png)
+![American Sign Language (ASL) Classification Using Computer Vision & IoT](images/Sign-Language-Classification.png)
 
 ## Introduction
 
