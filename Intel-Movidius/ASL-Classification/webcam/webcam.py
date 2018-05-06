@@ -1,5 +1,5 @@
 ############################################################################################
-# Title: ASL Classifier Webam
+# Title: ASL Classifier Webcam
 # Description: Sends frames of a webcam to the node js server via sockets.
 # Last Modified: 2018-05-05
 ############################################################################################
