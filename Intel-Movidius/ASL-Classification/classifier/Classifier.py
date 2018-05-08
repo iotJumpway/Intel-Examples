@@ -163,6 +163,10 @@ def main(argv):
 
         files = 0
         identified = 0
+        correct = 0
+        incorrect = []
+
+        map_characters = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E', 5: 'F', 6: 'G', 7: 'H', 8: 'I', 9: 'J', 10: 'K', 11: 'L', 12: 'M', 13: 'N', 14: 'O', 15: 'P', 16: 'Q', 17: 'R', 18: 'S', 19: 'T', 20: 'U', 21: 'V', 22: 'W', 23: 'X', 24: 'Y', 25: 'Z', 26: 'del', 27: 'nothing', 28: 'space'}
 
         for file in os.listdir(rootdir):
 
@@ -174,7 +178,6 @@ def main(argv):
                 print("")
                 print("-- Loaded Test Image", fileName)
                 img = cv2.imread(fileName).astype(np.float32)
-                print("")
 
                 dx,dy,dz= img.shape
                 delta=float(abs(dy-dx))
@@ -197,9 +200,7 @@ def main(argv):
                 detectionStart = datetime.now()
                 detectionClockStart = time.time()
 
-                print("-- DETECTION STARTING ")
-                print("-- STARTED: : ", detectionStart)
-                print("")
+                print("-- DETECTION STARTED: ", detectionStart)
 
                 Classifier.graph.LoadTensor(img.astype(np.float16), 'user object')
                 output, userobj = Classifier.graph.GetResult()
@@ -209,54 +210,25 @@ def main(argv):
                 detectionEnd = datetime.now()
                 detectionClockEnd = time.time()
 
-                print("")
-                print("-- DETECTION ENDING")
-                print("-- ENDED: ", detectionEnd)
-                print("-- TIME: {0}".format(detectionClockEnd - detectionClockStart))
-                print("")
+                print("-- DETECTION ENDED: ", detectionEnd)
+                print("-- DETECTION TIME: {0}".format(detectionClockEnd - detectionClockStart))
 
-                if output[top_inds[0]] > Classifier._configs["ClassifierSettings"]["InceptionThreshold"] and Classifier.categories[top_inds[0]] == "1":
+                if output[top_inds[0]] > Classifier._configs["ClassifierSettings"]["InceptionThreshold"]:
 
                     identified = identified + 1
 
+                    if map_characters[top_inds[0]]+".jpg" == file:
+
+                        isRight = "CORRECTLY"
+                        correct = correct + 1
+
+                    else:
+                        
+                        isRight = "INCORRECTLY"
+                        incorrect.append(currentDir+"/"+file)
+
+                    print("-- "+isRight+" DETECTED: "+map_characters[top_inds[0]])
                     print("")
-                    print("TASS Identified IDC with a confidence of", str(output[top_inds[0]]))
-                    print("")
-
-                    Classifier.jumpwayClient.publishToDeviceChannel(
-                            "Warnings",
-                            {
-                                "WarningType":"CCTV",
-                                "WarningOrigin": Server._configs["Cameras"][0]["ID"],
-                                "WarningValue": "RECOGNISED",
-                                "WarningMessage":"IDC Detected"
-                            }
-                        )
-
-                    print("")
-
-                else:
-
-                    Classifier.jumpwayClient.publishToDeviceChannel(
-                        "Warnings",
-                        {
-                            "WarningType":"CCTV",
-                            "WarningOrigin": Classifier._configs["Cameras"][0]["ID"],
-                            "WarningValue": "NOT RECOGNISED",
-                            "WarningMessage":"IDC Not Detected"
-                        }
-                    )
-
-                    print("")
-
-                Classifier.jumpwayClient.publishToDeviceChannel(
-                    "Sensors",
-                    {
-                        "Sensor":"CCTV",
-                        "SensorID": Classifier._configs["Cameras"][0]["ID"],
-                        "SensorValue":"IDC: " + Classifier.categories[top_inds[0]] + " (Confidence: " + str(output[top_inds[0]]) + ")"
-                    }
-                )
 
                 #print(top_inds)
                 #print(Classifier.categories)
@@ -277,9 +249,12 @@ def main(argv):
         print("")
         print("-- INCEPTION V3 TEST MODE ENDING")
         print("-- ENDED: ", humanEnd)
+        print("-- TIME(secs): {0}".format(clockEnd - clockStart))
         print("-- TESTED: ", files)
         print("-- IDENTIFIED: ", identified)
-        print("-- TIME(secs): {0}".format(clockEnd - clockStart))
+        print("-- CORRECT: ", correct)
+        print("-- INCORRECT: ")
+        print(json.dumps(incorrect, sort_keys=True, indent=4))
         print("")
 
         print("!! SHUTTING DOWN !!")
