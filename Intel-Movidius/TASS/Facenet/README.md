@@ -1,6 +1,8 @@
 # TASS Movidius Facenet Classifier
 
-![TASS Movidius Facenet Classifier](images/tass-ai.jpg)
+[![TASS Movidius Facenet Classifier](images/facenet.jpg)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS/Facenet)
+
+The TASS Movidius Facenet Classifier uses Siamese Neural Networks and Triplet Loss to classify known and unknown faces. The project uses an UP2 the Intel Movidius and the IoT JumpWay for IoT connectivity.
 
 ## Bugs/Issues
 
