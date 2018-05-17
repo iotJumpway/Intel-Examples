@@ -1,0 +1,31 @@
+{
+    "IoTJumpWay": {
+        "Location": 0,
+        "Zone": 0,
+        "Device": 0,
+        "DeviceName" : "",
+        "App": 0
+    },
+    "Actuators": {},
+    "Cameras": [
+        {
+            "ID": 0,
+            "URL": "",
+            "Name": ""
+        }
+    ],
+    "Sensors": {},
+	"IoTJumpWayMQTT": {
+        "MQTTUsername": "",
+        "MQTTPassword": ""
+    },
+	"ClassifierSettings":{
+        "NetworkPath":"",
+        "Graph":"model/tass.graph",
+        "Dlib":"model/dlib/shape_predictor_68_face_landmarks.dat",
+		"dataset_dir":"model/train/",
+        "TestingPath":"data/testing/",
+        "ValidPath":"data/known/",
+        "Threshold": 1.20
+	}
+}
