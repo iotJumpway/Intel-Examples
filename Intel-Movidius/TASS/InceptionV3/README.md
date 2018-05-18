@@ -239,7 +239,7 @@ TESTING TIME: 4.765908241271973
 
 ### Intel® NUC  Results
 
-![Test Inception V3 Object Recognition](images/InceptionTest.jpg)
+![Test Inception V3 Object Recognition](../images/InceptionTest.jpg)
 
 Using a Raspberry Pi, it should of taken about 0.3 seconds to classify each image.  Out of the 11 images tested 10 were identified with a confidence higher than 50%, the whole process should take around 4 or 5 seconds on a Raspberry Pi. **TESTING TIME** includes the time it took to process the 11 images, classify them, and send a notification to the IoT JumpWay for each object identified.
 
@@ -273,6 +273,7 @@ TESTED: 11
 IDENTIFIED: 10
 TESTING TIME: 4.594240665435791
 ```
+
 ## Build an IoT connected alarm
 
 ![IoT JumpWay Raspberry Pi Dev Kit IoT Alarm](images/IoT-Dev-Kit-Alarm.jpg)
