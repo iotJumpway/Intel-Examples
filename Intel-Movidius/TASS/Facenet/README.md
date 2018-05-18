@@ -339,7 +339,6 @@ Total Difference is: 0.9248141050338745
 -- Published to Device Warnings Channel
 -- Published: 36
 ```
-```
 
 ## Build an IoT connected alarm
 
