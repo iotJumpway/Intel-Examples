@@ -2,7 +2,156 @@
 
 [![TASS Movidius Facenet Classifier](images/facenet.jpg)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS/Facenet)
 
-The TASS Movidius Facenet Classifier uses Siamese Neural Networks and Triplet Loss to classify known and unknown faces. The project uses an UP2 the Intel Movidius and the IoT JumpWay for IoT connectivity.
+The ** TASS Movidius Facenet Classifier ** uses Siamese Neural Networks and Triplet Loss to classify known and unknown faces. The project uses an UP2 the Intel Movidius and the [IoT JumpWay](https://iot.techbubbletechnologies.com "IoT JumpWay") for IoT connectivity.
+
+- **Acknowledgement:** Uses code from Intel® **movidius/ncsdk** ([movidius/ncsdk Github](https://github.com/movidius/ncsdk "movidius/ncsdk Github"))
+- **Acknowledgement:** Uses code from Intel® **davidsandberg/facenet** ([davidsandberg/facenet Github](https://github.com/davidsandberg/facenet "davidsandberg/facenet"))
+
+## What Will We Do?
+
+1. Install the [Intel® NCSDK](https://github.com/movidius/ncsdk "Intel® NCSDK") on a Linux development device.
+2. Install the [Intel® NCSDK API](https://github.com/movidius/ncsdk "Intel® NCSDK API") on a Raspberry Pi 3 / UP Squared.
+3. Install the [IoT JumpWay Python MQTT Client](https://github.com/AdamMiltonBarker/JumpWayMQTT "IoT JumpWay Python MQTT Client") on the Raspberry Pi / UP Squared and configure the IoT JumpWay.
+4. Clone & set up the repo.
+5. Install and download all requirements.
+6. Prepare your known and testing faces datasets.
+7. Test the ** TASS Movidius Facenet Classifier ** on the testing dataset.
+8. Run ** TASS Movidius Facenet Classifier ** on a live webcam
+9. Build an IoT connected alarm that will be triggered when an unknown person is detected.
+
+## Applications
+
+**TASS Movidius Facenet Classifier** is made up of 4 core applications/programs:
+
+- **Setup:** setup.sh is a program designed to set up all required software for the classifier to function and to download the pretrained models.
+- **Classifier:** A classification program for testing known and unknown people using the **testing** and **valid** datasets.
+- **Webcam Classifier:** A clssification program that connects to a local webcam.
+- **IoT Connected Alarm:** An IoT connected alarm that is triggered when an unknown person is detected.
+
+## Python Versions
+
+- Tested in Python 3.5
+
+## Software Requirements
+
+- [Intel® NCSDK](https://github.com/movidius/ncsdk "Intel® NCSDK")
+- [Tensorflow](https://www.tensorflow.org/install "Tensorflow")
+- [IoT JumpWay Python MQTT Client](https://github.com/iotJumpway/JumpWayMQTT "IoT JumpWay Python MQTT Client")
+- [GrovePi](https://github.com/DexterInd/GrovePi "GrovePi")
+
+## Hardware Requirements
+
+- 1 x [Intel® Movidius](https://www.movidius.com/ "Intel® Movidius")
+- 1 x Linux Device for converting the pretrained model to a Movidius friendly model.
+- 1 x Raspberry Pi 3 / UP Squared for the classifier / webcam.
+- 1 x Raspberry Pi 3 for IoT connected alarm.
+- 1 x Grove starter kit for IoT, Raspberry Pi edition.
+- 1 x Blue LED (Grove)
+- 1 x Red LED (Grove)
+- 1 x Buzzer (Grove)
+
+## Install NCSDK On Your Development Device
+
+The first thing you will need to do is to install the **NCSDK** on your development device, this will be used to convert the trained model into a format that is compatible with the Movidius.
+
+```
+ $ mkdir -p ~/workspace
+ $ cd ~/workspace
+ $ git clone https://github.com/movidius/ncsdk.git
+ $ cd ~/workspace/ncsdk
+ $ make install
+```
+
+Next plug your Movidius into your device and issue the following commands:
+
+```
+ $ cd ~/workspace/ncsdk
+ $ make examples
+```
+
+## Install NCSDK On Your Raspberry Pi 3 / UP Squared
+
+![Intel® Movidius](images/UP2.jpg)
+
+Next you will need to install the **NCSDK** on your Raspberry Pi 3 / UP Squared device, this will be used by the classifier to carry out inference on local images or frames from the webcam. Make sure you have the Movidius plugged in.
+
+```
+ $ mkdir -p ~/workspace
+ $ cd ~/workspace
+ $ git clone https://github.com/movidius/ncsdk.git
+ $ cd ~/workspace/ncsdk/api/src
+ $ make
+ $ sudo make install
+```
+```
+ $ cd ~/workspace
+ $ git clone https://github.com/movidius/ncappzoo
+ $ cd ncappzoo/apps/hello_ncs_py
+ $ python3 hello_ncs.py
+```
+
+## Getting Started With The IoT JumpWay
+
+There are a few tutorials that you should follow before beginning, especially if it is the first time you have used the **IoT JumpWay Developer Program**. If you do not already have one, you will require an **IoT JumpWay Developer Program developer account**, and some basics to be set up before you can start creating your IoT devices. Visit the following [IoT JumpWay Developer Program Docs (5-10 minute read/setup)](https://github.com/iotJumpWay/IoT-JumpWay-Docs/ "IoT JumpWay Developer Program Docs (5-10 minute read/setup)") and check out the guides that take you through registration and setting up your Location Space, Zones, Devices and Applications (About 5 minutes read).
+
+## Install IoT JumpWay Python MQTT Client On Your Raspberry Pi 3 / UP Squared
+
+Next install the IoT JumpWay Python MQTT Client on your Raspberry Pi 3 / UP Squared. For this you can execute the following command:
+
+```
+ $ pip3 install JumpWayMQTT
+```
+
+## IoT JumpWay Device Connection Credentials & Settings
+
+- Setup an IoT JumpWay Location Device for IDC Classifier, ensuring you set up a camera node, as you will need the ID of the dummy camera for the project to work. Once your create your device add the location ID and Zone ID to the **IoTJumpWay** details in the confs file located at **required/confs.json**, also add the device ID and device name exactly, add the MQTT credentials to the **IoTJumpWayMQTT** .
+
+You will need to edit your device and add the rules that will allow it to communicate autonomously with the other devices and applications on the network, but for now, these are the only steps that need doing at this point.
+
+Follow the [IoT JumpWay Developer Program (BETA) Location Device Doc](https://github.com/iotJumpWay/IoT-JumpWay-Docs/blob/master/4-Location-Devices.md "IoT JumpWay Developer Program (BETA) Location Device Doc") to set up your devices.
+
+```
+{
+    "IoTJumpWay": {
+        "Location": 0,
+        "Zone": 0,
+        "Device": 0,
+        "DeviceName" : "",
+        "App": 0,
+        "AppName": ""
+    },
+    "Actuators": {},
+    "Cameras": [
+        {
+            "ID": 0,
+            "URL": 0,
+            "Name": ""
+        }
+    ],
+    "Sensors": {},
+	"IoTJumpWayMQTT": {
+        "MQTTUsername": "",
+        "MQTTPassword": ""
+    },
+    "ClassifierSettings":{
+        "NetworkPath":"",
+        "Graph":"model/tass.graph",
+        "Dlib":"model/dlib/shape_predictor_68_face_landmarks.dat",
+        "dataset_dir":"model/train/",
+        "TestingPath":"data/testing/",
+        "ValidPath":"data/known/",
+        "Threshold": 1.20
+    }
+}
+```
+
+## Cloning The Repo
+
+You will need to clone this repository to a location on your development terminal. Navigate to the directory you would like to download it to and issue the following commands.
+
+    $ git clone https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples.git
+
+Once you have the repo, you will need to find the files in this folder located in [IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS/Facenet](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS/Facenet "IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS/Facenet").
 
 ## Bugs/Issues
 
