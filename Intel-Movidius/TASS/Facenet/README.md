@@ -185,7 +185,7 @@ If you have problems running the above program and have errors try run the follo
 
 ## Preparing Your Dataset
 
-You need to set up two very small datasets. As we are using a pretrained Facenet model there is no training to do in this tutorial and we only need one image per known person. You should see the **known** and **testing** folders in the **data** directory, this is where you will store 1 image of each person you want to be identified by the network, and also a testing dataset that can include either known or unknown faces for testing. 
+You need to set up two very small datasets. As we are using a pretrained Facenet model there is no training to do in this tutorial and we only need one image per known person. You should see the **known** and **testing** folders in the **data** directory, this is where you will store 1 image of each person you want to be identified by the network, and also a testing dataset that can include either known or unknown faces for testing. When you store the known data, you should name each image with the name you want them to be identified as in the system, in my testing I used images of me and two other random people, the 1 image used to represent myself in the known folder was named Adam  
 
 ## Test the TASS Movidius Facenet Classifier
 
@@ -195,8 +195,83 @@ Now it is time to test out your classifier, on your development machine in the [
  $ python3.5 Classifier.py
 ```
 
-This will run the classifier test program, the program will first loop through your testing images, and once it sees a face it will loop through all of the known faces and match them against the faces, once it finds a match, or not, it will move on to the next image in your testing loop until all images have been classifier as known or unknown. 
+This will run the classifier test program, the program will first loop through your testing images, and once it sees a face it will loop through all of the known faces and match them against the faces, once it finds a match, or not, it will move on to the next image in your testing loop until all images have been classifier as known or unknown. Below is the output of my testing.
 
+```
+!! Welcome to TASS Movidius Facenet Classifier, please wait while the program initiates !!
+
+-- Running on Python 3.5.2 (default, Nov 23 2017, 16:37:01)
+[GCC 5.4.0 20160609]
+
+-- Imported Required Modules
+-- Movidius Connected
+-- Allocated Graph OK
+-- Initiating JumpWayMQTT Device
+-- JumpWayMQTT Device Initiated
+-- JumpWayMQTT Device Connection Initiating
+-- JumpWayMQTT Device Connection Initiated
+-- IoT JumpWay Initiated
+
+-- Classifier Initiated
+
+-- FACENET TEST MODE STARTING
+-- STARTED: :  2018-05-18 15:14:10.957737
+
+-- JumpWayMQTT Device Connected
+rc: 0
+-- Published to Device Status
+-- Published: 1
+Total Difference is: 1.1339170932769775
+-- MATCH Adam-3.jpg
+
+-- Published to Device Warnings Channel
+-- Published: 2
+Total Difference is: 1.7931939363479614
+-- NO MATCH
+
+-- Published to Device Warnings Channel
+-- Published: 3
+Total Difference is: 0.8448524475097656
+-- MATCH Adam-2.jpg
+
+-- Published to Device Warnings Channel
+-- Published: 4
+Total Difference is: 0.8118671178817749
+-- MATCH Adam-6.jpg
+
+-- Published to Device Warnings Channel
+-- Published: 5
+Total Difference is: 1.8371777534484863
+-- NO MATCH
+
+-- Published: 6
+-- Published to Device Warnings Channel
+Total Difference is: 0.0
+-- MATCH adam.jpg
+
+-- Published: 7
+-- Published to Device Warnings Channel
+Total Difference is: 0.8795345425605774
+-- MATCH Adam-4.jpg
+
+-- Published: 8
+-- Published to Device Warnings Channel
+Total Difference is: 1.0212488770484924
+-- MATCH Adam-5.jpg
+
+-- Published: 9
+-- Published to Device Warnings Channel
+
+-- FACENET TEST MODE ENDING
+-- ENDED:  2018-05-18 15:14:13.503037
+-- TESTED:  8
+-- IDENTIFIED:  6
+-- TIME(secs): 2.545285224914551
+
+!! SHUTTING DOWN !!
+```
+
+You can see that each of my 6 testing images were correctly identified and the unknowns were correctly not matched. 
  
 ## Bugs/Issues
 
