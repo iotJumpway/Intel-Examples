@@ -286,8 +286,60 @@ The WClassifier.py should connect to the local webcam on your device, process th
 }
 ```
 
-The program uses a **dlib** model to recognize faces in the frames / mark the facial points on the frame, and **Facenet** to determine whether they are a known person or not. 
- 
+The program uses a **dlib** model to recognize faces in the frames / mark the facial points on the frame, and **Facenet** to determine whether they are a known person or not. Below are the outputs around the time that the above photo was taken. You will see that the program publishes to the **Warnings** channel of the IoT JumpWay, this is currently the name for the channel that handles device to device communication via rules.
+
+```
+-- Saved frame
+
+Total Difference is: 1.0537698864936829
+-- MATCH
+
+-- Published: 30
+-- Published to Device Warnings Channel
+-- Saved frame
+
+Total Difference is: 0.9751482605934143
+-- MATCH
+
+-- Published to Device Warnings Channel
+-- Published: 31
+-- Saved frame
+
+Total Difference is: 0.8911715745925903
+-- MATCH
+
+-- Published to Device Warnings Channel
+-- Published: 32
+-- Saved frame
+
+Total Difference is: 1.0292763113975525
+-- MATCH
+
+-- Published to Device Warnings Channel
+-- Published: 33
+-- Saved frame
+
+Total Difference is: 0.9804747700691223
+-- MATCH
+
+-- Published to Device Warnings Channel
+-- Published: 34
+-- Saved frame
+
+Total Difference is: 1.0326017141342163
+-- MATCH
+
+-- Published to Device Warnings Channel
+-- Published: 35
+-- Saved frame
+
+Total Difference is: 0.9248141050338745
+-- MATCH
+
+-- Published to Device Warnings Channel
+-- Published: 36
+```
+
 ## Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come across whilst using this or any other Intel® related IoT JumpWay issues. You may also use the issues area to ask for general help whilst using the IoT JumpWay in your IoT projects.
