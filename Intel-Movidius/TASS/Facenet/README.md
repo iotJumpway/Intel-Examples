@@ -182,6 +182,10 @@ If you have problems running the above program and have errors try run the follo
  $ sed -i 's/\r//' setup.sh
  $ sh setup.sh
 ```
+
+## Preparing Your Dataset
+
+You need to set up two very small datasets. As we are using a pretrained Facenet model there is no training to do in this tutorial and we only need one image per known person. You should see the **known** and **testing** folders in the **data** directory, this is where you will store 1 image of each person you want to be identified by the network, and also a testing dataset that can include either known or unknown faces for testing. 
  
 ## Bugs/Issues
 
