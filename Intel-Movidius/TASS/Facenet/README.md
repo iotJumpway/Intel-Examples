@@ -125,7 +125,9 @@ Follow the [IoT JumpWay Developer Program (BETA) Location Device Doc](https://gi
         {
             "ID": 0,
             "URL": 0,
-            "Name": ""
+            "Name": "",
+            "Stream": "",
+            "StreamPort": 8080
         }
     ],
     "Sensors": {},
@@ -268,6 +270,23 @@ You can see that each of my 6 testing images were correctly identified and the u
 ## Run **TASS Movidius Facenet Classifier** on a live webcam
 
 Now comes the good part, realtime facial recognition and identification. 
+
+![TASS Movidius Facenet Classifier](images/capture.jpg)
+
+The WClassifier.py should connect to the local webcam on your device, process the frames and send them to a local server that is started by this same program. Be sure to edit the **ID** and **Name** values of the **Cameras** section of **required/confs.json** section using the details provided when setting up the configs, and add the URL of the IP of your device ie: http://192.168.1.200 to the **Stream** value and you can change **StreamPort** to whatever you want. These two fields will determine the address that you access your camera on, using the previous IP (Stream) and the StreamPort as 8080 the address would be **http://192.168.1.200:8080/index.html**.
+
+```
+"Cameras": [
+{
+    "ID": 0,
+    "URL": 0,
+    "Name": "",
+    "Stream": "",
+    "StreamPort": 8080
+}
+```
+
+The program uses a **dlib** model to recognize faces in the frames / mark the facial points on the frame, and **Facenet** to determine whether they are a known person or not. 
  
 ## Bugs/Issues
 
@@ -276,4 +295,6 @@ Please feel free to create issues for bugs and general issues you come across wh
 ## Contributors
 
 [![Adam Milton-Barker, Intel® Software Innovator](../../../images/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
+
+
 

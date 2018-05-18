@@ -10,8 +10,10 @@
     "Cameras": [
         {
             "ID": 0,
-            "URL": "",
-            "Name": ""
+            "URL": 0,
+            "Name": "",
+            "Stream": "",
+            "StreamPort": 8080
         }
     ],
     "Sensors": {},
