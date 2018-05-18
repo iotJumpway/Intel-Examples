@@ -1,10 +1,10 @@
-# TASS Movidius Yolo Example: IoT Connected Computer Vision
+# TASS Movidius Yolo Classifier
 
 ![TASS Movidius Example](images/tass-movidius.jpg)
 
 ## Introduction
 
-TASS Movidius uses a pretrained **Yolo model** and an **Intel® Movidius** to carry out object, both locally and on a live webcam stream. TASS Movidius uses the [IoT JumpWay](https://iot.techbubbletechnologies.com "IoT JumpWay") for IoT communication and publishes messages to the broker when an object is identified.
+The **TASS Movidius Yolo Classifier** uses a pretrained **Yolo model** and an **Intel® Movidius** to carry out object, both locally and on a live webcam stream. TASS Movidius uses the [IoT JumpWay](https://iot.techbubbletechnologies.com "IoT JumpWay") for IoT communication and publishes messages to the broker when an object is identified.
 
 - **Acknowledgement:** Uses code from Intel® **movidius/ncsdk** ([movidius/ncsdk Github](https://github.com/movidius/ncsdk "movidius/ncsdk Github"))
 - **Acknowledgement:** Uses code from Intel® **gudovskiy/yoloNCS** ([gudovskiy/yoloNCS Github](https://github.com/gudovskiy/yoloNCS "gudovskiy/yoloNCS Github"))
