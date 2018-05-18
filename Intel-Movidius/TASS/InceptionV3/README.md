@@ -272,7 +272,8 @@ TESTING ENDED
 TESTED: 11
 IDENTIFIED: 10
 TESTING TIME: 4.594240665435791
-```## Build an IoT connected alarm
+```
+## Build an IoT connected alarm
 
 ![IoT JumpWay Raspberry Pi Dev Kit IoT Alarm](images/IoT-Dev-Kit-Alarm.jpg)
 
@@ -314,4 +315,4 @@ Please feel free to create issues for bugs and general issues you come across wh
 
 ## Contributors
 
-[![Adam Milton-Barker, Intel® Software Innovator](../../../images/main/Intel-Software-Innovator.jpg)](https://github.com/iotJumpway)
+[![Adam Milton-Barker, Intel® Software Innovator](../../../images/main/Intel-Software-Innovator.jpg)](https://github.com/iotJumpway)d
