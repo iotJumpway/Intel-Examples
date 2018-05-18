@@ -8,15 +8,17 @@ Intel® Movidius™ VPUs drive the demanding workloads of  modern computer visio
 
 ![IoT JumpWay Intel® Movidius Examples](TASS/images/movidius.jpg)
 
-## Examples
+## TASS Movidius Classifiers
 
-[![TASS Movidius Example](IDC-Classification/images/IDC-Classification.png)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/IDC-Classification)
+[![TASS Movidius Classifiers](TASS/images/tass-movidius.jpg)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS/)
 
-- [Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/IDC-Classification "Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT") combines Computer Vision and the Internet of Things to provide researchers, doctors and students with a way to train a neural network with labelled breast cancer histology images to detect Invasive Ductal Carcinoma (IDC) in unseen/unlabelled images.
+The **TASS Movidius Classifiers** are computer vision programs using a number of different models including **Inception V3**, **Yolo**, **dlib**, **OpenCV** and **Facenet**.
 
-[![TASS Movidius Example](TASS/images/tass-movidius.jpg)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS)
+## Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT
 
-- [Python: TASS Movidius Example](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS "Python: TASS Movidius Example") uses pretrained Inception V3 & Yolo models with an Intel® Movidius to carry out object and facial classification, both locally and on a live webcam stream.
+[![Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT](IDC-Classification/images/IDC-Classification.png)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/IDC-Classification)
+
+**Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT** combines **Computer Vision** and the **Internet of Things** to provide researchers, doctors and students with a way to train a neural network with labelled breast cancer histology images to detect **Invasive Ductal Carcinoma (IDC)** in unseen/unlabelled images.
 
 ## Bugs/Issues
 
