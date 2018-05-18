@@ -361,7 +361,7 @@ Published To IoT JumpWay
 
 ## Setting Up Your Intel® Edison IoT Alarm
 
-![IoT JumpWay Intel® Edison Dev Kit IoT Alarm](../../images/Dev-Kit-IoT-Alarm/Edsion-Hardware-Setup.jpg)
+![IoT JumpWay Intel® Edison Dev Kit IoT Alarm](../../../images/Dev-Kit-IoT-Alarm/Edsion-Hardware-Setup.jpg)
 
 The next step is to set up your Intel® Edison so that TASS can communicate with it via the IoT JumpWay. For this, I already created a tutorial for the IoT JumpWay Intel® Edison Dev Kit IoT Alarm that will guide you through this process. The only difference is that you do not need to set up the Python commands application, as in this project, TASS will replace the Python commands application, to save time, please only follow the steps for the Intel® Edison device Node JS application.
 
@@ -377,7 +377,7 @@ You are now ready to take the final steps, at this point you should have everyth
 
 Next we are going to set up the rules that allow TASS PVL to control your Intel® Edison Dev Kit IoT Alarm autonomously. Go back to the TAS PVL device page and make sure you are on the edit page. Scroll down to below where you added the camera node and you will see you are able to add rules.
 
-![IoT JumpWay Intel® Edison Dev Kit IoT Alarm](../../images/Automation.PNG)
+![IoT JumpWay Intel® Edison Dev Kit IoT Alarm](../../../images/Automation.PNG)
 
 The rules that we want to add are as follows:
 
@@ -395,9 +395,9 @@ In the event that an object is detected with a confidence higher than the thresh
 
 When the program detects an object, it will send sensor data to the [IoT JumpWay](https://iot.techbubbletechnologies.com/ "IoT JumpWay"). You will be able to access the data in the [IoT JumpWay Developers Area](https://iot.techbubbletechnologies.com/developers/dashboard/ "IoT JumpWay Developers Area"). Once you have logged into the Developers Area, visit the [IoT JumpWay Location Devices Page](https://iot.techbubbletechnologies.com/developers/location-devices "Location Devices page"), find your device and then visit the Sensor Data pages to view the data sent from the device.
 
-![IoT JumpWay Sensor Data](../../images/main/SensorData.png)
+![IoT JumpWay Sensor Data](../../../images/main/SensorData.png)
 
-![IoT JumpWay Warning Data](../../images/main/WarningData.png)
+![IoT JumpWay Warning Data](../../../images/main/WarningData.png)
 
 ## Bugs/Issues
 
@@ -405,5 +405,5 @@ Please feel free to create issues for bugs and general issues you come across wh
 
 ## Contributors
 
-[![Adam Milton-Barker, Intel® Software Innovator](../../images/main/Intel-Software-Innovator.jpg)](https://github.com/iotJumpway)
+[![Adam Milton-Barker, Intel® Software Innovator](../../../images/main/Intel-Software-Innovator.jpg)](https://github.com/iotJumpway)
 
