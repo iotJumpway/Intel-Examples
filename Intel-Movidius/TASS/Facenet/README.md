@@ -28,14 +28,6 @@ The **TASS Movidius Facenet Classifier** uses Siamese Neural Networks and Triple
 - **Webcam Classifier:** A clssification program that connects to a local webcam.
 - **IoT Connected Alarm:** An IoT connected alarm that is triggered when an unknown person is detected.
 
-## Setup
-
-First you should set up the software requirements for 
-
-## Preparing Data
-
-You will need two types 
-
 ## Python Versions
 
 - Tested in Python 3.5
@@ -272,6 +264,10 @@ Total Difference is: 1.0212488770484924
 ```
 
 You can see that each of my 6 testing images were correctly identified and the unknowns were correctly not matched. 
+
+## Run **TASS Movidius Facenet Classifier** on a live webcam
+
+Now comes the good part, realtime facial recognition and identification. 
  
 ## Bugs/Issues
 
