@@ -167,8 +167,8 @@ Now you need to setup the software required for the classifier to run. The setup
 
 - Install the required packages named in **requirements.txt**
 - Downloads the pretrained Facenet model (**davidsandberg/facenet**)
-- Downloads the pretrained Inception V3 model
-- Converts the model to a model that is compatible with the **Intel® Movidius**
+- Downloads the pretrained **Inception V3** model
+- Converts the **Facenet** model to a model that is compatible with the **Intel® Movidius**
 
 Make sure you have installed the **NCSDK** on your developement machine and then run the following command, assuming you are located in the [IoT-JumpWay-Intel-Examples/Intel-Movidius/TASS/Facenet](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS/Facenet "IoT-JumpWay-Intel-Examples/Intel-Movidius/TASS/Facenet") directory.
 
@@ -186,6 +186,17 @@ If you have problems running the above program and have errors try run the follo
 ## Preparing Your Dataset
 
 You need to set up two very small datasets. As we are using a pretrained Facenet model there is no training to do in this tutorial and we only need one image per known person. You should see the **known** and **testing** folders in the **data** directory, this is where you will store 1 image of each person you want to be identified by the network, and also a testing dataset that can include either known or unknown faces for testing. 
+
+## Test the TASS Movidius Facenet Classifier
+
+Now it is time to test out your classifier, on your development machine in the [IoT-JumpWay-Intel-Examples/Intel-Movidius/TASS/Facenet](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS/Facenet "IoT-JumpWay-Intel-Examples/Intel-Movidius/TASS/Facenet") directory:
+
+```
+ $ python3.5 Classifier.py
+```
+
+This will run the classifier test program, the program will first loop through your testing images, and once it sees a face it will loop through all of the known faces and match them against the faces, once it finds a match, or not, it will move on to the next image in your testing loop until all images have been classifier as known or unknown. 
+
  
 ## Bugs/Issues
 
