@@ -29,7 +29,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 print("-- Running on Python "+sys.version)
 print("")
 
-import time,csv,getopt,json,time, cv2
+import time,csv,getopt,json, time, cv2
 import numpy as np
 
 import JumpWayMQTT.Device as JWMQTTdevice
