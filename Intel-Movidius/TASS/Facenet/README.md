@@ -2,7 +2,7 @@
 
 [![TASS Movidius Facenet Classifier](images/facenet.jpg)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS/Facenet)
 
-The ** TASS Movidius Facenet Classifier ** uses Siamese Neural Networks and Triplet Loss to classify known and unknown faces. The project uses an UP2 the Intel Movidius and the [IoT JumpWay](https://iot.techbubbletechnologies.com "IoT JumpWay") for IoT connectivity.
+The **TASS Movidius Facenet Classifier** uses Siamese Neural Networks and Triplet Loss to classify known and unknown faces. The project uses an UP2 the Intel Movidius and the [IoT JumpWay](https://iot.techbubbletechnologies.com "IoT JumpWay") for IoT connectivity.
 
 - **Acknowledgement:** Uses code from Intel® **movidius/ncsdk** ([movidius/ncsdk Github](https://github.com/movidius/ncsdk "movidius/ncsdk Github"))
 - **Acknowledgement:** Uses code from Intel® **davidsandberg/facenet** ([davidsandberg/facenet Github](https://github.com/davidsandberg/facenet "davidsandberg/facenet"))
@@ -15,8 +15,8 @@ The ** TASS Movidius Facenet Classifier ** uses Siamese Neural Networks and Trip
 4. Clone & set up the repo.
 5. Install and download all requirements.
 6. Prepare your known and testing faces datasets.
-7. Test the ** TASS Movidius Facenet Classifier ** on the testing dataset.
-8. Run ** TASS Movidius Facenet Classifier ** on a live webcam
+7. Test the **TASS Movidius Facenet Classifier** on the testing dataset.
+8. Run **TASS Movidius Facenet Classifier** on a live webcam
 9. Build an IoT connected alarm that will be triggered when an unknown person is detected.
 
 ## Applications
@@ -28,6 +28,14 @@ The ** TASS Movidius Facenet Classifier ** uses Siamese Neural Networks and Trip
 - **Webcam Classifier:** A clssification program that connects to a local webcam.
 - **IoT Connected Alarm:** An IoT connected alarm that is triggered when an unknown person is detected.
 
+## Setup
+
+First you should set up the software requirements for 
+
+## Preparing Data
+
+You will need two types 
+
 ## Python Versions
 
 - Tested in Python 3.5
@@ -35,7 +43,7 @@ The ** TASS Movidius Facenet Classifier ** uses Siamese Neural Networks and Trip
 ## Software Requirements
 
 - [Intel® NCSDK](https://github.com/movidius/ncsdk "Intel® NCSDK")
-- [Tensorflow](https://www.tensorflow.org/install "Tensorflow")
+- [Tensorflow 1.4.0](https://www.tensorflow.org/install "Tensorflow 1.4.0")
 - [IoT JumpWay Python MQTT Client](https://github.com/iotJumpway/JumpWayMQTT "IoT JumpWay Python MQTT Client")
 - [GrovePi](https://github.com/DexterInd/GrovePi "GrovePi")
 
@@ -151,8 +159,30 @@ You will need to clone this repository to a location on your development termina
 
     $ git clone https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples.git
 
-Once you have the repo, you will need to find the files in this folder located in [IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS/Facenet](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS/Facenet "IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS/Facenet").
+Once you have the repo, you will need to find the files in this folder located in [IoT-JumpWay-Intel-Examples/Intel-Movidius/TASS/Facenet](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS/Facenet "IoT-JumpWay-Intel-Examples/Intel-Movidius/TASS/Facenet").
 
+## Setup
+
+Now you need to setup the software required for the classifier to run. The setup.sh script is a shell script that you can run on both your development device and Raspberry Pi 3 / UP Squared device. 
+
+- Install the required packages named in **requirements.txt**
+- Downloads the pretrained Facenet model (**davidsandberg/facenet**)
+- Downloads the pretrained Inception V3 model
+- Converts the model to a model that is compatible with the **Intel® Movidius**
+
+Make sure you have installed the **NCSDK** on your developement machine and then run the following command, assuming you are located in the [IoT-JumpWay-Intel-Examples/Intel-Movidius/TASS/Facenet](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS/Facenet "IoT-JumpWay-Intel-Examples/Intel-Movidius/TASS/Facenet") directory.
+
+```
+ $ sh setup.sh
+```
+
+If you have problems running the above program and have errors try run the following command before executing the shell script. You may be getting errors due to the shell script having been edited on Windows, the following command will clean the setup file.
+
+```
+ $ sed -i 's/\r//' setup.sh
+ $ sh setup.sh
+```
+ 
 ## Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come across whilst using this or any other Intel® related IoT JumpWay issues. You may also use the issues area to ask for general help whilst using the IoT JumpWay in your IoT projects.

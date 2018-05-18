@@ -3,6 +3,12 @@
 echo "!! This program will set up everything you need to use Facenet !!"
 echo " "
 
+echo "-- Installing requirements.txt"
+echo " "
+
+pip3 install --upgrade pip
+pip3 install -r requirements.txt
+
 if [ ! -f "model/20170512-110547.zip" ]
 then
     echo "-- Facenet zip does not already exists in model folder, downloading."
