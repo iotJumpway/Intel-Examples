@@ -15,8 +15,8 @@ TASS Movidius uses a pretrained **Yolo model** and an **Intel® Movidius** to ca
 
 This tutorial will result in two IoT devices:
 
-1. IoT connected computer vision device using a **Raspberry Pi 3** & **Intel® Movidius**.
-2. IoT connected alarm system using an **Intel Edison** and an **IoT Dev Kit**. (OPTIONAL)
+1. IoT connected computer vision device using a **Raspberry Pi 3** / **UP Squared** for the classifier / webcam & **Intel® Movidius**.
+2. IoT connected alarm system using an **Raspberry Pi 3** / **UP Squared** and an **IoT Dev Kit**. (OPTIONAL)
 
 ## What Will We Do?
 
@@ -359,41 +359,38 @@ Published to Device Sensors Channel
 Published To IoT JumpWay
 ```
 
-## Setting Up Your Intel® Edison IoT Alarm
 
-![IoT JumpWay Intel® Edison Dev Kit IoT Alarm](../../../images/Dev-Kit-IoT-Alarm/Edsion-Hardware-Setup.jpg)
+## Build an IoT connected alarm
 
-The next step is to set up your Intel® Edison so that TASS can communicate with it via the IoT JumpWay. For this, I already created a tutorial for the IoT JumpWay Intel® Edison Dev Kit IoT Alarm that will guide you through this process. The only difference is that you do not need to set up the Python commands application, as in this project, TASS will replace the Python commands application, to save time, please only follow the steps for the Intel® Edison device Node JS application.
+![IoT JumpWay Raspberry Pi Dev Kit IoT Alarm](images/IoT-Dev-Kit-Alarm.jpg)
 
-You will find the tutorial on the following link:
+The next step is to set up your Raspberry Pi 3 so that the classifier can communicate with it via the IoT JumpWay. For this, I already created a tutorial for the IoT JumpWay Raspberry Pi Dev Kit IoT Alarm that will guide you through this process. The only difference is that you do not need to set up the Python commands application, as in this project, the classifier will replace the Python commands application, to save time please only follow the steps for Device.py and not Application.py. You will need to uncomment lines 104 - 107 to ensure that the LEDs and buzzer turn off after some time, you can update line 107 to set the amount of time to keep them running for.
 
-[IoT JumpWay Intel® Edison Dev Kit IoT Alarm](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-IoT-Alarm/NodeJS "IoT JumpWay Intel® Edison Dev Kit IoT Alarm")
+You will find the tutorial on the following link: [IoT JumpWay Raspberry Pi Dev Kit IoT Alarm](https://github.com/iotJumpway/IoT-JumpWay-RPI-Examples/tree/master/Dev-Kit-IoT-Alarm/Python "IoT JumpWay Raspberry Pi Dev Kit IoT Alarm")
 
 Once you have completed that tutorial and have your device setup, return here to complete the final integration steps.
 
 ## Setting Up Your Rules
 
-You are now ready to take the final steps, at this point you should have everything set up and your Intel® Edison Dev Kit IoT Alarm should be running and connected to the IoT JumpWay waiting for instructions.
+You are now ready to take the final steps, at this point you should have everything set up and your Raspberry Pi Dev Kit IoT Alarm should be running and connected to the IoT JumpWay waiting for instructions.
 
-Next we are going to set up the rules that allow TASS PVL to control your Intel® Edison Dev Kit IoT Alarm autonomously. Go back to the TAS PVL device page and make sure you are on the edit page. Scroll down to below where you added the camera node and you will see you are able to add rules.
+Next we are going to set up the rules that allow the classifier to control your Raspberry Pi Dev Kit IoT Alarm autonomously. Go back to the classifier device edit page. Scroll down to below where you added the camera node and you will see you are able to add rules.
 
-![IoT JumpWay Intel® Edison Dev Kit IoT Alarm](../../../images/Automation.PNG)
+![IoT JumpWay Intel® Edison Dev Kit IoT Alarm](../../../images/main/Automation.PNG)
 
 The rules that we want to add are as follows:
 
-1. When an object is identified, turn on the red LED.
+1. When an intruder is identified, turn on the red LED.
 
-3. When an object is identified, turn on the buzzer.
+2. When an intruder is identified, turn on the buzzer.
 
-The events are going be triggered by warning messages sent from TASS, so in the On Event Of drop down, select WARNING. Then you need to select the camera node you added to the TASS device, as this is the sensor that the warning will come from. Next choose RECOGNISED in the With Warning Of, which will mean that the rule will be triggered when the IoT JumpWay receives a warning message that an object has been identified, then select the Send Device Command for the Take The Following Action section, choose the Intel® Edison as the device, the red LED as the sensor, toggle as the action and on as the command. This will then tell the Edison to turn on the red light in the event of an object being detected, repeat this process for the buzzer.
+3. When a known person is identified, turn on the blue LED.
 
-## Seeing What Your Neural Network Sees
-
-In the event that an object is detected with a confidence higher than the threshold, the frame will be saved in the **data/captures** folder, bounding boxes will be drawn around all objects that are detected.
+The events are going be triggered by warning messages sent from the classifier, so in the **On Event Of** drop down, select **WARNING**. Then you need to select the camera node you added to the classifier device, as this is the sensor that the warning will come from. Next choose **RECOGNISED** in the **With Warning Of**, which will mean that the rule will be triggered when the IoT JumpWay receives a warning message that an intruder has been identified, then select the **Send Device Command** for the **Take The Following Action** section, choose the Raspberry Pi Dev Kit IoT Alarm as the device, the red LED as the sensor/actuator, **TOGGLE** as the action and on as the command. This will then tell the Raspberry Pi  to turn on the red light in the event of an intruder being detected, repeat this process for the buzzer. Finally repeat the LED command for the blue LED but with **NOT RECOGNISED** in the **With Warning Of** and selecting the ID that represents the blue LED you set up on the Raspberry Pi.
 
 ## Viewing Your Data
 
-When the program detects an object, it will send sensor data to the [IoT JumpWay](https://iot.techbubbletechnologies.com/ "IoT JumpWay"). You will be able to access the data in the [IoT JumpWay Developers Area](https://iot.techbubbletechnologies.com/developers/dashboard/ "IoT JumpWay Developers Area"). Once you have logged into the Developers Area, visit the [IoT JumpWay Location Devices Page](https://iot.techbubbletechnologies.com/developers/location-devices "Location Devices page"), find your device and then visit the Sensor Data pages to view the data sent from the device.
+When the program processes an image, it will send sensor & warning data where relevant to the [IoT JumpWay](https://iot.techbubbletechnologies.com/ "IoT JumpWay"). You will be able to access the data in the [IoT JumpWay Developers Area](https://iot.techbubbletechnologies.com/developers/dashboard/ "IoT JumpWay Developers Area"). Once you have logged into the Developers Area, visit the [IoT JumpWay Location Devices Page](https://iot.techbubbletechnologies.com/developers/location-devices "Location Devices page"), find your device and then visit the Sensor Data pages to view the data sent from the device. You can also view command messages for the Raspberry Pi in the Raspberry Pi device page under the Commands tab.
 
 ![IoT JumpWay Sensor Data](../../../images/main/SensorData.png)
 
