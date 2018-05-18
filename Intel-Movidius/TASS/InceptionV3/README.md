@@ -1,23 +1,21 @@
-# TASS Movidius Example: IoT Connected Computer Vision
+# TASS Movidius Inception V3 Classifier
 
 ![TASS Movidius Example](images/tass-movidius.jpg)
 
-
 ## Introduction
 
-TASS Movidius uses pretrained **Inception V3 & Yolo models** and an **Intel® Movidius** to carry out object and **facial classification**, both locally and on a live webcam stream. TASS Movidius uses the [IoT JumpWay](https://iot.techbubbletechnologies.com "IoT JumpWay") for IoT communication and publishes messages to the broker when an object is identified.
+The **TASS Movidius Inception V3** Classifier uses a pretrained or custom trained **Inception V3** model and an **Intel® Movidius** to carry out object and **facial classification**, both locally and on a live webcam stream. TASS Movidius uses the [IoT JumpWay](https://iot.techbubbletechnologies.com "IoT JumpWay") for IoT communication and publishes messages to the broker when an object is identified.
 
 - **Acknowledgement:** Uses code from Intel® **movidius/ncsdk** ([movidius/ncsdk Github](https://github.com/movidius/ncsdk "movidius/ncsdk Github"))
-- **Acknowledgement:** Uses code from Intel® **gudovskiy/yoloNCS** ([gudovskiy/yoloNCS Github](https://github.com/gudovskiy/yoloNCS "gudovskiy/yoloNCS Github"))
 
-![Test Yolo Object Recognition](images/movidius.jpg)
+![Test Yolo Object Recognition](../images/movidius.jpg)
 
 ## IoT Devices:
 
 This tutorial will result in two IoT devices:
 
-1. IoT connected computer vision device using a **Raspberry Pi 3** & **Intel® Movidius**.
-2. IoT connected alarm system using an **Intel Edison** and an **IoT Dev Kit**. (OPTIONAL)
+1. IoT connected computer vision device using a **Raspberry Pi 3** / **UP Squared** for the classifier / webcam & **Intel® Movidius**.
+2. IoT connected alarm system using an **Raspberry Pi 3** / **UP Squared** and an **IoT Dev Kit**. (OPTIONAL)
 
 ## What Will We Do?
 
@@ -25,12 +23,10 @@ This tutorial will result in two IoT devices:
 2. Install the [IoT JumpWay MQTT Client](https://github.com/iotJumpway/IoT-JumpWay-Python-MQTT-Clients "IoT JumpWay MQTT Client")
 3. Clone and set up the repo
 4. Test Inception V3 Object Recognition
-6. Live Inception V3 Object Recognition
-5. Test Yolo Object Recognition
-6. Live Yolo Object Recognition
-7. Custom training an Inception V3 model
-8. Using a custom trained model
-9. Communication with IoT alarm via rules
+5. Live Inception V3 Object Recognition
+6. Custom training an Inception V3 model
+7. Using a custom trained model
+8. Communication with IoT alarm via rules
 
 ## Python Versions
 
@@ -174,10 +170,10 @@ You will need to clone this repository to a location on your development termina
 
     $ git clone https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples.git
 
-Once you have the repo, you will need to find the files in this folder located in [Intel-Movidius/TASS directory](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS "Intel-Movidius/TASS directory"). You will need to navigate to this directory in your terminal also. Execute the following commands:
+Once you have the repo, you will need to find the files in this folder located in [Intel-Movidius/TASS/InceptionV3 directory](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS/InceptionV3 "Intel-Movidius/TASS/InceptionV3 directory"). You will need to navigate to this directory in your terminal also. Execute the following commands:
 
 ```
- $ cd IoT-JumpWay-Intel-Examples/Intel-Movidius/TASS
+ $ cd IoT-JumpWay-Intel-Examples/Intel-Movidius/TASS/InceptionV3
  $ make all
 ```
 
@@ -195,10 +191,6 @@ This tutorial provides a number of configuration modes. For ease, all of the cla
 
 - **InceptionTest:** This mode sets the program to classify testing images using Inception V3
 - **InceptionLive:** This mode sets the program to classify from the live webcam feed using Inception V3
-- **YoloTest:** This mode sets the program to classify testing images using Yolo
-- **YoloLive:** This mode sets the program to classify from the live webcam feed using Yolo
-- **FacialTest:** TODO
-- **FacialLive:** TODO
 
 ## Test Inception V3 Object Recognition
 
@@ -210,7 +202,7 @@ Now that everything is working, you can execute the following command which will
 
 ### Raspberry Pi 3 Results
 
-![Test Inception V3 Object Recognition](images/InceptionTestRPI.jpg)
+![Test Inception V3 Object Recognition](../images/InceptionTestRPI.jpg)
 
 Using a Raspberry Pi, it should of taken about 0.3 / 0.4 seconds to classify each image.  Out of the 11 images tested 10 were identified with a confidence higher than 50%, the whole process should take around 4-5 seconds on a Raspberry Pi. **TESTING TIME** includes the time it took to process the 11 images, classify them, and send a notification to the IoT JumpWay for each object identified.
 
@@ -280,215 +272,41 @@ TESTING ENDED
 TESTED: 11
 IDENTIFIED: 10
 TESTING TIME: 4.594240665435791
-```
+```## Build an IoT connected alarm
 
-## Test Yolo Object Recognition
+![IoT JumpWay Raspberry Pi Dev Kit IoT Alarm](images/IoT-Dev-Kit-Alarm.jpg)
 
-First of all you need to download the weights:
+The next step is to set up your Raspberry Pi 3 so that the classifier can communicate with it via the IoT JumpWay. For this, I already created a tutorial for the IoT JumpWay Raspberry Pi Dev Kit IoT Alarm that will guide you through this process. The only difference is that you do not need to set up the Python commands application, as in this project, the classifier will replace the Python commands application, to save time please only follow the steps for Device.py and not Application.py. You will need to uncomment lines 104 - 107 to ensure that the LEDs and buzzer turn off after some time, you can update line 107 to set the amount of time to keep them running for.
 
-* YOLO_tiny: https://drive.google.com/file/d/0Bzy9LxvTYIgKNFEzOEdaZ3U0Nms/view?usp=sharing
-
-Then compile the graph:
-
-```
- $ mvNCCompile prototxt/yolo_tiny_deploy.prototxt -w weights/yolo_tiny.caffemodel -s 12
-```
-
-You can execute the following command which will start the program in Yolo object detection testing mode. To be in Yolo object detection testing mode you must edit the **ClassifierSettings->MODE** setting in **data/confs.json** to be **YoloTest**. You can add new images to the testing folder by adding images to **data/testing/yolo**.
-
-```
- $ python3 tass.py
-```
-
-### Raspberry Pi 3 Results
-
-![Test Inception V3 Object Recognition](images/YoloTestRPI.jpg)
-
-Using a Raspberry Pi, it should of taken about 0.7 seconds to identify the car and the bicycle, it does not however identify the dog. **TESTING TIME** includes the time it took to process the image, classify it, and send a notification to the IoT JumpWay for each object identified.
-
-```
-Welcome to TASS Movidius, please wait while the program initiates...
-
-- Imported Required Modules
-- Movidius Connected
-- Allocated Graph OK
-- Allocated Graph OK
--- YOU ARE IN TEST MODE, EDIT data/confs.json TO CHANGE MODE TO LIVE --
-
-- IoT JumpWay Initiated
-
--- TassMovidius Initiated
-
-- YOLO TEST MODE STARTED:  1519415604.1698081
-
-
-- Loaded Test Image data/testing/yolo/dog.jpg
-
-- DETECTION STARTED:  2018-02-23 19:53:24.172337
-Published to Device Status
-rc: 0
-Published: 1
-- Loaded Tensor
-- DETECTION ENDED: 0.777153491973877
-
-- SAVED IMAGE/FRAME
-
-TASS Detected  car With A Confidence Of 0.29334354400634766
-
-Published to Device Sensors Channel
-
-TASS Detected  bicycle With A Confidence Of 0.23780977725982666
-
-Published: 2
-Published to Device Sensors Channel
-```
-
-```
-YOLO TEST MODE ENDED
-TESTED: 1
-IDENTIFIED: 2
-TESTING TIME: 0.8514771461486816
-```
-
-### Intel® NUC  Results
-
-![Test Yolo Object Recognition](images/YoloTest.jpg)
-
-Using a Intel® NUC, it should of taken about 0.7 seconds to identify the car and the bicycle, it does not however identify the dog. **TESTING TIME** includes the time it took to process the image, classify it, and send a notification to the IoT JumpWay for each object identified.
-
-```
-- Loaded Test Image data/testing/yolo/dog.jpg
-
-- DETECTION STARTED:  2018-02-22 02:00:50.509681
-/usr/local/lib/python3.5/dist-packages/skimage/transform/_warps.py:84: UserWarning: The default mode, 'constant', will be changed to 'reflect' in skimage 0.15.
-  warn("The default mode, 'constant', will be changed to 'reflect' in "
-- Loaded Tensor
-- DETECTION ENDED: 0.7135429382324219
-
-- SAVED IMAGE/FRAME
-- SAVED IMAGE/FRAME
-
-TASS Detected  car With A Confidence Of 0.293343544006
-
-Published: 2
-Published to Device Sensors Channel
-Published To IoT JumpWay
-
-
-TASS Detected  bicycle With A Confidence Of 0.23780977726
-
-Published: 3
-Published to Device Sensors Channel
-Published To IoT JumpWay
-
-
-TESTING YOLO ENDED
-TESTED: 1
-IDENTIFIED: 2
-TESTING TIME: 1.4020063877105713
-```
-
-## Live Yolo Object Recognition
-
-First of all make sure your camera is connected and update **data/confs.json** with your sensor information from the IoT JumpWay. You can also point to live stream on an IP cam using the URL field below, leaving it as 0 will connect to the webcam attached to your device.
-
-```
-"Cameras": [
-    {
-        "ID": YourCameraID,
-        "URL": 0,
-        "Name": "YourCameraName"
-    }
-],
-```
-
-Next, if you have not already done so by using **YoloTest** mode, you need to download the weights:
-
-* YOLO_tiny: https://drive.google.com/file/d/0Bzy9LxvTYIgKNFEzOEdaZ3U0Nms/view?usp=sharing
-
-Then compile the graph:
-
-```
- $ mvNCCompile prototxt/yolo_tiny_deploy.prototxt -w weights/yolo_tiny.caffemodel -s 12
-```
-
-You can execute the following command which will start the program in Yolo object detection live mode. To be in Yolo object detection live mode you must edit the **ClassifierSettings->MODE** setting in **data/confs.json** to be **YoloLive**.
-
-```
- $ python3 tass.py
-```
-
-![Live Yolo Object Recognition](images/YoloTestFrame.jpg)
-
-Using a picture with New York Taxis on it, TASS was able to detect a taxi taking about 0.6 seconds to classify the taxi.
-
-![Live Yolo Object Recognition](images/YoloLive.jpg)
-
-```
-- DETECTION STARTED:  2018-02-22 13:15:19.184130
-- Loaded Tensor
-- DETECTION ENDED: 0.5821969509124756
-
-- SAVED IMAGE/FRAME
-
-TASS Detected  car With A Confidence Of 0.246294021606
-
-Published: 2
-Published to Device Sensors Channel
-Published To IoT JumpWay
-
-- DETECTION STARTED:  2018-02-22 13:15:19.823934
-- Loaded Tensor
-- DETECTION ENDED: 0.5944797992706299
-
-- SAVED IMAGE/FRAME
-
-TASS Detected  car With A Confidence Of 0.260350584984
-
-Published: 3
-Published to Device Sensors Channel
-Published To IoT JumpWay
-```
-
-## Setting Up Your Intel® Edison IoT Alarm
-
-![IoT JumpWay Intel® Edison Dev Kit IoT Alarm](../../images/Dev-Kit-IoT-Alarm/Edsion-Hardware-Setup.jpg)
-
-The next step is to set up your Intel® Edison so that TASS can communicate with it via the IoT JumpWay. For this, I already created a tutorial for the IoT JumpWay Intel® Edison Dev Kit IoT Alarm that will guide you through this process. The only difference is that you do not need to set up the Python commands application, as in this project, TASS will replace the Python commands application, to save time, please only follow the steps for the Intel® Edison device Node JS application.
-
-You will find the tutorial on the following link:
-
-[IoT JumpWay Intel® Edison Dev Kit IoT Alarm](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Dev-Kit-IoT-Alarm/NodeJS "IoT JumpWay Intel® Edison Dev Kit IoT Alarm")
+You will find the tutorial on the following link: [IoT JumpWay Raspberry Pi Dev Kit IoT Alarm](https://github.com/iotJumpway/IoT-JumpWay-RPI-Examples/tree/master/Dev-Kit-IoT-Alarm/Python "IoT JumpWay Raspberry Pi Dev Kit IoT Alarm")
 
 Once you have completed that tutorial and have your device setup, return here to complete the final integration steps.
 
 ## Setting Up Your Rules
 
-You are now ready to take the final steps, at this point you should have everything set up and your Intel® Edison Dev Kit IoT Alarm should be running and connected to the IoT JumpWay waiting for instructions.
+You are now ready to take the final steps, at this point you should have everything set up and your Raspberry Pi Dev Kit IoT Alarm should be running and connected to the IoT JumpWay waiting for instructions.
 
-Next we are going to set up the rules that allow TASS PVL to control your Intel® Edison Dev Kit IoT Alarm autonomously. Go back to the TAS PVL device page and make sure you are on the edit page. Scroll down to below where you added the camera node and you will see you are able to add rules.
+Next we are going to set up the rules that allow the classifier to control your Raspberry Pi Dev Kit IoT Alarm autonomously. Go back to the classifier device edit page. Scroll down to below where you added the camera node and you will see you are able to add rules.
 
-![IoT JumpWay Intel® Edison Dev Kit IoT Alarm](../../images/Automation.PNG)
+![IoT JumpWay Intel® Edison Dev Kit IoT Alarm](../../../images/main/Automation.PNG)
 
 The rules that we want to add are as follows:
 
-1. When an object is identified, turn on the red LED.
+1. When an intruder is identified, turn on the red LED.
 
-3. When an object is identified, turn on the buzzer.
+2. When an intruder is identified, turn on the buzzer.
 
-The events are going be triggered by warning messages sent from TASS, so in the On Event Of drop down, select WARNING. Then you need to select the camera node you added to the TASS device, as this is the sensor that the warning will come from. Next choose RECOGNISED in the With Warning Of, which will mean that the rule will be triggered when the IoT JumpWay receives a warning message that an object has been identified, then select the Send Device Command for the Take The Following Action section, choose the Intel® Edison as the device, the red LED as the sensor, toggle as the action and on as the command. This will then tell the Edison to turn on the red light in the event of an object being detected, repeat this process for the buzzer.
+3. When a known person is identified, turn on the blue LED.
 
-## Seeing What Your Neural Network Sees
-
-In the event that an object is detected with a confidence higher than the threshold, the frame will be saved in the **data/captures** folder, bounding boxes will be drawn around all objects that are detected.
+The events are going be triggered by warning messages sent from the classifier, so in the **On Event Of** drop down, select **WARNING**. Then you need to select the camera node you added to the classifier device, as this is the sensor that the warning will come from. Next choose **RECOGNISED** in the **With Warning Of**, which will mean that the rule will be triggered when the IoT JumpWay receives a warning message that an intruder has been identified, then select the **Send Device Command** for the **Take The Following Action** section, choose the Raspberry Pi Dev Kit IoT Alarm as the device, the red LED as the sensor/actuator, **TOGGLE** as the action and on as the command. This will then tell the Raspberry Pi  to turn on the red light in the event of an intruder being detected, repeat this process for the buzzer. Finally repeat the LED command for the blue LED but with **NOT RECOGNISED** in the **With Warning Of** and selecting the ID that represents the blue LED you set up on the Raspberry Pi.
 
 ## Viewing Your Data
 
-When the program detects an object, it will send sensor data to the [IoT JumpWay](https://iot.techbubbletechnologies.com/ "IoT JumpWay"). You will be able to access the data in the [IoT JumpWay Developers Area](https://iot.techbubbletechnologies.com/developers/dashboard/ "IoT JumpWay Developers Area"). Once you have logged into the Developers Area, visit the [IoT JumpWay Location Devices Page](https://iot.techbubbletechnologies.com/developers/location-devices "Location Devices page"), find your device and then visit the Sensor Data pages to view the data sent from the device.
+When the program processes an image, it will send sensor & warning data where relevant to the [IoT JumpWay](https://iot.techbubbletechnologies.com/ "IoT JumpWay"). You will be able to access the data in the [IoT JumpWay Developers Area](https://iot.techbubbletechnologies.com/developers/dashboard/ "IoT JumpWay Developers Area"). Once you have logged into the Developers Area, visit the [IoT JumpWay Location Devices Page](https://iot.techbubbletechnologies.com/developers/location-devices "Location Devices page"), find your device and then visit the Sensor Data pages to view the data sent from the device. You can also view command messages for the Raspberry Pi in the Raspberry Pi device page under the Commands tab.
 
-![IoT JumpWay Sensor Data](../../images/main/SensorData.png)
+![IoT JumpWay Sensor Data](../../../images/main/SensorData.png)
 
-![IoT JumpWay Warning Data](../../images/main/WarningData.png)
+![IoT JumpWay Warning Data](../../../images/main/WarningData.png)
 
 ## Bugs/Issues
 
@@ -496,5 +314,4 @@ Please feel free to create issues for bugs and general issues you come across wh
 
 ## Contributors
 
-[![Adam Milton-Barker, Intel® Software Innovator](../../images/main/Intel-Software-Innovator.jpg)](https://github.com/iotJumpway)
-
+[![Adam Milton-Barker, Intel® Software Innovator](../../../images/main/Intel-Software-Innovator.jpg)](https://github.com/iotJumpway)
