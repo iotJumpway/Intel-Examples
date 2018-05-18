@@ -1,6 +1,6 @@
 # TASS Movidius Yolo Example: IoT Connected Computer Vision
 
-![TASS Movidius Example](../images/tass-movidius.jpg)
+![TASS Movidius Example](images/tass-movidius.jpg)
 
 ## Introduction
 
