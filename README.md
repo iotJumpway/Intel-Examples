@@ -8,21 +8,31 @@ The **IoT JumpWay** is an IoT platform that provides a high performance, scalabl
 
 The platform provides an **IoT PaaS** for **IoT communication**, **tutorials** and **examples**. The **IoT JumpWay Intel® examples** provide example projects that you can use to get started using the **IoT JumpWay** for your **Intel®** IoT projects. Connect **Intel®** devices and sensors to the IoT JumpWay and control/monitor sensors/actuators and data to and from the devices.
 
+# Intel® AI DevCloud Tutorials & Source code
+
+[![IoT JumpWay Intel® AI DevCloud Examples](Intel-AI-DevCloud/images/intel-nervana-ai-cluster-colfax.jpg)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-AI-DevCloud)
+
+- [Python: Intel® AI DevCloud TASS Trainer](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-AI-DevCloud/Tass-Trainer "Python: Intel® AI DevCloud TASS Trainer"). Train TASS on the Intel® AI DevCloud platform.
+
 ## Intel® Movidius Examples
 
 [![IoT JumpWay Movidius Examples](Intel-Movidius/Images/movidius.jpg)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius)
 
 "Intel® Movidius™ VPUs drive the demanding workloads of modern computer vision and AI applications at ultra-low power. By coupling highly parallel programmable compute with workload-specific hardware acceleration, and co-locating these components on a common intelligent memory fabric, Movidius achieves a unique balance of power efficiency and high performance. Movidius technology allows device makers to deploy deep neural network and computer vision applications in categories such as smartphones, drones, intelligent cameras and augmented reality devices."
 
-- [Python: TASS Movidius Example](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS "Python: TASS Movidius Example"). Uses pretrained Inception V3 & Yolo models with an Intel® Movidius to carry out object and facial classification, both locally and on a live webcam stream.
+## TASS Movidius Classifiers
 
-## Intel® AI DevCloud Examples
+[![TASS Movidius Classifiers](Intel-Movidius/TASS/images/tass-movidius.jpg)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS/)
 
-[![IoT JumpWay Intel® AI DevCloud Examples](Intel-AI-DevCloud/images/intel-nervana-ai-cluster-colfax.jpg)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-AI-DevCloud)
+The **TASS Movidius Classifiers** are computer vision programs using a number of different models including **Inception V3**, **Yolo**, **dlib**, **OpenCV** and **Facenet**.
+
+## Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT
+
+[![Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT](IDC-Classification/images/IDC-Classification.png)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/IDC-Classification)
+
+**Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT** combines **Computer Vision** and the **Internet of Things** to provide researchers, doctors and students with a way to train a neural network with labelled breast cancer histology images to detect **Invasive Ductal Carcinoma (IDC)** in unseen/unlabelled images.
 
 "The Intel® AI DevCloud is a cluster of Intel® Xeon® Scalable Processors that will assist you with your machine learning and deep learning training and inference compute needs. It provides access to precompiled software optimized for Intel® architecture on Intel® Xeon® Scalable Processors."
-
-- [Python: Intel® AI DevCloud TASS Trainer](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Colfax/Tass-Trainer "Python: Intel® AI DevCloud TASS Trainer"). Train TASS on the Intel® AI DevCloud platform.
 
 ## Intel® Computer Vision SDK Examples
 
