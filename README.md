@@ -12,9 +12,11 @@ The platform provides an **IoT PaaS** for **IoT communication**, **tutorials** a
 
 [![IoT JumpWay Intel® AI DevCloud Examples](Intel-AI-DevCloud/images/intel-nervana-ai-cluster-colfax.jpg)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-AI-DevCloud)
 
+"The Intel® AI DevCloud is a cluster of Intel® Xeon® Scalable Processors that will assist you with your machine learning and deep learning training and inference compute needs. It provides access to precompiled software optimized for Intel® architecture on Intel® Xeon® Scalable Processors."
+
 - [Python: Intel® AI DevCloud TASS Trainer](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-AI-DevCloud/Tass-Trainer "Python: Intel® AI DevCloud TASS Trainer"). Train TASS on the Intel® AI DevCloud platform.
 
-## Intel® Movidius Examples
+# Intel® Movidius Examples
 
 [![IoT JumpWay Movidius Examples](Intel-Movidius/Images/movidius.jpg)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius)
 
@@ -22,19 +24,13 @@ The platform provides an **IoT PaaS** for **IoT communication**, **tutorials** a
 
 ## TASS Movidius Classifiers
 
-[![TASS Movidius Classifiers](Intel-Movidius/TASS/images/tass-movidius.jpg)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS/)
+- [TASS Movidius Classifiers](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Webcam/ConsoleApp "TASS Movidius Classifiers").  The **TASS Movidius Classifiers** are computer vision programs using a number of different models including **Inception V3**, **Yolo**, **dlib**, **OpenCV** and **Facenet**.
 
-The **TASS Movidius Classifiers** are computer vision programs using a number of different models including **Inception V3**, **Yolo**, **dlib**, **OpenCV** and **Facenet**.
+## Breast Cancer Classification Using Computer Vision & IoT
 
-## Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT
+- [Breast Cancer Classification Using Computer Vision & IoT](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Webcam/ConsoleApp "Breast Cancer Classification Using Computer Vision & IoT"). **Breast Cancer Classification Using Computer Vision & IoT** combines **Computer Vision** and the **Internet of Things** to provide researchers, doctors and students with a way to train a neural network with labelled breast cancer histology images to detect **Invasive Ductal Carcinoma (IDC)** in unseen/unlabelled images.
 
-[![Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT](IDC-Classification/images/IDC-Classification.png)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/IDC-Classification)
-
-**Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT** combines **Computer Vision** and the **Internet of Things** to provide researchers, doctors and students with a way to train a neural network with labelled breast cancer histology images to detect **Invasive Ductal Carcinoma (IDC)** in unseen/unlabelled images.
-
-"The Intel® AI DevCloud is a cluster of Intel® Xeon® Scalable Processors that will assist you with your machine learning and deep learning training and inference compute needs. It provides access to precompiled software optimized for Intel® architecture on Intel® Xeon® Scalable Processors."
-
-## Intel® Computer Vision SDK Examples
+# Intel® Computer Vision SDK Examples
 
 [![Intel® Computer Vision SDK Windows Examples](Intel-Computer-Vision-SDK/images/Intel-Computer-Vision-SDK.png)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK)
 
@@ -44,7 +40,7 @@ The **TASS Movidius Classifiers** are computer vision programs using a number of
 
 - [Windows Console: TASS PVL RealSense](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Computer-Vision-SDK/TASS-PVL/Windows/Realsense/ConsoleApp "Windows Console: TASS PVL RealSense"). A Computer Vision security system using the Intel® CV SDK & RealSense.
 
-## Intel® Arduino 101 DFRobot Examples
+# Intel® Arduino 101 DFRobot Examples
 
 ![Intel® Arduino 101 DFRobot Examples](images/main/DFRobot.png)
 
@@ -52,7 +48,7 @@ The **TASS Movidius Classifiers** are computer vision programs using a number of
 
 - [Arduino: LCD Intruder System Example](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Arduino-101/3RD-PARTY-DFRobot/LCD-Intruder-System "Arduino: LCD Intruder System Example"). Set up an Arduino 101 intruder alarm system that is controlled by the DFRobot LCD Keypad Shield and communication via the IoT JumpWay.
 
-## Intel® Arduino 101 Examples
+# Intel® Arduino 101 Examples
 
 ![IoT JumpWay Intel® Arduino 101 Examples](images/main/Arduino-101.png)
 
