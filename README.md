@@ -18,7 +18,7 @@ The platform provides an **IoT PaaS** for **IoT communication**, **tutorials** a
 
 ## Intel® AI DevCloud Examples
 
-[![IoT JumpWay Intel® AI DevCloud Examples](Intel-Colfax/images/intel-nervana-ai-cluster-colfax.jpg)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Colfax)
+[![IoT JumpWay Intel® AI DevCloud Examples](Intel-AI-DevCloud/images/intel-nervana-ai-cluster-colfax.jpg)](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-AI-DevCloud)
 
 "The Intel® AI DevCloud is a cluster of Intel® Xeon® Scalable Processors that will assist you with your machine learning and deep learning training and inference compute needs. It provides access to precompiled software optimized for Intel® architecture on Intel® Xeon® Scalable Processors."
 
