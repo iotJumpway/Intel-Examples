@@ -1,7 +1,7 @@
 ############################################################################################
 # Title: Facenet Helpers
 # Description: Helper functions for Facenet.
-# Last Modified: 2018/02/21
+# Last Modified: 2018-05-21
 ############################################################################################
 
 import os, json, cv2
@@ -41,13 +41,13 @@ class FacenetHelpers():
 
     def match(self, face1_output, face2_output):
         if (len(face1_output) != len(face2_output)):
-            print('length mismatch in match')
+            print('-- Length mismatch in match')
             return False
         total_diff = 0
         for output_index in range(0, len(face1_output)):
             this_diff = np.square(face1_output[output_index] - face2_output[output_index])
             total_diff += this_diff
-        print('Total Difference is: ' + str(total_diff))
+        print('-- Total Difference is: ' + str(total_diff))
 
         if (total_diff < 1.2):
             # the total difference between the two is under the threshold so
