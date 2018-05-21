@@ -109,13 +109,13 @@ class Classifier():
 		try:
 			
 			self.jumpwayClient = JWMQTTdevice.DeviceConnection({
-                "locationID": self._configs["IoTJumpWay"]["Location"],
-                "zoneID": self._configs["IoTJumpWay"]["Zone"],
-                "deviceId": self._configs["IoTJumpWay"]["Device"],
-                "deviceName": self._configs["IoTJumpWay"]["DeviceName"],
-                "username": self._configs["IoTJumpWayMQTT"]["MQTTUsername"],
-                "password": self._configs["IoTJumpWayMQTT"]["MQTTPassword"]
-            })
+				"locationID": self._configs["IoTJumpWay"]["Location"],
+				"zoneID": self._configs["IoTJumpWay"]["Zone"],
+				"deviceId": self._configs["IoTJumpWay"]["Device"],
+				"deviceName": self._configs["IoTJumpWay"]["DeviceName"],
+				"username": self._configs["IoTJumpWayMQTT"]["MQTTUsername"],
+				"password": self._configs["IoTJumpWayMQTT"]["MQTTPassword"]
+			})
 		
 		except Exception as e:
 			print(str(e))
@@ -173,43 +173,43 @@ class CamHandler(BaseHTTPRequestHandler):
 
 						for valid in os.listdir(validDir):
 
-								if valid.endswith('.jpg') or valid.endswith('.jpeg') or valid.endswith('.png') or valid.endswith('.gif'):
-									
-									if (FacenetHelpers.match(
-										FacenetHelpers.infer(cv2.imread(validDir+valid), Classifier.graph), 
-										FacenetHelpers.infer(currentFace, Classifier.graph))):
+							if valid.endswith('.jpg') or valid.endswith('.jpeg') or valid.endswith('.png') or valid.endswith('.gif'):
+								
+								if (FacenetHelpers.match(
+									FacenetHelpers.infer(cv2.imread(validDir+valid), Classifier.graph), 
+									FacenetHelpers.infer(currentFace, Classifier.graph))):
 
-										name = valid.rsplit('.', 1)[0]
-										print("-- MATCH "+name)
-										print("")
-										Classifier.jumpwayClient.publishToDeviceChannel(
-											"Warnings",
-											{
-												"WarningType":"CCTV",
-												"WarningOrigin": Classifier._configs["Cameras"][0]["ID"],
-												"WarningValue": "RECOGNISED",
-												"WarningMessage":name+" Detected"
-											}
-										)
-										break
-									else:
-										print("-- NO MATCH")
-										print("")
-
-										cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
-
-										Classifier.jumpwayClient.publishToDeviceChannel(
-											"Warnings",
-											{
-												"WarningType":"CCTV",
-												"WarningOrigin": Classifier._configs["Cameras"][0]["ID"],
-												"WarningValue": "INTRUDER",
-												"WarningMessage":"INTRUDER"
-											}
-										)
-								else:
-									print("-- NO VALID ID")
+									name = valid.rsplit('.', 1)[0]
+									print("-- MATCH "+name)
 									print("")
+									Classifier.jumpwayClient.publishToDeviceChannel(
+										"Warnings",
+										{
+											"WarningType":"CCTV",
+											"WarningOrigin": Classifier._configs["Cameras"][0]["ID"],
+											"WarningValue": "RECOGNISED",
+											"WarningMessage":name+" Detected"
+										}
+									)
+									break
+								else:
+									print("-- NO MATCH")
+									print("")
+
+									cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
+
+									Classifier.jumpwayClient.publishToDeviceChannel(
+										"Warnings",
+										{
+											"WarningType":"CCTV",
+											"WarningOrigin": Classifier._configs["Cameras"][0]["ID"],
+											"WarningValue": "INTRUDER",
+											"WarningMessage":"INTRUDER"
+										}
+									)
+							else:
+								print("-- NO VALID ID")
+								print("")
 					
 					imgRGB=cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
 					imgRGB = cv2.flip(imgRGB, 1)
@@ -230,7 +230,6 @@ class CamHandler(BaseHTTPRequestHandler):
 			return
 		if self.path.endswith('.html'):
 			src = '<img src="http://'+Classifier._configs["Cameras"][0]["Stream"]+':'+str(Classifier._configs["Cameras"][0]["StreamPort"])+'/cam.mjpg" />'
-			print(src)
 			self.send_response(200)
 			self.send_header('Content-type','text/html')
 			self.end_headers()
@@ -265,7 +264,6 @@ def main():
 		print("server started")
 		server.serve_forever()
 	except KeyboardInterrupt:
-		capture.release()
 		server.socket.close()
 
 if __name__ == '__main__':
