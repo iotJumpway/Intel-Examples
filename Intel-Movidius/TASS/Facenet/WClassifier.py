@@ -2,7 +2,7 @@
 # Title: TASS Movidius Facenet WebCam Classifier
 # Description: Connects to a local webcam or stream for realtime face recognition.
 # Acknowledgements: Uses code from Intel movidius/ncsdk (https://github.com/movidius/ncsdk)
-# Last Modified: 2018-05-21
+# Last Modified: 2018-05-16
 ############################################################################################
 
 ############################################################################################
@@ -51,64 +51,64 @@ from datetime import datetime
 capture=None
 
 class Classifier():
-
-    def __init__(self):
-
-        self._configs = {}
-        self.movidius = None
-        self.jumpwayClient = None
-        self.OpenCVCapture = None
-
-        self.graphfile = None
-        self.graph = None
-
-        self.CheckDevices()
-        self.Helpers = Helpers()
-        self.OpenCVHelpers = OpenCVHelpers()
-        self.FacenetHelpers = FacenetHelpers()
-        self._configs = self.Helpers.loadConfigs()
-        self.loadRequirements()
-        self.startMQTT()
-
-        self.detector = dlib.get_frontal_face_detector()
-        self.predictor = dlib.shape_predictor(self._configs["ClassifierSettings"]["Dlib"])
-
-        print("")
-        print("-- Classifier Initiated")
-        print("")
-
-    def CheckDevices(self):
-
-        #mvnc.SetGlobalOption(mvnc.GlobalOption.LOGLEVEL, 2)
-        devices = mvnc.EnumerateDevices()
-        if len(devices) == 0:
-            print('!! WARNING! No Movidius Devices Found !!')
-            quit()
-
-        self.movidius = mvnc.Device(devices[0])
-        self.movidius.OpenDevice()
-
-        print("-- Movidius Connected")
-
-    def allocateGraph(self,graphfile):
-
-        self.graph = self.movidius.AllocateGraph(graphfile)
-
-    def loadRequirements(self):
-
-        with open(self._configs["ClassifierSettings"]["NetworkPath"] + self._configs["ClassifierSettings"]["Graph"], mode='rb') as f:
-
-            self.graphfile = f.read()
-
-        self.allocateGraph(self.graphfile)
-
-        print("-- Allocated Graph OK")
-
-    def startMQTT(self):
-
-        try:
-
-            self.jumpwayClient = JWMQTTdevice.DeviceConnection({
+	
+	def __init__(self):
+		
+		self._configs = {}
+		self.movidius = None
+		self.jumpwayClient = None
+		self.OpenCVCapture = None
+		
+		self.graphfile = None
+		self.graph = None
+		
+		self.CheckDevices()
+		self.Helpers = Helpers()
+		self.OpenCVHelpers = OpenCVHelpers()
+		self.FacenetHelpers = FacenetHelpers()
+		self._configs = self.Helpers.loadConfigs()
+		self.loadRequirements()
+		self.startMQTT()
+		
+		self.detector = dlib.get_frontal_face_detector()
+		self.predictor = dlib.shape_predictor(self._configs["ClassifierSettings"]["Dlib"])
+		
+		print("")
+		print("-- Classifier Initiated")
+		print("")
+		
+	def CheckDevices(self):
+		
+		#mvnc.SetGlobalOption(mvnc.GlobalOption.LOGLEVEL, 2)
+		devices = mvnc.EnumerateDevices()
+		if len(devices) == 0:
+			print('!! WARNING! No Movidius Devices Found !!')
+			quit()
+			
+		self.movidius = mvnc.Device(devices[0])
+		self.movidius.OpenDevice()
+		
+		print("-- Movidius Connected")
+		
+	def allocateGraph(self,graphfile):
+		
+		self.graph = self.movidius.AllocateGraph(graphfile)
+		
+	def loadRequirements(self):
+		
+		with open(self._configs["ClassifierSettings"]["NetworkPath"] + self._configs["ClassifierSettings"]["Graph"], mode='rb') as f:
+			
+			self.graphfile = f.read()
+			
+		self.allocateGraph(self.graphfile)
+		
+		print("-- Allocated Graph OK")
+		
+	def startMQTT(self):
+		
+		try:
+			
+			self.jumpwayClient = JWMQTTdevice.DeviceConnection({
                 "locationID": self._configs["IoTJumpWay"]["Location"],
                 "zoneID": self._configs["IoTJumpWay"]["Zone"],
                 "deviceId": self._configs["IoTJumpWay"]["Device"],
@@ -116,14 +116,14 @@ class Classifier():
                 "username": self._configs["IoTJumpWayMQTT"]["MQTTUsername"],
                 "password": self._configs["IoTJumpWayMQTT"]["MQTTPassword"]
             })
-
-        except Exception as e:
-            print(str(e))
-            sys.exit()
-
-        self.jumpwayClient.connectToDevice()
-
-        print("-- IoT JumpWay Initiated")
+		
+		except Exception as e:
+			print(str(e))
+			sys.exit()
+			
+		self.jumpwayClient.connectToDevice()
+		
+		print("-- IoT JumpWay Initiated")
 
 class CamHandler(BaseHTTPRequestHandler):
 	def do_GET(self):
@@ -141,7 +141,7 @@ class CamHandler(BaseHTTPRequestHandler):
 					# to have a maximum width of 400 pixels
 					frame = capture.read()
 					frame = imutils.resize(frame, width=640)
-					rawFrame = frame 
+					rawFrame = frame.copy()
 
 					gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 					rects = Classifier.detector(gray, 0)
@@ -163,50 +163,53 @@ class CamHandler(BaseHTTPRequestHandler):
 						for (x, y) in shape:
 							cv2.circle(frame, (x, y), 1, (0, 255, 0), -1)
 
-						if frameWait >= 20:
+						frameWait = 0
+						currentFace = rawFrame[
+							max(0, rect.top()-100): min(rect.bottom()+100, 480),
+							max(0, rect.left()-100): min(rect.right()+100, 640)]
+						cv2.imwrite("test.jpg",currentFace)
+					
+						validDir = Classifier._configs["ClassifierSettings"]["NetworkPath"] + Classifier._configs["ClassifierSettings"]["ValidPath"]
 
-							frameWait = 0
-							currentFace = rawFrame[y:y+h, x:x+w]
-						
-							validDir = Classifier._configs["ClassifierSettings"]["NetworkPath"] + Classifier._configs["ClassifierSettings"]["ValidPath"]
+						for valid in os.listdir(validDir):
 
-							for valid in os.listdir(validDir):
+								if valid.endswith('.jpg') or valid.endswith('.jpeg') or valid.endswith('.png') or valid.endswith('.gif'):
+									
+									if (FacenetHelpers.match(
+										FacenetHelpers.infer(cv2.imread(validDir+valid), Classifier.graph), 
+										FacenetHelpers.infer(currentFace, Classifier.graph))):
 
-									if valid.endswith('.jpg') or valid.endswith('.jpeg') or valid.endswith('.png') or valid.endswith('.gif'):
-										
-										if (FacenetHelpers.match(
-											FacenetHelpers.infer(cv2.imread(validDir+valid), Classifier.graph), 
-											FacenetHelpers.infer(currentFace, Classifier.graph))):
-
-											name = valid.rsplit('.', 1)[0]
-											print("-- MATCH "+name)
-											print("")
-											Classifier.jumpwayClient.publishToDeviceChannel(
-												"Warnings",
-												{
-													"WarningType":"CCTV",
-													"WarningOrigin": Classifier._configs["Cameras"][0]["ID"],
-													"WarningValue": "RECOGNISED",
-													"WarningMessage":name+" Detected"
-												}
-											)
-											break
-										else:
-											print("-- NO MATCH")
-											print("")
-
-											Classifier.jumpwayClient.publishToDeviceChannel(
-												"Warnings",
-												{
-													"WarningType":"CCTV",
-													"WarningOrigin": Classifier._configs["Cameras"][0]["ID"],
-													"WarningValue": "INTRUDER",
-													"WarningMessage":"INTRUDER"
-												}
-											)
-									else:
-										print("-- NO VALID ID")
+										name = valid.rsplit('.', 1)[0]
+										print("-- MATCH "+name)
 										print("")
+										Classifier.jumpwayClient.publishToDeviceChannel(
+											"Warnings",
+											{
+												"WarningType":"CCTV",
+												"WarningOrigin": Classifier._configs["Cameras"][0]["ID"],
+												"WarningValue": "RECOGNISED",
+												"WarningMessage":name+" Detected"
+											}
+										)
+										break
+									else:
+										print("-- NO MATCH")
+										print("")
+
+										cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
+
+										Classifier.jumpwayClient.publishToDeviceChannel(
+											"Warnings",
+											{
+												"WarningType":"CCTV",
+												"WarningOrigin": Classifier._configs["Cameras"][0]["ID"],
+												"WarningValue": "INTRUDER",
+												"WarningMessage":"INTRUDER"
+											}
+										)
+								else:
+									print("-- NO VALID ID")
+									print("")
 					
 					imgRGB=cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
 					imgRGB = cv2.flip(imgRGB, 1)
@@ -226,11 +229,13 @@ class CamHandler(BaseHTTPRequestHandler):
 				exit
 			return
 		if self.path.endswith('.html'):
+			src = '<img src="http://'+Classifier._configs["Cameras"][0]["Stream"]+':'+str(Classifier._configs["Cameras"][0]["StreamPort"])+'/cam.mjpg" />'
+			print(src)
 			self.send_response(200)
 			self.send_header('Content-type','text/html')
 			self.end_headers()
 			self.wfile.write('<html><head></head><body>'.encode())
-			self.wfile.write('<img src="http://192.168.1.44:8080/cam.mjpg"/>'.encode())
+			self.wfile.write(src.encode())
 			self.wfile.write('</body></html>'.encode())
 			return
 
@@ -256,7 +261,7 @@ def main():
 		sys.exit()
 
 	try:
-		server = ThreadedHTTPServer(('192.168.1.44', 8080), CamHandler)
+		server = ThreadedHTTPServer((Classifier._configs["Cameras"][0]["Stream"], Classifier._configs["Cameras"][0]["StreamPort"]), CamHandler)
 		print("server started")
 		server.serve_forever()
 	except KeyboardInterrupt:

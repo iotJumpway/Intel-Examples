@@ -1,7 +1,7 @@
 ############################################################################################
 # Title: Facenet Helpers
 # Description: Helper functions for Facenet.
-# Last Modified: 2018-05-21
+# Last Modified: 2018/02/21
 ############################################################################################
 
 import os, json, cv2
@@ -49,7 +49,7 @@ class FacenetHelpers():
             total_diff += this_diff
         print('-- Total Difference is: ' + str(total_diff))
 
-        if (total_diff < 1.2):
+        if (total_diff < 1.3):
             # the total difference between the two is under the threshold so
             # the faces match.
             return True
