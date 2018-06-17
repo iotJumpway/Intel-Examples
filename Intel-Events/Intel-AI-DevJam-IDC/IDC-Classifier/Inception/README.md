@@ -727,9 +727,9 @@ The events are going be triggered by warning messages sent from the IDC classifi
 
 When the program processes an image, it will send sensor & warning data where relevant to the [IoT JumpWay](https://iot.techbubbletechnologies.com/ "IoT JumpWay"). You will be able to access the data in the [IoT JumpWay Developers Area](https://iot.techbubbletechnologies.com/developers/dashboard/ "IoT JumpWay Developers Area"). Once you have logged into the Developers Area, visit the [IoT JumpWay Location Devices Page](https://iot.techbubbletechnologies.com/developers/location-devices "Location Devices page"), find your device and then visit the Sensor Data pages to view the data sent from the device. You can also view command messages for the Raspberry Pi in the Raspberry Pi device page under the Commands tab.
 
-![IoT JumpWay Sensor Data](../../../images/SensorData.png)
+![IoT JumpWay Sensor Data](../../../../images/SensorData.png)
 
-![IoT JumpWay Warning Data](../../../images/WarningData.png)
+![IoT JumpWay Warning Data](../../../../images/WarningData.png)
 
 # DISCLAIMER
 
@@ -744,5 +744,5 @@ Please feel free to create issues for bugs and general issues you come across wh
 
 ## Contributors
 
-[![Adam Milton-Barker, Intel® Software Innovator](../../../images/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
+[![Adam Milton-Barker, Intel® Software Innovator](../../../../images/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
 
