@@ -19,7 +19,7 @@ The tutorial will use IoT JumpWay Python MQTT Library for communication, an Inte
 
 ## Software requirements
 
-1. [IoT JumpWay Python MQTT Client](https://github.com/iotJumpway/IoT-JumpWay-Python-MQTT-Clients "IoT JumpWay Python MQTT Client")
+1. [IoT JumpWay Python MQTT Client](https://github.com/iotJumpway/JumpWayMQTT "IoT JumpWay Python MQTT Client")
 
 ## Hardware Requirements
 
