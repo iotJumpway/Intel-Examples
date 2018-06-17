@@ -417,5 +417,5 @@ Below you will find all known bugs in the application. Each bug has a correspond
 
 ## Contributors
 
-[![Adam Milton-Barker, Intel® Software Innovator](../../images/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
+[![Adam Milton-Barker, Intel® Software Innovator](../../../../../../images/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
 
