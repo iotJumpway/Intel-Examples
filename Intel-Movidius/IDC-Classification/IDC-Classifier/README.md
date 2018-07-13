@@ -460,11 +460,11 @@ inception-v3 on NCS
 
 Each command sent to the device is stored in the [iotJumpWay](https://www.iotJumpWay.tech/ "iotJumpWay"). You will be able to access the data in the [iotJumpWay Developers Area](https://www.iotJumpWay.tech/console/ "iotJumpWay Developers Area"). 
 
-Once you have logged into Console, visit the [iotJumpWay Locations homepage](https://www.iotjumpway.tech/console/locations/ "iotJumpWay Locations homepage"). You will see a list of all of your locations and access to **edit**, **zones**, **devices** & **data**. Click on the **devices** tab 
+Once you have logged into Console, visit the [iotJumpWay Locations homepage](https://www.iotjumpway.tech/console/locations/ "iotJumpWay Locations homepage"). You will see a list of all of your locations and access to **edit**, **zones**, **devices** & **data**. Click on the **data** button in the relevant location. 
 
-![iotJumpWay Raspberry Pi Dev Kit IoT Alarm](../images/iotJumpWay-Locations.jpg)
+![Viewing Your Data](../../../images/iotJumpWay-Locations.jpg)
 
-![iotJumpWay Raspberry Pi Dev Kit IoT Alarm](../images/iotJumpWay-Locations-Data.jpg)
+![Viewing Your Data](../../../images/iotJumpWay-Locations-Data.jpg)
 
 ## DISCLAIMER
 
