@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DeviceId>30F105C9-681E-420b-A277-7C086EAD8A4E</DeviceId>
+    <UseEmulator>true</UseEmulator>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Source>D:\Transporter\Transporter\__PROJECTS\IoT\_GITHUB\IoT-JumpWay-Microsoft-Examples\Intel-AI-DevJam-IDC\IDC-Classifier\Inception\data\idc\1\8975_idx5_x1251_y1251_class1.png</Source>
+    <SmallTileSource>D:\Transporter\Transporter\__PROJECTS\IoT\_GITHUB\IoT-JumpWay-Microsoft-Examples\Intel-AI-DevJam-IDC\IDC-Classifier\Inception\data\idc\1\8975_idx5_x1251_y1251_class1.png</SmallTileSource>
+    <MediumTileSource>D:\Transporter\Transporter\__PROJECTS\IoT\_GITHUB\IoT-JumpWay-Microsoft-Examples\Intel-AI-DevJam-IDC\IDC-Classifier\Inception\data\idc\1\8975_idx5_x1251_y1251_class1.png</MediumTileSource>
+    <WideTileSource>D:\Transporter\Transporter\__PROJECTS\IoT\_GITHUB\IoT-JumpWay-Microsoft-Examples\Intel-AI-DevJam-IDC\IDC-Classifier\Inception\data\idc\1\8975_idx5_x1251_y1251_class1.png</WideTileSource>
+    <LargeTileSource>D:\Transporter\Transporter\__PROJECTS\IoT\_GITHUB\IoT-JumpWay-Microsoft-Examples\Intel-AI-DevJam-IDC\IDC-Classifier\Inception\data\idc\1\8975_idx5_x1251_y1251_class1.png</LargeTileSource>
+    <AppIconSource>D:\Transporter\Transporter\__PROJECTS\IoT\_GITHUB\IoT-JumpWay-Microsoft-Examples\Intel-AI-DevJam-IDC\IDC-Classifier\Inception\data\idc\1\8975_idx5_x1251_y1251_class1.png</AppIconSource>
+    <SplashScreenSource>D:\Transporter\Transporter\__PROJECTS\IoT\_GITHUB\IoT-JumpWay-Microsoft-Examples\Intel-AI-DevJam-IDC\IDC-Classifier\Inception\data\idc\1\8975_idx5_x1251_y1251_class1.png</SplashScreenSource>
+    <PackageLogoSource>D:\Transporter\Transporter\__PROJECTS\IoT\_GITHUB\IoT-JumpWay-Microsoft-Examples\Intel-AI-DevJam-IDC\IDC-Classifier\Inception\data\idc\1\8975_idx5_x1251_y1251_class1.png</PackageLogoSource>
+  </PropertyGroup>
+</Project>

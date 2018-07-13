@@ -1,0 +1,16 @@
+/osver:6.2
+/appcontainer
+"/runtime:mrt100_app"
+/eh:clr
+/pdb
+"/nativeLink:C:\Program Files (x86)\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.compiler\2.0.3\tools\x86\ilc\lib\Native\vmath.lib"
+/customImports
+/methodBodyFolding
+"D:\Transporter\Transporter\__PROJECTS\IoT\_GITHUB\IoT-JumpWay-Microsoft-Examples\Intel-AI-DevJam-IDC\IDC-Classifier-GUI\obj\x86\Release\ilc\intermediate\MDIL\IDC-Classifier-GUI.mdilexe"
+"/i:D:\Transporter\Transporter\__PROJECTS\IoT\_GITHUB\IoT-JumpWay-Microsoft-Examples\Intel-AI-DevJam-IDC\IDC-Classifier-GUI\obj\x86\Release\ilc\intermediate\MDIL"
+"/out:D:\Transporter\Transporter\__PROJECTS\IoT\_GITHUB\IoT-JumpWay-Microsoft-Examples\Intel-AI-DevJam-IDC\IDC-Classifier-GUI\obj\x86\Release\ilc\intermediate\Native\IDC-Classifier-GUI.exe"
+"/pdbAltPath:D:\Transporter\Transporter\__PROJECTS\IoT\_GITHUB\IoT-JumpWay-Microsoft-Examples\Intel-AI-DevJam-IDC\IDC-Classifier-GUI\bin\x86\Release\ilc"
+"/res:D:\Transporter\Transporter\__PROJECTS\IoT\_GITHUB\IoT-JumpWay-Microsoft-Examples\Intel-AI-DevJam-IDC\IDC-Classifier-GUI\obj\x86\Release\ilc\intermediate\Native.res"
+"/i:C:\Program Files (x86)\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.sharedlibrary-x86\2.0.0\tools\SharedLibrary\ret\MDIL"
+/shimexe
+"/classlib:SharedLibrary"
