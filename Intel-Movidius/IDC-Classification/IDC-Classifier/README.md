@@ -1,6 +1,6 @@
 # Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT
 
-![Intel® Movidius](images/IDC-Classification.png)
+![Intel® Movidius](../images/IDC-Classification.png)
 
 ## Introduction
 
@@ -15,7 +15,7 @@ This is a project I created as an extension to one of my facial recognition proj
 - **Acknowledgement:** Uses code from Intel® **movidius/ncsdk** ([movidius/ncsdk Github](https://github.com/movidius/ncsdk "movidius/ncsdk Github"))
 - **Acknowledgement:** Uses code from chesterkuo **imageclassify-movidius** ([imageclassify-movidius Github](https://github.com/chesterkuo/imageclassify-movidius "imageclassify-movidius Github"))
 
-![Intel® Movidius](../Images/movidius.jpg)
+![Intel® Movidius](../../images/movidius.jpg)
 
 ## What Will We Do?
 
@@ -87,7 +87,7 @@ Next plug your Movidius into your device and issue the following commands:
 
 ## Install NCSDK On Your Raspberry Pi 3 / UP Squared
 
-![Intel® Movidius](images/UP2.jpg)
+![Intel® Movidius](../images/UP2.jpg)
 
 Next you will need to install the **NCSDK** on your Raspberry Pi 3 / UP Squared device, this will be used by the classifier to carry out inference on local images or images received via the API we will create. Make sure you have the Movidius plugged in.
 
@@ -241,9 +241,9 @@ Once uploaded, follow the instructions in **DevCloudTrainer.ipynb**, this noteb
 
 ## Training Results
 
-![Training Accuracy](images/training-accuracy.jpg)
+![Training Accuracy](../images/training-accuracy.jpg)
 
-![Training Accuracy](images/training-total-loss.jpg)
+![Training Accuracy](../images/training-total-loss.jpg)
 
 ## Evaluating Your Model
 
@@ -260,9 +260,9 @@ INFO:tensorflow:Global Step 74: Streaming Accuracy: 0.8942 (0.67 sec/step)
 INFO:tensorflow:Final Streaming Accuracy: 0.8941
 ```
 
-![Training Accuracy](images/validation-accuracy.jpg)
+![Training Accuracy](../images/validation-accuracy.jpg)
 
-![Training Accuracy](images/validation-total-loss.jpg)
+![Training Accuracy](../images/validation-total-loss.jpg)
 
 ## Download Your Model
 
@@ -454,7 +454,7 @@ inception-v3 on NCS
 
 ## Setting Up The Universal Windows Application
 
-![IDC Classifier Universal Windows Application](images/VS2017-Universal-Windows-App.jpg)
+![IDC Classifier Universal Windows Application](../images/VS2017-Universal-Windows-App.jpg)
 
 Navigate to **IoT-JumpWay-Microsoft-Examples/Intel-AI-DevJam-IDC** and double click the **IDC-Classifier-GUI.sln** file to open the solution in **Visual Studio 2017**.
 
@@ -488,7 +488,7 @@ To add your own data you can remove the images in the **Data** folder and add yo
 
 ## Build an IoT connected alarm
 
-![iotJumpWay Raspberry Pi Dev Kit IoT Alarm](images/IoT-Dev-Kit-Alarm.jpg)
+![iotJumpWay Raspberry Pi Dev Kit IoT Alarm](../images/IoT-Dev-Kit-Alarm.jpg)
 
 The next step is to set up your Raspberry Pi 3 so that the IDC server can communicate with it via the iotJumpWay. For this, I already created a tutorial for the iotJumpWay Raspberry Pi Dev Kit IoT Alarm that will guide you through this process. The only difference is that you do not need to set up the Python commands application, as in this project, the IDC server will replace the Python commands application, to save time, please only follow the steps for Device.py and not Application.py. You will need to uncomment lines 104 - 107 to ensure that the LEDs and buzzer turn off after some time, you can update line 107 to set the amount of time to keep them running for.
 
@@ -502,7 +502,7 @@ You are now ready to take the final steps, at this point you should have everyth
 
 Next we are going to set up the rules that allow the IDC server to control your Raspberry Pi Dev Kit IoT Alarm autonomously. Go back to the IDC device edit page. Scroll down to below where you added the camera node and you will see you are able to add rules.
 
-![iotJumpWay Intel® Edison Dev Kit IoT Alarm](../../images/main/Automation.PNG)
+![iotJumpWay Intel® Edison Dev Kit IoT Alarm](../../../images/main/Automation.PNG)
 
 The rules that we want to add are as follows:
 
@@ -518,9 +518,9 @@ The events are going be triggered by warning messages sent from the IDC classifi
 
 When the program processes an image, it will send sensor & warning data where relevant to the [iotJumpWay](https://iot.techbubbletechnologies.com/ "iotJumpWay"). You will be able to access the data in the [iotJumpWay Devs Area](https://iot.techbubbletechnologies.com/developers/dashboard/ "iotJumpWay Devs Area"). Once you have logged into the Developers Area, visit the [iotJumpWay Location Devices Page](https://iot.techbubbletechnologies.com/developers/location-devices "Location Devices page"), find your device and then visit the Sensor Data pages to view the data sent from the device. You can also view command messages for the Raspberry Pi in the Raspberry Pi device page under the Commands tab.
 
-![iotJumpWay Sensor Data](../../images/main/SensorData.png)
+![iotJumpWay Sensor Data](../../../images/main/SensorData.png)
 
-![iotJumpWay Warning Data](../../images/main/WarningData.png)
+![iotJumpWay Warning Data](../../../images/main/WarningData.png)
 
 ## Bugs/Issues
 
@@ -528,5 +528,5 @@ Please feel free to create issues for bugs and general issues you come across wh
 
 ## Contributors
 
-[![Adam Milton-Barker, Intel® Software Innovator](../../images/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
+[![Adam Milton-Barker, Intel® Software Innovator](../../../images/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
 
