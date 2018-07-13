@@ -18,6 +18,16 @@ The IDC Classifier is made up of 3 projects that combine together to make a netw
 
 - [Dev Kit IoT Alarm: An IoT connected alarm system built on a Raspberry Pi using the iotJumpWay](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/IDC-Classification/Dev-Kit-IoT-Alarm "Dev Kit IoT Alarm: An IoT connected alarm system built on a Raspberry Pi using the iotJumpWay")
 
+## DISCLAIMER
+
+This is a project I created as an extension to one of my facial recognition projects, I advise that this is to be used by developers interested in learning about the use cases of computer vision, medical researchers and students, or professionals in the medical industry to evaluate if it may help them and to expand upon. This is not meant to be an alternative for use instead of seeking professional help. I am a developer not a doctor or expert on cancer.
+
+## ACKNOWLEDGEMENTS
+
+- Uses code from Intel® **movidius/ncsdk** ([movidius/ncsdk Github](https://github.com/movidius/ncsdk "movidius/ncsdk Github"))
+- Uses code from chesterkuo **imageclassify-movidius** ([imageclassify-movidius Github](https://github.com/chesterkuo/imageclassify-movidius "imageclassify-movidius Github"))
+- Uses data from **paultimothymooney** on **Kaggle** ([predict-idc-in-breast-cancer-histology-images data on Kaggle](https://www.kaggle.com/paultimothymooney/predict-idc-in-breast-cancer-histology-images/data "predict-idc-in-breast-cancer-histology-images data on Kaggle"))
+
 ## Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come across whilst using this or any other IoT JumpWay Intel repo issues: [IoT-JumpWay-Intel-Examples Github Issues](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/issues "IoT-JumpWay-Intel-Examples Github Issues"). 

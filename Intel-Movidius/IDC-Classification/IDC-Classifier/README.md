@@ -10,7 +10,7 @@ This project shows how existing deep learning technologies can be utilized to tr
 
 **Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT** combines **Computer Vision** and the **Internet of Things** to provide developers, researchers, doctors and/or students with a way to train a neural network with labelled breast cancer histology images to detect Invasive Ductal Carcinoma (IDC) in unseen/unlabelled images.
 
-The project uses the power of the **Intel® Movidius** and uses a custom trained **Inception V3 model** to carry out **image classification**, both locally and via a server / client. IoT communication is powered by the [iotJumpWay](https://iot.techbubbletechnologies.com "iotJumpWay") and publishes the results after processing local images or images sent through the API.
+The project uses the power of the **Intel® Movidius** and uses a custom trained **Inception V3 model** to carry out **image classification**, both locally and via a server / client. IoT communication is powered by the [iotJumpWay](https://www.iotJumpWay.tech "iotJumpWay") and publishes the results after processing local images or images sent through the API.
 
 ![Intel® Movidius](../../Images/movidius.jpg) 
 
@@ -455,6 +455,16 @@ inception-v3 on NCS
 
 192.168.1.40 - - [24/Apr/2018 14:25:45] "POST /api/infer HTTP/1.1" 200 -
 ```
+
+## Viewing Your Data
+
+Each command sent to the device is stored in the [iotJumpWay](https://www.iotJumpWay.tech/ "iotJumpWay"). You will be able to access the data in the [iotJumpWay Developers Area](https://www.iotJumpWay.tech/console/ "iotJumpWay Developers Area"). 
+
+Once you have logged into Console, visit the [iotJumpWay Locations homepage](https://www.iotjumpway.tech/console/locations/ "iotJumpWay Locations homepage"). You will see a list of all of your locations and access to **edit**, **zones**, **devices** & **data**. Click on the **devices** tab 
+
+![iotJumpWay Raspberry Pi Dev Kit IoT Alarm](../images/iotJumpWay-Locations.jpg)
+
+![iotJumpWay Raspberry Pi Dev Kit IoT Alarm](../images/iotJumpWay-Locations-Data.jpg)
 
 ## DISCLAIMER
 
