@@ -12,7 +12,7 @@ This project shows how existing deep learning technologies can be utilized to tr
 
 The project uses the power of the **Intel® Movidius** and uses a custom trained **Inception V3 model** to carry out **image classification**, both locally and via a server / client. IoT communication is powered by the [iotJumpWay](https://iot.techbubbletechnologies.com "iotJumpWay") and publishes the results after processing local images or images sent through the API.
 
-![Intel® Movidius](../images/movidius.jpg)
+![Intel® Movidius](images/movidius.jpg)
 
 ## What Will We Do?
 
