@@ -26,18 +26,22 @@ The project uses the power of the **Intel® Movidius** and uses a custom trained
 8.  Convert the model to a format suitable for the Movidius.
 9.  Test the IDC classifier locally on the Linux development device.
 10. Live IDC classification via the server / client.
-11. Build an IoT connected alarm that will be triggered when IDC is detected.
 
 ## Applications
 
-**Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT** is made up of 7 core applications:
+**Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT** is made up of 5 core applications:
 
 - **DevCloudTrainer:** A training program that allows you to train a convolutional neural network using Intel® AI DevCloud.
 - **Evaluator:** An evaluation program for evaluating your model.
 - **Classifier:** A classification program for testing your model.
 - **Server/API:** A server that powers a REST Api, providing access to the classifier.
 - **Client:** A client that can interact with the server/API.
-- **IoT Connected Alarm:** An IoT connected alarm that is triggered when IDC is detected.
+
+## Related Tutorials
+
+- [IDC Classifier GUI: Upload testing data and run the IDC Classifier from a Universals Windows Application](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/IDC-Classification/IDC-Classifier-GUI "IDC Classifier GUI: Upload testing data and run the IDC Classifier from a Universals Windows Application")
+
+- [Dev Kit IoT Alarm: An IoT connected alarm system built on a Raspberry Pi using the iotJumpWay](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/IDC-Classification/Dev-Kit-IoT-Alarm "Dev Kit IoT Alarm: An IoT connected alarm system built on a Raspberry Pi using the iotJumpWay")
 
 ## Python Versions
 
@@ -53,12 +57,13 @@ The project uses the power of the **Intel® Movidius** and uses a custom trained
 
 ## Hardware Requirements
 
-Everything after **1 x Linux Device for training & converting the trained model to a Movidius friendly model** in the list below is optional.
-
 - 1 x [Access to Intel® AI DevCloud](https://software.intel.com/en-us/ai-academy/tools/devcloud "Access to Intel® AI DevCloud")
 - 1 x [Intel® Movidius](https://www.movidius.com/ "Intel® Movidius")
 - 1 x Linux Device for training & converting the trained model to a Movidius friendly model.
 - 1 x Raspberry Pi 3 / UP Squared for the classifier / server.
+
+### Optional Hardware
+
 - 1 x Raspberry Pi 3 for IoT connected alarm.
 - 1 x Grove starter kit for IoT, Raspberry Pi edition.
 - 1 x Blue LED (Grove)
@@ -188,7 +193,7 @@ Once you have the repo, you will need to find the files in this folder located i
 
 ## Preparing Your IDC Training Data
 
-For this tutorial, I used a dataset from Kaggle ( [Predict IDC in Breast Cancer Histology Images](https://www.kaggle.com/paultimothymooney/predict-idc-in-breast-cancer-histology-images "Predict IDC in Breast Cancer Histology Images") ), but you are free to use any dataset you like. I have uploaded the collection I used for positive and negative images which you will find in the **model/train** directory. Once you decide on your dataset you need to arrange your data into the **model/train** directory. Each subdirectory should be named with integers, I used 0 and 1 to represent positive and negative. In my testing I used 4400 positive and 4400 negative examples giving an overall training accuracy of 0.8596 (See Training Results below) and an average confidence of 0.96 on correct identifications. The data provided is 50px x 50px, as Inception V3 was trained on images of size 299px x 299px, the images are resized to 299px x 299px, ideally the images would be that size already so you may want to try different datasets and see how your results vary.
+For this tutorial, I used a dataset from Kaggle ( [Predict IDC in Breast Cancer Histology Images](https://www.kaggle.com/paultimothymooney/predict-idc-in-breast-cancer-histology-images/data "Predict IDC in Breast Cancer Histology Images") ), but you are free to use any dataset you like. I have uploaded the collection I used for positive and negative images which you will find in the **model/train** directory. Once you decide on your dataset you need to arrange your data into the **model/train** directory. Each subdirectory should be named with integers, I used 0 and 1 to represent positive and negative. In my testing I used 4400 positive and 4400 negative examples giving an overall training accuracy of 0.8596 (See Training Results below) and an average confidence of 0.96 on correct identifications. The data provided is 50px x 50px, as Inception V3 was trained on images of size 299px x 299px, the images are resized to 299px x 299px, ideally the images would be that size already so you may want to try different datasets and see how your results vary.
 
 ## Finetuning Your Training Parameters
 
@@ -337,7 +342,7 @@ Now that we are all trained and tested, it is time to set up the server that wil
 
 The following instructions will help you set up your server and test a positive and negative prediction:
 
-1. If you used the [Predict IDC in Breast Cancer Histology Images](https://www.kaggle.com/paultimothymooney/predict-idc-in-breast-cancer-histology-images "Predict IDC in Breast Cancer Histology Images") dataset, you can use the **positive.png** & **negative.png** as they are from that dataset, if not you should chose a positive and negative example from your testing set and replace these images.
+1. If you used the [Predict IDC in Breast Cancer Histology Images](https://www.kaggle.com/paultimothymooney/predict-idc-in-breast-cancer-histology-images/data "Predict IDC in Breast Cancer Histology Images") dataset, you can use the **positive.png** & **negative.png** as they are from that dataset, if not you should chose a positive and negative example from your testing set and replace these images.
 
 2. The server is currently set to start up on localhost, if you would like to change this you need to edit line 281 of **Server.py** and line 38 of **Client.py** to match your desired host. Once you have things working, if you are going to be leaving this running and access it from the outside world you shoud secure it with LetsEncrypt or similar.
 
@@ -455,8 +460,11 @@ inception-v3 on NCS
 
 This is a project I created as an extension to one of my facial recognition projects, I advise that this is to be used by developers interested in learning about the use cases of computer vision, medical researchers and students, or professionals in the medical industry to evaluate if it may help them and to expand upon. This is not meant to be an alternative for use instead of seeking professional help. I am a developer not a doctor or expert on cancer.
 
-- **Acknowledgement:** Uses code from Intel® **movidius/ncsdk** ([movidius/ncsdk Github](https://github.com/movidius/ncsdk "movidius/ncsdk Github"))
-- **Acknowledgement:** Uses code from chesterkuo **imageclassify-movidius** ([imageclassify-movidius Github](https://github.com/chesterkuo/imageclassify-movidius "imageclassify-movidius Github"))
+## ACKNOWLEDGEMENTS
+
+- Uses code from Intel® **movidius/ncsdk** ([movidius/ncsdk Github](https://github.com/movidius/ncsdk "movidius/ncsdk Github"))
+- Uses code from chesterkuo **imageclassify-movidius** ([imageclassify-movidius Github](https://github.com/chesterkuo/imageclassify-movidius "imageclassify-movidius Github"))
+- Uses data from **paultimothymooney** on **Kaggle** ([predict-idc-in-breast-cancer-histology-images data on Kaggle](https://www.kaggle.com/paultimothymooney/predict-idc-in-breast-cancer-histology-images/data "predict-idc-in-breast-cancer-histology-images data on Kaggle"))
 
 ## Bugs/Issues
 
