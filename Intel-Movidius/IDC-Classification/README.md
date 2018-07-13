@@ -1,5 +1,4 @@
-# Invasive Ducatal Carcinoma (IDC) Classifier
-## Using Intel Movidius & UP2
+# Invasive Ductal Carcinoma (IDC) Classifier
 
 ![Intel® Movidius](images/IDC-Classification.jpg)
 
@@ -23,5 +22,5 @@ Please feel free to create issues for bugs and general issues you come across wh
 
 ## Contributors
 
-[![Adam Milton-Barker, Intel® Software Innovator](../../../images/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
+[![Adam Milton-Barker, Intel® Software Innovator](../images/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
 
