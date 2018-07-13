@@ -53,6 +53,8 @@ The project uses the power of the **Intel® Movidius** and uses a custom trained
 
 ## Hardware Requirements
 
+Everything after **1 x Linux Device for training & converting the trained model to a Movidius friendly model** in the list below is optional.
+
 - 1 x [Access to Intel® AI DevCloud](https://software.intel.com/en-us/ai-academy/tools/devcloud "Access to Intel® AI DevCloud")
 - 1 x [Intel® Movidius](https://www.movidius.com/ "Intel® Movidius")
 - 1 x Linux Device for training & converting the trained model to a Movidius friendly model.
