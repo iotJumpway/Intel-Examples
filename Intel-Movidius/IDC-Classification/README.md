@@ -16,6 +16,8 @@ The IDC Classifier is made up of 3 projects that combine together to make a netw
 
 - [IDC Classifier GUI: Upload testing data and run the IDC Classifier from a Universals Windows Application](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/IDC-Classification/IDC-Classifier-GUI "IDC Classifier GUI: Upload testing data and run the IDC Classifier from a Universals Windows Application")
 
+- [Dev Kit IoT Alarm: An IoT connected alarm system built on a Raspberry Pi using the iotJumpWay](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/IDC-Classification/Dev-Kit-IoT-Alarm "Dev Kit IoT Alarm: An IoT connected alarm system built on a Raspberry Pi using the iotJumpWay")
+
 ## Bugs/Issues
 
 Please feel free to create issues for bugs and general issues you come across whilst using this or any other IoT JumpWay Intel repo issues: [IoT-JumpWay-Intel-Examples Github Issues](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/issues "IoT-JumpWay-Intel-Examples Github Issues"). 
