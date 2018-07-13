@@ -2,18 +2,15 @@
 
 ![Intel® Movidius](../images/IDC-Classification.png)
 
-## Introduction
+## Abstract
 
-**Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT** combines **Computer Vision** and the **Internet of Things** to provide researchers, doctors and students with a way to train a neural network with labelled breast cancer histology images to detect Invasive Ductal Carcinoma (IDC) in unseen/unlabelled images.
+This project shows how existing deep learning technologies can be utilized to train artificial intelligence (AI) to be able to detect invasive ductal carcinoma (IDC)1 (breast cancer) in unlabeled histology images. More specifically, I show how to train a convolutional neural network using TensorFlow* and transfer learning using a dataset of negative and positive histology images. In addition to showing how artificial intelligence can be used to detect IDC, I also show how the Internet of Things (IoT) can be used in conjunction with AI to create automated systems that can be used in the medical industry.
+
+- [View the technical article on Intel® AI Academy Documentation section of IDZ](https://software.intel.com/en-us/articles/machine-learning-and-mammography "View the technical article on Intel® AI Academy Documentation section of IDZ")
+
+**Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT** combines **Computer Vision** and the **Internet of Things** to provide developers, researchers, doctors and/or students with a way to train a neural network with labelled breast cancer histology images to detect Invasive Ductal Carcinoma (IDC) in unseen/unlabelled images.
 
 The project uses the power of the **Intel® Movidius** and uses a custom trained **Inception V3 model** to carry out **image classification**, both locally and via a server / client. IoT communication is powered by the [iotJumpWay](https://iot.techbubbletechnologies.com "iotJumpWay") and publishes the results after processing local images or images sent through the API.
-
-## DISCLAIMER
-
-This is a project I created as an extension to one of my facial recognition projects, I advise that this is to be used by developers interested in learning about the use cases of computer vision, medical researchers and students, or professionals in the medical industry to evaluate if it may help them and to expand upon. This is not meant to be an alternative for use instead of seeking professional help. I am a developer not a doctor or expert on cancer.
-
-- **Acknowledgement:** Uses code from Intel® **movidius/ncsdk** ([movidius/ncsdk Github](https://github.com/movidius/ncsdk "movidius/ncsdk Github"))
-- **Acknowledgement:** Uses code from chesterkuo **imageclassify-movidius** ([imageclassify-movidius Github](https://github.com/chesterkuo/imageclassify-movidius "imageclassify-movidius Github"))
 
 ![Intel® Movidius](../../images/movidius.jpg)
 
@@ -521,6 +518,13 @@ When the program processes an image, it will send sensor & warning data where re
 ![iotJumpWay Sensor Data](../../../images/main/SensorData.png)
 
 ![iotJumpWay Warning Data](../../../images/main/WarningData.png)
+
+## DISCLAIMER
+
+This is a project I created as an extension to one of my facial recognition projects, I advise that this is to be used by developers interested in learning about the use cases of computer vision, medical researchers and students, or professionals in the medical industry to evaluate if it may help them and to expand upon. This is not meant to be an alternative for use instead of seeking professional help. I am a developer not a doctor or expert on cancer.
+
+- **Acknowledgement:** Uses code from Intel® **movidius/ncsdk** ([movidius/ncsdk Github](https://github.com/movidius/ncsdk "movidius/ncsdk Github"))
+- **Acknowledgement:** Uses code from chesterkuo **imageclassify-movidius** ([imageclassify-movidius Github](https://github.com/chesterkuo/imageclassify-movidius "imageclassify-movidius Github"))
 
 ## Bugs/Issues
 
