@@ -462,7 +462,7 @@ Each command sent to the device is stored in the [iotJumpWay](https://www.iotJum
 
 Once you have logged into Console, visit the [iotJumpWay Locations homepage](https://www.iotjumpway.tech/console/locations/ "iotJumpWay Locations homepage"). You will see a list of all of your locations and access to **edit**, **zones**, **devices** & **data**.
 
-![Viewing Your Data](../../../images/iotJumpWay-Locations.jpg)
+![Viewing Your Data](../../../images/iotJumpWay-Locations-Data-Tab.jpg)
 
  Now click on the **data** button in the relevant location to be taken to the data logs area. 
 
