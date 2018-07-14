@@ -15,7 +15,7 @@ if we find **false positives** we will attempt to find a way to reduce them, pro
 
 ## IoT Connectivity
 
-**IoT connectivity** for the project is provided by the [IoT JumpWay](https://www.iotjumpway.tech "IoT JumpWay"). The **IoT JumpWay** is an **IoT communication** platform as a service (PaaS) with a social network frontend. IoT JumpWay developers will soon be able to share projects/photos/videos and events. Use of the IoT JumpWay is completely free, you can find out more on the [Developer Program](https://iot.techbubbletechnologies.com/developers/ "Developer Program") page.
+**IoT connectivity** for the project is provided by the [iotJumpWay](https://www.iotjumpway.tech "iotJumpWay"). The **iotJumpWay** is an **IoT communication** platform as a service (PaaS) with a social network frontend. iotJumpWay developers will soon be able to share projects/photos/videos and events. Use of the iotJumpWay is completely free, you can find out more on the [Developer Program](https://iot.techbubbletechnologies.com/developers/ "Developer Program") page.
 
 ## Checklist
 
@@ -69,9 +69,9 @@ INFO:tensorflow:Global Step 74: Streaming Accuracy: 0.8942 (0.67 sec/step)
 INFO:tensorflow:Final Streaming Accuracy: 0.8941
 ```
 
-![Training Accuracy](../IDC-Classifier/Inception/images/validation-accuracy.jpg)
+![Training Accuracy](../images/validation-accuracy.jpg)
 
-![Training Accuracy](../IDC-Classifier/Inception/images/validation-total-loss.jpg)
+![Training Accuracy](../images/validation-total-loss.jpg)
 
 ## Testing The Universal Windows Application
 
@@ -186,7 +186,7 @@ Processed image 8
 
 You can see the images that were incorrectly classified along with images from opposing classes that I believed may be able to trick the IDC Classifer in the image above. I was able to find similar looking images from the negative class that shows the classifier may of confused two similar images from two seperate classes.
 
-![Testing The Universal Windows Application](../IDC-Classifier/Inception/images/output.jpg)
+![Testing The Universal Windows Application](images/Output-12-Images.jpg)
 
 This was also tested using the [IDC Classifier Test Program](https://github.com/iotJumpway/IoT-JumpWay-Microsoft-Examples/blob/master/Intel-AI-DevJam-IDC/IDC-Classifier/Classifier.py "IDC Classifier Test Program") with the same outcome. It seems that similar to facial recognition, Inception V3 gets confused on similar images, this can be confirmed or not by testing larger datasets.
 
@@ -420,16 +420,14 @@ Below you will find any features that will be implemented. Pull requests are wel
 
 - [IoTJumpWay Integration](https://www.iotjumpway.tech "IoTJumpWay Integration")
 
+## ACKNOWLEDGEMENTS
+
+- Uses data from **paultimothymooney** on **Kaggle** ([predict-idc-in-breast-cancer-histology-images data on Kaggle](https://www.kaggle.com/paultimothymooney/predict-idc-in-breast-cancer-histology-images/data "predict-idc-in-breast-cancer-histology-images data on Kaggle"))
+
 ## Bugs/Issues
 
-Please feel free to create issues for bugs and general issues you come across whilst using this or any other IoT JumpWay Microsoft repo issues: [IoT-JumpWay-Microsoft-Examples Github Issues](https://github.com/iotJumpway/IoT-JumpWay-Microsoft-Examples/issues "IoT-JumpWay-Microsoft-Examples Github Issues")
-
-## Known Bugs
-Below you will find all known bugs in the application. Each bug has a corresponding issue in the repo issues area. Pull requests are welcome.
-
-- [KNOWN BUG: Crashes after permissions](https://github.com/iotJumpway/IoT-JumpWay-Microsoft-Examples/issues/1 "KNOWN BUG: Crashes after permissions")
+Please feel free to create issues for bugs and general issues you come across whilst using this or any other Intel® related iotJumpWay issues. You may also use the issues area to ask for general help whilst using the iotJumpWay in your IoT projects.
 
 ## Contributors
 
-[![Adam Milton-Barker, Intel® Software Innovator](../../images/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
-
+[![Adam Milton-Barker, Intel® Software Innovator](../../../images/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
